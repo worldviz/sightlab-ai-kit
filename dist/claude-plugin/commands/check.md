@@ -2,7 +2,7 @@
 description: Run the SightLab 2.x static checks (and the autopilot when available) on a script
 ---
 
-Use the `sightlab-2x` skill. Target script: $ARGUMENTS (default: the experiment script in
+Use the SightLab skill for this project's generation (today `sightlab-2x`; its first section says how to tell). Target script: $ARGUMENTS (default: the experiment script in
 this project).
 
 1. Run `python "${CLAUDE_PLUGIN_ROOT}/skills/sightlab-2x/harness/check.py" <script> --sightlab-utils "<installed package dir>"`

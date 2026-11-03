@@ -1,7 +1,8 @@
-# SightLab 2.x AI Kit
+# SightLab AI Kit
 
-A plugin for building, checking and testing WorldViz SightLab 2.x experiments, the Python
-eye-tracking library that runs inside Vizard on Windows. It gives Claude the workflow a
+A plugin that carries one skill per SightLab generation: `sightlab-2x` today, for building,
+checking and testing WorldViz SightLab 2.x experiments, the Python eye-tracking library that
+runs inside Vizard on Windows. The skill gives Claude the workflow a
 SightLab engineer follows: size the request, assemble a brief, build the script in steps,
 run the static checker after every edit, run the experiment unattended in desktop mode, and
 hand over a review note with what the headset still has to confirm.
@@ -14,8 +15,7 @@ hand over a review note with what the headset still has to confirm.
   Vizard source that every SightLab licensee receives, so answers cite real lines.
 - `skills/sightlab-2x/harness/`: `check.py` (static checks, any Python 3.8+) and
   `autopilot.py` (runs the experiment in Vizard's desktop mode and writes a report).
-- Three commands: `/sightlab-2x:sightlab-new`, `/sightlab-2x:sightlab-check`,
-  `/sightlab-2x:sightlab-review`.
+- Three commands: `/sightlab:new`, `/sightlab:check`, `/sightlab:review`.
 
 ## What it runs, sends and fetches
 
@@ -31,8 +31,8 @@ claude.ai chat it answers from its files and writes scripts for you to run.
 
 ## Install
 
-Claude Code: `claude plugin install sightlab-2x --marketplace worldviz/sightlab-ai-kit`.
+Claude Code: `claude plugin install sightlab --marketplace worldviz/sightlab-ai-kit`.
 claude.ai: Customize, Plugins, Add marketplace, `worldviz/sightlab-ai-kit`.
 Source, releases and the Codex version: https://github.com/worldviz/sightlab-ai-kit
 
-Kit version 2026.11.2, generated from sightlab_utils 2.8.21 on 2026-11-03.
+Kit version 2026.11.3, generated from sightlab_utils 2.8.21 on 2026-11-03.

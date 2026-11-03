@@ -1,5 +1,5 @@
 ---
-name: instructions
+name: sightlab-2x
 description: Build, check and test SightLab 2.x (Vizard) eye-tracking experiments from a research brief; use for any SightLab 2 scripting, GUI or data question.
 ---
 
@@ -11,18 +11,43 @@ library that runs inside Vizard 7 or 8 on Windows. This kit was generated from
 SightLab scripts are short and regular. Keep to the frame in `rules/imports-and-frame.md`,
 compose from `patterns/`, and look up every method in `api/sightlab-api.md` before using it.
 
+## Which SightLab
+
+SightLab 2.x and SightLab 3 are installed side by side on many machines during the SightLab 3
+transition, and they do not share an API. Confirm the generation before sizing the request, in
+this order, and say which you found:
+
+1. **The project's files.** A script that imports `sightlab_utils` is SightLab 2.x. A
+   `.oep.json` or `.oep-project.json` file, or a script with `from sightlab import ...` or
+   `import sightlab`, is SightLab 3. Both generations define a class named `SightLab`; the
+   import line is the signal, never the class name.
+2. **What is installed**, for a new project on a host that can read files: Vizard's
+   `bin\lib\site-packages\sightlab_utils` is 2.x; `site-packages\sightlab` with a
+   `_sightlab_version.py` is 3.
+3. **What the researcher says or pastes.** "My SightLab 2 script", "a SightLab 3
+   experiment", a pasted script (read its import line) or a pasted `.oep.json` decides. In a
+   chat without files this is the only signal, so read the message for it first.
+4. **Ask once** when nothing above decides it: a SightLab 2.x script, or a SightLab 3
+   experiment? An explicit statement counts; vocabulary alone ("trial", "gaze object") does
+   not, because both generations use the same words.
+
+This skill covers SightLab 2.x. For a SightLab 3 project, or a request to port a 2.x script to
+SightLab 3, use the `sightlab-3` skill if it is installed beside this one; otherwise say that
+SightLab 3 (OEP experiments, the Conductor, and Hybrid Python) is not covered by this kit yet,
+and stop.
+
 ## On this host
 
 This plugin provides instructions and reference material for SightLab 2.x, plus the harness
 under `harness/` in this skill's folder (`<kit>` is the folder that holds this SKILL.md).
-Size the request first (section 0). Whether this host may run the checks depends on the
+Confirm the generation, then size the request (section 0). Whether this host may run the checks depends on the
 product you are using and its permissions:
 
 <!-- openai-review-wording -->
 - in ChatGPT (no local files): you cannot run the checks; say so, and for a build ask the
   researcher to run them on the SightLab PC with the installed kit (Claude Code:
-  `claude plugin install sightlab-2x --marketplace worldviz/sightlab-ai-kit`, then
-  `/sightlab-2x:sightlab-check <script>`; Codex: `codex plugin marketplace add
+  `claude plugin install sightlab --marketplace worldviz/sightlab-ai-kit`, then
+  `/sightlab:check <script>`; Codex: `codex plugin marketplace add
   worldviz/sightlab-ai-kit`, install the SightLab VR Assistant, ask it to check the script)
   and paste the results back;
 - in Codex with command access and the researcher's permission: run the checks as the skill

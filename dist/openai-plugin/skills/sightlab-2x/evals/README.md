@@ -22,7 +22,7 @@ Each folder has:
 
 1. Copy the starter project to a new folder; copy the eval's `brief.md` into its `brief/`.
 2. Ask the agent to build the experiment from that brief (in Claude Code:
-   `/sightlab-2x:sightlab-new` with the brief path, or the same words in any host).
+   `/sightlab:new` with the brief path, or the same words in any host).
 3. `python harness/check.py <script>`: zero errors.
 4. On a machine with Vizard and SightLab 2:
    `winviz.exe harness\autopilot.py <script> --assertions <eval>\autopilot-assertions.json`.

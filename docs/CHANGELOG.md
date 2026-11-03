@@ -1,7 +1,25 @@
-# SightLab 2.x AI Kit — changelog
+# SightLab AI Kit — changelog
 
 Entries before 2026.11.1 cite `docs/audits/`, `docs/plans/` and `tools/fetch_sources.sh`,
 which live in the team's internal repository, not here.
+
+## 2026.11.3 (2026-11-03)
+
+The plugin is now `sightlab` and carries one skill per SightLab generation (`sightlab-2x`
+today), so a SightLab 3 skill can be added without renaming what users installed. If you
+installed 2026.11.2: `claude plugin uninstall sightlab-2x@worldviz`, then
+`claude plugin install sightlab --marketplace worldviz/sightlab-ai-kit`; in claude.ai remove
+**SightLab 2.x AI Kit** and add **SightLab** from the same marketplace; Codex users run
+`codex plugin marketplace upgrade worldviz` and reinstall from `/plugins`.
+
+- Commands are `/sightlab:new`, `/sightlab:check`, `/sightlab:review`.
+- The skill opens with "Which SightLab": the import line, the project files and what the
+  researcher says or pastes decide the generation; it asks once when they do not; SightLab 3
+  is named as not covered yet.
+- The Codex plugin's skill folder and skill name are `sightlab-2x` (were the 0.80.x
+  `instructions`).
+- `src/` is one folder per skill; the build loops over them.
+- Harness unchanged since 2026.11.2 (VM rerun 2026-11-03: all seven runs met).
 
 ## 2026.11.2 (2026-11-03)
 

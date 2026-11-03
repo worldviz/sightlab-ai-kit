@@ -1,17 +1,17 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "worldviz",
-  "description": "WorldViz plugins: the SightLab 2.x AI Kit for building and testing SightLab (Vizard) experiments.",
+  "description": "WorldViz plugins: the SightLab AI Kit for building and testing SightLab (Vizard) experiments.",
   "owner": {
     "name": "WorldViz",
     "url": "https://www.worldviz.com"
   },
   "plugins": [
     {
-      "name": "sightlab-2x",
+      "name": "sightlab",
       "source": "./dist/claude-plugin",
-      "description": "Build, check and test WorldViz SightLab 2.x (Vizard) eye-tracking experiments from a research brief.",
-      "version": "2026.11.2",
+      "description": "Build, check and test WorldViz SightLab (Vizard) experiments from a research brief. Carries one skill per SightLab generation; SightLab 2.x today.",
+      "version": "2026.11.3",
       "category": "Science",
       "tags": [
         "sightlab",

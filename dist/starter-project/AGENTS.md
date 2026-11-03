@@ -15,4 +15,4 @@ installed plugin, not a folder in this project.
    sees one.
 4. The brief lives in `brief/`; experiment data goes to `data/`.
 
-Kit version 2026.11.2, generated from sightlab_utils 2.8.21 on 2026-11-03.
+Kit version 2026.11.3, generated from sightlab_utils 2.8.21 on 2026-11-03.

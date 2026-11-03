@@ -1,6 +1,7 @@
-# SightLab 2.x AI Kit
+# SightLab AI Kit
 
-The SightLab VR Assistant: a plugin for building, checking and testing WorldViz SightLab 2.x experiments, the Python
+The SightLab VR Assistant: a plugin that carries one skill per SightLab generation, `sightlab-2x` today, for
+building, checking and testing WorldViz SightLab 2.x experiments, the Python
 eye-tracking library that runs inside Vizard on Windows. It gives the assistant the workflow a
 SightLab engineer follows: size the request, assemble a brief, build the script in steps,
 run the static checker after every edit, run the experiment unattended in desktop mode, and
@@ -8,11 +9,11 @@ hand over a review note with what the headset still has to confirm.
 
 ## What it contains
 
-- `skills/instructions/SKILL.md`: the workflow, with the rules, patterns, guides and the API
+- `skills/sightlab-2x/SKILL.md`: the workflow, with the rules, patterns, guides and the API
   map generated from the SightLab source beside it.
-- `skills/instructions/reference/`: `sightlab.py`, `viz.py` and `replay.py`, the SightLab and
+- `skills/sightlab-2x/reference/`: `sightlab.py`, `viz.py` and `replay.py`, the SightLab and
   Vizard source that every SightLab licensee receives, so answers cite real lines.
-- `skills/instructions/harness/`: `check.py` (static checks, any Python 3.8+) and
+- `skills/sightlab-2x/harness/`: `check.py` (static checks, any Python 3.8+) and
   `autopilot.py` (runs the experiment in Vizard's desktop mode and writes a report).
 
 ## What it runs, sends and fetches
@@ -31,4 +32,4 @@ Codex: `codex plugin marketplace add worldviz/sightlab-ai-kit`, then install fro
 ChatGPT: the SightLab VR Assistant in the Plugins directory.
 Source, releases and the Claude version: https://github.com/worldviz/sightlab-ai-kit
 
-Kit version 2026.11.2, generated from sightlab_utils 2.8.21 on 2026-11-03.
+Kit version 2026.11.3, generated from sightlab_utils 2.8.21 on 2026-11-03.
