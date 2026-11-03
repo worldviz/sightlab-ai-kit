@@ -1,0 +1,7 @@
+[
+  {"name": "four trials completed", "type": "trials_completed", "n": 4},
+  {"name": "target recorded", "type": "value_in", "file": "summary", "column": "Target", "allowed": ["basketball", "soccerball"]},
+  {"name": "position recorded", "type": "value_in", "file": "summary", "column": "Position", "allowed": ["left", "centre", "right"]},
+  {"name": "time to find stored", "type": "column_nonempty", "file": "summary", "column": "Time to find (s)"},
+  {"name": "gaze landed on the target", "type": "gaze_events_min", "n": 1}
+]

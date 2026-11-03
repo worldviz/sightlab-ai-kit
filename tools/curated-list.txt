@@ -1,0 +1,14 @@
+# Shipped examples copied into src/examples/curated/ (one Folder/script.py per line).
+# Each must pass harness/check.py with no errors; tools/curate_examples.py refuses the rest.
+Sample Code/SightLabVR_NonGUI.py
+Sample Code/SightLab_VR_GUI.py
+Gaze_Based_Interactions/Gaze_Based_Interaction_Simple.py
+RatingScale_GUI/RatingScale_Sample.py
+Randomize/SightLab_VR_Randomize_Blocks.py
+Biopac Saving to Data Files/Biopac Saving to Data Files.py
+Custom Data Saving/SavingCustomData.py
+Reaction Time/reactionTime.py
+Instructions/instructions_example.py
+Proximity Sensors/proximitySensors_example.py
+Memory_Experiment/Memory_Task.py
+STIM Files/STIM_File_example.py

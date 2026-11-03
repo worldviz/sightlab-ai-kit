@@ -1,0 +1,3595 @@
+[
+ {
+  "folder": "360 Moving Regions of Interest",
+  "scripts": [
+   "360_ROI_Path_Tracer.py",
+   "360_moving_RegionsOfInterest.py",
+   "ReadMe.py",
+   "Replay.py",
+   "moving_rois.py"
+  ],
+  "main_script": "Replay.py",
+  "readme": "ReadMe.py",
+  "summary": "webbrowser.open('https://help.worldviz.com/sightlab/360-moving-regions-of-interest')",
+  "methods": [
+   "addGazeItems",
+   "getMediaObject",
+   "getTrialCount"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": []
+ },
+ {
+  "folder": "360 non GUI",
+  "scripts": [
+   "SightLabVR_360_nonGUI.py",
+   "SightLabVR_Replay.py"
+  ],
+  "main_script": "SightLabVR_360_nonGUI.py",
+  "readme": null,
+  "summary": "sightlab.setTrialCount(2)",
+  "methods": [
+   "endTrial",
+   "setEnvironment",
+   "setTrialCount",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": []
+ },
+ {
+  "folder": "360_with_3D_Model",
+  "scripts": [
+   "360_3D_Model.py",
+   "360_3D_Model_Proximity.py",
+   "360_3D_Model_Proximity_Video_Cycle.py",
+   "SightLabVR_Replay.py",
+   "Three_Sixty_3D_Model_Config.py"
+  ],
+  "main_script": "360_3D_Model.py",
+  "readme": null,
+  "summary": "sightlab.setTrialCount(1)",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "setEnvironment",
+   "setTrialCount",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": true,
+   "grab": true,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "crate.osgb",
+   "empty.osgb"
+  ]
+ },
+ {
+  "folder": "3D Tablet Menu",
+  "scripts": [
+   "3D_tablet_menu.py",
+   "3D_tablet_menu_XR.py",
+   "ReadMe.py",
+   "SightLabVR_Replay.py"
+  ],
+  "main_script": "3D_tablet_menu.py",
+  "readme": "ReadMe.py",
+  "summary": "Set up actions in Action1, 2, 3, 4 functions Press 'm' to toggle menu Use Right or Left controllers to activate buttons by touching them or use the auto highli\u2026",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getConfig",
+   "getTrialCount",
+   "setEnvironment",
+   "setHighlighter",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": true,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [
+   "Vive Focus",
+   "Quest Pro",
+   "Quest 3",
+   "Varjo"
+  ],
+  "environments": [
+   "VR_Menu.osgb",
+   "empty.osgb"
+  ]
+ },
+ {
+  "folder": "AI_3D_Model_Spawner",
+  "scripts": [
+   "AI_3D_Model_Spawner.py",
+   "Config_Global.py",
+   "Model_Loader.py"
+  ],
+  "main_script": "Model_Loader.py",
+  "readme": null,
+  "summary": "Model Loader Script for AI_3D_Model_Spawner ============================================ This script loads 3D models that were previously saved using the AI_3D\u2026",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getConfig",
+   "setEnvironment",
+   "setStartText",
+   "setTrialCount",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": false,
+   "grab": true,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [
+   "Vive Focus",
+   "Quest Pro",
+   "Quest 3",
+   "Varjo"
+  ],
+  "environments": [
+   ".osgb",
+   "RockyCavern.osgb",
+   "empty.osgb"
+  ]
+ },
+ {
+  "folder": "AI_AR_Object_Detection",
+  "scripts": [
+   "AI_ObjectDetection_MR.py",
+   "AI_ObjectDetection_MR_Config.py",
+   "AI_Object_Detection_MR_Replay.py",
+   "ReadMe.py"
+  ],
+  "main_script": "AI_ObjectDetection_MR.py",
+  "readme": "ReadMe.py",
+  "summary": "AI_ObjectDetection_MR.py -------------------------------------------------------------- Mixed-reality eye-tracking with real-time AI (YOLOX) object detection. \u2026",
+  "methods": [
+   "endTrial",
+   "setEnvironment",
+   "setPassthrough",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "XR_Ground.osgb",
+   "direction_arrow.osgb",
+   "empty.osgb"
+  ]
+ },
+ {
+  "folder": "AI_Data_Analysis",
+  "scripts": [
+   "AI_Data_Analysis.py",
+   "AI_Data_Analysis_Entire_Folder.py",
+   "Auto AI View Detection/Auto_AI_View_Detection.py",
+   "Auto AI View Detection/Convert Video to Images.py",
+   "Auto AI View Detection/Follow_Up_Questions.py",
+   "Auto AI View Detection/object_interactions.py",
+   "SightLabVR_Replay.py",
+   "SightLab_VR.py"
+  ],
+  "main_script": "SightLab_VR.py",
+  "readme": null,
+  "summary": "for trial in range(sightlab.getTrialCount()): yield viztask.waitEvent(TRIAL_START)",
+  "methods": [
+   "getTrialCount"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": []
+ },
+ {
+  "folder": "AI_Image_Spawner",
+  "scripts": [
+   "AI_Image_Spawner.py"
+  ],
+  "main_script": "AI_Image_Spawner.py",
+  "readme": null,
+  "summary": "if is_gpt_model: # GPT image models always return base64 image_data = base64.b64decode(response.data[0].b64_json) else: # Older models return a URL that has to\u2026",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getTrialCount",
+   "setEnvironment",
+   "setExperimentSummaryData",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": true,
+   "grab": true,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "whiteroom.osgb"
+  ]
+ },
+ {
+  "folder": "AI_Intelligent_Agent",
+  "scripts": [
+   "AI_Agent.py",
+   "AI_Agent_Avatar.py",
+   "AI_Agent_GUI.py",
+   "AI_Agents.py",
+   "Config_Global.py",
+   "ReadMe.py",
+   "Resources/Language_Map.py",
+   "Resources/avatar_playback_visibility_patch.py",
+   "Resources/event_info.py",
+   "SightLabVR_Replay.py",
+   "configs/RocketBoxFemale.py",
+   "configs/RocketBoxMale.py",
+   "configs/Seated_Male_Patient.py",
+   "configs/Seated_Woman_Patient.py",
+   "configs/Template_Female.py",
+   "configs/Template_Male.py",
+   "configs/VCC_Male2.py",
+   "configs/x_Multi_RocketBoxFemale.py",
+   "configs/x_Multi_RocketBoxMale.py",
+   "configs/x_ReallusionMale.py",
+   "find_morph_indices.py",
+   "installer/fetch_pocket_tts_assets.py",
+   "multi_agent_interaction.py",
+   "pocket_tts_engine.py"
+  ],
+  "main_script": "AI_Agent.py",
+  "readme": "ReadMe.py",
+  "summary": "if USE_GUI: sightlab = sl.SightLab(gazepointvisible = False, console = False, highlighttool = HIGHLIGHT_TOOL) else: sightlab = sl.SightLab(gui= False,gazepoint\u2026",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getEnvironment",
+   "getTrialCount",
+   "getTrialNumber",
+   "screenCapture",
+   "setAvatarHead",
+   "setEnvironment",
+   "setExperimentSummaryData",
+   "setPassthrough",
+   "setStartText",
+   "setTrialCount",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [
+   "Vive Focus",
+   "Quest 3",
+   "Varjo"
+  ],
+  "environments": [
+   "GlowManBlue.osgb",
+   "Reallusion_ActorCore_Male.osgb",
+   "RocketBox_Female1.osgb",
+   "RocketBox_Male1.osgb",
+   "empty.osgb",
+   "homeOffice.osgb",
+   "light_point.osgb",
+   "vcc_male2.osgb"
+  ]
+ },
+ {
+  "folder": "AI_ObjectDetection",
+  "scripts": [
+   "AI_ObjectDetection.py",
+   "AI_ObjectDetection_Config.py",
+   "SightLabVR_Replay.py",
+   "installer/download_yolox_weights.py",
+   "installer/patch_vizard_autocomplete.py"
+  ],
+  "main_script": "AI_ObjectDetection.py",
+  "readme": null,
+  "summary": "AI_ObjectDetection.py -------------------------------------------------------------- VR eye-tracking with real-time AI (YOLOX) object detection. Runs YOLO on t\u2026",
+  "methods": [
+   "endTrial",
+   "getTrialCount",
+   "setEnvironment",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "direction_arrow.osgb",
+   "homeOffice.osgb"
+  ]
+ },
+ {
+  "folder": "Adaptive_Learning",
+  "scripts": [
+   "Adaptive_Learning_ReactionTime.py",
+   "Adaptive_Learning_ReactionTime_Staircase.py"
+  ],
+  "main_script": "Adaptive_Learning_ReactionTime.py",
+  "readme": null,
+  "summary": "Adaptive_Sphere_SKLEARN.py ------------------------------------------------------- Shows a red sphere in VR. Its visible duration expands or shrinks online usi\u2026",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getTrialCount",
+   "setCustomTrialData",
+   "setEnvironment",
+   "setStartPoint",
+   "setTrialCount",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": true,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "dojo.osgb"
+  ]
+ },
+ {
+  "folder": "Adding_NPC",
+  "scripts": [
+   "Adding_NPCs.py",
+   "Adding_NPCs_GUI.py",
+   "Adding_NPCs_Replay.py"
+  ],
+  "main_script": "Adding_NPCs.py",
+  "readme": null,
+  "summary": "sightlab.addSceneObject('avatarObject', avatarObject, gaze=True, avatar=True) sightlab.addSceneObject('avatarObject2', avatarObject2, gaze=True, avatar=True)",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getTrialCount",
+   "setEnvironment",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": true,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "Business_Office.OSGB"
+  ]
+ },
+ {
+  "folder": "Audio Recording",
+  "scripts": [
+   "SessionReplay_Audio.py",
+   "SightLabVR_Audio.py",
+   "convert_to_transcript.py",
+   "convert_to_transcript_offline.py",
+   "speech_recognition_example.py"
+  ],
+  "main_script": "SightLabVR_Audio.py",
+  "readme": null,
+  "summary": "Records the microphone during every trial (sounddevice package required). Each trial's audio is saved beside that trial's replay file: data/<session>__experime\u2026",
+  "methods": [
+   "getTrialCount"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": []
+ },
+ {
+  "folder": "Avatar_Playback",
+  "scripts": [
+   "SightLabVR_AvatarPlayback-GUI.py",
+   "SightLabVR_AvatarPlayback.py",
+   "SightLabVR_Replay.py"
+  ],
+  "main_script": "SightLabVR_AvatarPlayback.py",
+  "readme": null,
+  "summary": "Records your head and hands (and voice) in one session, then plays them back as an avatar in later sessions.",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getTrialCount",
+   "setDataDirectory",
+   "setEnvironment",
+   "setTrialCount",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": true,
+   "grab": true,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "Business_Office.osgb"
+  ]
+ },
+ {
+  "folder": "Avatar_Viewpoint",
+  "scripts": [
+   "SightLabVR_Replay.py",
+   "avatar_head_view_sightlab.py"
+  ],
+  "main_script": "avatar_head_view_sightlab.py",
+  "readme": null,
+  "summary": "This script demonstrates how to display an avatar's viewpoint in a secondary window. The view is dynamically linked to the avatar's head bone, updating with ch\u2026",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "setAvatarHead",
+   "setEnvironment",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "GlowManBlue.osgb",
+   "dojo.osgb"
+  ]
+ },
+ {
+  "folder": "Barchart",
+  "scripts": [
+   "Barchart.py",
+   "SightLabVR_Replay.py"
+  ],
+  "main_script": "Barchart.py",
+  "readme": null,
+  "summary": "Requires using the Package Manager to install numpy",
+  "methods": [
+   "endTrial",
+   "getExperimentDataFolderPath",
+   "getPlotData",
+   "getTrialCount",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": []
+ },
+ {
+  "folder": "Biofeedback",
+  "scripts": [
+   "360_with_3D_Model/360_3D_Model_Biofeedback.py",
+   "360_with_3D_Model/SightLabVR_Replay.py",
+   "360_with_3D_Model/Three_Sixty_3D_Model_Config.py",
+   "360_with_3D_Model/high_res_video.py",
+   "BioFeedback_Ball_Biopac/BioFeedback_Ball_Biopac.py",
+   "BioFeedback_Ball_Biopac/BioFeedback_Ball_Biopac_360.py",
+   "BioFeedback_Ball_Biopac/SightLabVR_Replay.py",
+   "Biofeedback_Heart/BioFeedback_Heart_Biopac.py",
+   "Biofeedback_Heart/SightLabVR_Replay.py",
+   "EDA biofeedback/EDAbiofeedback.py",
+   "HR detection task.py/HR detection task python 3.py",
+   "HR detection task.py/biopacndt.py"
+  ],
+  "main_script": "EDA biofeedback/EDAbiofeedback.py",
+  "readme": null,
+  "summary": "About: This program will spawn 3D models (the default object is a droplet) on a table each time the participant has an SCR response. The onset of an SCR respon\u2026",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getTrialCount",
+   "setCustomReplayFlag",
+   "setCustomTrialData",
+   "setEnvironment",
+   "setTrialCount",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": true,
+   "grab": true,
+   "biopac": true,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "Heart.osgb",
+   "RegionOfInterestSphere.osgb",
+   "droplet.osgb",
+   "empty.osgb",
+   "meditation_ball.osgb",
+   "table.osgb",
+   "whiteroom.osgb"
+  ]
+ },
+ {
+  "folder": "Biopac Saving to Data Files",
+  "scripts": [
+   "Biopac Saving Average to Summary.py",
+   "Biopac Saving to Data Files.py",
+   "comparison_condition_to_measurement.py",
+   "comparison_condition_to_measurement_eeg.py"
+  ],
+  "main_script": "Biopac Saving to Data Files.py",
+  "readme": null,
+  "summary": "for i in range(0, sightlab.getTrialCount()): if i != 0: yield viztask.waitKeyDown(' ')",
+  "methods": [
+   "endTrial",
+   "getTrialCount",
+   "setCustomTrialData",
+   "setExperimentSummaryData",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": true,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": []
+ },
+ {
+  "folder": "Choice Comparison",
+  "scripts": [
+   "Choice_Comparison_Keypress.py",
+   "Choice_Comparison_Pointer.py",
+   "Choice_Comparison_Replay.py",
+   "Choice_Comparison_Visualization_Barchart.py",
+   "Choice_Comparison_participant_mode.py",
+   "Choice_Comparison_rating.py",
+   "Comparison_Graph.py",
+   "ReadMe.py"
+  ],
+  "main_script": "Comparison_Graph.py",
+  "readme": "ReadMe.py",
+  "summary": "Currently only works for Choice Comparison Pointer",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getConfig",
+   "getCurrentRepetition",
+   "getCurrentTime",
+   "getEnvironment",
+   "getTrialCount",
+   "getTrialNumber",
+   "setExperimentSummaryData",
+   "setStartText",
+   "showRatings",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": true,
+   "grab": true,
+   "biopac": false,
+   "ratings": true,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": []
+ },
+ {
+  "folder": "Choice Comparison_Experiment",
+  "scripts": [
+   "Choice_Comparison_Model_Loader.py",
+   "Choice_Comparison_Replay.py",
+   "Choice_Comparison_Visualization_Barchart.py",
+   "Comparison_Graph.py",
+   "ReadMe.py"
+  ],
+  "main_script": "Comparison_Graph.py",
+  "readme": "ReadMe.py",
+  "summary": "plt.tight_layout()",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getTrialCount",
+   "setExperimentSummaryData",
+   "setStartText",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": true,
+   "grab": true,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   ".osgb"
+  ]
+ },
+ {
+  "folder": "Collision",
+  "scripts": [
+   "Collision_Test.py",
+   "SightLabVR_Replay.py"
+  ],
+  "main_script": "Collision_Test.py",
+  "readme": null,
+  "summary": "yield viztask.waitKeyDown(' ') yield sightlab.endTrial()",
+  "methods": [
+   "endTrial",
+   "setEnvironment",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "RockyCavern.osgb",
+   "ramp.osgb"
+  ]
+ },
+ {
+  "folder": "Custom Data Saving",
+  "scripts": [
+   "ReadMe.py",
+   "SavingCustomData.py",
+   "SightLabVR_Replay.py",
+   "SightLabVR_condition.py",
+   "Stopping_and_Starting_Data_Logging.py"
+  ],
+  "main_script": "SavingCustomData.py",
+  "readme": "ReadMe.py",
+  "summary": "yield viztask.waitKeyDown(' ') yield sightlab.endTrial(endExperimentText='Done')",
+  "methods": [
+   "addSceneObject",
+   "addToTimeline",
+   "addTrackingTrialDataColumn",
+   "endTrial",
+   "getAvatarRHand",
+   "getTrialCount",
+   "getTrialNumber",
+   "setCustomTrialData",
+   "setEnvironment",
+   "setEnvironmentDirectory",
+   "setExperimentSummaryData",
+   "setTrialCount",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": true,
+   "grab": true,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "dojo.osgb"
+  ]
+ },
+ {
+  "folder": "Distance_Perception",
+  "scripts": [
+   "Distance_Perception.py",
+   "Distance_Perception_GUI.py",
+   "ReadMe.py",
+   "SightLabVR_Replay.py",
+   "SingleObject_Analysis/comparison_label_TTFF.py",
+   "SingleObject_Analysis/visualization_of_data_combined.py"
+  ],
+  "main_script": "Distance_Perception.py",
+  "readme": "ReadMe.py",
+  "summary": "for name in OBJECTS_TO_RANDOMIZE: target = env.getChild(name) sightlab.addSceneObject(name, target, gaze=True) targets.append(target) orgMats = [target.getMatr\u2026",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getConfig",
+   "getEnvironment",
+   "getTrialCount",
+   "getTrialNumber",
+   "setEnvironment",
+   "setExperimentSummaryData",
+   "setStartText",
+   "setTrialCount",
+   "showRatings",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": true,
+   "grab": false,
+   "biopac": false,
+   "ratings": true,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "dojo2.osgb"
+  ]
+ },
+ {
+  "folder": "Drawing",
+  "scripts": [
+   "Drawing_Example.py"
+  ],
+  "main_script": "Drawing_Example.py",
+  "readme": null,
+  "summary": "Desktop: LMB to draw, RMB to clear, M to change Color, RETURN KEY to toggle drawing in the air on the surface HMD: RH Grip button to draw, LH Y button to clear\u2026",
+  "methods": [
+   "getConfig",
+   "getTrialCount"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": []
+ },
+ {
+  "folder": "Driving",
+  "scripts": [
+   "Driving_Client.py",
+   "Driving_Config.py",
+   "Driving_GUI_Main.py",
+   "Driving_GUI_Traffic.py",
+   "Driving_Main_noGUI.py",
+   "Driving_Server.py",
+   "Preview-Brake_Lights.py",
+   "ReadMe.py",
+   "SightLabVR_Replay.py",
+   "generate_pedestrian_routes.py",
+   "generate_traffic_network.py",
+   "modules/body_motion.py",
+   "modules/brake_lights.py",
+   "modules/car_mirrors.py",
+   "modules/car_module.py",
+   "modules/collision.py",
+   "modules/driver_data.py",
+   "modules/dynamic_driving.py",
+   "modules/frame_profiler.py",
+   "modules/g923_input.py",
+   "modules/haptics.py",
+   "modules/multiuser_cars.py",
+   "modules/seat_recenter.py",
+   "modules/thrustmaster_input.py",
+   "modules/traffic/__init__.py",
+   "modules/traffic/ground.py",
+   "modules/traffic/lights.py",
+   "modules/traffic/netsync.py",
+   "modules/traffic/pedestrian_signals.py",
+   "modules/traffic/pedestrians.py",
+   "modules/traffic/recorder.py",
+   "modules/traffic/routes.py",
+   "modules/traffic/system.py",
+   "modules/traffic/vehicle.py",
+   "modules/traffic_brake_state.py",
+   "modules/trial_gc.py",
+   "modules/vehicle_collision.py",
+   "modules/wheel_inspector.py",
+   "probe_environment.py",
+   "test_traffic_network.py",
+   "traffic_config.py",
+   "traffic_layouts/__init__.py",
+   "traffic_layouts/city_rtx2.py",
+   "traffic_layouts/street.py",
+   "vizconnect_configs/dynamic_driving.py",
+   "vizconnect_configs/modules/car_module.py",
+   "vizconnect_configs/modules/dynamic_driving.py",
+   "vizconnect_configs/modules/g923_input.py",
+   "vizconnect_configs/modules/thrustmaster_input.py",
+   "vizconnect_configs/modules/wheel_inspector.py",
+   "vizconnect_configs/vizconnect_config_desktop_driving.py",
+   "vizconnect_configs/vizconnect_config_desktop_driving_controller.py",
+   "vizconnect_configs/vizconnect_config_desktop_driving_g923.py",
+   "vizconnect_configs/vizconnect_config_desktop_driving_thrustmaster.py",
+   "vizconnect_configs/vizconnect_config_desktop_driving_wheel.py",
+   "vizconnect_configs/vizconnect_config_meta_driving.py",
+   "vizconnect_configs/vizconnect_config_meta_driving_controller.py",
+   "vizconnect_configs/vizconnect_config_omnicept_driving.py",
+   "vizconnect_configs/vizconnect_config_openxr_driving _controller.py",
+   "vizconnect_configs/vizconnect_config_openxr_driving _focus.py",
+   "vizconnect_configs/vizconnect_config_openxr_driving _focus_wheel.py",
+   "vizconnect_configs/vizconnect_config_openxr_driving.py",
+   "vizconnect_configs/vizconnect_config_openxr_driving_no_eyetr.py",
+   "vizconnect_configs/vizconnect_config_vive_driving.py",
+   "vizconnect_configs/vizconnect_config_vive_driving_controller.py",
+   "vizconnect_configs/vizconnect_config_vive_pro_driving.py"
+  ],
+  "main_script": "Driving_Client.py",
+  "readme": "ReadMe.py",
+  "summary": "Driving example, multi-user client. Run one on each driver's computer and connect it to Driving_Server.py, which starts the trials, runs the traffic and pedest\u2026",
+  "methods": [
+   "addSceneObject",
+   "addTrackingTrialDataColumn",
+   "endTrial",
+   "getConfig",
+   "getCurrentEnvironmentName",
+   "getEnvironment",
+   "getEyeTracker",
+   "getGazeTimeObject",
+   "getTrialCount",
+   "id",
+   "screenCapture",
+   "setAvatarLeftHand",
+   "setAvatarRightHand",
+   "setCustomReplayFlag",
+   "setCustomTrialData",
+   "setEnvironment",
+   "setExperimentSummaryData",
+   "setTrialCount",
+   "startTrial",
+   "writeToStatus"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": true,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": true,
+   "multi_user": true
+  },
+  "hardware_hints": [
+   "Vive Focus",
+   "Quest Pro",
+   "Omnicept",
+   "Varjo",
+   "Pimax",
+   "SteamVR",
+   "Projection"
+  ],
+  "environments": [
+   "%s.osgb",
+   ".osgb",
+   "Black-Sedan.osgb",
+   "ENV_Highway.osgb",
+   "InstrumentPanel.osgb",
+   "LeftMirror.osgb",
+   "Radio.osgb",
+   "RearViewMirror.osgb",
+   "RocketBox_Female1.osgb",
+   "RocketBox_Female2.osgb",
+   "RocketBox_Male1.osgb",
+   "RocketBox_Male2.osgb",
+   "RocketBox_Male3.osgb",
+   "Taxi.osgb",
+   "beachball.osgb",
+   "black-sedan.osgb",
+   "car.osgb",
+   "car2.osgb",
+   "car2_pbr.osgb",
+   "car3.osgb",
+   "chicago2.osgb",
+   "city_rtx2.osgb",
+   "crate.osgb",
+   "empty.osgb",
+   "jeepmodel.osgb",
+   "piazza.osgb",
+   "piazza_animations.osgb",
+   "street__night.osgb",
+   "street_day.osgb",
+   "taxi.osgb"
+  ]
+ },
+ {
+  "folder": "Education_Application_AI",
+  "scripts": [
+   "AI_Agent_Education.py",
+   "ReadMe.py",
+   "SightLabVR_Replay.py",
+   "configs/AI_Agent_Config_Education.py"
+  ],
+  "main_script": "AI_Agent_Education.py",
+  "readme": "ReadMe.py",
+  "summary": "AI_Agent_Education_fast_followups.py Adds back **follow\u2011up questions** via (A) chat input and (B) speech recognition, while keeping the **instant streaming spe\u2026",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getEnvironment",
+   "getTrialCount",
+   "setHighlighter",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": true,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "RocketBox_Male1.osgb",
+   "gallery_paintings.osgb"
+  ]
+ },
+ {
+  "folder": "External Data Recorder 2",
+  "scripts": [
+   "ClientWindowScreenshot.py",
+   "Data_Recorder_Config.py",
+   "External_Data_Recorder.py",
+   "External_Data_Replay.py",
+   "Eye_Calibration.py",
+   "Pimax_Gaze.py",
+   "Pimax_Gaze_Probe.py",
+   "Postprocess_Config.py",
+   "Postprocessor.py",
+   "Projective_Utilities.py",
+   "ReadMe.py",
+   "SRAnipal_EyeTrackerTest.py",
+   "Steamlink_Gaze.py",
+   "auto-complete-fix/module_cache.py",
+   "auto-complete-fix/module_parser.py",
+   "auto-complete-fix/patch_vizard_autocomplete.py",
+   "frame_preprocessor.py",
+   "gaze_writer.py",
+   "installer/patch_vizard_autocomplete.py",
+   "modules/face_tracker_data_htc.py",
+   "output_logger.py",
+   "vizconnect_configs/vizconnect_config_desktop_3d.py",
+   "vizconnect_configs/vizconnect_config_openxr.py",
+   "vizconnect_configs/vizconnect_config_openxr_eyetr.py",
+   "vizconnect_configs/vizconnect_config_varjo.py",
+   "vizconnect_configs/vizconnect_config_vive_recorder.py"
+  ],
+  "main_script": "Pimax_Gaze.py",
+  "readme": "ReadMe.py",
+  "summary": "Pimax_Gaze.py -- out-of-band gaze for the Pimax Dream Air (Tobii XR5). WHY THIS EXISTS --------------- The recorder must work with ANY external VR application,\u2026",
+  "methods": [
+   "consoleOFF",
+   "endTrial",
+   "getConfig",
+   "getCurrentTime",
+   "getEyeTracker",
+   "getGazePointObject",
+   "getTrialCount",
+   "hideInstructions",
+   "resetTimer",
+   "runExperiment",
+   "setAvatarLeftHand",
+   "setAvatarRightHand",
+   "setCustomTrialData",
+   "setEnvironment",
+   "setExperimentSummaryData",
+   "setStartText",
+   "setTrialCount",
+   "showInstructions",
+   "startTrial",
+   "togglePoint"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": true,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [
+   "Vive Pro Eye",
+   "Vive Focus",
+   "Quest Pro",
+   "Quest 3",
+   "Omnicept",
+   "Varjo",
+   "Pimax",
+   "SteamVR",
+   "Steamlink",
+   "Tobii",
+   "LSL",
+   "Projection"
+  ],
+  "environments": [
+   "beachball.osgb",
+   "empty.osgb",
+   "empty_collideBox.osgb",
+   "gaze_point2a.osgb",
+   "piazza.osgb",
+   "piazza_animations.osgb",
+   "whiteroom.osgb"
+  ]
+ },
+ {
+  "folder": "EyeTracker_Tests",
+  "scripts": [
+   "ReadMe.py",
+   "SightLabVR_Replay.py",
+   "SpatialArray.py",
+   "Spatial_Accuracy.py",
+   "VOR_Test.py",
+   "eyeTrackerTestData/GazeUtils.py",
+   "smoothPursuit.py"
+  ],
+  "main_script": "VOR_Test.py",
+  "readme": "ReadMe.py",
+  "summary": "sightlab.addSceneObject(\"target\", target, gaze = True)",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getEyeTracker",
+   "getGazePointObject",
+   "hideInstructions",
+   "id",
+   "runExperiment",
+   "setEnvironment",
+   "setStartText",
+   "setTrialCount",
+   "startTrial",
+   "togglePoint"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": true,
+   "grab": true,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [
+   "SteamVR"
+  ],
+  "environments": [
+   "dojo.osgb",
+   "dojo_bullseye.osgb",
+   "dojo_clear.osgb",
+   "targetObject2.osgb"
+  ]
+ },
+ {
+  "folder": "Face_Tracking_Data",
+  "scripts": [
+   "FaceTracker_Sliders.py",
+   "FaceTracker_Sliders_HTC.py",
+   "Face_Tracking_Saving.py",
+   "Face_Tracking_Saving_HTC.py",
+   "ReadMe.py",
+   "facial_expressions_over_time.py"
+  ],
+  "main_script": "FaceTracker_Sliders.py",
+  "readme": "ReadMe.py",
+  "summary": "This example shows how to access the Facebook face tracking data from OpenXR",
+  "methods": [
+   "endTrial",
+   "setEnvironment",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "gallery.osgb"
+  ]
+ },
+ {
+  "folder": "Foot_Tracking",
+  "scripts": [
+   "Foot_Tracking.py",
+   "ReadMe.py"
+  ],
+  "main_script": "Foot_Tracking.py",
+  "readme": "ReadMe.py",
+  "summary": "rightFoot.setParent(transportNode) leftFoot.setParent(transportNode)",
+  "methods": [
+   "endTrial",
+   "getTrialCount",
+   "setAvatarLeftHand",
+   "setAvatarRightHand",
+   "setEnvironment",
+   "setTrialCount",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [
+   "Vive",
+   "SteamVR"
+  ],
+  "environments": [
+   "empty.osgb",
+   "leftShoe.osgb",
+   "pit_raised.osgb",
+   "rightShoe.osgb"
+  ]
+ },
+ {
+  "folder": "Gaze_Based_Interactions",
+  "scripts": [
+   "Gaze_Based_End_Trial_GUI.py",
+   "Gaze_Based_Interaction.py",
+   "Gaze_Based_Interaction_Simple.py",
+   "ReadMe.py",
+   "SightLabVR_Rating_after_view.py",
+   "SightLabVR_Replay.py",
+   "SightLab_Demo.py"
+  ],
+  "main_script": "SightLab_Demo.py",
+  "readme": "ReadMe.py",
+  "summary": "sightlab.addSceneObject(\"chick1\", chick1, gaze = True, avatar = True) sightlab.addSceneObject(\"creature1\", creature1, gaze = True, avatar = True)",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getExperimentDataFolderPath",
+   "getPlotData",
+   "getTrialCount",
+   "setEnvironment",
+   "setEnvironmentDirectory",
+   "setExperimentSummaryData",
+   "setStartText",
+   "showRatings",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": true,
+   "grab": true,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "Creature.osgb",
+   "chick.osgb",
+   "complete_scene.osgb",
+   "dojo.osgb"
+  ]
+ },
+ {
+  "folder": "Glaucoma Simulation",
+  "scripts": [
+   "SightLabVR_glaucoma.py",
+   "SightLabVR_glaucoma_Replay.py"
+  ],
+  "main_script": "SightLabVR_glaucoma.py",
+  "readme": null,
+  "summary": "ball.setPosition(line.end) headEuler = viz.MainView.getEuler() ball.setEuler(headEuler)",
+  "methods": [
+   "endTrial",
+   "getConfig",
+   "getEyeTracker",
+   "getGazePointObject",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "glaucoma_artifact.osgb"
+  ]
+ },
+ {
+  "folder": "Grab_Events",
+  "scripts": [
+   "Grab_Events.py",
+   "Grab_Events_hand_position_tracking.py",
+   "ReadMe.py",
+   "SightLabVR_Replay.py"
+  ],
+  "main_script": "Grab_Events.py",
+  "readme": "ReadMe.py",
+  "summary": "viz.callback(grabber.GRAB_EVENT, onGrab) viz.callback(grabber.RELEASE_EVENT, onRelease)",
+  "methods": [
+   "endTrial",
+   "getAvatarLHand",
+   "getAvatarRHand",
+   "getConfig",
+   "setCustomTrialData",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": []
+ },
+ {
+  "folder": "Group_Heatmap_Replay",
+  "scripts": [
+   "group_heatmap.py",
+   "group_heatmap_config.py",
+   "group_heatmap_replay.py",
+   "merge_sessions.py"
+  ],
+  "main_script": "group_heatmap.py",
+  "readme": null,
+  "summary": "Shared heatmap for group sessions made by merge_sessions.py. The replay gives every client its own heatmap, each drawn and blended on its own, so 20 people loo\u2026",
+  "methods": [],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "GlowManAuto.osgb"
+  ]
+ },
+ {
+  "folder": "HandPath_Tracking",
+  "scripts": [
+   "Hand_Tracking.py",
+   "Plotly_Hand_Path.py"
+  ],
+  "main_script": "Hand_Tracking.py",
+  "readme": null,
+  "summary": "bodyTracking.addTrialDataColumns()",
+  "methods": [
+   "addSceneObject",
+   "addTrackingTrialDataColumn",
+   "endTrial",
+   "getTrialCount",
+   "setEnvironment",
+   "setTrialCount",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": true,
+   "grab": true,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "dojo.osgb"
+  ]
+ },
+ {
+  "folder": "Hand_Tracking_Grabbing_Physics",
+  "scripts": [
+   "Hand_Grabbing_Physics.py",
+   "Hand_Grabbing_Physics_Full_Body_Meta.py",
+   "Hand_Grabbing_Physics_large_object_test.py",
+   "ManusGlove_Grabbing.py",
+   "Manus_handTracking_gestures.py",
+   "OpenXR_Hand_Tracking.py",
+   "ReadMe.py",
+   "SightLabVR_Replay.py"
+  ],
+  "main_script": "ManusGlove_Grabbing.py",
+  "readme": "ReadMe.py",
+  "summary": "sightlab.setAvatarLeftHand(leftHand= vizfx.addChild(AVATAR_HANDS_RESOURCE_PATH+'/empty.osgb')) sightlab.setAvatarRightHand(rightHand= vizfx.addChild(AVATAR_HAN\u2026",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getConfig",
+   "getTrialCount",
+   "setAvatarLeftHand",
+   "setAvatarRightHand",
+   "setEnvironment",
+   "setEnvironmentDirectory",
+   "setTrialCount",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": true,
+   "grab": true,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [
+   "Vive Focus",
+   "Quest Pro",
+   "Quest 3",
+   "Manus"
+  ],
+  "environments": [
+   "Reset_Text.osgb",
+   "chick.osgb",
+   "empty.osgb",
+   "empty_xr_cube.osgb",
+   "lab_modified3.osgb"
+  ]
+ },
+ {
+  "folder": "HeyGen_ScreenCast",
+  "scripts": [
+   "HeyGen_ScreenCast.py",
+   "HeyGen_ScreenCast_Replay.py",
+   "Resources/Language_Map.py",
+   "Resources/event_info.py",
+   "VideoScreenConfig.py"
+  ],
+  "main_script": "HeyGen_ScreenCast.py",
+  "readme": null,
+  "summary": "Requires to turn off hardware acceleration on your browser For Chrome: Go to chrome://settings Scroll to \"System\" Toggle \"Use hardware acceleration when availa\u2026",
+  "methods": [
+   "endTrial",
+   "runExperiment",
+   "setAvatarLeftHand",
+   "setAvatarRightHand",
+   "setEnvironment",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": true,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "conference.osgb",
+   "empty.osgb",
+   "whiteroom.osgb"
+  ]
+ },
+ {
+  "folder": "Image_Viewer",
+  "scripts": [
+   "ImageViewer_Replay.py",
+   "Image_Viewer.py"
+  ],
+  "main_script": "Image_Viewer.py",
+  "readme": null,
+  "summary": "if not USE_PASSTHROUGH: env = vizfx.addChild(ENVIRONMENT_OBJECT) else: env = vizfx.addChild('sightlab_resources/environments/empty.osgb') sightlab.setEnvironme\u2026",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getConfig",
+   "getTrialCount",
+   "setAvatarRightHand",
+   "setEnvironment",
+   "setExperimentSummaryData",
+   "setTrialCount",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": true,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [
+   "Vive Focus",
+   "Quest Pro",
+   "Quest 3",
+   "Varjo"
+  ],
+  "environments": [
+   "empty.osgb",
+   "whiteroom.osgb"
+  ]
+ },
+ {
+  "folder": "Input Dialogs",
+  "scripts": [
+   "input_dialogs.py"
+  ],
+  "main_script": "input_dialogs.py",
+  "readme": null,
+  "summary": "for trial in range(sightlab.getTrialCount()): yield viztask.waitEvent(TRIAL_START)",
+  "methods": [
+   "getTrialCount",
+   "setExperimentSummaryData"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": []
+ },
+ {
+  "folder": "Instructions",
+  "scripts": [
+   "ImageInstructions_Grabbable.py",
+   "ImageInstructions_slides.py",
+   "ReadMe.py",
+   "instructions_example.py",
+   "instructions_example_GUI.py",
+   "instructions_example_GUI_Main.py",
+   "instructions_example_GUI_Main_Image.py",
+   "instructions_example_GUI_Multiple.py",
+   "instructions_example_multiple_instructions.py",
+   "instructions_example_other_way.py"
+  ],
+  "main_script": "instructions_example.py",
+  "readme": "ReadMe.py",
+  "summary": "yield sightlab.startTrial(startExperimentText = \"Press trigger to start\", textContinueEvent = \"triggerPress\")",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getConfig",
+   "getTrialCount",
+   "getTrialNumber",
+   "hideInstructions",
+   "setDataLoggingState",
+   "setEnvironment",
+   "setStartText",
+   "setTrialCount",
+   "showInstructions",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": true,
+   "grab": true,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "dojo.osgb"
+  ]
+ },
+ {
+  "folder": "Jump To Locations",
+  "scripts": [
+   "ReadMe.py",
+   "jump_to_locations_Replay.py",
+   "jump_to_locations_menu.py",
+   "jump_to_locations_no_menu.py"
+  ],
+  "main_script": "jump_to_locations_menu.py",
+  "readme": "ReadMe.py",
+  "summary": "Press '/' key to save a location to the locations/locations.txt file and a screenshot to recordings Each location will be both assigned to a numerical key \"1\",\u2026",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getConfig",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": true,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "VR_Menu_Locations.osgb"
+  ]
+ },
+ {
+  "folder": "LSL_Sample",
+  "scripts": [
+   "LSL_Biopac_Stream.py",
+   "LSLmousecoordinates.py",
+   "LSLpupil_diameter.py",
+   "lsl_list_streams.py",
+   "lsl_receiver.py",
+   "lsl_sample_receive.py",
+   "lsl_sample_stream.py",
+   "lsl_sender.py"
+  ],
+  "main_script": "lsl_sender.py",
+  "readme": "ReadMe.md",
+  "summary": "Helpers for sending SightLab data out over LSL (to Biopac AcqKnowledge, LabRecorder, etc.) Nothing here imports viz, so it also runs in plain Python. In a Viza\u2026",
+  "methods": [
+   "endTrial",
+   "getExperimentDataFolderPath",
+   "getEyeTracker",
+   "getTrialCount",
+   "setEnvironment",
+   "setExperimentSummaryData",
+   "setStartText",
+   "setTrialCount",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [
+   "Vive Focus",
+   "LSL"
+  ],
+  "environments": [
+   "dojo.osgb"
+  ]
+ },
+ {
+  "folder": "Large List of Items",
+  "scripts": [
+   "gaze_time_subnodes.py",
+   "gaze_time_subnodes2.py"
+  ],
+  "main_script": "gaze_time_subnodes.py",
+  "readme": null,
+  "summary": "for item in sceneDict: sightlab.addSceneObject(item, env.getChild(item), gaze = sceneDict[item][0], grab = sceneDict[item][1])",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "setEnvironment",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": true,
+   "grab": true,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "complete_scene.osgb"
+  ]
+ },
+ {
+  "folder": "MeasuringTape",
+  "scripts": [
+   "Measuring_tape_test.py",
+   "ReadMe.py"
+  ],
+  "main_script": "Measuring_tape_test.py",
+  "readme": "ReadMe.py",
+  "summary": "For desktop use 'c' and 'g' keys to set and end measuring tape",
+  "methods": [
+   "endTrial",
+   "setEnvironmentDirectory",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": []
+ },
+ {
+  "folder": "Medelopt",
+  "scripts": [
+   "SightLabVR_Medelopt.py"
+  ],
+  "main_script": "SightLabVR_Medelopt.py",
+  "readme": null,
+  "summary": "Install pyserial module",
+  "methods": [
+   "setCustomTrialData"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": []
+ },
+ {
+  "folder": "Memory_Experiment",
+  "scripts": [
+   "Analysis/comparison_label_TTFF.py",
+   "Memory_Task.py",
+   "Memory_Task_Replay.py",
+   "ReadMe.py"
+  ],
+  "main_script": "Memory_Task.py",
+  "readme": "ReadMe.py",
+  "summary": "sightlab.setTrialCount(6)",
+  "methods": [
+   "endTrial",
+   "hideInstructions",
+   "setDataLoggingState",
+   "setEnvironment",
+   "setExperimentSummaryData",
+   "setStartText",
+   "setTrialCount",
+   "showInstructions",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "dojo.osgb"
+  ]
+ },
+ {
+  "folder": "Meta_Pro_Full_Body",
+  "scripts": [
+   "Meta_Full_Body.py"
+  ],
+  "main_script": "Meta_Full_Body.py",
+  "readme": null,
+  "summary": "yield viztask.waitKeyDown(' ') yield sightlab.endTrial()",
+  "methods": [
+   "endTrial",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": []
+ },
+ {
+  "folder": "Mirror_Demo",
+  "scripts": [
+   "FaceTracker_Sliders.py",
+   "FaceTracker_Sliders_HTC.py",
+   "MirrorConfig.py",
+   "SessionReplay_Mirror.py",
+   "facial_expressions_over_time.py",
+   "sliders.py",
+   "virtual_mirror.py",
+   "virtual_mirror_simple.py",
+   "virtual_mirror_simple_GUI.py"
+  ],
+  "main_script": "sliders.py",
+  "readme": null,
+  "summary": "Create canvas for displaying face tracking data",
+  "methods": [
+   "endTrial",
+   "getAvatarHead",
+   "getConfig",
+   "setAvatarHead",
+   "setAvatarLeftHand",
+   "setAvatarRightHand",
+   "setEnvironment",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [
+   "Vive Focus",
+   "Quest Pro",
+   "Quest 3"
+  ],
+  "environments": [
+   "Male1.osgb",
+   "MixamoGuy1.osgb",
+   "Mixamo_2.osgb",
+   "Mixamo_Female.osgb",
+   "ReadyPlayerMe.osgb",
+   "ReadyPlayerMe_Female.osgb",
+   "ReadyPlayerMe_Male2.osgb",
+   "Reallusion_ActorCore_Male.osgb",
+   "RocketBox_Female1.osgb",
+   "RocketBox_Male1.osgb",
+   "Stimulus.osgb",
+   "empty.osgb",
+   "gallery.osgb",
+   "x_MixamoBot.osgb",
+   "x_MixamoBot_shiny.osgb"
+  ]
+ },
+ {
+  "folder": "MixedReality",
+  "scripts": [
+   "MR_Config.py",
+   "MetaPro_GrabbingXR.py",
+   "MixedReality.py",
+   "MixedReality_EyeTracking.py",
+   "MixedReality_avatar.py",
+   "MixedReality_blank.py",
+   "MixedReality_virtual_screen.py",
+   "SessionReplay_passthrough.py",
+   "SightLabVR_XR_GUI.py",
+   "VideoScreenConfig.py",
+   "Video_Player.py",
+   "XR_Model_Viewer.py",
+   "mediaConfigXR.py"
+  ],
+  "main_script": "MR_Config.py",
+  "readme": null,
+  "summary": "Mixed Reality Eye Tracking Config",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getConfig",
+   "setEnvironment",
+   "setHeadlight",
+   "setPassthrough",
+   "setTransportState",
+   "setTrialCount",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": true,
+   "grab": true,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [
+   "Vive Focus",
+   "Quest Pro",
+   "Quest 3",
+   "Varjo"
+  ],
+  "environments": [
+   ".OSGB",
+   ".osgb",
+   "3D_Video_Screen.osgb",
+   "Reset_Text.osgb",
+   "RocketBox_Male1.osgb",
+   "XR_Avatar.osgb",
+   "XR_Ground.osgb",
+   "XR_virtual_screen.osgb",
+   "basketball.osgb",
+   "crate.osgb",
+   "direction_arrow.osgb",
+   "empty.osgb",
+   "empty_XR.osgb",
+   "empty_xr_cube.osgb",
+   "guitar.osgb",
+   "logo.osgb",
+   "sceneController.osgb"
+  ]
+ },
+ {
+  "folder": "Model and Media Viewer",
+  "scripts": [
+   "MediaViewer_update.py",
+   "ModelViewer_Single_User.py",
+   "ModelViewer_with_Rating/ModelViewer_v2.py",
+   "ModelViewer_with_Rating/mediaConfig.py",
+   "SightLabVR_Replay.py",
+   "local_vizconnect_configs/vizconnect_config_desktop_3d.py",
+   "local_vizconnect_configs/vizconnect_config_focus_vision_openxr.py",
+   "local_vizconnect_configs/vizconnect_config_oculus_simulate.py",
+   "local_vizconnect_configs/vizconnect_config_openxr.py",
+   "local_vizconnect_configs/vizconnect_config_openxr_driving_no_eyetr.py",
+   "local_vizconnect_configs/vizconnect_config_projection.py",
+   "local_vizconnect_configs/vizconnect_config_steamvr.py",
+   "mediaConfig.py"
+  ],
+  "main_script": "mediaConfig.py",
+  "readme": null,
+  "summary": "",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getConfig",
+   "getEnvironment",
+   "getEyeTracker",
+   "getTrialCount",
+   "getTrialNumber",
+   "id",
+   "setCustomTrialData",
+   "setEnvironment",
+   "setHighlighter",
+   "setStartText",
+   "showRatings",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": true,
+   "grab": true,
+   "biopac": false,
+   "ratings": true,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [
+   "Vive Focus",
+   "Quest Pro",
+   "Quest 3",
+   "Varjo",
+   "SteamVR",
+   "Projection"
+  ],
+  "environments": [
+   ".OSGB",
+   ".osgb",
+   "LargeScreen.osgb",
+   "ShowRoom_empty.osgb",
+   "VR_Menu.osgb",
+   "beachball.osgb",
+   "chair.osgb",
+   "crate.osgb",
+   "empty.osgb",
+   "guitar.osgb",
+   "lab_empty.osgb",
+   "piazza.osgb",
+   "piazza_animations.osgb",
+   "whiteroom.osgb"
+  ]
+ },
+ {
+  "folder": "Model_Converter",
+  "scripts": [
+   "ReadMe_Model_Converter.py"
+  ],
+  "main_script": "ReadMe_Model_Converter.py",
+  "readme": null,
+  "summary": "webbrowser.open('https://help.worldviz.com/sightlab/model-converter/')",
+  "methods": [],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": []
+ },
+ {
+  "folder": "Movement Limitation",
+  "scripts": [
+   "movementLimitation.py"
+  ],
+  "main_script": "movementLimitation.py",
+  "readme": null,
+  "summary": "manager.onEnter(hallwaySensor,pushBack)",
+  "methods": [
+   "endTrial",
+   "setEnvironment",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "lab_collision.osgb"
+  ]
+ },
+ {
+  "folder": "Omnicept",
+  "scripts": [
+   "Data_Capture_Only.py",
+   "Data_Capture_Only_gaze_mat.py",
+   "SightLab_VR_omnicept.py",
+   "omniceptExample.py"
+  ],
+  "main_script": "omniceptExample.py",
+  "readme": null,
+  "summary": "viz.go()",
+  "methods": [
+   "endTrial",
+   "setCustomTrialData",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [
+   "Omnicept"
+  ],
+  "environments": [
+   "empty.osgb"
+  ]
+ },
+ {
+  "folder": "Physics",
+  "scripts": [
+   "Physics.py",
+   "Physics_GUI.py"
+  ],
+  "main_script": "Physics.py",
+  "readme": null,
+  "summary": "viz.phys.enable()",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getEnvironment",
+   "setEnvironment",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": true,
+   "grab": true,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "dojo.osgb"
+  ]
+ },
+ {
+  "folder": "PigeonHunt",
+  "scripts": [
+   "PigeonHunt.py",
+   "SightLabVR_Replay.py"
+  ],
+  "main_script": "PigeonHunt.py",
+  "readme": null,
+  "summary": "sightlab.addSceneObject('male',male,gaze = True, avatar = True)",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "setEnvironment",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": true,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "piazza.osgb",
+   "sky_day.osgb"
+  ]
+ },
+ {
+  "folder": "Pro_Vs_Anti_Saccade",
+  "scripts": [
+   "SightLabVR_Replay.py",
+   "pro_vs_antisaccade.py"
+  ],
+  "main_script": "pro_vs_antisaccade.py",
+  "readme": null,
+  "summary": "SightLab VR implementation of a Pro vs Antisaccade Smooth-Pursuit task ===================================================================== Paradigm -------- \u2026",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "hideInstructions",
+   "setEnvironment",
+   "setStartText",
+   "setTrialCount",
+   "showInstructions",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": true,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "whiteroom.osgb"
+  ]
+ },
+ {
+  "folder": "Proximity Sensors",
+  "scripts": [
+   "proximitySensors_Areas.py",
+   "proximitySensors_Areas2.py",
+   "proximitySensors_example.py"
+  ],
+  "main_script": "proximitySensors_Areas.py",
+  "readme": null,
+  "summary": "Proximity areas placed in the scene: walk into the maze's two areas. Each area is a stand-in object in the environment model: proximity_area.osgb from sightlab\u2026",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "setCustomTrialData",
+   "setEnvironment",
+   "setExperimentSummaryData",
+   "setTrialCount",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": true,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "Business_Office.OSGB",
+   "maze.osgb"
+  ]
+ },
+ {
+  "folder": "PublishExe",
+  "scripts": [
+   "SightLabVR_Replay.py",
+   "SightLabVR_publish_exe_nonGUI.py"
+  ],
+  "main_script": "SightLabVR_publish_exe_nonGUI.py",
+  "readme": null,
+  "summary": "============================================================================= PUBLISH CONFIGURATION - Must be BEFORE any sightlab imports! ====================\u2026",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "setEnvironment",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": true,
+   "grab": true,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "Business_Office.OSGB"
+  ]
+ },
+ {
+  "folder": "Pupil Diameter Baseline",
+  "scripts": [
+   "pupil_diameter_baseline.py"
+  ],
+  "main_script": "pupil_diameter_baseline.py",
+  "readme": null,
+  "summary": "yield viztask.waitKeyDown(' ') #use sphere for 360 videos and env for 3D model scenes #sphere.visible(viz.OFF) yield sightlab.startTrial() envObject = sightlab\u2026",
+  "methods": [
+   "endTrial",
+   "getEnvironment",
+   "setCustomTrialData",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "whiteroom.osgb"
+  ]
+ },
+ {
+  "folder": "Pupil_Labs",
+  "scripts": [
+   "SightLabVR_Replay.py",
+   "SightLab_VR_PupilLabs.py"
+  ],
+  "main_script": "SightLab_VR_PupilLabs.py",
+  "readme": null,
+  "summary": "setVizconnectConfigs(['Desktop','Pupil Labs'])",
+  "methods": [
+   "endTrial",
+   "getTrialCount",
+   "getTrialNumber",
+   "hideInstructions",
+   "setFixationSaccadeThresholds",
+   "setStartText",
+   "showInstructions",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [
+   "Pupil Labs"
+  ],
+  "environments": []
+ },
+ {
+  "folder": "Randomize",
+  "scripts": [
+   "Randomize_Setup.py",
+   "SightLabVR_Replay.py",
+   "SightLab_VR_Randomize_Blocks.py",
+   "SightLab_VR_Randomize_Blocks_360.py",
+   "SightLab_VR_Randomize_Blocks_GUI.py"
+  ],
+  "main_script": "Randomize_Setup.py",
+  "readme": null,
+  "summary": "for trial in range(sightlab.getTrialCount()): yield viztask.waitEvent(TRIAL_START)",
+  "methods": [
+   "getCurrentRepetition",
+   "getTrialCount",
+   "getTrialNumber",
+   "setHeadlight",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": []
+ },
+ {
+  "folder": "RatingScale Multiple Paths",
+  "scripts": [
+   "SightLabVR_Replay.py",
+   "ratingScale.py"
+  ],
+  "main_script": "ratingScale.py",
+  "readme": null,
+  "summary": "sightlab.setTrialCount(2)",
+  "methods": [
+   "endTrial",
+   "getTrialCount",
+   "getTrialNumber",
+   "setEnvironment",
+   "setExperimentSummaryData",
+   "setTrialCount",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": true,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": []
+ },
+ {
+  "folder": "RatingScale_GUI",
+  "scripts": [
+   "Questions_From_CSV_Example/RatingScale_GUI_csv_setup.py",
+   "RatingScale_GUI.py",
+   "RatingScale_GUI_at_end.py",
+   "RatingScale_Sample.py",
+   "Surveys.py",
+   "ratingScale.py"
+  ],
+  "main_script": "Surveys.py",
+  "readme": null,
+  "summary": "responses['Gender'] = vizinput.choose(\"What is your gender?\", [\"Male\", \"Female\", \"Other\", \"Prefer not to answer\"])",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getTrialCount",
+   "hideInstructions",
+   "setEnvironment",
+   "setExperimentSummaryData",
+   "setHeadlight",
+   "setStartText",
+   "setTrialCount",
+   "showInstructions",
+   "showRatings",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": true,
+   "grab": false,
+   "biopac": false,
+   "ratings": true,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "Business_Office.OSGB",
+   "Business_Office.osgb",
+   "dojo.osgb"
+  ]
+ },
+ {
+  "folder": "Reaction Time",
+  "scripts": [
+   "SightLabVR_Replay.py",
+   "reactionTime.py",
+   "reactionTime_Selector_Tool.py",
+   "reactionTime_Shoot_Dont_Shoot.py",
+   "reactionTime_Shoot_Dont_Shoot_maze.py"
+  ],
+  "main_script": "reactionTime.py",
+  "readme": null,
+  "summary": "hideSphere() # Initially hidden",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getConfig",
+   "getTrialCount",
+   "resetViewPoint",
+   "setCustomTrialData",
+   "setEnvironment",
+   "setExperimentSummaryData",
+   "setFixationSaccadeThresholds",
+   "setHighlighter",
+   "setStartPoint",
+   "setStartText",
+   "setTrialCount",
+   "showInstructions",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": true,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "dojo.osgb",
+   "maze.osgb",
+   "red_ball.osgb"
+  ]
+ },
+ {
+  "folder": "Real World Objects in VR",
+  "scripts": [
+   "Real_World_Objects_in_VR.py",
+   "Real_World_Objects_in_VR_360.py"
+  ],
+  "main_script": "Real_World_Objects_in_VR.py",
+  "readme": null,
+  "summary": "if USE_WEBCAM: #Create Video Camera extension video = viz.add('VideoCamera.dle')",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getConfig",
+   "getEnvironment",
+   "setEnvironment",
+   "setTrialCount",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": true,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [
+   "Vive Focus",
+   "Quest Pro",
+   "Quest 3",
+   "Varjo"
+  ],
+  "environments": [
+   "empty.osgb"
+  ]
+ },
+ {
+  "folder": "Replay_Events",
+  "scripts": [
+   "SightLabVR_Events_Color.py",
+   "SightLabVR_Events_Visibility.py",
+   "SightLabVR_Replay.py",
+   "SightLabVR_Replay_Color.py",
+   "SightLabVR_Replay_Visibility.py"
+  ],
+  "main_script": "SightLabVR_Events_Color.py",
+  "readme": null,
+  "summary": "sightlab.setEnvironment(env)",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getTrialCount",
+   "setCustomReplayFlag",
+   "setEnvironment",
+   "setTrialCount",
+   "showInstructions",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": true,
+   "grab": true,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "dojo.osgb"
+  ]
+ },
+ {
+  "folder": "Rotoscoped_Avatars",
+  "scripts": [
+   "Rotoscoped_Avatar.py",
+   "SightLabVR_Replay.py"
+  ],
+  "main_script": "Rotoscoped_Avatar.py",
+  "readme": "ReadMe.txt",
+  "summary": "Use v key to play the media Download video sample from https://drive.google.com/file/d/1pmiWI1saleH2cvLf5HPbx2vuffiD6DS2/view?usp=sharing",
+  "methods": [
+   "endTrial",
+   "getEnvironment",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": []
+ },
+ {
+  "folder": "STIM Files",
+  "scripts": [
+   "Data_Analysis/visualization_of_data_combined.py",
+   "Data_Analysis/visualization_of_data_simple.py",
+   "STIM_File_Config.py",
+   "STIM_File_example.py",
+   "STIM_File_example_random.py",
+   "SessionReplay_STIM.py"
+  ],
+  "main_script": "STIM_File_Config.py",
+  "readme": "ReadMe.txt",
+  "summary": "}",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getCurrentTime",
+   "runExperiment",
+   "setDwellTimeThreshold",
+   "setEnvironment",
+   "setExperimentSummaryData",
+   "setTrialCount",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": true,
+   "grab": true,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": true,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "basketball.osgb",
+   "dojo.osgb"
+  ]
+ },
+ {
+  "folder": "Sample Code",
+  "scripts": [
+   "SightLabVR_NonGUI.py",
+   "SightLabVR_Replay.py",
+   "SightLab_VR_GUI.py",
+   "SightLab_VR_Participant_Mode.py",
+   "SightLab_VR_event_manager.py"
+  ],
+  "main_script": "SightLab_VR_GUI.py",
+  "readme": null,
+  "summary": "for trial in range(sightlab.getTrialCount()): yield viztask.waitEvent(TRIAL_START)",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getTrialCount",
+   "setEnvironment",
+   "setTrialCount",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": true,
+   "grab": true,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "dojo.osgb",
+   "dojo2.osgb"
+  ]
+ },
+ {
+  "folder": "Scene_Builder",
+  "scripts": [
+   "Config_Global.py",
+   "Model_Loader.py",
+   "Scene_Builder.py"
+  ],
+  "main_script": "Model_Loader.py",
+  "readme": null,
+  "summary": "Model Loader Script for AI_3D_Model_Spawner ============================================ This script loads 3D models that were previously saved using the AI_3D\u2026",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getConfig",
+   "setEnvironment",
+   "setStartText",
+   "setTrialCount",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": false,
+   "grab": true,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [
+   "Vive Focus",
+   "Quest Pro",
+   "Quest 3",
+   "Varjo"
+  ],
+  "environments": [
+   ".osgb",
+   "RockyCavern.osgb",
+   "empty.osgb"
+  ]
+ },
+ {
+  "folder": "Screen Based Eyetrackers",
+  "scripts": [
+   "Eyelogic_Calibration.py",
+   "Screen_Based_Eyelogic.py",
+   "Screen_Based_Eyelogic_GUI.py",
+   "Screen_Based_Simulate.py",
+   "Screen_Based_Tobii.py",
+   "Screen_Based_Tobii_GUI.py",
+   "SightLabVR_Replay.py",
+   "SightLabVR_Replay_Follow_Mode.py",
+   "SightLabVR_Replay_Follow_Mode_EyeLogic.py",
+   "eyelogic/ELApi.py",
+   "eyelogic/__init__.py",
+   "vizconnect_configs/vizconnect_config_screen_based.py",
+   "vizconnect_configs/vizconnect_config_screen_based_eyeLogic.py",
+   "vizconnect_configs/vizconnect_config_screen_based_tobii.py",
+   "vizconnect_configs/vizconnect_config_screen_based_tobii_test2.py"
+  ],
+  "main_script": "Screen_Based_Tobii.py",
+  "readme": null,
+  "summary": "sightlab.setEnvironment(env)",
+  "methods": [
+   "addSceneObject",
+   "addTrackingTrialDataColumn",
+   "endTrial",
+   "getGazePointObject",
+   "getTrialCount",
+   "setEnvironment",
+   "setGazePointObject",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": true,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [
+   "Tobii"
+  ],
+  "environments": [
+   "Business_Office.OSGB",
+   "dojo.osgb",
+   "empty.osgb",
+   "gaze_point1a.osgb",
+   "gaze_point2a.osgb",
+   "gaze_point2b.osgb",
+   "piazza.osgb",
+   "piazza_animations.osgb"
+  ]
+ },
+ {
+  "folder": "Scripted Avatar Agent",
+  "scripts": [
+   "Scripted_Avatar_Agent_GUI.py",
+   "Scripted_Avatar_Agent_Rating._Timed.py",
+   "Scripted_Avatar_Agent_Rating.py",
+   "Scripted_Avatar_Agent_Rating_STIM.py",
+   "Scripted_Avatar_Agent_Replay.py",
+   "Scripted_Avatar_Agent_Replay_STIM.py",
+   "comparison_label.py",
+   "configs/Rocketbox_Female.py",
+   "configs/Rocketbox_Male.py",
+   "configs/VCC_Male2.py",
+   "modules/Config_Global.py",
+   "modules/avatar_agent_core.py",
+   "modules/avatar_agent_core_STIM.py",
+   "modules/avatar_agent_core_spatial_audio.py",
+   "modules/avatar_agent_core_timed.py"
+  ],
+  "main_script": "comparison_label.py",
+  "readme": null,
+  "summary": "plt.tight_layout()",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getConfig",
+   "getEnvironment",
+   "removeSceneObject",
+   "setExperimentSummaryData",
+   "showRatings",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": true,
+   "grab": false,
+   "biopac": false,
+   "ratings": true,
+   "stim_files": true,
+   "multi_user": false
+  },
+  "hardware_hints": [
+   "Quest Pro",
+   "Quest 3",
+   "Varjo"
+  ],
+  "environments": [
+   "Conference Room.osgb",
+   "RocketBox_Female1.osgb",
+   "RocketBox_Male1.osgb",
+   "homeOffice.osgb",
+   "light_point.osgb",
+   "vcc_male2.osgb"
+  ]
+ },
+ {
+  "folder": "Seated_or_Standing_Avatar_Body",
+  "scripts": [
+   "Avatar_Body.py",
+   "Avatar_Body_GUI.py",
+   "SightLabVR_Replay.py"
+  ],
+  "main_script": "Avatar_Body.py",
+  "readme": null,
+  "summary": "Options for static or tracked Static Seated will give you a static seated avatar body",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getConfig",
+   "getTrialCount",
+   "setAvatarHead",
+   "setAvatarLeftHand",
+   "setAvatarRightHand",
+   "setEnvironment",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": true,
+   "grab": true,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [
+   "Quest Pro",
+   "Quest 3"
+  ],
+  "environments": [
+   "XR_Avatar_No_Head.osgb",
+   "empty.osgb",
+   "stimulus.osgb"
+  ]
+ },
+ {
+  "folder": "Selector Tool",
+  "scripts": [
+   "Selector_Tool.py",
+   "Selector_Tool_GUI.py",
+   "Selector_Tool_GUI_Grab.py"
+  ],
+  "main_script": "Selector_Tool.py",
+  "readme": null,
+  "summary": "for index in range(0, len(target_objects)): sightlab.addSceneObject(target_names[index], target_objects[index], gaze = True) sightlab.setHighlighter(mode = sl.\u2026",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getConfig",
+   "getEnvironment",
+   "getTrialCount",
+   "setEnvironment",
+   "setHighlighter",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": true,
+   "grab": true,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "dojo.osgb"
+  ]
+ },
+ {
+  "folder": "Setting Flags",
+  "scripts": [
+   "Network_Flag_Sender.py",
+   "Setting_Flags_using_key_or_trigger.py",
+   "Setting_Flags_using_key_or_trigger_openxr.py",
+   "Setting_Flags_using_network_event.py"
+  ],
+  "main_script": "Network_Flag_Sender.py",
+  "readme": null,
+  "summary": "Run this in a second Vizard instance to send network flag events to the Setting_Flags_using_network_event.py example. Use 'localhost' when both scripts run on \u2026",
+  "methods": [
+   "getConfig",
+   "getTrialCount",
+   "setCustomTrialData"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [
+   "Quest",
+   "SteamVR"
+  ],
+  "environments": []
+ },
+ {
+  "folder": "Spatial Scanning",
+  "scripts": [
+   "SightLabVR_Replay.py",
+   "spatial_scanning.py",
+   "spatial_scanning_audio.py",
+   "spatial_scanning_static.py"
+  ],
+  "main_script": "spatial_scanning.py",
+  "readme": null,
+  "summary": "sightlab.addSceneObject('redBall', sphere1, gaze=True) sightlab.addSceneObject('blueBall', sphere2, gaze=True) sightlab.addSceneObject('greenBall', sphere3, ga\u2026",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getGazePointObject",
+   "setEnvironment",
+   "setExperimentSummaryData",
+   "setStartPoint",
+   "setStartText",
+   "setTrialCount",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": true,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "dojo.osgb"
+  ]
+ },
+ {
+  "folder": "Swap_Environments",
+  "scripts": [
+   "SightLabVR_Replay.py",
+   "visibility.py"
+  ],
+  "main_script": "visibility.py",
+  "readme": null,
+  "summary": "vizact.onkeydown(\"v\", changeVisibility)",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "setTrialCount",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "dojo.osgb",
+   "lab_empty.osgb"
+  ]
+ },
+ {
+  "folder": "Third Person View",
+  "scripts": [
+   "SightLabVR_Replay.py",
+   "SightLab_VR.py"
+  ],
+  "main_script": "SightLab_VR.py",
+  "readme": null,
+  "summary": "for trial in range(sightlab.getTrialCount()): yield viztask.waitEvent(TRIAL_START)",
+  "methods": [
+   "getTrialCount"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": []
+ },
+ {
+  "folder": "Timer",
+  "scripts": [
+   "SightLabVR_timer.py",
+   "SightLabVR_timer_nonGUI.py"
+  ],
+  "main_script": "SightLabVR_timer.py",
+  "readme": null,
+  "summary": "for trial in range(sightlab.getTrialCount()): yield viztask.waitEvent(TRIAL_START)",
+  "methods": [
+   "endTrial",
+   "getTrialCount",
+   "setEnvironment",
+   "setTrialCount",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "complete_scene.osgb"
+  ]
+ },
+ {
+  "folder": "Toggle Lights",
+  "scripts": [
+   "ToggleEnvironments.py",
+   "ToggleLights.py"
+  ],
+  "main_script": "ToggleLights.py",
+  "readme": null,
+  "summary": "Use the '3' key to toggle the lights",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "setEnvironment",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": false,
+   "grab": true,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "complete_scene.osgb",
+   "complete_scene_lights_off.osgb",
+   "flashlight.osgb",
+   "lab.osgb"
+  ]
+ },
+ {
+  "folder": "ToggleMenu",
+  "scripts": [
+   "toggleMenu.py"
+  ],
+  "main_script": "toggleMenu.py",
+  "readme": null,
+  "summary": "Press 'm' or the right thumbstick to bring up a virtual menu",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "setEnvironment",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": false,
+   "grab": true,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "dojo.osgb",
+   "screen2.osgb"
+  ]
+ },
+ {
+  "folder": "Tossing_Objects",
+  "scripts": [
+   "tossing_object.py"
+  ],
+  "main_script": "tossing_object.py",
+  "readme": null,
+  "summary": "print(type(grabberTool))",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getConfig",
+   "getTrialCount",
+   "setAvatarRightHand",
+   "setEnvironment",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": true,
+   "grab": true,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [
+   "SteamVR",
+   "Manus"
+  ],
+  "environments": [
+   "ShowRoom_empty.osgb",
+   "crate.osgb",
+   "empty.osgb"
+  ]
+ },
+ {
+  "folder": "Varjo_Sample",
+  "scripts": [
+   "Varjo_Sample.py"
+  ],
+  "main_script": "Varjo_Sample.py",
+  "readme": null,
+  "summary": "sightlab.setEnvironment(env)",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "setEnvironment",
+   "setTrialCount",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": true,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "Business_Office.OSGB"
+  ]
+ },
+ {
+  "folder": "Video_Compressor",
+  "scripts": [
+   "compress_video.py",
+   "video_compressor.py"
+  ],
+  "main_script": "compress_video.py",
+  "readme": null,
+  "summary": "if not fileList: print(\"No .avi files found in the directory.\") else: choice = vizinput.choose('Please select a video file', fileList)",
+  "methods": [],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": []
+ },
+ {
+  "folder": "View_Percentage",
+  "scripts": [
+   "SightLabVR_Replay.py",
+   "View_Percentage.py",
+   "View_Percentage_Save.py"
+  ],
+  "main_script": "View_Percentage.py",
+  "readme": null,
+  "summary": "for trial in range(sightlab.getTrialCount()): yield viztask.waitKeyDown(' ') yield sightlab.startTrial()",
+  "methods": [
+   "endTrial",
+   "getCurrentTime",
+   "getTrialCount",
+   "setExperimentSummaryData",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": []
+ },
+ {
+  "folder": "Virtual 2D Screen",
+  "scripts": [
+   "2D_Screen.py",
+   "2D_Screen_GUI.py",
+   "2D_Screen_GUI_Replay.py",
+   "2D_Screen_replay.py",
+   "3D_Screen.py",
+   "Cycle_Videos/2D_Screen_replay.py",
+   "Cycle_Videos/ExperimentSettings.py",
+   "Cycle_Videos/Virtual_Screen.py",
+   "VideoScreenConfig.py",
+   "VideoScreenConfig2.py",
+   "Video_Player.py",
+   "Video_Player_GUI.py",
+   "Video_Player_STIM_File.py",
+   "Video_Player_replay.py",
+   "Video_Player_replay_STIM.py"
+  ],
+  "main_script": "2D_Screen.py",
+  "readme": null,
+  "summary": "Replace the video with your own. Change out the environment or use the GUI by changing GUI = False to GUi = True. K-Lite Codec Pack may be needed to playback v\u2026",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getConfig",
+   "getEnvironment",
+   "getTrialCount",
+   "hideInstructions",
+   "runExperiment",
+   "setAvatarLeftHand",
+   "setAvatarRightHand",
+   "setEnvironment",
+   "setExperimentSummaryData",
+   "setStartPoint",
+   "setStartText",
+   "setTrialCount",
+   "showInstructions",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": true,
+   "grab": true,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": true,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "3D_Video_Screen.osgb",
+   "Stimulus.osgb",
+   "empty.osgb",
+   "full_black.osgb",
+   "screen.osgb"
+  ]
+ },
+ {
+  "folder": "Virtual_Screencast",
+  "scripts": [
+   "VideoScreenConfig.py",
+   "Virtual_screencast_Phone.py",
+   "Virtual_screencast_Phone_and_Screen.py",
+   "Virtual_screencast_desktop.py",
+   "Virtual_screencast_multiple.py",
+   "Virtual_screencast_room.py",
+   "Virtual_screencast_window.py",
+   "Virtual_screencast_window_replay_from_capture.py"
+  ],
+  "main_script": "VideoScreenConfig.py",
+  "readme": null,
+  "summary": "if USE_DIRECTORY == True: video_directory=r'C:\\Path_To_Video' video_files = [f for f in os.listdir(video_directory) if f.endswith(('.mp4', '.avi','.mov','.wmv'\u2026",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getConfig",
+   "getEnvironment",
+   "getTrialCount",
+   "runExperiment",
+   "setAvatarLeftHand",
+   "setAvatarRightHand",
+   "setEnvironment",
+   "setStartPoint",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": true,
+   "grab": true,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": true,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "3D_Video_Screen.osgb",
+   "Stimulus.osgb",
+   "WorkRoom1.osgb",
+   "empty.osgb",
+   "screen.osgb",
+   "smartphone.osgb",
+   "whiteroom.osgb"
+  ]
+ },
+ {
+  "folder": "VisualSearch",
+  "scripts": [
+   "VisualSearch1_SingleObject/Config_Visual_Search.py",
+   "VisualSearch1_SingleObject/ReadMe.py",
+   "VisualSearch1_SingleObject/SessionReplay_VisualSearch.py",
+   "VisualSearch1_SingleObject/SingleObject_Analysis/visualization_of_data_combined.py",
+   "VisualSearch1_SingleObject/SingleObject_Analysis/visualization_of_data_simple.py",
+   "VisualSearch1_SingleObject/VisualSearch_SingleObject.py",
+   "VisualSearch1_SingleObject_GUI/ReadMe.py",
+   "VisualSearch1_SingleObject_GUI/SingleObject_Analysis/comparison_label_TTFF.py",
+   "VisualSearch1_SingleObject_GUI/SingleObject_Analysis/visualization_of_data_combined.py",
+   "VisualSearch1_SingleObject_GUI/VisualSearch_SIngleObject_Replay.py",
+   "VisualSearch1_SingleObject_GUI/VisualSearch_SingleObject_GUI.py",
+   "VisualSearch2_MutipleObjects/Config_Visual_Search2.py",
+   "VisualSearch2_MutipleObjects/MutlipleObjects_Analysis/comparison_label_TTFF.py",
+   "VisualSearch2_MutipleObjects/MutlipleObjects_Analysis/visualization_matplotlib.py",
+   "VisualSearch2_MutipleObjects/MutlipleObjects_Analysis/visualization_of_data_combined.py",
+   "VisualSearch2_MutipleObjects/MutlipleObjects_Analysis/visualization_seaborn.py",
+   "VisualSearch2_MutipleObjects/ReadMe.py",
+   "VisualSearch2_MutipleObjects/SessionReplay.py",
+   "VisualSearch2_MutipleObjects/VisualSearch_highlighter.py",
+   "VisualSearch2_MutipleObjects/VisualSearch_highlighter_GUI.py",
+   "VisualSearch3_ArtGallery/Config_Visual_Search_Randomize.py",
+   "VisualSearch3_ArtGallery/Config_Visual_Search_Randomize_Option2.py",
+   "VisualSearch3_ArtGallery/ReadMe.py",
+   "VisualSearch3_ArtGallery/Visual_Search_Randomize.py",
+   "VisualSearch3_ArtGallery/Visual_Search_Randomize_Client.py",
+   "VisualSearch3_ArtGallery/Visual_Search_Randomize_Replay.py",
+   "VisualSearch3_ArtGallery/Visual_Search_Randomize_Server.py",
+   "VisualSearch_BasicTemplate/Visual_Search_Template_Conjunction.py",
+   "VisualSearch_BasicTemplate/Visual_Search_Template_Replay.py",
+   "VisualSearch_Randy_Pausch/Main_Visual_Search.py",
+   "VisualSearch_Randy_Pausch/Modules/letter_module.py",
+   "VisualSearch_Randy_Pausch/Modules/response_module.py",
+   "VisualSearch_Randy_Pausch/ReadMe.py",
+   "VisualSearch_Randy_Pausch/VisualSearch_Comparison.py",
+   "VisualSearch_Randy_Pausch/VisualSearch_Replay.py",
+   "VisualSearch_Randy_Pausch/experiment.py",
+   "Visual_Search_Task/ReadMe.py",
+   "Visual_Search_Task/SessionReplay.py",
+   "Visual_Search_Task/SessionReplay_All_Trials_Heatmap_Walk_Path.py",
+   "Visual_Search_Task/VisualSearch_Code.py",
+   "Visual_Search_Task/VisualSearch_Config.py",
+   "Visual_Search_Task/VisualSearch_GUI.py",
+   "Visual_Search_Task/resources/heatmap_visualizer_config.py"
+  ],
+  "main_script": "Visual_Search_Task/SessionReplay.py",
+  "readme": null,
+  "summary": "",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getConfig",
+   "getCurrentRepetition",
+   "getCurrentTime",
+   "getEnvironment",
+   "getTrialCount",
+   "getTrialNumber",
+   "id",
+   "setEnvironment",
+   "setExperimentSummaryData",
+   "setHighlighter",
+   "setStartText",
+   "setTrialCount",
+   "showInstructions",
+   "showRatings",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": true,
+   "grab": false,
+   "biopac": true,
+   "ratings": true,
+   "stim_files": true,
+   "multi_user": true
+  },
+  "hardware_hints": [],
+  "environments": [
+   "Piazza_empty.osgb",
+   "RockyCavern.osgb",
+   "chick.osgb",
+   "complete_scene.osgb",
+   "complete_scene_walls.osgb",
+   "dojo2.osgb",
+   "empty.osgb",
+   "gallery_paintings.osgb",
+   "ground.osgb",
+   "pigeon.osgb",
+   "sampleObject.osgb",
+   "sampleObject_similar.osgb",
+   "soccerball.osgb",
+   "toy_spaceship.osgb",
+   "whiteroom.osgb"
+  ]
+ },
+ {
+  "folder": "VisualizationTools",
+  "scripts": [
+   "Plotly_Walk_Path.py",
+   "Plotly_Walk_Path_Combined.py",
+   "Ploty_Barchart_Views.py",
+   "Ploty_Walk_and_Gaze.py",
+   "SightLab_VR_Data_Test.py",
+   "SightLab_VR_MatPlotLib_RealTime.py",
+   "barchart_histogram.py",
+   "barchart_histogram_entireFolder.py",
+   "boxPlot_2_by_3.py",
+   "comparison_label.py",
+   "heatmap.py",
+   "heatmap_point_cloud.py",
+   "point_cloud2.py",
+   "point_cloud_color.py",
+   "visualization_of_data_combined.py"
+  ],
+  "main_script": "heatmap.py",
+  "readme": null,
+  "summary": "fileList.sort(reverse=True) # Sort the list if needed choice = vizinput.choose('Please select a data file', fileList) filename = fileList[choice]",
+  "methods": [
+   "endTrial",
+   "getTrialCount",
+   "hideInstructions",
+   "showInstructions",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [
+   "Projection"
+  ],
+  "environments": [
+   "beachball.osgb",
+   "ground.osgb"
+  ]
+ },
+ {
+  "folder": "ViveTrackers",
+  "scripts": [
+   "Plotly_Tracker_Path.py",
+   "ViveTrackers_FullBody.py",
+   "ViveTrackers_FullBody_GUI.py",
+   "ViveTrackers_Tracking_Object.py",
+   "ViveTrackers_Tracking_ObjectReplay.py",
+   "vizconnect_configs/vizconnect_config_CC2.py",
+   "vizconnect_configs/vizconnect_config_desktop_3d.py",
+   "vizconnect_configs/vizconnect_config_mocopi.py",
+   "vizconnect_configs/vizconnect_config_viveTrackers.py",
+   "vizconnect_configs/vizconnect_config_viveTrackers_CC.py",
+   "vizconnect_configs/vizconnect_config_vive_focus_openXR_trackers.py"
+  ],
+  "main_script": "Plotly_Tracker_Path.py",
+  "readme": null,
+  "summary": "fileList.sort(reverse=True) # Sort the list if needed choice = vizinput.choose('Please select a data file', fileList) filename = fileList[choice]",
+  "methods": [
+   "addSceneObject",
+   "addTrackingTrialDataColumn",
+   "endTrial",
+   "getConfig",
+   "getEnvironment",
+   "getEyeTracker",
+   "getTrialCount",
+   "setAvatarLeftHand",
+   "setAvatarRightHand",
+   "setCustomTrialData",
+   "setEnvironment",
+   "setTrialCount",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": true,
+   "grab": true,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [
+   "Vive",
+   "Quest Pro",
+   "SteamVR"
+  ],
+  "environments": [
+   "C:\\Program Files\\WorldViz\\Sightlab2\\sightlab_resources\\avatar\\TrackedAvatars\\RocketBox_Female1.osgb",
+   "Interior_Empty.osgb",
+   "Stimulus.osgb",
+   "basketball.osgb",
+   "beachball.osgb",
+   "empty.osgb",
+   "piazza.osgb",
+   "piazza_animations.osgb",
+   "soccerball.osgb",
+   "stimulus.osgb"
+  ]
+ },
+ {
+  "folder": "Walk the Plank",
+  "scripts": [
+   "Config_Walk_The_Plank.py",
+   "SessionReplay.py",
+   "screen_flash.py",
+   "walk_the_plank_SightLab.py"
+  ],
+  "main_script": "screen_flash.py",
+  "readme": null,
+  "summary": "Simple module to flash the screen, works on Oculus",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getConfig",
+   "setAvatarLeftHand",
+   "setAvatarRightHand",
+   "setCustomTrialData",
+   "setEnvironment",
+   "setTrialCount",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [
+   "SteamVR",
+   "Vive Trackers"
+  ],
+  "environments": [
+   "empty.osgb",
+   "leftShoe.osgb",
+   "pit2.osgb",
+   "pit_drop.osgb",
+   "platform.osgb",
+   "rightShoe.osgb"
+  ]
+ },
+ {
+  "folder": "cobiFNIR",
+  "scripts": [
+   "Chart.py",
+   "cobi_FNIR.py",
+   "cobi_FNIR2.py",
+   "cobibiopac.py"
+  ],
+  "main_script": "Chart.py",
+  "readme": null,
+  "summary": "Display virtually unlimited number of waveforms Change color on the fly Change position on the fly Hide the display on the fly Change transperancy level on the\u2026",
+  "methods": [
+   "endTrial",
+   "setCustomTrialData",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": []
+ },
+ {
+  "folder": "convert_to_pixels",
+  "scripts": [
+   "convert_to_pixels.py",
+   "convert_to_pixels_folder.py"
+  ],
+  "main_script": "convert_to_pixels.py",
+  "readme": null,
+  "summary": "for row in reader: if not row or len(row) != len(headers): continue",
+  "methods": [],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": []
+ },
+ {
+  "folder": "doorExample",
+  "scripts": [
+   "SightLab_Door/SightLabVR_door_proximity.py",
+   "door_animation2.py",
+   "door_animation_timing.py"
+  ],
+  "main_script": "door_animation2.py",
+  "readme": null,
+  "summary": "",
+  "methods": [
+   "endTrial",
+   "getTrialCount",
+   "setEnvironment",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "DoorAnimated.osgb",
+   "Door_Scene.osgb"
+  ]
+ }
+]

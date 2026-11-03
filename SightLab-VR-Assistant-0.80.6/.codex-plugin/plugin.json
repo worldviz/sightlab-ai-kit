@@ -1,0 +1,32 @@
+{
+  "author": {
+    "name": "Worldviz"
+  },
+  "description": "Help with SightLab VR experiment design, GUI workflows, Python scripting, and troubleshooting using bundled documentation and code references.",
+  "interface": {
+    "capabilities": [
+      "skills"
+    ],
+    "category": "Developer Tools",
+    "composerIcon": "./assets/gpt-icon.png",
+    "developerName": "Worldviz",
+    "displayName": "SightLab VR Assistant",
+    "logo": "./assets/gpt-icon.png",
+    "longDescription": "SightLab VR Assistant helps researchers, educators, and developers design and configure virtual reality experiments with WorldViz SightLab VR.\n\nGet guidance on GUI workflows, Python scripting, trial setup, participant instructions, gaze-based interactions, grabbable objects, rating scales, and data collection. Ask questions about SightLab documentation, understand example scripts, or troubleshoot code using the bundled reference material.\n\nThe plugin provides instructions and reference files. It does not include a remote MCP service or directly connect to VR hardware. Running generated experiment scripts requires a compatible SightLab/Vizard installation and any hardware needed for your study. Reference material may differ from your installed version; review and test generated code before using it in an experiment.",
+    "shortDescription": "Build SightLab VR experiments",
+    "websiteURL": "https://help.worldviz.com/sightlab/",
+    "supportURL": "https://www.worldviz.com/virtual-reality-support",
+    "privacyPolicyURL": "https://help.worldviz.com/sightlab/sightlab-assistant-privacy-policy/",
+    "termsOfServiceURL": "https://help.worldviz.com/sightlab/sightlab-assistant-privacy-policy/#part-2-assistant-terms"
+  },
+  "name": "gpt-8fac8a955f2dc675005d97a73ee481f2",
+  "skills": "./skills/",
+  "version": "0.80.6",
+  "extensions": {
+    "com.openai": {
+      "publication": {
+        "release_notes": "Removed plugin-level defaultPrompt starter questions. The skill-level default_prompt remains absent. No changes to instructions, references, icons, or policy URLs."
+      }
+    }
+  }
+}

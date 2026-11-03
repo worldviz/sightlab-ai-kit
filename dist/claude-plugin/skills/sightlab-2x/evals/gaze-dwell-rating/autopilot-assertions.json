@@ -1,0 +1,7 @@
+[
+  {"name": "four trials completed", "type": "trials_completed", "n": 4},
+  {"name": "left rating stored every trial", "type": "column_nonempty", "file": "summary", "column": "Rating_left"},
+  {"name": "right rating stored every trial", "type": "column_nonempty", "file": "summary", "column": "Rating_right"},
+  {"name": "pair labelled", "type": "column_nonempty", "file": "summary", "column": "Pair"},
+  {"name": "gaze landed on an object", "type": "gaze_events_min", "n": 1}
+]

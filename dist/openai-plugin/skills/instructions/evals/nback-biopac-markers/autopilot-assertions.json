@@ -1,0 +1,7 @@
+[
+  {"name": "two blocks completed", "type": "trials_completed", "n": 2},
+  {"name": "markers sent (trial start/end at least)", "type": "marker_calls_min", "n": 4},
+  {"name": "hits counted", "type": "column_nonempty", "file": "summary", "column": "Hits"},
+  {"name": "false alarms counted", "type": "column_nonempty", "file": "summary", "column": "False alarms"},
+  {"name": "misses counted", "type": "column_nonempty", "file": "summary", "column": "Misses"}
+]

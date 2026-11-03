@@ -1,0 +1,7 @@
+[
+  {"name": "four trials completed", "type": "trials_completed", "n": 4},
+  {"name": "condition labelled", "type": "value_in", "file": "summary", "column": "Condition", "allowed": ["short", "long"]},
+  {"name": "probe type labelled", "type": "value_in", "file": "summary", "column": "Probe", "allowed": ["old", "new"]},
+  {"name": "response stored", "type": "value_in", "file": "summary", "column": "Response", "allowed": ["Yes", "No"]},
+  {"name": "correctness scored", "type": "value_in", "file": "summary", "column": "Correct", "allowed": ["0", "1"]}
+]

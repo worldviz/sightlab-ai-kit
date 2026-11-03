@@ -1,0 +1,8 @@
+.svn/
+.superpowers/
+__pycache__/
+.pytest_cache/
+*.pyc
+.venv/
+tools/vm/vm-results-*.txt
+tools/vm/vm-runs/

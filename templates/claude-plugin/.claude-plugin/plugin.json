@@ -1,0 +1,11 @@
+{
+  "name": "sightlab-2x",
+  "version": "{{VERSION}}",
+  "description": "Build, check and test WorldViz SightLab 2.x (Vizard) eye-tracking experiments from a research brief.",
+  "author": {
+    "name": "WorldViz",
+    "url": "https://www.worldviz.com"
+  },
+  "homepage": "https://help.worldviz.com/sightlab/",
+  "keywords": ["sightlab", "vizard", "vr", "eye-tracking", "experiment"]
+}

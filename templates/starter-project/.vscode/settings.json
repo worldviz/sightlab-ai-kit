@@ -1,0 +1,13 @@
+{
+  "files.exclude": {
+    "**/__pycache__": true,
+    ".autopilot": true
+  },
+  "python.analysis.extraPaths": [
+    "C:\\Program Files\\WorldViz\\Vizard8\\bin\\lib\\site-packages",
+    "C:\\Program Files\\WorldViz\\Vizard8\\python"
+  ],
+  "files.eol": "\n",
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true
+}

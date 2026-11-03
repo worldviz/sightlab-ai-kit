@@ -1,0 +1,2056 @@
+{
+ "generated": "2026-10-31T21:03Z",
+ "root": "sightlab_resources",
+ "folders": {
+  "(root)": [
+   "Desktop_Controls.jpg",
+   "desktop_controls1.jpg",
+   "desktop_controls2.jpg",
+   "sightlab_controls.jpg",
+   "sightlab_controls_oculus.jpg",
+   "sightlab_controls_presenter.jpg"
+  ],
+  "audio": [
+   "242739__marlonhj__engine-1.wav",
+   "beep.wav",
+   "block.wav",
+   "instructions.mp3",
+   "switch.wav",
+   "tada.wav"
+  ],
+  "avatar": [
+   "Complete Character/000_invisible.tga",
+   "Complete Character/Anim/CC2_mHigh_m_ascendstairs_inplace.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_dancing_neutral_A0.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_descendstairs_inplace.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_gestic_listen_left_01.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_gestic_listen_left_01b.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_gestic_listen_neutral_01.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_gestic_listen_neutral_02.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_gestic_listen_neutral_03.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_gestic_listen_right_01.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_gestic_talk_neutral_01.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_gestic_talk_neutral_01_A0.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_gestic_talk_neutral_02.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_gestic_talk_neutral_03.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_gestic_talk_neutral_04.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_gestic_talk_neutral_05.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_idle_breathe_01.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_idle_breathe_02.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_idle_breathe_03.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_idle_look_around_01.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_idle_look_around_02.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_idle_look_around_03.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_idle_neutral_01.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_idle_neutral_01_A0.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_idle_neutral_02.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_idle_neutral_03.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_idle_neutral_04.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_idle_neutral_05.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_idle_neutral_06.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_idle_neutral_07.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_idle_neutral_08.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_idle_neutral_09.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_idle_neutral_10.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_run_neutral_01_inplace.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_run_neutral_01_inplace_A0.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_run_neutral_02_inplace.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_run_start_inplace.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_run_stop_inplace.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_run_to_walk_inplace.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_sit_chair_breathe_01.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_sit_chair_gestic_thoughtful.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_sit_chair_idle_look_around.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_sit_chair_idle_neutral_01.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_sit_chair_idle_neutral_01_A0.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_sit_chair_idle_neutral_02.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_sit_down_chair_01.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_sit_down_chair_02.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_sit_down_chair_left.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_sit_down_chair_right.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_sit_down_table_left.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_sit_down_table_right.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_sit_stand_up_chair_01.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_sit_stand_up_chair_left.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_sit_stand_up_chair_right.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_sit_stand_up_table_left.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_sit_stand_up_table_right.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_sit_table_breathe_01.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_sit_table_gestic_thoughtful.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_sit_table_idle_look_around.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_sit_table_idle_neutral_01.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_sit_table_idle_neutral_01_A0.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_sit_table_idle_neutral_02.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_strafe_l_inplace.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_strafe_r_inplace.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_turn_left_120.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_turn_left_180.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_turn_left_60.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_turn_left_90.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_turn_right_120.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_turn_right_180.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_turn_right_60.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_turn_right_90.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_walk_neutral_01_inplace.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_walk_neutral_01_inplace_A0.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_walk_neutral_02_inplace.CAF",
+   "Complete Character/Anim/CC2_mHigh_m_walk_neutral_03_inplace.CAF",
+   "Complete Character/Anim/motive.caf",
+   "Complete Character/Anim/motive10.caf",
+   "Complete Character/Anim/motive11.caf",
+   "Complete Character/Anim/motive2.caf",
+   "Complete Character/Anim/motive3.caf",
+   "Complete Character/Anim/motive5.caf",
+   "Complete Character/Anim/motive6.caf",
+   "Complete Character/Anim/motive7.caf",
+   "Complete Character/Anim/motive8.caf",
+   "Complete Character/Anim/motive9.caf",
+   "Complete Character/Anim/motive_export.caf",
+   "Complete Character/Anim/motive_new2.caf",
+   "Complete Character/Anim/motive_test.caf",
+   "Complete Character/CC2_m001_hipoly_A1.cfg",
+   "Complete Character/m001_body_color.tga",
+   "Complete Character/m001_head_color.tga",
+   "Complete Character/Material/CC2_m001_hipoly_1.CRF",
+   "Complete Character/Material/CC2_m001_hipoly_2.CRF",
+   "Complete Character/Mesh/CC2_m001_hipoly.CMF",
+   "Complete Character/Skel/CC2_mHigh_Skeleton.CSF",
+   "full_body/ReadyPlayerMe.osgb",
+   "full_body/ReadyPlayerMe_Female.osgb",
+   "full_body/ReadyPlayerMe_Male2.osgb",
+   "full_body/ReadyPlayerMe_UpperBody.osgb",
+   "full_body/Reallusion_ActorCore_Male.osgb",
+   "full_body/RocketBox_Female1.osgb",
+   "full_body/RocketBox_Male1.osgb",
+   "full_body/Sado_Avaturn.osgb",
+   "full_body/vcc_female.cfg",
+   "full_body/vcc_male.cfg",
+   "full_body/vcc_male2.cfg",
+   "full_body/Woman_Avaturn.osgb",
+   "full_body/x_MixamoBot.osgb",
+   "full_body/x_MixamoBot_shiny.osgb",
+   "full_body/XR_Avatar_No_Head.osgb",
+   "full_body/XR_Hands_Only.osgb",
+   "TrackedAvatars/RocketBox_Female1.osgb",
+   "TrackedAvatars/RocketBox_Female2.osgb",
+   "TrackedAvatars/RocketBox_Male1.osgb",
+   "TrackedAvatars/RocketBox_Male2.osgb",
+   "TrackedAvatars/RocketBox_Male3.osgb",
+   "TrackedAvatars/WV_Mark.osgb",
+   "TrackedAvatars/z_ReadyPlayerMe_Female.osgb"
+  ],
+  "environments": [
+   "Business_Office.OSGB",
+   "complete_scene.osgb",
+   "dojo.osgb",
+   "dojo2.osgb",
+   "dojo2_empty.osgb",
+   "empty.osgb",
+   "gallery_paintings.osgb",
+   "homeOffice.osgb",
+   "Interior_Empty.osgb",
+   "jeepmodel.osgb",
+   "lab_empty.osgb",
+   "Lecture.osgb",
+   "Lecture_Hall_Dark_Template.osgb",
+   "maze.osgb",
+   "medical_examination_room.osgb",
+   "modern_office_skyline.osgb",
+   "Piazza_empty.osgb",
+   "pit2.osgb",
+   "pit_raised.osgb",
+   "RockyCavern.osgb",
+   "RockyCavern_Night.osgb",
+   "ShowRoom_empty.osgb",
+   "ShowRoom_standin_avatar.osgb",
+   "Stimulus.osgb",
+   "street_day.osgb",
+   "van_gogh_room.osgb",
+   "waiting_room.osgb",
+   "whiteroom.osgb",
+   "whiteroom_clear.osgb"
+  ],
+  "example_resources": [
+   "audio/body_fall_thud.wav",
+   "audio/pit_fall.wav",
+   "audio/pit_running.wav",
+   "audio/pit_stop.wav",
+   "audio/pit_thud.wav",
+   "audio/platform_running.wav",
+   "audio/platform_stop.wav",
+   "complete_scene_lights_off.osgb",
+   "complete_scene_walls.osgb",
+   "dojo_bullseye.osgb",
+   "dojo_clear.osgb",
+   "empty_xr_cube.osgb",
+   "full_black.osgb",
+   "lab_collision.osgb",
+   "pit2.osgb",
+   "pit_drop.osgb",
+   "pit_raised.osgb",
+   "platform.osgb",
+   "street.osgb",
+   "XR_Avatar.osgb",
+   "XR_Real_World_Fixations.osgb",
+   "XR_virtual_screen.osgb"
+  ],
+  "icons": [
+   "__init__.py",
+   "add_icon.png",
+   "asset_browser_E4H_2.ico",
+   "attention_color_ramp.png",
+   "builder-icon.ico",
+   "builder.ico",
+   "client_6Gn_icon.ico",
+   "client_purple_zIA_icon.ico",
+   "coaster-client.ico",
+   "coaster-server.ico",
+   "delete.png",
+   "documentation.png",
+   "down_chevron.png",
+   "folder_icon.png",
+   "green_status.png",
+   "help_icon.png",
+   "inspector.ico",
+   "inspector2_1LR_3.ico",
+   "left_chevron.png",
+   "new/sightlab_new.ico",
+   "new/SR_Icon.png",
+   "plus_icon.png",
+   "red_status.png",
+   "refresh_color.png",
+   "refresh_icon.png",
+   "revert_icon.png",
+   "right_chevron.png",
+   "SR_Client_icon.ico",
+   "SR_Icon.png",
+   "sr_icon_I6G_icon.ico",
+   "SR_Replay_icon.png",
+   "sr_replay_icon_JPC_icon.ico",
+   "SR_Server_icon.ico",
+   "subtract_icon.png",
+   "up_chevron.png",
+   "zoom_in.png",
+   "zoom_out.png"
+  ],
+  "media": [
+   "01_Warehouse.avi",
+   "02_parking_lot.jpg",
+   "03_DRI.jpg",
+   "04_warehouse.jpg",
+   "football_pass.avi",
+   "realistic_new_york_skyline_daytime.jpg",
+   "skybox_oil.jpg",
+   "skybox_room1.jpg",
+   "skybox_room2.jpg"
+  ],
+  "media_2D": [
+   "black.jpg",
+   "droneShots.mp4",
+   "movie_cartoon-bird.wmv",
+   "SBS.mp4"
+  ],
+  "objects": [
+   "3D_Video_Screen.osgb",
+   "Baseball.osgb",
+   "basketball.osgb",
+   "beer.osgb",
+   "box.osgb",
+   "button_target.osgb",
+   "car.osgb",
+   "chair.osgb",
+   "chick.osgb",
+   "cigs.osgb",
+   "Client_Start_Group.osgb",
+   "computer_monitor.osgb",
+   "crate.osgb",
+   "Creature.osgb",
+   "direction_arrow.osgb",
+   "Directional_Day_Light.osgb",
+   "empty.osgb",
+   "empty_collideBox.osgb",
+   "empty_XR.osgb",
+   "fire.osgb",
+   "flashlight.osgb",
+   "glaucoma_artifact.osgb",
+   "ground.osgb",
+   "guitar.osgb",
+   "jeepmodel.osgb",
+   "LargeScreen.osgb",
+   "left_headlight.osgb",
+   "LeftQuestPro_controls.osgb",
+   "leftShoe.osgb",
+   "light_point.osgb",
+   "meditation_ball.osgb",
+   "mirror.osgb",
+   "pigeon.osgb",
+   "Plant.osgb",
+   "proximity_area.osgb",
+   "pug_AI_Generated.osgb",
+   "pug_AI_Generated2.osgb",
+   "ramp.osgb",
+   "RegionOfInterest.osgb",
+   "RegionOfInterest2.osgb",
+   "RegionOfInterestSphere.osgb",
+   "reset_text.osgb",
+   "right_headlight.osgb",
+   "RightQuestPro_controls.osgb",
+   "rightShoe.osgb",
+   "RulerTripod.osgb",
+   "salad_luma_labs.osgb",
+   "sceneController.osgb",
+   "screen.osgb",
+   "screen2.osgb",
+   "screen_dome.osgb",
+   "screen_hmd.osgb",
+   "SIGHTLAB_START_POINT.osgb",
+   "SIGHTLAB_START_POINT_CLIENT.osgb",
+   "SimpleBlanket.osgb",
+   "sky_day.osgb",
+   "sky_night.osgb",
+   "soccerball.osgb",
+   "standInAvatar.osgb",
+   "startPoint.osgb",
+   "stunt_ramp2.osgb",
+   "Table.osgb",
+   "tablet.osgb",
+   "targetObject2.osgb",
+   "toy_spaceship.osgb",
+   "TV_Object.osgb",
+   "TV_Stand.osgb",
+   "volleyball.osgb",
+   "VR_Menu.osgb",
+   "XR_Ground.osgb"
+  ],
+  "scene_objects": [
+   "RegionOfInterest.osgb",
+   "SIGHTLAB_START_POINT.osgb",
+   "SIGHTLAB_START_POINT_CLIENT.osgb",
+   "standInAvatar.osgb"
+  ]
+ },
+ "all": [
+  "audio/242739__marlonhj__engine-1.wav",
+  "audio/beep.wav",
+  "audio/block.wav",
+  "audio/instructions.mp3",
+  "audio/switch.wav",
+  "audio/tada.wav",
+  "avatar/Complete Character/000_invisible.tga",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_ascendstairs_inplace.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_dancing_neutral_A0.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_descendstairs_inplace.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_gestic_listen_left_01.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_gestic_listen_left_01b.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_gestic_listen_neutral_01.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_gestic_listen_neutral_02.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_gestic_listen_neutral_03.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_gestic_listen_right_01.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_gestic_talk_neutral_01.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_gestic_talk_neutral_01_A0.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_gestic_talk_neutral_02.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_gestic_talk_neutral_03.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_gestic_talk_neutral_04.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_gestic_talk_neutral_05.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_idle_breathe_01.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_idle_breathe_02.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_idle_breathe_03.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_idle_look_around_01.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_idle_look_around_02.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_idle_look_around_03.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_idle_neutral_01.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_idle_neutral_01_A0.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_idle_neutral_02.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_idle_neutral_03.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_idle_neutral_04.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_idle_neutral_05.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_idle_neutral_06.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_idle_neutral_07.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_idle_neutral_08.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_idle_neutral_09.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_idle_neutral_10.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_run_neutral_01_inplace.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_run_neutral_01_inplace_A0.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_run_neutral_02_inplace.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_run_start_inplace.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_run_stop_inplace.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_run_to_walk_inplace.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_sit_chair_breathe_01.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_sit_chair_gestic_thoughtful.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_sit_chair_idle_look_around.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_sit_chair_idle_neutral_01.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_sit_chair_idle_neutral_01_A0.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_sit_chair_idle_neutral_02.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_sit_down_chair_01.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_sit_down_chair_02.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_sit_down_chair_left.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_sit_down_chair_right.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_sit_down_table_left.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_sit_down_table_right.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_sit_stand_up_chair_01.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_sit_stand_up_chair_left.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_sit_stand_up_chair_right.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_sit_stand_up_table_left.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_sit_stand_up_table_right.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_sit_table_breathe_01.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_sit_table_gestic_thoughtful.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_sit_table_idle_look_around.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_sit_table_idle_neutral_01.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_sit_table_idle_neutral_01_A0.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_sit_table_idle_neutral_02.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_strafe_l_inplace.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_strafe_r_inplace.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_turn_left_120.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_turn_left_180.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_turn_left_60.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_turn_left_90.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_turn_right_120.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_turn_right_180.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_turn_right_60.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_turn_right_90.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_walk_neutral_01_inplace.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_walk_neutral_01_inplace_A0.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_walk_neutral_02_inplace.CAF",
+  "avatar/Complete Character/Anim/CC2_mHigh_m_walk_neutral_03_inplace.CAF",
+  "avatar/Complete Character/Anim/motive.caf",
+  "avatar/Complete Character/Anim/motive10.caf",
+  "avatar/Complete Character/Anim/motive11.caf",
+  "avatar/Complete Character/Anim/motive2.caf",
+  "avatar/Complete Character/Anim/motive3.caf",
+  "avatar/Complete Character/Anim/motive5.caf",
+  "avatar/Complete Character/Anim/motive6.caf",
+  "avatar/Complete Character/Anim/motive7.caf",
+  "avatar/Complete Character/Anim/motive8.caf",
+  "avatar/Complete Character/Anim/motive9.caf",
+  "avatar/Complete Character/Anim/motive_export.caf",
+  "avatar/Complete Character/Anim/motive_new2.caf",
+  "avatar/Complete Character/Anim/motive_test.caf",
+  "avatar/Complete Character/CC2_m001_hipoly_A1.cfg",
+  "avatar/Complete Character/m001_body_color.tga",
+  "avatar/Complete Character/m001_head_color.tga",
+  "avatar/Complete Character/Material/CC2_m001_hipoly_1.CRF",
+  "avatar/Complete Character/Material/CC2_m001_hipoly_2.CRF",
+  "avatar/Complete Character/Mesh/CC2_m001_hipoly.CMF",
+  "avatar/Complete Character/Skel/CC2_mHigh_Skeleton.CSF",
+  "avatar/full_body/ReadyPlayerMe.osgb",
+  "avatar/full_body/ReadyPlayerMe_Female.osgb",
+  "avatar/full_body/ReadyPlayerMe_Male2.osgb",
+  "avatar/full_body/ReadyPlayerMe_UpperBody.osgb",
+  "avatar/full_body/Reallusion_ActorCore_Male.osgb",
+  "avatar/full_body/RocketBox_Female1.osgb",
+  "avatar/full_body/RocketBox_Male1.osgb",
+  "avatar/full_body/Sado_Avaturn.osgb",
+  "avatar/full_body/vcc_female.cfg",
+  "avatar/full_body/vcc_male.cfg",
+  "avatar/full_body/vcc_male2.cfg",
+  "avatar/full_body/Woman_Avaturn.osgb",
+  "avatar/full_body/x_MixamoBot.osgb",
+  "avatar/full_body/x_MixamoBot_shiny.osgb",
+  "avatar/full_body/XR_Avatar_No_Head.osgb",
+  "avatar/full_body/XR_Hands_Only.osgb",
+  "avatar/TrackedAvatars/RocketBox_Female1.osgb",
+  "avatar/TrackedAvatars/RocketBox_Female2.osgb",
+  "avatar/TrackedAvatars/RocketBox_Male1.osgb",
+  "avatar/TrackedAvatars/RocketBox_Male2.osgb",
+  "avatar/TrackedAvatars/RocketBox_Male3.osgb",
+  "avatar/TrackedAvatars/WV_Mark.osgb",
+  "avatar/TrackedAvatars/z_ReadyPlayerMe_Female.osgb",
+  "Desktop_Controls.jpg",
+  "desktop_controls1.jpg",
+  "desktop_controls2.jpg",
+  "environments/Business_Office.OSGB",
+  "environments/complete_scene.osgb",
+  "environments/dojo.osgb",
+  "environments/dojo2.osgb",
+  "environments/dojo2_empty.osgb",
+  "environments/empty.osgb",
+  "environments/gallery_paintings.osgb",
+  "environments/homeOffice.osgb",
+  "environments/Interior_Empty.osgb",
+  "environments/jeepmodel.osgb",
+  "environments/lab_empty.osgb",
+  "environments/Lecture.osgb",
+  "environments/Lecture_Hall_Dark_Template.osgb",
+  "environments/maze.osgb",
+  "environments/medical_examination_room.osgb",
+  "environments/modern_office_skyline.osgb",
+  "environments/Piazza_empty.osgb",
+  "environments/pit2.osgb",
+  "environments/pit_raised.osgb",
+  "environments/RockyCavern.osgb",
+  "environments/RockyCavern_Night.osgb",
+  "environments/ShowRoom_empty.osgb",
+  "environments/ShowRoom_standin_avatar.osgb",
+  "environments/Stimulus.osgb",
+  "environments/street_day.osgb",
+  "environments/van_gogh_room.osgb",
+  "environments/waiting_room.osgb",
+  "environments/whiteroom.osgb",
+  "environments/whiteroom_clear.osgb",
+  "example_resources/audio/body_fall_thud.wav",
+  "example_resources/audio/pit_fall.wav",
+  "example_resources/audio/pit_running.wav",
+  "example_resources/audio/pit_stop.wav",
+  "example_resources/audio/pit_thud.wav",
+  "example_resources/audio/platform_running.wav",
+  "example_resources/audio/platform_stop.wav",
+  "example_resources/complete_scene_lights_off.osgb",
+  "example_resources/complete_scene_walls.osgb",
+  "example_resources/dojo_bullseye.osgb",
+  "example_resources/dojo_clear.osgb",
+  "example_resources/empty_xr_cube.osgb",
+  "example_resources/full_black.osgb",
+  "example_resources/lab_collision.osgb",
+  "example_resources/pit2.osgb",
+  "example_resources/pit_drop.osgb",
+  "example_resources/pit_raised.osgb",
+  "example_resources/platform.osgb",
+  "example_resources/street.osgb",
+  "example_resources/XR_Avatar.osgb",
+  "example_resources/XR_Real_World_Fixations.osgb",
+  "example_resources/XR_virtual_screen.osgb",
+  "icons/__init__.py",
+  "icons/add_icon.png",
+  "icons/asset_browser_E4H_2.ico",
+  "icons/attention_color_ramp.png",
+  "icons/builder-icon.ico",
+  "icons/builder.ico",
+  "icons/client_6Gn_icon.ico",
+  "icons/client_purple_zIA_icon.ico",
+  "icons/coaster-client.ico",
+  "icons/coaster-server.ico",
+  "icons/delete.png",
+  "icons/documentation.png",
+  "icons/down_chevron.png",
+  "icons/folder_icon.png",
+  "icons/green_status.png",
+  "icons/help_icon.png",
+  "icons/inspector.ico",
+  "icons/inspector2_1LR_3.ico",
+  "icons/left_chevron.png",
+  "icons/new/sightlab_new.ico",
+  "icons/new/SR_Icon.png",
+  "icons/plus_icon.png",
+  "icons/red_status.png",
+  "icons/refresh_color.png",
+  "icons/refresh_icon.png",
+  "icons/revert_icon.png",
+  "icons/right_chevron.png",
+  "icons/SR_Client_icon.ico",
+  "icons/SR_Icon.png",
+  "icons/sr_icon_I6G_icon.ico",
+  "icons/SR_Replay_icon.png",
+  "icons/sr_replay_icon_JPC_icon.ico",
+  "icons/SR_Server_icon.ico",
+  "icons/subtract_icon.png",
+  "icons/up_chevron.png",
+  "icons/zoom_in.png",
+  "icons/zoom_out.png",
+  "media/01_Warehouse.avi",
+  "media/02_parking_lot.jpg",
+  "media/03_DRI.jpg",
+  "media/04_warehouse.jpg",
+  "media/football_pass.avi",
+  "media/realistic_new_york_skyline_daytime.jpg",
+  "media/skybox_oil.jpg",
+  "media/skybox_room1.jpg",
+  "media/skybox_room2.jpg",
+  "media_2D/black.jpg",
+  "media_2D/droneShots.mp4",
+  "media_2D/movie_cartoon-bird.wmv",
+  "media_2D/SBS.mp4",
+  "objects/3D_Video_Screen.osgb",
+  "objects/Baseball.osgb",
+  "objects/basketball.osgb",
+  "objects/beer.osgb",
+  "objects/box.osgb",
+  "objects/button_target.osgb",
+  "objects/car.osgb",
+  "objects/chair.osgb",
+  "objects/chick.osgb",
+  "objects/cigs.osgb",
+  "objects/Client_Start_Group.osgb",
+  "objects/computer_monitor.osgb",
+  "objects/crate.osgb",
+  "objects/Creature.osgb",
+  "objects/direction_arrow.osgb",
+  "objects/Directional_Day_Light.osgb",
+  "objects/empty.osgb",
+  "objects/empty_collideBox.osgb",
+  "objects/empty_XR.osgb",
+  "objects/fire.osgb",
+  "objects/flashlight.osgb",
+  "objects/glaucoma_artifact.osgb",
+  "objects/ground.osgb",
+  "objects/guitar.osgb",
+  "objects/jeepmodel.osgb",
+  "objects/LargeScreen.osgb",
+  "objects/left_headlight.osgb",
+  "objects/LeftQuestPro_controls.osgb",
+  "objects/leftShoe.osgb",
+  "objects/light_point.osgb",
+  "objects/meditation_ball.osgb",
+  "objects/mirror.osgb",
+  "objects/pigeon.osgb",
+  "objects/Plant.osgb",
+  "objects/proximity_area.osgb",
+  "objects/pug_AI_Generated.osgb",
+  "objects/pug_AI_Generated2.osgb",
+  "objects/ramp.osgb",
+  "objects/RegionOfInterest.osgb",
+  "objects/RegionOfInterest2.osgb",
+  "objects/RegionOfInterestSphere.osgb",
+  "objects/reset_text.osgb",
+  "objects/right_headlight.osgb",
+  "objects/RightQuestPro_controls.osgb",
+  "objects/rightShoe.osgb",
+  "objects/RulerTripod.osgb",
+  "objects/salad_luma_labs.osgb",
+  "objects/sceneController.osgb",
+  "objects/screen.osgb",
+  "objects/screen2.osgb",
+  "objects/screen_dome.osgb",
+  "objects/screen_hmd.osgb",
+  "objects/SIGHTLAB_START_POINT.osgb",
+  "objects/SIGHTLAB_START_POINT_CLIENT.osgb",
+  "objects/SimpleBlanket.osgb",
+  "objects/sky_day.osgb",
+  "objects/sky_night.osgb",
+  "objects/soccerball.osgb",
+  "objects/standInAvatar.osgb",
+  "objects/startPoint.osgb",
+  "objects/stunt_ramp2.osgb",
+  "objects/Table.osgb",
+  "objects/tablet.osgb",
+  "objects/targetObject2.osgb",
+  "objects/toy_spaceship.osgb",
+  "objects/TV_Object.osgb",
+  "objects/TV_Stand.osgb",
+  "objects/volleyball.osgb",
+  "objects/VR_Menu.osgb",
+  "objects/XR_Ground.osgb",
+  "scene_objects/RegionOfInterest.osgb",
+  "scene_objects/SIGHTLAB_START_POINT.osgb",
+  "scene_objects/SIGHTLAB_START_POINT_CLIENT.osgb",
+  "scene_objects/standInAvatar.osgb",
+  "sightlab_controls.jpg",
+  "sightlab_controls_oculus.jpg",
+  "sightlab_controls_presenter.jpg"
+ ],
+ "sizes": {
+  "objects/3D_Video_Screen.osgb": {
+   "size": [
+    1.293,
+    0.73,
+    0.132
+   ],
+   "center": [
+    0.0,
+    1.377,
+    0.626
+   ],
+   "bottom": 1.012,
+   "class": "large"
+  },
+  "objects/Baseball.osgb": {
+   "size": [
+    0.208,
+    0.204,
+    0.205
+   ],
+   "center": [
+    0.014,
+    0.094,
+    0.045
+   ],
+   "bottom": -0.008,
+   "class": "hand-held"
+  },
+  "objects/Client_Start_Group.osgb": {
+   "size": [
+    3.311,
+    1.681,
+    2.232
+   ],
+   "center": [
+    -0.096,
+    0.847,
+    -4.684
+   ],
+   "bottom": 0.006,
+   "class": "large"
+  },
+  "objects/Creature.osgb": {
+   "size": [
+    0.801,
+    0.882,
+    0.807
+   ],
+   "center": [
+    0.023,
+    0.4,
+    0.048
+   ],
+   "bottom": -0.041,
+   "class": "large"
+  },
+  "objects/Directional_Day_Light.osgb": {
+   "size": [
+    -1.0,
+    -1.0,
+    -1.0
+   ],
+   "center": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bottom": 0.5,
+   "class": "hand-held"
+  },
+  "objects/LargeScreen.osgb": {
+   "size": [
+    9.577,
+    5.405,
+    0.354
+   ],
+   "center": [
+    0.241,
+    2.961,
+    1.608
+   ],
+   "bottom": 0.258,
+   "class": "large"
+  },
+  "objects/LeftQuestPro_controls.osgb": {
+   "size": [
+    0.052,
+    0.044,
+    0.073
+   ],
+   "center": [
+    0.013,
+    -0.008,
+    -0.006
+   ],
+   "bottom": -0.03,
+   "class": "hand-held"
+  },
+  "objects/Plant.osgb": {
+   "size": [
+    0.571,
+    0.806,
+    0.635
+   ],
+   "center": [
+    1.758,
+    1.256,
+    0.869
+   ],
+   "bottom": 0.853,
+   "class": "large"
+  },
+  "objects/RegionOfInterest.osgb": {
+   "size": [
+    0.65,
+    0.65,
+    0.65
+   ],
+   "center": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bottom": -0.325,
+   "class": "table-top"
+  },
+  "objects/RegionOfInterest2.osgb": {
+   "size": [
+    0.65,
+    0.65,
+    0.65
+   ],
+   "center": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bottom": -0.325,
+   "class": "table-top"
+  },
+  "objects/RegionOfInterestSphere.osgb": {
+   "size": [
+    1.26,
+    1.258,
+    1.267
+   ],
+   "center": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bottom": -0.629,
+   "class": "large"
+  },
+  "objects/RightQuestPro_controls.osgb": {
+   "size": [
+    0.045,
+    0.046,
+    0.07
+   ],
+   "center": [
+    0.0,
+    -0.009,
+    -0.005
+   ],
+   "bottom": -0.032,
+   "class": "hand-held"
+  },
+  "objects/RulerTripod.osgb": {
+   "size": [
+    0.284,
+    2.1,
+    0.248
+   ],
+   "center": [
+    -0.0,
+    1.05,
+    0.039
+   ],
+   "bottom": 0.0,
+   "class": "large"
+  },
+  "objects/SIGHTLAB_START_POINT.osgb": {
+   "size": [
+    0.681,
+    1.681,
+    0.616
+   ],
+   "center": [
+    0.139,
+    0.847,
+    0.067
+   ],
+   "bottom": 0.006,
+   "class": "large"
+  },
+  "objects/SIGHTLAB_START_POINT_CLIENT.osgb": {
+   "size": [
+    0.681,
+    1.681,
+    0.616
+   ],
+   "center": [
+    0.139,
+    0.847,
+    0.067
+   ],
+   "bottom": 0.006,
+   "class": "large"
+  },
+  "objects/SimpleBlanket.osgb": {
+   "size": [
+    2.843,
+    0.026,
+    2.172
+   ],
+   "center": [
+    0.135,
+    0.02,
+    0.017
+   ],
+   "bottom": 0.007,
+   "class": "large"
+  },
+  "objects/TV_Object.osgb": {
+   "size": [
+    1.456,
+    0.881,
+    0.089
+   ],
+   "center": [
+    0.087,
+    0.329,
+    -0.017
+   ],
+   "bottom": -0.111,
+   "class": "large"
+  },
+  "objects/TV_Stand.osgb": {
+   "size": [
+    1.459,
+    2.075,
+    0.19
+   ],
+   "center": [
+    -0.062,
+    1.038,
+    -0.038
+   ],
+   "bottom": 0.0,
+   "class": "large"
+  },
+  "objects/Table.osgb": {
+   "size": [
+    1.2,
+    0.575,
+    0.754
+   ],
+   "center": [
+    0.0,
+    0.281,
+    0.882
+   ],
+   "bottom": -0.006,
+   "class": "large"
+  },
+  "objects/VR_Menu.osgb": {
+   "size": [
+    0.604,
+    0.482,
+    0.015
+   ],
+   "center": [
+    0.0,
+    -0.089,
+    -0.005
+   ],
+   "bottom": -0.33,
+   "class": "table-top"
+  },
+  "objects/XR_Ground.osgb": {
+   "size": [
+    26.269,
+    0.344,
+    31.456
+   ],
+   "center": [
+    0.0,
+    -0.312,
+    -0.0
+   ],
+   "bottom": -0.484,
+   "class": "large"
+  },
+  "objects/basketball.osgb": {
+   "size": [
+    0.341,
+    0.275,
+    0.321
+   ],
+   "center": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bottom": -0.138,
+   "class": "hand-held"
+  },
+  "objects/beer.osgb": {
+   "size": [
+    0.08,
+    0.298,
+    0.08
+   ],
+   "center": [
+    0.0,
+    0.149,
+    -0.0
+   ],
+   "bottom": 0.0,
+   "class": "hand-held"
+  },
+  "objects/box.osgb": {
+   "size": [
+    0.726,
+    0.568,
+    0.726
+   ],
+   "center": [
+    0.025,
+    0.265,
+    -0.206
+   ],
+   "bottom": -0.019,
+   "class": "table-top"
+  },
+  "objects/button_target.osgb": {
+   "size": [
+    0.101,
+    0.064,
+    0.002
+   ],
+   "center": [
+    -0.008,
+    0.011,
+    0.001
+   ],
+   "bottom": -0.021,
+   "class": "hand-held"
+  },
+  "objects/car.osgb": {
+   "size": [
+    1.859,
+    1.514,
+    5.323
+   ],
+   "center": [
+    -0.012,
+    0.733,
+    -0.221
+   ],
+   "bottom": -0.024,
+   "class": "large"
+  },
+  "objects/chair.osgb": {
+   "size": [
+    0.72,
+    0.966,
+    0.76
+   ],
+   "center": [
+    -0.034,
+    0.483,
+    0.037
+   ],
+   "bottom": 0.0,
+   "class": "large"
+  },
+  "objects/chick.osgb": {
+   "size": [
+    0.542,
+    0.542,
+    0.558
+   ],
+   "center": [
+    0.016,
+    0.261,
+    -0.029
+   ],
+   "bottom": -0.01,
+   "class": "table-top"
+  },
+  "objects/cigs.osgb": {
+   "size": [
+    0.096,
+    0.18,
+    0.096
+   ],
+   "center": [
+    0.0,
+    0.089,
+    0.046
+   ],
+   "bottom": -0.001,
+   "class": "hand-held"
+  },
+  "objects/computer_monitor.osgb": {
+   "size": [
+    0.753,
+    0.571,
+    0.218
+   ],
+   "center": [
+    -0.0,
+    0.286,
+    0.102
+   ],
+   "bottom": 0.001,
+   "class": "table-top"
+  },
+  "objects/crate.osgb": {
+   "size": [
+    0.494,
+    0.494,
+    0.494
+   ],
+   "center": [
+    0.0,
+    0.23,
+    -0.0
+   ],
+   "bottom": -0.017,
+   "class": "table-top"
+  },
+  "objects/direction_arrow.osgb": {
+   "size": [
+    0.164,
+    2.128,
+    1.508
+   ],
+   "center": [
+    0.06,
+    -0.253,
+    -0.084
+   ],
+   "bottom": -1.317,
+   "class": "large"
+  },
+  "objects/empty.osgb": {
+   "size": [
+    -1.0,
+    -1.0,
+    -1.0
+   ],
+   "center": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bottom": 0.5,
+   "class": "hand-held"
+  },
+  "objects/empty_XR.osgb": {
+   "size": [
+    0.65,
+    0.65,
+    0.65
+   ],
+   "center": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bottom": -0.325,
+   "class": "table-top"
+  },
+  "objects/empty_collideBox.osgb": {
+   "size": [
+    11.779,
+    9.81,
+    15.13
+   ],
+   "center": [
+    0.467,
+    0.725,
+    -0.0
+   ],
+   "bottom": -4.18,
+   "class": "large"
+  },
+  "objects/fire.osgb": {
+   "size": [
+    8.0,
+    2.0,
+    0.0
+   ],
+   "center": [
+    3.0,
+    0.0,
+    -0.0
+   ],
+   "bottom": -1.0,
+   "class": "large"
+  },
+  "objects/flashlight.osgb": {
+   "size": [
+    0.073,
+    0.079,
+    0.241
+   ],
+   "center": [
+    -0.0,
+    0.246,
+    0.209
+   ],
+   "bottom": 0.206,
+   "class": "hand-held"
+  },
+  "objects/glaucoma_artifact.osgb": {
+   "size": [
+    0.358,
+    0.307,
+    0.0
+   ],
+   "center": [
+    0.0,
+    -0.032,
+    0.014
+   ],
+   "bottom": -0.185,
+   "class": "table-top"
+  },
+  "objects/ground.osgb": {
+   "size": [
+    50.0,
+    0.0,
+    50.0
+   ],
+   "center": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bottom": 0.0,
+   "class": "large"
+  },
+  "objects/guitar.osgb": {
+   "size": [
+    0.425,
+    1.264,
+    0.191
+   ],
+   "center": [
+    -0.003,
+    0.553,
+    -0.0
+   ],
+   "bottom": -0.079,
+   "class": "large"
+  },
+  "objects/jeepmodel.osgb": {
+   "size": [
+    2.19,
+    2.305,
+    4.378
+   ],
+   "center": [
+    0.462,
+    1.117,
+    0.427
+   ],
+   "bottom": -0.036,
+   "class": "large"
+  },
+  "objects/leftShoe.osgb": {
+   "size": [
+    0.329,
+    0.308,
+    0.332
+   ],
+   "center": [
+    0.051,
+    0.049,
+    -0.058
+   ],
+   "bottom": -0.105,
+   "class": "hand-held"
+  },
+  "objects/left_headlight.osgb": {
+   "size": [
+    0.285,
+    0.309,
+    0.942
+   ],
+   "center": [
+    -0.029,
+    0.631,
+    1.792
+   ],
+   "bottom": 0.477,
+   "class": "large"
+  },
+  "objects/light_point.osgb": {
+   "size": [
+    -1.0,
+    -1.0,
+    -1.0
+   ],
+   "center": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bottom": 0.5,
+   "class": "hand-held"
+  },
+  "objects/meditation_ball.osgb": {
+   "size": [
+    0.629,
+    0.629,
+    0.629
+   ],
+   "center": [
+    0.0,
+    1.479,
+    1.056
+   ],
+   "bottom": 1.165,
+   "class": "table-top"
+  },
+  "objects/mirror.osgb": {
+   "size": [
+    0.815,
+    2.012,
+    0.0
+   ],
+   "center": [
+    0.02,
+    1.269,
+    1.577
+   ],
+   "bottom": 0.263,
+   "class": "large"
+  },
+  "objects/pigeon.osgb": {
+   "size": [
+    0.248,
+    0.32,
+    0.326
+   ],
+   "center": [
+    -0.025,
+    0.139,
+    -0.04
+   ],
+   "bottom": -0.021,
+   "class": "hand-held"
+  },
+  "objects/proximity_area.osgb": {
+   "size": [
+    5.046,
+    0.65,
+    1.06
+   ],
+   "center": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bottom": -0.325,
+   "class": "large"
+  },
+  "objects/pug_AI_Generated.osgb": {
+   "size": [
+    0.282,
+    0.376,
+    0.282
+   ],
+   "center": [
+    0.002,
+    0.128,
+    0.009
+   ],
+   "bottom": -0.06,
+   "class": "table-top"
+  },
+  "objects/pug_AI_Generated2.osgb": {
+   "size": [
+    0.411,
+    0.557,
+    0.616
+   ],
+   "center": [
+    -0.003,
+    0.272,
+    0.01
+   ],
+   "bottom": -0.007,
+   "class": "table-top"
+  },
+  "objects/ramp.osgb": {
+   "size": [
+    2.781,
+    3.139,
+    4.882
+   ],
+   "center": [
+    -0.0,
+    1.571,
+    3.322
+   ],
+   "bottom": 0.002,
+   "class": "large"
+  },
+  "objects/reset_text.osgb": {
+   "size": [
+    3.5,
+    1.167,
+    0.0
+   ],
+   "center": [
+    1.667,
+    0.333,
+    -0.0
+   ],
+   "bottom": -0.251,
+   "class": "large"
+  },
+  "objects/rightShoe.osgb": {
+   "size": [
+    0.331,
+    0.289,
+    0.34
+   ],
+   "center": [
+    -0.042,
+    -0.008,
+    -0.066
+   ],
+   "bottom": -0.152,
+   "class": "hand-held"
+  },
+  "objects/right_headlight.osgb": {
+   "size": [
+    0.285,
+    0.309,
+    0.942
+   ],
+   "center": [
+    0.969,
+    0.631,
+    1.78
+   ],
+   "bottom": 0.477,
+   "class": "large"
+  },
+  "objects/salad_luma_labs.osgb": {
+   "size": [
+    0.797,
+    0.846,
+    0.997
+   ],
+   "center": [
+    0.007,
+    0.008,
+    -0.001
+   ],
+   "bottom": -0.415,
+   "class": "large"
+  },
+  "objects/sceneController.osgb": {
+   "size": [
+    0.234,
+    0.21,
+    0.124
+   ],
+   "center": [
+    -0.027,
+    -0.018,
+    -0.0
+   ],
+   "bottom": -0.123,
+   "class": "hand-held"
+  },
+  "objects/screen.osgb": {
+   "size": [
+    0.89,
+    0.546,
+    0.038
+   ],
+   "center": [
+    0.079,
+    1.18,
+    0.921
+   ],
+   "bottom": 0.907,
+   "class": "large"
+  },
+  "objects/screen2.osgb": {
+   "size": [
+    0.78,
+    0.477,
+    0.028
+   ],
+   "center": [
+    0.0,
+    -0.02,
+    0.014
+   ],
+   "bottom": -0.259,
+   "class": "table-top"
+  },
+  "objects/screen_dome.osgb": {
+   "size": [
+    0.865,
+    0.865,
+    0.341
+   ],
+   "center": [
+    0.0,
+    1.651,
+    0.37
+   ],
+   "bottom": 1.219,
+   "class": "large"
+  },
+  "objects/screen_hmd.osgb": {
+   "size": [
+    1.395,
+    1.107,
+    0.077
+   ],
+   "center": [
+    0.051,
+    1.252,
+    0.941
+   ],
+   "bottom": 0.699,
+   "class": "large"
+  },
+  "objects/sky_day.osgb": {
+   "size": [
+    613.236,
+    310.408,
+    613.236
+   ],
+   "center": [
+    0.0,
+    59.849,
+    0.0
+   ],
+   "bottom": -95.355,
+   "class": "large"
+  },
+  "objects/sky_night.osgb": {
+   "size": [
+    613.236,
+    298.497,
+    613.236
+   ],
+   "center": [
+    0.0,
+    83.003,
+    0.0
+   ],
+   "bottom": -66.246,
+   "class": "large"
+  },
+  "objects/soccerball.osgb": {
+   "size": [
+    0.222,
+    0.222,
+    0.22
+   ],
+   "center": [
+    -0.0,
+    -0.0,
+    -0.0
+   ],
+   "bottom": -0.111,
+   "class": "hand-held"
+  },
+  "objects/standInAvatar.osgb": {
+   "size": [
+    0.681,
+    1.681,
+    0.616
+   ],
+   "center": [
+    0.139,
+    0.919,
+    0.067
+   ],
+   "bottom": 0.079,
+   "class": "large"
+  },
+  "objects/startPoint.osgb": {
+   "size": [
+    0.681,
+    1.681,
+    0.616
+   ],
+   "center": [
+    0.139,
+    0.919,
+    0.067
+   ],
+   "bottom": 0.079,
+   "class": "large"
+  },
+  "objects/stunt_ramp2.osgb": {
+   "size": [
+    71.957,
+    31.32,
+    88.622
+   ],
+   "center": [
+    -32.417,
+    14.767,
+    44.864
+   ],
+   "bottom": -0.893,
+   "class": "large"
+  },
+  "objects/tablet.osgb": {
+   "size": [
+    0.327,
+    0.064,
+    0.173
+   ],
+   "center": [
+    -0.037,
+    0.094,
+    -0.0
+   ],
+   "bottom": 0.062,
+   "class": "hand-held"
+  },
+  "objects/targetObject2.osgb": {
+   "size": [
+    0.42,
+    0.42,
+    0.006
+   ],
+   "center": [
+    0.0,
+    -0.001,
+    -0.003
+   ],
+   "bottom": -0.211,
+   "class": "table-top"
+  },
+  "objects/toy_spaceship.osgb": {
+   "size": [
+    0.38,
+    0.254,
+    0.414
+   ],
+   "center": [
+    -0.005,
+    0.126,
+    0.0
+   ],
+   "bottom": -0.001,
+   "class": "table-top"
+  },
+  "objects/volleyball.osgb": {
+   "size": [
+    0.219,
+    0.22,
+    0.22
+   ],
+   "center": [
+    0.0,
+    0.002,
+    0.0
+   ],
+   "bottom": -0.108,
+   "class": "hand-held"
+  },
+  "scene_objects/RegionOfInterest.osgb": {
+   "size": [
+    0.65,
+    0.65,
+    0.65
+   ],
+   "center": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bottom": -0.325,
+   "class": "table-top"
+  },
+  "scene_objects/SIGHTLAB_START_POINT.osgb": {
+   "size": [
+    0.681,
+    1.681,
+    0.616
+   ],
+   "center": [
+    0.139,
+    0.847,
+    0.067
+   ],
+   "bottom": 0.006,
+   "class": "large"
+  },
+  "scene_objects/SIGHTLAB_START_POINT_CLIENT.osgb": {
+   "size": [
+    0.681,
+    1.681,
+    0.616
+   ],
+   "center": [
+    0.139,
+    0.847,
+    0.067
+   ],
+   "bottom": 0.006,
+   "class": "large"
+  },
+  "scene_objects/standInAvatar.osgb": {
+   "size": [
+    0.681,
+    1.681,
+    0.616
+   ],
+   "center": [
+    0.139,
+    0.919,
+    0.067
+   ],
+   "bottom": 0.079,
+   "class": "large"
+  },
+  "environments/Business_Office.OSGB": {
+   "size": [
+    500.0,
+    500.0,
+    500.0
+   ],
+   "center": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bottom": -250.0
+  },
+  "environments/Interior_Empty.osgb": {
+   "size": [
+    15.407,
+    3.564,
+    15.412
+   ],
+   "center": [
+    -0.208,
+    1.479,
+    1.413
+   ],
+   "bottom": -0.303
+  },
+  "environments/Lecture.osgb": {
+   "size": [
+    16.883,
+    8.065,
+    23.787
+   ],
+   "center": [
+    0.0,
+    2.133,
+    -0.202
+   ],
+   "bottom": -1.899
+  },
+  "environments/Lecture_Hall_Dark_Template.osgb": {
+   "size": [
+    16.883,
+    8.065,
+    23.787
+   ],
+   "center": [
+    0.0,
+    2.133,
+    -0.202
+   ],
+   "bottom": -1.899
+  },
+  "environments/Piazza_empty.osgb": {
+   "size": [
+    613.236,
+    310.408,
+    613.236
+   ],
+   "center": [
+    0.0,
+    59.849,
+    0.0
+   ],
+   "bottom": -95.355
+  },
+  "environments/RockyCavern.osgb": {
+   "size": [
+    613.236,
+    310.408,
+    613.236
+   ],
+   "center": [
+    0.0,
+    59.849,
+    0.0
+   ],
+   "bottom": -95.355
+  },
+  "environments/RockyCavern_Night.osgb": {
+   "size": [
+    50.923,
+    13.239,
+    90.869
+   ],
+   "center": [
+    9.811,
+    6.569,
+    -21.431
+   ],
+   "bottom": -0.051
+  },
+  "environments/ShowRoom_empty.osgb": {
+   "size": [
+    500.0,
+    500.0,
+    500.0
+   ],
+   "center": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bottom": -250.0
+  },
+  "environments/ShowRoom_standin_avatar.osgb": {
+   "size": [
+    500.0,
+    500.0,
+    500.0
+   ],
+   "center": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bottom": -250.0
+  },
+  "environments/Stimulus.osgb": {
+   "size": [
+    8.068,
+    6.187,
+    10.974
+   ],
+   "center": [
+    -1.426,
+    1.706,
+    -1.149
+   ],
+   "bottom": -1.388
+  },
+  "environments/complete_scene.osgb": {
+   "size": [
+    13.253,
+    7.573,
+    13.253
+   ],
+   "center": [
+    0.362,
+    2.256,
+    -0.283
+   ],
+   "bottom": -1.531
+  },
+  "environments/dojo.osgb": {
+   "size": [
+    19.189,
+    9.057,
+    22.863
+   ],
+   "center": [
+    -0.034,
+    4.369,
+    0.027
+   ],
+   "bottom": -0.16
+  },
+  "environments/dojo2.osgb": {
+   "size": [
+    16.273,
+    8.574,
+    17.857
+   ],
+   "center": [
+    -0.099,
+    4.147,
+    -0.106
+   ],
+   "bottom": -0.14
+  },
+  "environments/dojo2_empty.osgb": {
+   "size": [
+    613.236,
+    310.408,
+    613.236
+   ],
+   "center": [
+    0.0,
+    59.849,
+    0.0
+   ],
+   "bottom": -95.355
+  },
+  "environments/empty.osgb": {
+   "size": [
+    -1.0,
+    -1.0,
+    -1.0
+   ],
+   "center": [
+    0.0,
+    0.0,
+    -0.0
+   ],
+   "bottom": 0.5
+  },
+  "environments/gallery_paintings.osgb": {
+   "size": [
+    21.607,
+    7.005,
+    22.208
+   ],
+   "center": [
+    0.001,
+    3.08,
+    2.526
+   ],
+   "bottom": -0.422
+  },
+  "environments/homeOffice.osgb": {
+   "size": [
+    5.084,
+    4.071,
+    6.345
+   ],
+   "center": [
+    0.326,
+    1.972,
+    -0.199
+   ],
+   "bottom": -0.063
+  },
+  "environments/jeepmodel.osgb": {
+   "size": [
+    11.779,
+    9.81,
+    15.13
+   ],
+   "center": [
+    0.467,
+    0.725,
+    -0.0
+   ],
+   "bottom": -4.18
+  },
+  "environments/lab_empty.osgb": {
+   "size": [
+    13.081,
+    7.262,
+    13.005
+   ],
+   "center": [
+    0.076,
+    3.63,
+    0.872
+   ],
+   "bottom": -0.001
+  },
+  "environments/maze.osgb": {
+   "size": [
+    25.023,
+    8.343,
+    25.039
+   ],
+   "center": [
+    -0.001,
+    3.847,
+    -0.02
+   ],
+   "bottom": -0.325
+  },
+  "environments/medical_examination_room.osgb": {
+   "size": [
+    3.988,
+    3.1,
+    3.281
+   ],
+   "center": [
+    -0.83,
+    1.35,
+    0.508
+   ],
+   "bottom": -0.2
+  },
+  "environments/modern_office_skyline.osgb": {
+   "size": [
+    7.651,
+    3.661,
+    9.097
+   ],
+   "center": [
+    -0.117,
+    1.794,
+    -0.583
+   ],
+   "bottom": -0.036
+  },
+  "environments/pit2.osgb": {
+   "size": [
+    25.023,
+    19.352,
+    25.039
+   ],
+   "center": [
+    0.342,
+    1.482,
+    2.294
+   ],
+   "bottom": -8.194
+  },
+  "environments/pit_raised.osgb": {
+   "size": [
+    25.023,
+    19.158,
+    25.039
+   ],
+   "center": [
+    0.342,
+    -6.063,
+    0.862
+   ],
+   "bottom": -15.642
+  },
+  "environments/street_day.osgb": {
+   "size": [
+    613.236,
+    310.408,
+    613.236
+   ],
+   "center": [
+    0.0,
+    59.849,
+    0.0
+   ],
+   "bottom": -95.355
+  },
+  "environments/van_gogh_room.osgb": {
+   "size": [
+    3.536,
+    4.798,
+    6.768
+   ],
+   "center": [
+    0.385,
+    1.438,
+    -0.014
+   ],
+   "bottom": -0.961
+  },
+  "environments/waiting_room.osgb": {
+   "size": [
+    9.754,
+    5.0,
+    10.344
+   ],
+   "center": [
+    0.521,
+    2.5,
+    -1.081
+   ],
+   "bottom": 0.0
+  },
+  "environments/whiteroom.osgb": {
+   "size": [
+    5.0,
+    5.0,
+    6.591
+   ],
+   "center": [
+    -0.0,
+    2.5,
+    0.795
+   ],
+   "bottom": 0.0
+  },
+  "environments/whiteroom_clear.osgb": {
+   "size": [
+    24.665,
+    5.0,
+    6.591
+   ],
+   "center": [
+    0.0,
+    2.5,
+    0.795
+   ],
+   "bottom": 0.0
+  }
+ },
+ "measured": "2026-10-31T21:00Z"
+}

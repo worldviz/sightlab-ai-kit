@@ -1,0 +1,3730 @@
+{
+ "generated": "2026-10-31T06:22Z",
+ "modules": {
+  "eye_tracker_utils": {
+   "classes": {
+    "DataVisualization3D": {
+     "bases": [],
+     "doc": null,
+     "init_params": [],
+     "lineno": 10,
+     "methods": {
+      "readFile": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 19,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "fileName"
+        }
+       ],
+       "signature": "readFile(fileName)"
+      },
+      "remove3DPts": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 31,
+       "params": [],
+       "signature": "remove3DPts()"
+      },
+      "setList": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 16,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "data"
+        }
+       ],
+       "signature": "setList(data)"
+      },
+      "show3DPts": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 36,
+       "params": [],
+       "signature": "show3DPts()"
+      }
+     }
+    },
+    "GazeTime": {
+     "bases": [
+      "viz.EventClass"
+     ],
+     "doc": null,
+     "init_params": [
+      {
+       "default": null,
+       "kind": "positional",
+       "name": "objectDict"
+      },
+      {
+       "default": "0.5",
+       "kind": "positional",
+       "name": "threshold"
+      }
+     ],
+     "lineno": 58,
+     "methods": {
+      "addGazeItems": {
+       "doc": "Args:\n    objectDict {}: pairs of names and node3d objects",
+       "is_generator": false,
+       "lineno": 97,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "objectDict"
+        }
+       ],
+       "signature": "addGazeItems(objectDict)"
+      },
+      "getAvgTimes": {
+       "doc": "get a dictionary with object names and avg time per view\n\nReturns: {}",
+       "is_generator": false,
+       "lineno": 104,
+       "params": [],
+       "signature": "getAvgTimes()"
+      },
+      "getGazeObjectName": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 120,
+       "params": [],
+       "signature": "getGazeObjectName()"
+      },
+      "getThreshold": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 166,
+       "params": [],
+       "signature": "getThreshold()"
+      },
+      "getTotalTimes": {
+       "doc": "get a dictionary with object names and total view times\n\nReturns: {}",
+       "is_generator": false,
+       "lineno": 131,
+       "params": [],
+       "signature": "getTotalTimes()"
+      },
+      "getViews": {
+       "doc": "get a dictionary with object names and number of views\n\nReturns: {}",
+       "is_generator": false,
+       "lineno": 140,
+       "params": [],
+       "signature": "getViews()"
+      },
+      "removeGazeItems": {
+       "doc": "remove items with keys in the names list\n\nArgs:\n    names []",
+       "is_generator": false,
+       "lineno": 148,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "names"
+        }
+       ],
+       "signature": "removeGazeItems(names)"
+      },
+      "setGazeObjects": {
+       "doc": "Args:\n    objectDict {}: pairs of names and node3d objects",
+       "is_generator": false,
+       "lineno": 159,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "objectDict"
+        }
+       ],
+       "signature": "setGazeObjects(objectDict)"
+      },
+      "setThreshold": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 169,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "time"
+        }
+       ],
+       "signature": "setThreshold(time)"
+      },
+      "updateGazeObject": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 172,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "object"
+        }
+       ],
+       "signature": "updateGazeObject(object)"
+      }
+     }
+    }
+   },
+   "constants": [
+    "GAZE_BEGIN_EVENT",
+    "GAZE_TIME_EVENT",
+    "GAZE_END_EVENT"
+   ],
+   "functions": {}
+  },
+  "gaze_events": {
+   "classes": {},
+   "constants": [
+    "UPDATE_GAZE_EVENT",
+    "GAZE_START_EVENT",
+    "GAZE_FIXATION_EVENT",
+    "GAZE_END_EVENT",
+    "SET_GAZE_POINT_EVENT"
+   ],
+   "functions": {
+    "id": {
+     "doc": "Generate unique ID for use over viznet",
+     "is_generator": false,
+     "lineno": 1,
+     "params": [
+      {
+       "default": null,
+       "kind": "positional",
+       "name": "name"
+      }
+     ],
+     "signature": "id(name)"
+    }
+   }
+  },
+  "settings": {
+   "classes": {},
+   "constants": [
+    "LANGUAGE",
+    "WINDOW_SIZE",
+    "WINDOW_FOV",
+    "WINDOW_X_SIZE",
+    "WINDOW_Y_SIZE",
+    "SCALE_FACTOR",
+    "VIZCONNECT_DICT",
+    "DEFAULT_VIZCONNECT_CONFIG_LIST",
+    "FULL_BODY_VIZCONNECT_CONFIG_LIST",
+    "VIZCONNECT_CONFIG_LIST",
+    "VIZCONNECT_CONFIG",
+    "OPENXR_VIZCONNECTS",
+    "CONTINUE_EVENT_KEY",
+    "CONTINUE_ON_LEFT",
+    "COMPRESS_VIDEOS",
+    "VIDEO_FILE_TYPE",
+    "BIT_RATE",
+    "VIDEO_RECORDING_WINDOW_HEIGHT",
+    "VIDEO_RECORDING_WINDOW_WIDTH",
+    "START_TEXT",
+    "BIOPAC_TOGGLE",
+    "DISPERSION_THRESHOLD_VALUE",
+    "DURATION_THRESHOLD_VALUE",
+    "DWELL_THRESHOLD_VALUE",
+    "SERVER_CONNECT_RETRY_INTERVAL",
+    "AUTO_SERVER_FROM_SIGHTLAB_SYNC",
+    "ROUND_VALUES",
+    "FADE_IN_TIME",
+    "FADE_OUT_TIME",
+    "TRIAL_OR_SCENE",
+    "SHIFT_LOCK_TOGGLE",
+    "ADDITIONAL_SETTINGS",
+    "PARTICIPANT_INFO1",
+    "PARTICIPANT_INFO2"
+   ],
+   "functions": {}
+  },
+  "sightlab": {
+   "classes": {
+    "GUI": {
+     "bases": [],
+     "doc": "Graphical User Interface for experiment configuration and management.\n\nProvides an interactive GUI window for configuring experiment parameters including:\n- Participant information\n- Trial settings and conditions\n- Environment and object selection\n- Regions of interest (ROI) definition\n- Media setup for 360\u00b0 videos/images\n- Multi-user server/client configuration\n- Data recording options\n\nHandles loading/saving configurations and provides real-time preview of experimental setups.",
+     "init_params": [
+      {
+       "default": null,
+       "kind": "positional",
+       "name": "guiWindow"
+      },
+      {
+       "default": null,
+       "kind": "positional",
+       "name": "isGUI"
+      },
+      {
+       "default": null,
+       "kind": "positional",
+       "name": "biopacToggle"
+      },
+      {
+       "default": null,
+       "kind": "positional",
+       "name": "gazePointWindow"
+      },
+      {
+       "default": "None",
+       "kind": "positional",
+       "name": "configPath"
+      },
+      {
+       "default": "None",
+       "kind": "positional",
+       "name": "configSelect"
+      },
+      {
+       "default": "None",
+       "kind": "positional",
+       "name": "directory"
+      },
+      {
+       "default": "False",
+       "kind": "positional",
+       "name": "serverMode"
+      },
+      {
+       "default": "False",
+       "kind": "positional",
+       "name": "clientMode"
+      },
+      {
+       "default": "False",
+       "kind": "positional",
+       "name": "demoMode"
+      }
+     ],
+     "lineno": 2869,
+     "methods": {
+      "addSyncPrimaryServer": {
+       "doc": "Offer the SightLab Sync primary PC as this client's multi-user server.\n\nIt is added to the server list, and chosen when no server is chosen yet\n(a client that has never run a session has no recent_config_client.stlb, so\nnone is). The list is saved with the rest of the client settings when a\nsession runs. Off with AUTO_SERVER_FROM_SIGHTLAB_SYNC = False in settings.py.",
+       "is_generator": false,
+       "lineno": 3199,
+       "params": [],
+       "signature": "addSyncPrimaryServer()"
+      },
+      "completeSceneInfo": {
+       "doc": "Finalize and save GUI configuration settings.\n\nCalled when user clicks Continue button. Gathers all settings from GUI controls,\nsaves trial information, and prepares configuration for experiment execution.\nHandles server-specific setup if in server mode.\n\nReturns:\n    None. Updates self.trialSettings with final configuration",
+       "is_generator": false,
+       "lineno": 4225,
+       "params": [],
+       "signature": "completeSceneInfo()"
+      },
+      "disableSceneInfo": {
+       "doc": "Visually disable the scene info GUI panel.\n\nReduces panel opacity and hides all control elements to indicate disabled state.\nUsed during operations where GUI interaction should be prevented.\n\nReturns:\n    None. Updates GUI panel visibility",
+       "is_generator": false,
+       "lineno": 4321,
+       "params": [],
+       "signature": "disableSceneInfo()"
+      },
+      "enableSceneInfo": {
+       "doc": "Re-enable the scene info GUI panel.\n\nRestores panel opacity and shows all control elements.\n\nReturns:\n    None. Updates GUI panel visibility",
+       "is_generator": false,
+       "lineno": 4336,
+       "params": [],
+       "signature": "enableSceneInfo()"
+      },
+      "findFiles": {
+       "doc": "Search directory for files matching extension pattern.\n\nArgs:\n    directory (str): Directory path to search\n    ext (str, optional): File extension filter (e.g., \".json\"). Default \"\" (all files)\n    recursive (bool, optional): Whether to search subdirectories. Default False\n    full_path (bool, optional): If True, treats directory as absolute path. Default False\n    \nReturns:\n    list: List of matching file paths, empty list if directory not found",
+       "is_generator": false,
+       "lineno": 7071,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "directory"
+        },
+        {
+         "default": "''",
+         "kind": "positional",
+         "name": "ext"
+        },
+        {
+         "default": "False",
+         "kind": "positional",
+         "name": "recursive"
+        },
+        {
+         "default": "False",
+         "kind": "positional",
+         "name": "full_path"
+        }
+       ],
+       "signature": "findFiles(directory, ext='', recursive=False, full_path=False)"
+      },
+      "findNodes": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 6756,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "environment"
+        },
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "reldirectory"
+        }
+       ],
+       "signature": "findNodes(environment, reldirectory)"
+      },
+      "generatePages": {
+       "doc": "Split GUI element list into paginated pages.\n\nWhen the number of GUI elements (e.g., trials, objects) exceeds the page limit,\ndistributes them across multiple pages for better organization and performance.\n\nArgs:\n    guiList (list): List of GUI elements to paginate\n    pageLimit (int, optional): Maximum elements per page. Default 25\n    \nReturns:\n    dict: Dictionary mapping page numbers to element sublists",
+       "is_generator": false,
+       "lineno": 4413,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "guiList"
+        },
+        {
+         "default": "25",
+         "kind": "positional",
+         "name": "pageLimit"
+        }
+       ],
+       "signature": "generatePages(guiList, pageLimit=25)"
+      },
+      "generateResourceLists": {
+       "doc": "Scan resource directories and build file lists for GUI dropdowns.\n\nPopulates lists of available resources:\n- Avatar heads (for multi-user visualization)\n- Avatar hands (for hand tracking visualization)\n- Gaze point objects (for gaze visualization)\n- Saved configuration files\n\nAlso loads the most recent or specified configuration file.\n\nReturns:\n    None. Updates self.avatarHeadFileList, self.avatarHandsFileList,\n    self.gazePointFileList, self.loadConfigFileList",
+       "is_generator": false,
+       "lineno": 3219,
+       "params": [],
+       "signature": "generateResourceLists()"
+      },
+      "launch_tool": {
+       "doc": "Launch an external tool/application.\n\nArgs:\n    exe_path (str): Path to the executable to launch\n    tool_name (str): Name of the tool (for error messages)",
+       "is_generator": false,
+       "lineno": 6534,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "exe_path"
+        },
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "tool_name"
+        }
+       ],
+       "signature": "launch_tool(exe_path, tool_name)"
+      },
+      "loadConfigFile": {
+       "doc": "Load experiment configuration from JSON file.\n\nAttempts to load configuration from:\n1. User-specified config file (if configPath provided)\n2. Most recently used config (stored in recent_config.json)\n3. Default settings (if no config found)\n\nHandles backwards compatibility by adding missing keys from new settings.\nConverts old list-based trial setup format to dictionary format.\n\nReturns:\n    None. Updates self.trialSettings with loaded configuration",
+       "is_generator": false,
+       "lineno": 3094,
+       "params": [],
+       "signature": "loadConfigFile()"
+      },
+      "loadFullBodyAvatar": {
+       "doc": "Load and display the full body avatar in the GUI preview.",
+       "is_generator": false,
+       "lineno": 6495,
+       "params": [
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "e"
+        }
+       ],
+       "signature": "loadFullBodyAvatar(e=None)"
+      },
+      "loadTempAvatar": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 6344,
+       "params": [
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "e"
+        }
+       ],
+       "signature": "loadTempAvatar(e=None)"
+      },
+      "loadTempEnvironment": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 6552,
+       "params": [
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "path"
+        },
+        {
+         "default": "False",
+         "kind": "positional",
+         "name": "default"
+        },
+        {
+         "default": "MODEL_3D",
+         "kind": "positional",
+         "name": "mode"
+        }
+       ],
+       "signature": "loadTempEnvironment(path=None, default=False, mode=MODEL_3D)"
+      },
+      "normalizePath": {
+       "doc": "Format file path for display in GUI with character limit.\n\nNormalizes path and creates a compact display format showing parent/child directories.\nTruncates long paths with ellipsis and pads short paths with spaces for consistent width.\n\nArgs:\n    path (str): File system path to normalize\n    \nReturns:\n    str: Formatted path string (max 30 characters)",
+       "is_generator": false,
+       "lineno": 7028,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "path"
+        }
+       ],
+       "signature": "normalizePath(path)"
+      },
+      "participantInfo": {
+       "doc": "Display participant information input dialog.\n\nCreates a modal dialog for entering participant details before experiment starts.\nCollects participant ID and up to two additional custom info fields.\nInput is validated and stored in self.participantData.\n\nReturns:\n    None. Waits for user input and updates self.participantData dictionary",
+       "is_generator": true,
+       "lineno": 6835,
+       "params": [],
+       "signature": "participantInfo()"
+      },
+      "refreshExperimentSetup": {
+       "doc": "Update experiment setup display with current trial configuration.\n\nRefreshes the summary display showing number of trials, trial labels,\nand other high-level experiment parameters. Updates the GUI panel to\nreflect any changes made to trial settings.\n\nReturns:\n    None. Updates GUI display elements",
+       "is_generator": false,
+       "lineno": 4349,
+       "params": [],
+       "signature": "refreshExperimentSetup()"
+      },
+      "refreshGUI": {
+       "doc": "Update GUI controls to reflect current configuration settings.\n\nSyncs GUI element states (dropdowns, textboxes, checkboxes) with values\nstored in self.trialSettings[DEFAULT]. Called after loading a configuration\nfile or resetting to defaults.\n\nReturns:\n    None. Updates GUI control states",
+       "is_generator": false,
+       "lineno": 6956,
+       "params": [],
+       "signature": "refreshGUI()"
+      },
+      "relativePath": {
+       "doc": "Convert absolute path to relative path from script directory.\n\nArgs:\n    path (str): Absolute file system path\n    \nReturns:\n    str: Path relative to self.scriptDirectory",
+       "is_generator": false,
+       "lineno": 7059,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "path"
+        }
+       ],
+       "signature": "relativePath(path)"
+      },
+      "sceneInfo": {
+       "doc": "Create and display the main experiment configuration GUI panel.\n\nBuilds a comprehensive multi-page interface for configuring all experiment parameters:\n- Participant information input\n- Trial settings (number, randomization, data saving mode)\n- Environment/object/media selection\n- Regions of interest (ROI) definition\n- Start/end conditions\n- Eye tracking parameters\n- Multi-user server/client settings\n- Configuration file management (save/load)\n\nUses nested helper functions for handling UI callbacks and configuration management.\n\nReturns:\n    None. Displays GUI window and sets up event handlers",
+       "is_generator": true,
+       "lineno": 3315,
+       "params": [],
+       "signature": "sceneInfo()"
+      },
+      "setSettings": {
+       "doc": "Collect and save all settings from GUI controls to configuration.\n\nReads current values from all GUI input elements (textboxes, checkboxes,\ndropdowns, etc.) and stores them in self.trialSettings[DEFAULT].\nHandles different settings for server/client modes.\n\nReturns:\n    None. Updates self.trialSettings dictionary",
+       "is_generator": false,
+       "lineno": 6895,
+       "params": [],
+       "signature": "setSettings()"
+      },
+      "trialInfo": {
+       "doc": "Create trial-specific configuration interface.\n\nGenerates a detailed configuration panel for individual trial settings including:\n- Environment/media file selection (drag-and-drop support)\n- Object placement and visibility\n- Regions of interest (ROI) setup\n- Trial-specific start/end conditions\n- Media player controls for 360\u00b0 content\n\nNested helper functions handle file drops, object management, and UI callbacks.\n\nArgs:\n    button (bool, optional): Whether to show modification button. Default True\n    getSettings (bool, optional): If True, saves settings without showing UI. Default None\n    \nReturns:\n    None. Updates self.trialSettings for current trial",
+       "is_generator": false,
+       "lineno": 4451,
+       "params": [
+        {
+         "default": "True",
+         "kind": "positional",
+         "name": "button"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "getSettings"
+        }
+       ],
+       "signature": "trialInfo(button=True, getSettings=None)"
+      },
+      "updateGazeObject": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 6744,
+       "params": [],
+       "signature": "updateGazeObject()"
+      },
+      "windowSizeCheck": {
+       "doc": "Adjust window scaling and field of view based on display size.\n\nAutomatically adapts GUI scaling and camera FOV to accommodate different\nmonitor resolutions and sizes. Updates global scaling factors used throughout\nthe application.\n\nReturns:\n    None. Updates SCALE_FACTOR, WINDOW_SIZE, proportionFactor, WINDOW_FOV globals",
+       "is_generator": false,
+       "lineno": 6697,
+       "params": [],
+       "signature": "windowSizeCheck()"
+      }
+     }
+    },
+    "HUD": {
+     "bases": [],
+     "doc": "Heads-Up Display manager for in-experiment text overlays and visual feedback.\n\nManages on-screen display elements during experiment execution including:\n- Console text (displays current gaze object and status messages)\n- Timer display (trial duration or countdown)\n- Status messages (instructions, trial state)\n- Fade-in/fade-out overlay (smooth transitions)\n- Multi-client console display for server mode\n- BIOPAC integration markers\n\nAll HUD elements are rendered in screen space (ortho mode) and can be\nindividually toggled on/off during runtime.",
+     "init_params": [
+      {
+       "default": null,
+       "kind": "positional",
+       "name": "overlayWindow"
+      },
+      {
+       "default": null,
+       "kind": "positional",
+       "name": "GUI_FLAG"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "FADE_QUAD"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "CONSOLE_TEXT"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "TIMER"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "STATUS"
+      },
+      {
+       "default": "False",
+       "kind": "positional",
+       "name": "BIOPAC"
+      },
+      {
+       "default": "1",
+       "kind": "positional",
+       "name": "clientCount"
+      },
+      {
+       "default": "None",
+       "kind": "positional",
+       "name": "acqServer"
+      },
+      {
+       "default": "False",
+       "kind": "positional",
+       "name": "SHOW_GAZE_PATH"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "CONTINUE_KEY"
+      },
+      {
+       "default": "False",
+       "kind": "positional",
+       "name": "serverMode"
+      },
+      {
+       "default": "False",
+       "kind": "positional",
+       "name": "clientMode"
+      }
+     ],
+     "lineno": 7106,
+     "methods": {
+      "consoleOFF": {
+       "doc": "Disable console text display in HUD (hides gaze fixation info).",
+       "is_generator": false,
+       "lineno": 7820,
+       "params": [],
+       "signature": "consoleOFF()"
+      },
+      "consoleON": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 7813,
+       "params": [],
+       "signature": "consoleON()"
+      },
+      "endTrial": {
+       "doc": "End trial and save collected data.\n\nWrites all session data to files, disables HUD console, sends final\ngaze end events if needed, and sends BIOPAC markers if enabled.\n\nArgs:\n    BIOPAC (bool): Whether to send BIOPAC markers\n    trialNumber (int): Current trial number for logging\n    \nYields:\n    Small delay for BIOPAC marker processing",
+       "is_generator": true,
+       "lineno": 7759,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "BIOPAC"
+        },
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "trialNumber"
+        }
+       ],
+       "signature": "endTrial(BIOPAC, trialNumber)"
+      },
+      "fadeQuadOFF": {
+       "doc": "Hide fade overlay quad.",
+       "is_generator": false,
+       "lineno": 7850,
+       "params": [],
+       "signature": "fadeQuadOFF()"
+      },
+      "fadeQuadON": {
+       "doc": "Show fade overlay quad.",
+       "is_generator": false,
+       "lineno": 7845,
+       "params": [],
+       "signature": "fadeQuadON()"
+      },
+      "getCurrentTime": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 7307,
+       "params": [],
+       "signature": "getCurrentTime()"
+      },
+      "onGazeBegin": {
+       "doc": "Handle gaze begin event callback.\n\nCalled when gaze first intersects with a tracked object. Updates console,\nsets flags for recording, and sends network events in client mode.\n\nArgs:\n    e: Gaze event object containing object name and gaze data",
+       "is_generator": false,
+       "lineno": 7538,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "e"
+        }
+       ],
+       "signature": "onGazeBegin(e)"
+      },
+      "onGazeEnd": {
+       "doc": "Handle gaze end event callback.\n\nCalled when gaze leaves a tracked object. Records dwell duration,\nupdates console, sets flags, and sends network/BIOPAC events.\n\nArgs:\n    e: Gaze event object containing object name, dwell time",
+       "is_generator": false,
+       "lineno": 7571,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "e"
+        }
+       ],
+       "signature": "onGazeEnd(e)"
+      },
+      "onGazeTime": {
+       "doc": "Handle gaze time (dwell threshold) event callback.\n\nCalled when gaze dwells on an object for the threshold duration.\nTriggers fixation onset recording and sends events for analysis.\n\nArgs:\n    e: Gaze time event object containing object name and threshold time",
+       "is_generator": false,
+       "lineno": 7603,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "e"
+        }
+       ],
+       "signature": "onGazeTime(e)"
+      },
+      "onGrab": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 7640,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "e"
+        }
+       ],
+       "signature": "onGrab(e)"
+      },
+      "onRelease": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 7652,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "e"
+        }
+       ],
+       "signature": "onRelease(e)"
+      },
+      "preTrial": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 7671,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "dateTime"
+        },
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "participantData"
+        },
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "isGUI"
+        },
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "trialMode"
+        },
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "trialNumber"
+        },
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "trialLabel"
+        },
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "sceneObjects"
+        },
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "trackingDataLogging"
+        },
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "replayDataLogging"
+        },
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "experimentDataLogging"
+        },
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "timeLineLogging"
+        },
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "fixationLogging"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "customExperimentData"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "scriptDirectory"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "trialConfigFile"
+        },
+        {
+         "default": "PER_TRIAL",
+         "kind": "positional",
+         "name": "dataFileSaving"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "clientDict"
+        },
+        {
+         "default": "True",
+         "kind": "positional",
+         "name": "individualEyeIntersect"
+        },
+        {
+         "default": "{}",
+         "kind": "positional",
+         "name": "customTrackingObjects"
+        },
+        {
+         "default": "False",
+         "kind": "positional",
+         "name": "oldHeaders"
+        },
+        {
+         "default": "0",
+         "kind": "positional",
+         "name": "updateRate"
+        }
+       ],
+       "signature": "preTrial(dateTime, participantData, isGUI, trialMode, trialNumber, trialLabel, sceneObjects, trackingDataLogging, replayDataLogging, experimentDataLogging, timeLineLogging, fixationLogging, customExperimentData=None, scriptDirectory=None, trialConfigFile=None, dataFileSaving=PER_TRIAL, clientDict=None, individualEyeIntersect=True, customTrackingObjects={}, oldHeaders=False, updateRate=0)"
+      },
+      "setGazeTimeObject": {
+       "doc": "Configure gaze time threshold objects for dwell-based events.\n\nArgs:\n    gazeObjects (list): List of scene objects to monitor for gaze dwell\n    dwellTime (float, optional): Dwell threshold in seconds. Default from DWELL_THRESHOLD_VALUE",
+       "is_generator": false,
+       "lineno": 7522,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "gazeObjects"
+        },
+        {
+         "default": "DWELL_THRESHOLD_VALUE",
+         "kind": "positional",
+         "name": "dwellTime"
+        }
+       ],
+       "signature": "setGazeTimeObject(gazeObjects, dwellTime=DWELL_THRESHOLD_VALUE)"
+      },
+      "setTrialState": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 7664,
+       "params": [],
+       "signature": "setTrialState()"
+      },
+      "startTrial": {
+       "doc": "Start trial recording and data collection.\n\nInitiates trial timer, enables HUD console, starts scene update loop,\nand sends BIOPAC markers if enabled. Fades out overlay quad for smooth transition.\n\nArgs:\n    BIOPAC (bool, optional): Whether to send BIOPAC markers. Default False\n    tempFlag (str, optional): Custom flag text for this trial start. Default \"-\"\n    \nYields:\n    Fade-out animation if fade quad is enabled",
+       "is_generator": true,
+       "lineno": 7707,
+       "params": [
+        {
+         "default": "False",
+         "kind": "positional",
+         "name": "BIOPAC"
+        },
+        {
+         "default": "'-'",
+         "kind": "positional",
+         "name": "tempFlag"
+        }
+       ],
+       "signature": "startTrial(BIOPAC=False, tempFlag='-')"
+      },
+      "statusOFF": {
+       "doc": "Disable status text display in HUD.",
+       "is_generator": false,
+       "lineno": 7841,
+       "params": [],
+       "signature": "statusOFF()"
+      },
+      "statusON": {
+       "doc": "Enable status text display in HUD.",
+       "is_generator": false,
+       "lineno": 7836,
+       "params": [],
+       "signature": "statusON()"
+      },
+      "timerOFF": {
+       "doc": "Disable timer text display in HUD.",
+       "is_generator": false,
+       "lineno": 7832,
+       "params": [],
+       "signature": "timerOFF()"
+      },
+      "timerON": {
+       "doc": "Enable timer text display in HUD.",
+       "is_generator": false,
+       "lineno": 7827,
+       "params": [],
+       "signature": "timerON()"
+      },
+      "updateGazePointObject": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 7427,
+       "params": [],
+       "signature": "updateGazePointObject()"
+      },
+      "updateScene": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 7483,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "sessionRecorder"
+        }
+       ],
+       "signature": "updateScene(sessionRecorder)"
+      },
+      "windowSizeCheck": {
+       "doc": "Check for window resize and adjust HUD element positions/scaling.\n\nMonitors window size changes and updates HUD element positions and scale\nfactors to maintain proper layout across different resolutions.\n\nReturns:\n    None. Updates global SCALE_FACTOR and repositions HUD elements",
+       "is_generator": false,
+       "lineno": 7389,
+       "params": [],
+       "signature": "windowSizeCheck()"
+      },
+      "writeToClient": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 7377,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "message"
+        },
+        {
+         "default": "viz.GREEN",
+         "kind": "positional",
+         "name": "color"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "clientsOnline"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "clientsReady"
+        }
+       ],
+       "signature": "writeToClient(message, color=viz.GREEN, clientsOnline=None, clientsReady=None)"
+      },
+      "writeToClientList": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 7373,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "clientDict"
+        }
+       ],
+       "signature": "writeToClientList(clientDict)"
+      },
+      "writeToConsole": {
+       "doc": "Update console text display showing gaze fixation status.\n\nUpdates HUD text showing which object is currently fixated and which\nobject gaze just ended on. Supports multiple clients in server mode.\n\nArgs:\n    fixatedList (str, optional): Name of currently fixated object\n    endedList (str, optional): Name of object where gaze just ended\n    clientNumber (int, optional): Client index for multi-user. Default 1\n    \nReturns:\n    None. Updates console text display",
+       "is_generator": false,
+       "lineno": 7313,
+       "params": [
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "fixatedList"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "endedList"
+        },
+        {
+         "default": "1",
+         "kind": "positional",
+         "name": "clientNumber"
+        }
+       ],
+       "signature": "writeToConsole(fixatedList=None, endedList=None, clientNumber=1)"
+      },
+      "writeToServer": {
+       "doc": "Update server status display in multi-user mode.\n\nShows connection status and ready state of connected clients.\n\nArgs:\n    count (int): Number of connected clients\n    readyCount (int): Number of clients in ready state\n    message (str): Additional status message",
+       "is_generator": false,
+       "lineno": 7359,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "count"
+        },
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "readyCount"
+        },
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "message"
+        }
+       ],
+       "signature": "writeToServer(count, readyCount, message)"
+      },
+      "writeToStatus": {
+       "doc": "Display status message in HUD.\n\nArgs:\n    message (str): Status message text to display",
+       "is_generator": false,
+       "lineno": 7341,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "message"
+        }
+       ],
+       "signature": "writeToStatus(message)"
+      },
+      "writeToTimer": {
+       "doc": "Display timer message in HUD.\n\nArgs:\n    message (str): Timer text to display (e.g., elapsed time, countdown)",
+       "is_generator": false,
+       "lineno": 7350,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "message"
+        }
+       ],
+       "signature": "writeToTimer(message)"
+      }
+     }
+    },
+    "SessionRecorder": {
+     "bases": [],
+     "doc": "Records experiment session data including eye tracking, gaze events, object interactions, and trial metrics.\n\nManages data logging for SightLab experiments, handling replay data, trial data, experiment summaries,\ntimelines, and fixation/saccade analysis. Supports both single-user and multi-user (server/client) modes.",
+     "init_params": [
+      {
+       "default": "datetime.now().strftime('%m-%d-%Y-%H-%M-%S')",
+       "kind": "positional",
+       "name": "dateTime"
+      },
+      {
+       "default": "None",
+       "kind": "positional",
+       "name": "participant"
+      },
+      {
+       "default": "None",
+       "kind": "positional",
+       "name": "isGUI"
+      },
+      {
+       "default": "MODEL_3D",
+       "kind": "positional",
+       "name": "trialMode"
+      },
+      {
+       "default": "1",
+       "kind": "positional",
+       "name": "trialNumber"
+      },
+      {
+       "default": "'A'",
+       "kind": "positional",
+       "name": "trialLabel"
+      },
+      {
+       "default": "1000",
+       "kind": "positional",
+       "name": "maxDistance"
+      },
+      {
+       "default": "None",
+       "kind": "positional",
+       "name": "sceneObjects"
+      },
+      {
+       "default": "None",
+       "kind": "positional",
+       "name": "customExperimentData"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "trackingDataLogging"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "replayDataLogging"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "experimentSummary"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "trialTimeLine"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "fixationTimeLine"
+      },
+      {
+       "default": "None",
+       "kind": "positional",
+       "name": "scriptDirectory"
+      },
+      {
+       "default": "None",
+       "kind": "positional",
+       "name": "trialConfigFile"
+      },
+      {
+       "default": "PER_TRIAL",
+       "kind": "positional",
+       "name": "dataFileSaving"
+      },
+      {
+       "default": "False",
+       "kind": "positional",
+       "name": "serverMode"
+      },
+      {
+       "default": "False",
+       "kind": "positional",
+       "name": "clientMode"
+      },
+      {
+       "default": "None",
+       "kind": "positional",
+       "name": "clientDict"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "individualEyeIntersect"
+      },
+      {
+       "default": "{}",
+       "kind": "positional",
+       "name": "customTrackingObjects"
+      },
+      {
+       "default": "DISPERSION_THRESHOLD_VALUE",
+       "kind": "positional",
+       "name": "dispersionThreshold"
+      },
+      {
+       "default": "DURATION_THRESHOLD_VALUE",
+       "kind": "positional",
+       "name": "durationThreshold"
+      },
+      {
+       "default": "DWELL_THRESHOLD_VALUE",
+       "kind": "positional",
+       "name": "dwellThreshold"
+      },
+      {
+       "default": "0",
+       "kind": "positional",
+       "name": "noiseReductionThreshold"
+      },
+      {
+       "default": "False",
+       "kind": "positional",
+       "name": "regenerateMode"
+      },
+      {
+       "default": "False",
+       "kind": "positional",
+       "name": "oldHeaders"
+      },
+      {
+       "default": "None",
+       "kind": "positional",
+       "name": "overlayWindow"
+      }
+     ],
+     "lineno": 155,
+     "methods": {
+      "appendConfigData": {
+       "doc": "Append trial configuration data to JSON file.\n\nSaves trial-specific configuration settings to a JSON file for the current experiment.\nMerges new config data with existing data if file already exists.\nUsed to maintain a complete record of all trial configurations in an experiment session.\n\nReturns:\n    None. Writes/updates JSON config file in experiment directory",
+       "is_generator": false,
+       "lineno": 1602,
+       "params": [],
+       "signature": "appendConfigData()"
+      },
+      "appendTrialSummary": {
+       "doc": "Append summary statistics for the trial to the experiment summary CSV file.\n\nCalculates and writes aggregated metrics including dwell times, fixation counts,\nsaccadic movements, and time to first fixation for each region of interest and\nthe entire scene.\n\nArgs:\n    replayData (dict): Complete replay data with tracking information\n    viewAnalysis (dict): Analyzed view data with dwell times and visit counts\n    fixationMetrics (dict): Fixation and saccade event data\n    clientID (str, optional): Client ID for multi-user sessions",
+       "is_generator": false,
+       "lineno": 1373,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "replayData"
+        },
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "viewAnalysis"
+        },
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "fixationMetrics"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "clientID"
+        }
+       ],
+       "signature": "appendTrialSummary(replayData, viewAnalysis, fixationMetrics, clientID=None)"
+      },
+      "saccadeFixationCalculate": {
+       "doc": "Calculate fixations and saccades using dispersion-threshold identification algorithm.\n\nAnalyzes eye movement data to identify fixation periods (stable gaze) and saccadic\nmovements (rapid eye movements). Computes view durations, fixation counts, and\nsaccadic metrics for each region of interest.\n\nArgs:\n    objectTracker (dict): Frame-by-frame tracking data\n    dispersionThreshold (float): Maximum dispersion in degrees for fixation (typically 1-2\u00b0)\n    durationThreshold (float): Minimum duration in seconds for fixation (typically 0.1s)\n    dwellThreshold (float): Minimum dwell time in seconds for gaze events\n    noiseFilter (int, optional): Window size for noise reduction filtering. Default 50\n    client (str, optional): Client ID for multi-user session analysis\n    \nReturns:\n    None. Updates internal state with fixation/saccade metrics",
+       "is_generator": false,
+       "lineno": 1898,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "objectTracker"
+        },
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "dispersionThreshold"
+        },
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "durationThreshold"
+        },
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "dwellThreshold"
+        },
+        {
+         "default": "50",
+         "kind": "positional",
+         "name": "noiseFilter"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "client"
+        }
+       ],
+       "signature": "saccadeFixationCalculate(objectTracker, dispersionThreshold, durationThreshold, dwellThreshold, noiseFilter=50, client=None)"
+      },
+      "setFlag": {
+       "doc": "Set a flag for the current frame of data.\n\nFlags are used to mark specific events or conditions during experiment recording.\nMultiple flags can be accumulated in the default SIGHTLAB_FLAG column.\n\nArgs:\n    flagText (str, optional): Text content of the flag. Default '-'\n    columnName (str, optional): Column name for the flag. Default SIGHTLAB_FLAG\n    \nReturns:\n    None. Updates self.flag or self.customFlags dictionary",
+       "is_generator": false,
+       "lineno": 2608,
+       "params": [
+        {
+         "default": "'-'",
+         "kind": "positional",
+         "name": "flagText"
+        },
+        {
+         "default": "SIGHTLAB_FLAG",
+         "kind": "positional",
+         "name": "columnName"
+        }
+       ],
+       "signature": "setFlag(flagText='-', columnName=SIGHTLAB_FLAG)"
+      },
+      "setGazeState": {
+       "doc": "Update the gaze state for a tracked scene object.\n\nSets whether an object is currently being gazed at and tracks fixation duration.\nUsed to maintain real-time gaze interaction state for AOI (Area of Interest) analysis.\n\nArgs:\n    sceneObject: The scene object being tracked\n    state: Gaze state (True if object is being fixated on, False otherwise)\n    fixationPeriod (float, optional): Duration of fixation in seconds. Default 0\n    \nReturns:\n    None. Updates self.gazeTracker dictionary",
+       "is_generator": false,
+       "lineno": 2630,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "sceneObject"
+        },
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "state"
+        },
+        {
+         "default": "0",
+         "kind": "positional",
+         "name": "fixationPeriod"
+        }
+       ],
+       "signature": "setGazeState(sceneObject, state, fixationPeriod=0)"
+      },
+      "updateClientData": {
+       "doc": "Receive and store client data in multi-user server mode.\n\nIn server mode, receives replay data from connected clients and stores it with\ntimestamp synchronization. Uses binary search for efficient timestamp matching.\nAggregates custom objects and flags from all clients.\n\nArgs:\n    e: Event object containing client data with attributes:\n       - e.client: Client network object\n       - e.timestamp: Client's local timestamp (string)\n       - e.replayData: Client's frame data\n       - e.customObjects: Client's custom tracked objects\n       - e.customFlags: Client's custom flag data\n       \nReturns:\n    None. Updates self.replayData, self.customObjects, self.customFlags dictionaries",
+       "is_generator": false,
+       "lineno": 2649,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "e"
+        }
+       ],
+       "signature": "updateClientData(e)"
+      },
+      "updateData": {
+       "doc": "Update per-frame data recording during active trial.\n\nCalled each frame to update gaze point visualization and record tracking data.\nHandles both VR head-mounted displays and screen-based eye trackers with\nappropriate coordinate transformations. In client mode, sends data to server.\n\nArgs:\n    currentTime (float): Current timestamp in seconds\n    intersectPoint (list): 3D world coordinates [x, y, z] of gaze intersection\n    eyeTracker: Eye tracker data object with gaze information\n    \nReturns:\n    None. Updates replay data and sends to server if in client mode",
+       "is_generator": false,
+       "lineno": 1817,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "currentTime"
+        },
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "intersectPoint"
+        },
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "eyeTracker"
+        }
+       ],
+       "signature": "updateData(currentTime, intersectPoint, eyeTracker)"
+      },
+      "updateReplayData": {
+       "doc": "Update replay data with current frame's tracking information.\n\nRecords positions, orientations, colors, and states of all tracked objects including\nenvironment, avatars, gaze objects, grab objects, custom objects, eye tracking data,\npupil diameter, and custom flags for the current timestamp.\n\nArgs:\n    currentTime (float): Current timestamp in seconds\n    eyeTracker: Eye tracker object for gaze data\n    intersectPoint (list): 3D coordinates of gaze intersection point [x, y, z]",
+       "is_generator": false,
+       "lineno": 571,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "currentTime"
+        },
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "eyeTracker"
+        },
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "intersectPoint"
+        }
+       ],
+       "signature": "updateReplayData(currentTime, eyeTracker, intersectPoint)"
+      },
+      "writeFixationTimelineData": {
+       "doc": "Write detailed fixation and saccade event timeline to CSV file.\n\nCreates a chronological record of individual fixation and saccade events with\ndetailed metrics including duration, dispersion, velocity, amplitude, and angular distance.\nSeparate files for each client in multi-user mode.\n\nArgs:\n    fixationSaccadeMetrics (dict): Event data keyed by timestamp with metrics\n    clientID (str, optional): Client ID for multi-user sessions\n    \nReturns:\n    None. Writes fixation timeline CSV file",
+       "is_generator": false,
+       "lineno": 1725,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "fixationSaccadeMetrics"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "clientID"
+        }
+       ],
+       "signature": "writeFixationTimelineData(fixationSaccadeMetrics, clientID=None)"
+      },
+      "writeReplayData": {
+       "doc": "Write accumulated replay data to a binary file using orjson for efficient serialization.\n\nSaves the complete replay data dictionary including all tracked object states,\neye tracking data, and custom flags to a timestamped JSON file in the replay\ndata directory.",
+       "is_generator": false,
+       "lineno": 998,
+       "params": [],
+       "signature": "writeReplayData()"
+      },
+      "writeSessionData": {
+       "doc": "Process and write all session data to output files.\n\nCoordinates the complete data export pipeline when a trial ends:\n1. Cleans empty replay data frames\n2. Runs fixation/saccade analysis for each client\n3. Writes various output files based on enabled flags:\n   - Trial tracking data (raw frame-by-frame)\n   - Experiment summary (aggregated metrics)\n   - Timeline data (temporal analysis)\n   - Fixation timeline (fixation-specific analysis)\n   - Replay data (for playback in replay mode)\n   - Trial configuration data\n\nReturns:\n    None. Writes data to CSV/JSON files and updates internal state",
+       "is_generator": false,
+       "lineno": 2818,
+       "params": [],
+       "signature": "writeSessionData()"
+      },
+      "writeTimeLineData": {
+       "doc": "Write timeline data showing gaze events over time to CSV file.\n\nCreates a chronological log of all gaze events including start/end times,\ndwell durations, fixation counts, and associated flags for each region of interest.\n\nArgs:\n    viewAnalysis (dict): Analyzed view data with temporal information\n    fixationMetrics (dict): Fixation event data for counting\n    clientID (str, optional): Client ID for multi-user sessions",
+       "is_generator": false,
+       "lineno": 1633,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "viewAnalysis"
+        },
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "fixationMetrics"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "clientID"
+        }
+       ],
+       "signature": "writeTimeLineData(viewAnalysis, fixationMetrics, clientID=None)"
+      },
+      "writeTrialData": {
+       "doc": "Write frame-by-frame trial tracking data to CSV file.\n\nExports detailed tracking data including eye positions, head positions, fixation status,\ngaze events, custom flags, and pupil diameter measurements to a CSV file with headers.\n\nArgs:\n    replayData (dict): Complete replay data dictionary with tracking information\n    clientID (str, optional): Client ID for multi-user sessions. If None, writes server data",
+       "is_generator": false,
+       "lineno": 1103,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "replayData"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "clientID"
+        }
+       ],
+       "signature": "writeTrialData(replayData, clientID=None)"
+      }
+     }
+    },
+    "SightLab": {
+     "bases": [],
+     "doc": null,
+     "init_params": [
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "gui"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "pid"
+      },
+      {
+       "default": "None",
+       "kind": "positional",
+       "name": "biopac"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "timer"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "fadequad"
+      },
+      {
+       "default": "False",
+       "kind": "positional",
+       "name": "headlight"
+      },
+      {
+       "default": "False",
+       "kind": "positional",
+       "name": "mouselock"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "gazepointvisible"
+      },
+      {
+       "default": "ADDITIONAL_SETTINGS['Gaze Path Visible']",
+       "kind": "positional",
+       "name": "gazepathvisible"
+      },
+      {
+       "default": "ADDITIONAL_SETTINGS['Console']",
+       "kind": "positional",
+       "name": "console"
+      },
+      {
+       "default": "False",
+       "kind": "positional",
+       "name": "screenrecord"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "trackingdatalogging"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "replaydatalogging"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "experimentdatalogging"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "timelinelogging"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "fixationlogging"
+      },
+      {
+       "default": "False",
+       "kind": "positional",
+       "name": "continuekey"
+      },
+      {
+       "default": "None",
+       "kind": "positional",
+       "name": "trialcount"
+      },
+      {
+       "default": "None",
+       "kind": "positional",
+       "name": "configpath"
+      },
+      {
+       "default": "LOAD_ALL",
+       "kind": "positional",
+       "name": "loadenvironmentmode"
+      },
+      {
+       "default": "None",
+       "kind": "positional",
+       "name": "directory"
+      },
+      {
+       "default": "1",
+       "kind": "positional",
+       "name": "repetitions"
+      },
+      {
+       "default": "PER_TRIAL",
+       "kind": "positional",
+       "name": "datafilesaving"
+      },
+      {
+       "default": "viz.OFF",
+       "kind": "positional",
+       "name": "loglevel"
+      },
+      {
+       "default": "None",
+       "kind": "positional",
+       "name": "hardwareconfig"
+      },
+      {
+       "default": "None",
+       "kind": "positional",
+       "name": "vizconnectconfig"
+      },
+      {
+       "default": "None",
+       "kind": "positional",
+       "name": "vizconnectconfiglist"
+      },
+      {
+       "default": "False",
+       "kind": "positional",
+       "name": "serverMode"
+      },
+      {
+       "default": "False",
+       "kind": "positional",
+       "name": "clientMode"
+      },
+      {
+       "default": "False",
+       "kind": "positional",
+       "name": "highlighttool"
+      },
+      {
+       "default": "SIGHTLAB_VERSION",
+       "kind": "positional",
+       "name": "title"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "individual_eye_intersect"
+      },
+      {
+       "default": "False",
+       "kind": "positional",
+       "name": "oldHeaders"
+      },
+      {
+       "default": "0",
+       "kind": "positional",
+       "name": "updateRate"
+      },
+      {
+       "default": "None",
+       "kind": "positional",
+       "name": "selectconfig"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "optimizeintersect"
+      },
+      {
+       "default": "False",
+       "kind": "positional",
+       "name": "fastload"
+      },
+      {
+       "default": "False",
+       "kind": "positional",
+       "name": "barchart"
+      },
+      {
+       "default": "False",
+       "kind": "positional",
+       "name": "fullbody"
+      },
+      {
+       "default": "None",
+       "kind": "positional",
+       "name": "fullbodyavatar"
+      }
+     ],
+     "lineno": 7859,
+     "methods": {
+      "addGazePointWindow": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 11852,
+       "params": [],
+       "signature": "addGazePointWindow()"
+      },
+      "addRegionOfInterest": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 11606,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "regionObject"
+        }
+       ],
+       "signature": "addRegionOfInterest(regionObject)"
+      },
+      "addSceneObject": {
+       "doc": "Add an object to the scene with optional gaze tracking and grab interaction.\n\nArgs:\n    objectName: Unique identifier for the object.\n    sceneObject: The viz object to add to the scene.\n    gaze: Enable gaze-based interaction tracking (default False).\n    grab: Enable VR controller grab interaction (default False).\n    visible: Make object visible (False hides and disables shadow casting, default True).\n    avatar: Mark as an avatar component object (default False).\n    customChildOf: Name of parent object to link to (default None).",
+       "is_generator": false,
+       "lineno": 10277,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "objectName"
+        },
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "sceneObject"
+        },
+        {
+         "default": "False",
+         "kind": "positional",
+         "name": "gaze"
+        },
+        {
+         "default": "False",
+         "kind": "positional",
+         "name": "grab"
+        },
+        {
+         "default": "True",
+         "kind": "positional",
+         "name": "visible"
+        },
+        {
+         "default": "False",
+         "kind": "positional",
+         "name": "avatar"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "customChildOf"
+        }
+       ],
+       "signature": "addSceneObject(objectName, sceneObject, gaze=False, grab=False, visible=True, avatar=False, customChildOf=None)"
+      },
+      "addToTimeline": {
+       "doc": "Add an event to the timeline log.\n\nRecords timestamped events for timeline reconstruction during replay.\n\nArgs:\n    flag: Event flag/label (default None).\n    objectName: Name of object involved in event (default None).\n    dwellTime: Duration of gaze dwell if applicable (default None).",
+       "is_generator": false,
+       "lineno": 11790,
+       "params": [
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "flag"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "objectName"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "dwellTime"
+        }
+       ],
+       "signature": "addToTimeline(flag=None, objectName=None, dwellTime=None)"
+      },
+      "addTrackingTrialDataColumn": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 11170,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "columnName"
+        },
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "trackedObject"
+        },
+        {
+         "default": "SIXDOF",
+         "kind": "positional",
+         "name": "dataType"
+        },
+        {
+         "default": "viz.ABS_GLOBAL",
+         "kind": "positional",
+         "name": "mode"
+        }
+       ],
+       "signature": "addTrackingTrialDataColumn(columnName, trackedObject, dataType=SIXDOF, mode=viz.ABS_GLOBAL)"
+      },
+      "compressRecording": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 8347,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "input_path"
+        },
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "output_path"
+        },
+        {
+         "default": "BIT_RATE",
+         "kind": "positional",
+         "name": "bitrate"
+        }
+       ],
+       "signature": "compressRecording(input_path, output_path, bitrate=BIT_RATE)"
+      },
+      "disableMixedReality": {
+       "doc": "Disable passthrough and remove the chroma-key shader.",
+       "is_generator": false,
+       "lineno": 11485,
+       "params": [],
+       "signature": "disableMixedReality()"
+      },
+      "enableEnvironmentNudgeKeys": {
+       "doc": "Bind keys to nudge the 360/180 environment sphere along Z.\n\nPressing ``forwardKey`` pushes the scene away from the viewer; pressing\n``backKey`` pulls it closer. Each press shifts by ``step`` meters.\n\nArgs:\n    forwardKey (str): Key for +Z (push away). Default ']'.\n    backKey (str): Key for -Z (pull closer). Default '['.\n    step (float): Distance per keypress, in meters. Default 0.1.",
+       "is_generator": false,
+       "lineno": 11225,
+       "params": [
+        {
+         "default": "']'",
+         "kind": "positional",
+         "name": "forwardKey"
+        },
+        {
+         "default": "'['",
+         "kind": "positional",
+         "name": "backKey"
+        },
+        {
+         "default": "0.1",
+         "kind": "positional",
+         "name": "step"
+        }
+       ],
+       "signature": "enableEnvironmentNudgeKeys(forwardKey=']', backKey='[', step=0.1)"
+      },
+      "enableEnvironmentPitchKeys": {
+       "doc": "Bind keys to pitch-rotate the 360/180 environment sphere.\n\nPressing ``upKey`` tilts the scene up (increases pitch); pressing\n``downKey`` tilts it down. Each press rotates by ``step`` degrees.\n\nArgs:\n    upKey (str): Key for +pitch (tilt up). Default '7'.\n    downKey (str): Key for -pitch (tilt down). Default '8'.\n    step (float): Degrees per keypress. Default 5.0.",
+       "is_generator": false,
+       "lineno": 11259,
+       "params": [
+        {
+         "default": "'7'",
+         "kind": "positional",
+         "name": "upKey"
+        },
+        {
+         "default": "'8'",
+         "kind": "positional",
+         "name": "downKey"
+        },
+        {
+         "default": "5.0",
+         "kind": "positional",
+         "name": "step"
+        }
+       ],
+       "signature": "enableEnvironmentPitchKeys(upKey='7', downKey='8', step=5.0)"
+      },
+      "enableEnvironmentVerticalKeys": {
+       "doc": "Bind keys to nudge the 360/180 environment sphere along Y.\n\nPressing ``upKey`` raises the scene; pressing ``downKey`` lowers it.\nEach press shifts by ``step`` meters.\n\nArgs:\n    upKey: Key for +Y (raise). Default '0'.\n    downKey: Key for -Y (lower). Default '9'.\n    step (float): Distance per keypress, in meters. Default 0.1.",
+       "is_generator": false,
+       "lineno": 11239,
+       "params": [
+        {
+         "default": "'0'",
+         "kind": "positional",
+         "name": "upKey"
+        },
+        {
+         "default": "'9'",
+         "kind": "positional",
+         "name": "downKey"
+        },
+        {
+         "default": "0.1",
+         "kind": "positional",
+         "name": "step"
+        }
+       ],
+       "signature": "enableEnvironmentVerticalKeys(upKey='0', downKey='9', step=0.1)"
+      },
+      "enableMediaSkipKeys": {
+       "doc": "Bind keys to skip forward/back in the current 360 or SBS 180 video.\n\nArgs:\n    forwardKey (str): Key to skip forward. Default 'v'.\n    backKey (str): Key to skip backward. Default 'c'.\n    step (float): Seconds to jump per keypress. Default 5.0.",
+       "is_generator": false,
+       "lineno": 11286,
+       "params": [
+        {
+         "default": "'v'",
+         "kind": "positional",
+         "name": "forwardKey"
+        },
+        {
+         "default": "'c'",
+         "kind": "positional",
+         "name": "backKey"
+        },
+        {
+         "default": "5.0",
+         "kind": "positional",
+         "name": "step"
+        }
+       ],
+       "signature": "enableMediaSkipKeys(forwardKey='v', backKey='c', step=5.0)"
+      },
+      "enableMixedReality": {
+       "doc": "Enable OpenXR passthrough and chroma-key the current 180 SBS video.\n\nConvenience wrapper: turns on passthrough via ``setPassthrough()`` and,\nif the current environment object is a ``Stereo180Sphere``, applies\nthe chroma-key shader so the solid backdrop in the video is keyed out\nand the real world shows through.\n\nArgs:\n    keyColor (tuple): Backdrop color (r, g, b) in 0..1.\n    threshold (float): Chroma distance cutoff (see\n        ``Stereo180Sphere.setChromaKey``).\n    softness (float): Soft-edge width.\n    spill (float): Spill suppression strength (0 disables).",
+       "is_generator": false,
+       "lineno": 11459,
+       "params": [
+        {
+         "default": "(0.2, 0.23, 0.28)",
+         "kind": "positional",
+         "name": "keyColor"
+        },
+        {
+         "default": "0.02",
+         "kind": "positional",
+         "name": "threshold"
+        },
+        {
+         "default": "0.02",
+         "kind": "positional",
+         "name": "softness"
+        },
+        {
+         "default": "0.2",
+         "kind": "positional",
+         "name": "spill"
+        }
+       ],
+       "signature": "enableMixedReality(keyColor=(0.2, 0.23, 0.28), threshold=0.02, softness=0.02, spill=0.2)"
+      },
+      "enableTransportToggleKey": {
+       "doc": "Bind a keyboard key to toggle the main transport on/off.\n\nUseful in 360/Stereo180 modes where the transport may be disabled by\ndefault but you want to be able to walk/fly during the trial.\n\nArgs:\n    key (str): Keyboard key to bind. Default 'y'.",
+       "is_generator": false,
+       "lineno": 11214,
+       "params": [
+        {
+         "default": "'y'",
+         "kind": "positional",
+         "name": "key"
+        }
+       ],
+       "signature": "enableTransportToggleKey(key='y')"
+      },
+      "endTrial": {
+       "doc": "End the current trial and save data.\n\ncondition=NO_CONDITION, endTrialText=None\nendExperimentText=None, endRatings=None\ntextContinueEvent='triggerPress'\ntextContinueKey=None, textContinueTimer=None",
+       "is_generator": true,
+       "lineno": 10537,
+       "params": [
+        {
+         "default": "NO_CONDITION",
+         "kind": "positional",
+         "name": "condition"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "endTrialText"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "endExperimentText"
+        },
+        {
+         "default": "'triggerPress'",
+         "kind": "positional",
+         "name": "textContinueEvent"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "textContinueKey"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "textContinueTimer"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "endRatings"
+        }
+       ],
+       "signature": "endTrial(condition=NO_CONDITION, endTrialText=None, endExperimentText=None, textContinueEvent='triggerPress', textContinueKey=None, textContinueTimer=None, endRatings=None)"
+      },
+      "experimentSetupCompleteStatus": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 11748,
+       "params": [],
+       "signature": "experimentSetupCompleteStatus()"
+      },
+      "getAvatarHead": {
+       "doc": "Get the avatar head object.\n\nReturns:\n    viz.VizNode or None: The avatar head object.",
+       "is_generator": false,
+       "lineno": 10245,
+       "params": [],
+       "signature": "getAvatarHead()"
+      },
+      "getAvatarLHand": {
+       "doc": "Get the avatar left hand object.\n\nReturns:\n    viz.VizNode or None: The avatar left hand object.",
+       "is_generator": false,
+       "lineno": 10261,
+       "params": [],
+       "signature": "getAvatarLHand()"
+      },
+      "getAvatarRHand": {
+       "doc": "Get the avatar right hand object.\n\nReturns:\n    viz.VizNode or None: The avatar right hand object.",
+       "is_generator": false,
+       "lineno": 10253,
+       "params": [],
+       "signature": "getAvatarRHand()"
+      },
+      "getConditionName": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 11636,
+       "params": [],
+       "signature": "getConditionName()"
+      },
+      "getConfig": {
+       "doc": "Get the current vizconnect configuration name.\n\nReturns:\n    str: The vizconnect hardware configuration name.",
+       "is_generator": false,
+       "lineno": 11373,
+       "params": [],
+       "signature": "getConfig()"
+      },
+      "getCurrentEnvironmentName": {
+       "doc": "Get the filename of the current environment.\n\nReturns:\n    str: Base filename of the current environment (e.g., 'room.osgb').",
+       "is_generator": false,
+       "lineno": 10204,
+       "params": [],
+       "signature": "getCurrentEnvironmentName()"
+      },
+      "getCurrentGazeEventData": {
+       "doc": "Get the current gaze event data.\n\nReturns:\n    dict: Current gaze event data (object, duration, timestamps, etc.).",
+       "is_generator": false,
+       "lineno": 11598,
+       "params": [],
+       "signature": "getCurrentGazeEventData()"
+      },
+      "getCurrentRepetition": {
+       "doc": "Get the current repetition number.\n\nReturns:\n    int: The current repetition number.",
+       "is_generator": false,
+       "lineno": 10397,
+       "params": [],
+       "signature": "getCurrentRepetition()"
+      },
+      "getCurrentTrialDirectory": {
+       "doc": "Get the directory path for the current trial's environment.\n\nReturns:\n    str: Absolute path to the directory containing the trial environment.",
+       "is_generator": false,
+       "lineno": 10212,
+       "params": [],
+       "signature": "getCurrentTrialDirectory()"
+      },
+      "getEnvironment": {
+       "doc": "Get the current environment object.\n\nReturns:\n    viz.VizNode: The current environment (3D model or 360\u00b0 sphere).",
+       "is_generator": false,
+       "lineno": 10196,
+       "params": [],
+       "signature": "getEnvironment()"
+      },
+      "getExperimentDataFolderPath": {
+       "doc": "Get the absolute path to the experiment data folder.\n\nReturns:\n    str: Path to the data folder for this participant and date. In the\n    extended-length form when the folder is too deep for Windows' path\n    limit; long_paths.plain_path gives the ordinary spelling for display.",
+       "is_generator": false,
+       "lineno": 11765,
+       "params": [],
+       "signature": "getExperimentDataFolderPath()"
+      },
+      "getEyeTracker": {
+       "doc": "Get the eye tracker object.\n\nReturns:\n    Eye tracker object or None: The active eye tracker instance.",
+       "is_generator": false,
+       "lineno": 10269,
+       "params": [],
+       "signature": "getEyeTracker()"
+      },
+      "getGazePointObject": {
+       "doc": "Get the gaze point visualization object.\n\nArgs:\n    clientNumber: Client ID (default 1, currently unused).\n    \nReturns:\n    viz.VizNode or None: The gaze point object if set.",
+       "is_generator": false,
+       "lineno": 10234,
+       "params": [
+        {
+         "default": "1",
+         "kind": "positional",
+         "name": "clientNumber"
+        }
+       ],
+       "signature": "getGazePointObject(clientNumber=1)"
+      },
+      "getGazeTimeObject": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 11198,
+       "params": [],
+       "signature": "getGazeTimeObject()"
+      },
+      "getMediaObject": {
+       "doc": "Get the 360\u00b0 media object (video or image texture).\n\nReturns:\n    viz.VizNode or None: The media object if in 360\u00b0 mode, None otherwise.",
+       "is_generator": false,
+       "lineno": 10220,
+       "params": [],
+       "signature": "getMediaObject()"
+      },
+      "getPlotData": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 11195,
+       "params": [],
+       "signature": "getPlotData()"
+      },
+      "getRegionOfInterest": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 11609,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "name"
+        }
+       ],
+       "signature": "getRegionOfInterest(name)"
+      },
+      "getTimeLineData": {
+       "doc": "Get timeline event data.\n\nArgs:\n    client: Client ID for multi-user mode (default None).\n    \nReturns:\n    dict: Timeline data with timestamps as keys.",
+       "is_generator": false,
+       "lineno": 11809,
+       "params": [
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "client"
+        }
+       ],
+       "signature": "getTimeLineData(client=None)"
+      },
+      "getTrialCount": {
+       "doc": "Get the total number of trials in the experiment.\n\nReturns:\n    int: Number of trials (default is 1).",
+       "is_generator": false,
+       "lineno": 10405,
+       "params": [],
+       "signature": "getTrialCount()"
+      },
+      "getTrialNumber": {
+       "doc": "Get the current trial number.\n\nReturns:\n    int: The current trial number (1-indexed).",
+       "is_generator": false,
+       "lineno": 11492,
+       "params": [],
+       "signature": "getTrialNumber()"
+      },
+      "hideInstructions": {
+       "doc": "Hide the instruction screen and resume scene.\n\nThis is a generator function. Optionally resumes data logging and fades out.\n\nArgs:\n    pauseTimer: Resume data logging after hiding (default False).\n    endFade: Fade out before hiding (default True).\n    \nYields:\n    Waits for fade-out to complete (if endFade=True).",
+       "is_generator": true,
+       "lineno": 9654,
+       "params": [
+        {
+         "default": "False",
+         "kind": "positional",
+         "name": "pauseTimer"
+        },
+        {
+         "default": "True",
+         "kind": "positional",
+         "name": "endFade"
+        }
+       ],
+       "signature": "hideInstructions(pauseTimer=False, endFade=True)"
+      },
+      "hideRatings": {
+       "doc": null,
+       "is_generator": true,
+       "lineno": 10066,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "endFade"
+        }
+       ],
+       "signature": "hideRatings(endFade)"
+      },
+      "identifyStartPoint": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 9106,
+       "params": [],
+       "signature": "identifyStartPoint()"
+      },
+      "regenerateDataFiles": {
+       "doc": "folderPath, \ndispersionThreshold = DISPERSION_THRESHOLD_VALUE, \ndurationThreshold = DURATION_THRESHOLD_VALUE, \ndwellThreshold = DWELL_THRESHOLD_VALUE, \nfileType = PER_TRIAL,\nnoiseReductionThreshold = 0,\nflipEyePitch = False):",
+       "is_generator": false,
+       "lineno": 11856,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "folderPath"
+        },
+        {
+         "default": "DISPERSION_THRESHOLD_VALUE",
+         "kind": "positional",
+         "name": "dispersionThreshold"
+        },
+        {
+         "default": "DURATION_THRESHOLD_VALUE",
+         "kind": "positional",
+         "name": "durationThreshold"
+        },
+        {
+         "default": "DWELL_THRESHOLD_VALUE",
+         "kind": "positional",
+         "name": "dwellThreshold"
+        },
+        {
+         "default": "PER_TRIAL",
+         "kind": "positional",
+         "name": "fileType"
+        },
+        {
+         "default": "0",
+         "kind": "positional",
+         "name": "noiseReductionThreshold"
+        },
+        {
+         "default": "False",
+         "kind": "positional",
+         "name": "flipEyePitch"
+        }
+       ],
+       "signature": "regenerateDataFiles(folderPath, dispersionThreshold=DISPERSION_THRESHOLD_VALUE, durationThreshold=DURATION_THRESHOLD_VALUE, dwellThreshold=DWELL_THRESHOLD_VALUE, fileType=PER_TRIAL, noiseReductionThreshold=0, flipEyePitch=False)"
+      },
+      "removeGazeObject": {
+       "doc": "Remove an object from gaze tracking.\n\nArgs:\n    objectName: Name of the object to remove from gaze tracking.",
+       "is_generator": false,
+       "lineno": 10337,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "objectName"
+        }
+       ],
+       "signature": "removeGazeObject(objectName)"
+      },
+      "removeGazePointWindow": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 11848,
+       "params": [],
+       "signature": "removeGazePointWindow()"
+      },
+      "removeGrabObject": {
+       "doc": "Remove an object from grab interaction.\n\nArgs:\n    objectName: Name of the object to remove from grab interaction.",
+       "is_generator": false,
+       "lineno": 10346,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "objectName"
+        }
+       ],
+       "signature": "removeGrabObject(objectName)"
+      },
+      "removeInvisibleObject": {
+       "doc": "Make an invisible object visible again.\n\nArgs:\n    objectName: Name of the invisible object to make visible.",
+       "is_generator": false,
+       "lineno": 10361,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "objectName"
+        }
+       ],
+       "signature": "removeInvisibleObject(objectName)"
+      },
+      "removeSceneObject": {
+       "doc": "Remove a scene object and clean up all associated tracking.\n\nAutomatically removes from gaze tracking, grab interaction, and invisible\nobject lists as needed, then removes the object from the scene.\n\nArgs:\n    objectName: Name of the object to remove.",
+       "is_generator": false,
+       "lineno": 10371,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "objectName"
+        }
+       ],
+       "signature": "removeSceneObject(objectName)"
+      },
+      "resetExperiment": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 9510,
+       "params": [],
+       "signature": "resetExperiment()"
+      },
+      "resetTimer": {
+       "doc": "Reset the trial timer to zero.\n\nClears the start time and buffer time, typically called at trial start.",
+       "is_generator": false,
+       "lineno": 11365,
+       "params": [],
+       "signature": "resetTimer()"
+      },
+      "resetTrial": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 9332,
+       "params": [],
+       "signature": "resetTrial()"
+      },
+      "resetViewPoint": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 9309,
+       "params": [
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "event"
+        },
+        {
+         "default": "[0.0, 1.8, 0.25]",
+         "kind": "positional",
+         "name": "pos"
+        },
+        {
+         "default": "[0.0, 0.0, 0.0]",
+         "kind": "positional",
+         "name": "ori"
+        }
+       ],
+       "signature": "resetViewPoint(event=None, pos=[0.0, 1.8, 0.25], ori=[0.0, 0.0, 0.0])"
+      },
+      "runExperiment": {
+       "doc": null,
+       "is_generator": true,
+       "lineno": 9459,
+       "params": [],
+       "signature": "runExperiment()"
+      },
+      "sceneToggle": {
+       "doc": "Toggle visibility of scene objects.\n\nControls visibility of environment, avatars, gaze points, and custom objects.\nUsed during instruction screens to hide/show the experiment scene.\n\nArgs:\n    state: viz.ON to show objects, viz.OFF to hide objects.",
+       "is_generator": false,
+       "lineno": 9586,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "state"
+        }
+       ],
+       "signature": "sceneToggle(state)"
+      },
+      "screenCapture": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 11645,
+       "params": [],
+       "signature": "screenCapture()"
+      },
+      "setAvatarHead": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 10588,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "head"
+        }
+       ],
+       "signature": "setAvatarHead(head)"
+      },
+      "setAvatarLeftHand": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 10599,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "leftHand"
+        }
+       ],
+       "signature": "setAvatarLeftHand(leftHand)"
+      },
+      "setAvatarRightHand": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 10605,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "rightHand"
+        }
+       ],
+       "signature": "setAvatarRightHand(rightHand)"
+      },
+      "setConditionName": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 11633,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "conditionName"
+        }
+       ],
+       "signature": "setConditionName(conditionName)"
+      },
+      "setConfigDirectory": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 11616,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "directoryName"
+        }
+       ],
+       "signature": "setConfigDirectory(directoryName)"
+      },
+      "setConsoleState": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 11201,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "state"
+        }
+       ],
+       "signature": "setConsoleState(state)"
+      },
+      "setCustomReplayFlag": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 11845,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "flagName"
+        },
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "data"
+        }
+       ],
+       "signature": "setCustomReplayFlag(flagName, data)"
+      },
+      "setCustomTrialData": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 11186,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "data"
+        },
+        {
+         "default": "SIGHTLAB_FLAG",
+         "kind": "positional",
+         "name": "columnName"
+        }
+       ],
+       "signature": "setCustomTrialData(data, columnName=SIGHTLAB_FLAG)"
+      },
+      "setDataDirectory": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 11629,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "directoryName"
+        }
+       ],
+       "signature": "setDataDirectory(directoryName)"
+      },
+      "setDataLoggingState": {
+       "doc": "Enable or disable data logging and timer tracking.\n\nControls whether tracking data is being recorded. When disabled, pauses\nthe data collection timer to exclude instruction/rating screen time.\n\nArgs:\n    state: True to enable logging, False to disable.\n    buffer: Track buffer time for timer adjustment (default True).",
+       "is_generator": false,
+       "lineno": 11343,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "state"
+        },
+        {
+         "default": "True",
+         "kind": "positional",
+         "name": "buffer"
+        }
+       ],
+       "signature": "setDataLoggingState(state, buffer=True)"
+      },
+      "setDwellTimeThreshold": {
+       "doc": "Set the dwell time threshold for gaze events.\n\nControls how long gaze must remain on an object before triggering\nan onGazeTime event. Updates the global threshold value.\n\nArgs:\n    dwellTime: Threshold in seconds (default from DWELL_THRESHOLD_VALUE).",
+       "is_generator": false,
+       "lineno": 11526,
+       "params": [
+        {
+         "default": "DWELL_THRESHOLD_VALUE",
+         "kind": "positional",
+         "name": "dwellTime"
+        }
+       ],
+       "signature": "setDwellTimeThreshold(dwellTime=DWELL_THRESHOLD_VALUE)"
+      },
+      "setEnvironment": {
+       "doc": "Set the experiment environment or 360\u00b0 media.\n\nConfigures the virtual environment for trials. Supports both 3D model environments\nand 360\u00b0 video/image media. Handles display parenting and headlight intensity.\n\nArgs:\n    environmentObject: Vizard 3D object or media file path\n    trial (str, optional): Trial ID to configure. Default DEFAULT\n    mode (str, optional): Environment mode (MODEL_3D or MEDIA_360). Default MODEL_3D\n    mediaType (str, optional): Media type for 360\u00b0 mode (\"video\" or \"image\"). Default \"video\"\n    mediaFormat (str, optional): Stereoscopic format for 360\u00b0 media. Default \"Stereoscopic T/B\"\n    headlightIntensity (float, optional): Scene headlight brightness (0-1). Default 0\n    \nReturns:\n    None. Updates experiment settings and scene configuration",
+       "is_generator": false,
+       "lineno": 10092,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "environmentObject"
+        },
+        {
+         "default": "DEFAULT",
+         "kind": "positional",
+         "name": "trial"
+        },
+        {
+         "default": "MODEL_3D",
+         "kind": "positional",
+         "name": "mode"
+        },
+        {
+         "default": "'video'",
+         "kind": "positional",
+         "name": "mediaType"
+        },
+        {
+         "default": "'Stereoscopic T/B'",
+         "kind": "positional",
+         "name": "mediaFormat"
+        },
+        {
+         "default": "0",
+         "kind": "positional",
+         "name": "headlightIntensity"
+        }
+       ],
+       "signature": "setEnvironment(environmentObject, trial=DEFAULT, mode=MODEL_3D, mediaType='video', mediaFormat='Stereoscopic T/B', headlightIntensity=0)"
+      },
+      "setEnvironmentDirectory": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 11622,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "directoryName"
+        },
+        {
+         "default": "MODEL_3D",
+         "kind": "positional",
+         "name": "mode"
+        }
+       ],
+       "signature": "setEnvironmentDirectory(directoryName, mode=MODEL_3D)"
+      },
+      "setEnvironmentFolder": {
+       "doc": "Set the resource folder for environments or media files.\n\nUpdates the GUI resource lists with files from the specified directory.\nUsed to dynamically change where environment/media files are loaded from.\n\nArgs:\n    path: Absolute path to the resource folder.\n    mode: MODEL_3D for 3D environments or MEDIA_360 for 360\u00b0 media (default MODEL_3D).",
+       "is_generator": false,
+       "lineno": 11549,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "path"
+        },
+        {
+         "default": "MODEL_3D",
+         "kind": "positional",
+         "name": "mode"
+        }
+       ],
+       "signature": "setEnvironmentFolder(path, mode=MODEL_3D)"
+      },
+      "setEnvironmentOffset": {
+       "doc": "Shift the 360/180 environment sphere relative to the viewer.\n\nUseful for nudging the captured scene up/down/forward so that the\nsubject in a stereo 180 video sits at a comfortable position.\n\nArgs:\n    pos (tuple): (x, y, z) offset in meters. +x = right, +y = up,\n        +z = forward (away from viewer). Default (0, 0, 0).\n    euler (tuple, optional): (yaw, pitch, roll) in degrees applied\n        to the sphere itself (re-orient the scene).\n    scale (float or tuple, optional): Uniform scale (float) or per-axis\n        scale (tuple) for the sphere. Smaller = subject appears closer.",
+       "is_generator": false,
+       "lineno": 10166,
+       "params": [
+        {
+         "default": "(0.0, 0.0, 0.0)",
+         "kind": "positional",
+         "name": "pos"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "euler"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "scale"
+        }
+       ],
+       "signature": "setEnvironmentOffset(pos=(0.0, 0.0, 0.0), euler=None, scale=None)"
+      },
+      "setExperimentSummaryData": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 11183,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "columnName"
+        },
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "data"
+        }
+       ],
+       "signature": "setExperimentSummaryData(columnName, data)"
+      },
+      "setFixationSaccadeThresholds": {
+       "doc": "Set thresholds for fixation/saccade detection algorithm.\n\nArgs:\n    dispersionThreshold: Maximum angle dispersion for fixation in degrees (default 1).\n    durationThreshold: Minimum duration for fixation in seconds (default 0.1).",
+       "is_generator": false,
+       "lineno": 11539,
+       "params": [
+        {
+         "default": "1",
+         "kind": "positional",
+         "name": "dispersionThreshold"
+        },
+        {
+         "default": "0.1",
+         "kind": "positional",
+         "name": "durationThreshold"
+        }
+       ],
+       "signature": "setFixationSaccadeThresholds(dispersionThreshold=1, durationThreshold=0.1)"
+      },
+      "setGazePointObject": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 10228,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "gazePointObject"
+        }
+       ],
+       "signature": "setGazePointObject(gazePointObject)"
+      },
+      "setHeadlight": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 11751,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "state"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "intensity"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "color"
+        }
+       ],
+       "signature": "setHeadlight(state, intensity=None, color=None)"
+      },
+      "setHighlighter": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 11823,
+       "params": [
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "mode"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "setItems"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "enable"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "client"
+        }
+       ],
+       "signature": "setHighlighter(mode=None, setItems=None, enable=None, client=None)"
+      },
+      "setMaxDistance": {
+       "doc": "Set the maximum distance for gaze intersection checks.\n\nArgs:\n    distance: Maximum ray cast distance in meters.",
+       "is_generator": false,
+       "lineno": 11587,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "distance"
+        }
+       ],
+       "signature": "setMaxDistance(distance)"
+      },
+      "setPassthrough": {
+       "doc": "Enable or disable OpenXR video passthrough (mixed reality).\n\nUses the first passthrough extension the headset's OpenXR runtime\noffers: FB (Meta Quest 3, Quest Pro), HTC (Vive Focus Vision) or\nVarjo (XR-3, XR-4). Every hardware profile of those headsets works,\nthe hand, full body and eye-tracker variants included. Sets the\nframebuffer clear alpha to 0 so the OpenXR compositor composites the\nVizard scene over the real world.\n\nUses only the OpenXR client the headset's rig has made: on Desktop it\nwarns and does nothing, and never starts the OpenXR runtime.\n\nArgs:\n    state (bool): True to enable passthrough, False to disable.\n    clearColor: Clear color to use while passthrough is on. Alpha is\n        always forced to 0 when enabling.",
+       "is_generator": false,
+       "lineno": 11381,
+       "params": [
+        {
+         "default": "True",
+         "kind": "positional",
+         "name": "state"
+        },
+        {
+         "default": "viz.BLACK",
+         "kind": "positional",
+         "name": "clearColor"
+        }
+       ],
+       "signature": "setPassthrough(state=True, clearColor=viz.BLACK)"
+      },
+      "setRecordingsDirectory": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 11639,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "directoryName"
+        }
+       ],
+       "signature": "setRecordingsDirectory(directoryName)"
+      },
+      "setSeatedMode": {
+       "doc": "Enable or disable seated mode for avatar leg positioning.\n\nLocks the avatar's legs in a seated position, overriding IK tracking.\nWorks for both single-user and multi-user (client/server) scenarios.\n\nArgs:\n    state: True to enable seated mode, False to disable (default True).",
+       "is_generator": false,
+       "lineno": 10611,
+       "params": [
+        {
+         "default": "True",
+         "kind": "positional",
+         "name": "state"
+        }
+       ],
+       "signature": "setSeatedMode(state=True)"
+      },
+      "setSeatedModeHeadOnly": {
+       "doc": "Enable or disable seated head-only mode for avatar positioning.\n\nLocks ALL bones below the neck so only the head tracks the HMD.\nLegs are placed in a seated position; arms, spine, and everything\nelse remain in their rest (T-pose) orientation.\n\nThis implies regular seated mode. When enabled, seated mode is also\nactivated automatically. When disabled, regular seated mode remains\nactive unless explicitly disabled separately.\n\nArgs:\n    state: True to enable head-only seated mode, False to disable (default True).\n    mode: Arm pose style - 'default' (arms at sides) or 'coaster' (arms raised forward).\n    transport_euler: Euler values [yaw, pitch, roll] matching the transportNode orientation.\n        The yaw is added to each locked arm bone's global yaw so that the arms\n        face the correct direction when the transport is rotated (e.g. [180,0,0]).",
+       "is_generator": false,
+       "lineno": 10830,
+       "params": [
+        {
+         "default": "True",
+         "kind": "positional",
+         "name": "state"
+        },
+        {
+         "default": "'default'",
+         "kind": "positional",
+         "name": "mode"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "transport_euler"
+        }
+       ],
+       "signature": "setSeatedModeHeadOnly(state=True, mode='default', transport_euler=None)"
+      },
+      "setStartPoint": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 9401,
+       "params": [
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "POSITION"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "ORIENTATION"
+        }
+       ],
+       "signature": "setStartPoint(POSITION=None, ORIENTATION=None)"
+      },
+      "setStartText": {
+       "doc": "Set the text displayed on the start trial button.\n\nArgs:\n    startText: Text to display on the trial start button.",
+       "is_generator": false,
+       "lineno": 11578,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "startText"
+        }
+       ],
+       "signature": "setStartText(startText)"
+      },
+      "setTransportPosition": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 11337,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "pos"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "euler"
+        }
+       ],
+       "signature": "setTransportPosition(pos, euler=None)"
+      },
+      "setTransportState": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 11207,
+       "params": [
+        {
+         "default": "viz.TOGGLE",
+         "kind": "positional",
+         "name": "state"
+        }
+       ],
+       "signature": "setTransportState(state=viz.TOGGLE)"
+      },
+      "setTrialCount": {
+       "doc": "Set the number of trials and initialize their settings.\n\nCreates a deep copy of the default settings for each trial.\n\nArgs:\n    trialCount: Number of trials to run.",
+       "is_generator": false,
+       "lineno": 10413,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "trialCount"
+        }
+       ],
+       "signature": "setTrialCount(trialCount)"
+      },
+      "setTrialLength": {
+       "doc": "Set the trial duration in seconds.\n\nArgs:\n    length: Trial duration in seconds.",
+       "is_generator": false,
+       "lineno": 10426,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "length"
+        }
+       ],
+       "signature": "setTrialLength(length)"
+      },
+      "setfadeQuadState": {
+       "doc": "Control the fade quad visibility.\n\nArgs:\n    state: True to show fade quad, False to hide it.",
+       "is_generator": false,
+       "lineno": 11500,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "state"
+        }
+       ],
+       "signature": "setfadeQuadState(state: bool)"
+      },
+      "setupHighlighter": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 8383,
+       "params": [],
+       "signature": "setupHighlighter()"
+      },
+      "showGazePath": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 9525,
+       "params": [
+        {
+         "default": "GAZE",
+         "kind": "positional",
+         "name": "scanPathType"
+        },
+        {
+         "default": "CONTINUE_EVENT_KEY",
+         "kind": "positional",
+         "name": "waitKey"
+        }
+       ],
+       "signature": "showGazePath(scanPathType=GAZE, waitKey=CONTINUE_EVENT_KEY)"
+      },
+      "showInstructions": {
+       "doc": "Display an instruction screen with optional image.\n\nThis is a generator function. Fades in, shows text/image, and optionally pauses data logging.\n\nArgs:\n    message: Instruction text to display (default '').\n    image: Path to image file to display (default None).\n    pauseTimer: Pause data logging during display (default False).\n    \nYields:\n    Waits for fade-in to complete.\n    \nReturns:\n    viz.VizNode: The image quad if image provided, None otherwise.",
+       "is_generator": true,
+       "lineno": 9618,
+       "params": [
+        {
+         "default": "''",
+         "kind": "positional",
+         "name": "message"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "image"
+        },
+        {
+         "default": "False",
+         "kind": "positional",
+         "name": "pauseTimer"
+        }
+       ],
+       "signature": "showInstructions(message='', image=None, pauseTimer=False)"
+      },
+      "showRatings": {
+       "doc": "Display a rating scale interface for participant responses.\n\nThis is a generator function. Shows a message with selectable rating options.\nAutomatically switches to vertical layout for long answer options.\n\nArgs:\n    message: Question or prompt text to display.\n    ratingScale: List of rating options (default ['0'..'10']).\n    color: Text color (default viz.WHITE).\n    characterLimit: Maximum characters in text input (default 8).\n    pauseTimer: Pause data logging during display (default True).\n    endFade: Fade out after selection (default True).\n    \nYields:\n    Waits for fade-in, user selection, and optional fade-out.\n    \nReturns:\n    str: The selected rating value.",
+       "is_generator": true,
+       "lineno": 9831,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "message"
+        },
+        {
+         "default": "['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10']",
+         "kind": "positional",
+         "name": "ratingScale"
+        },
+        {
+         "default": "viz.WHITE",
+         "kind": "positional",
+         "name": "color"
+        },
+        {
+         "default": "8",
+         "kind": "positional",
+         "name": "characterLimit"
+        },
+        {
+         "default": "True",
+         "kind": "positional",
+         "name": "pauseTimer"
+        },
+        {
+         "default": "True",
+         "kind": "positional",
+         "name": "endFade"
+        },
+        {
+         "default": "1.0",
+         "kind": "positional",
+         "name": "uiScale"
+        }
+       ],
+       "signature": "showRatings(message, ratingScale=['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10'], color=viz.WHITE, characterLimit=8, pauseTimer=True, endFade=True, uiScale=1.0)"
+      },
+      "startTrial": {
+       "doc": "Start a trial with optional configuration.\n\ncondition=None, trialLength=-1, trialLabel=None\nstartTrialText=None, startExperimentText=None\nstartRatings=None, textContinueKey=None\ntextContinueEvent='triggerPress'\ntrackingDataLogging=None, replayDataLogging=None\nexperimentSummaryLogging=None, timeLineLogging=None\nfixationLogging=None, startPoint=None, startEuler=None",
+       "is_generator": true,
+       "lineno": 10434,
+       "params": [
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "condition"
+        },
+        {
+         "default": "-1",
+         "kind": "positional",
+         "name": "trialLength"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "trialLabel"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "startTrialText"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "startExperimentText"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "startRatings"
+        },
+        {
+         "default": "'triggerPress'",
+         "kind": "positional",
+         "name": "textContinueEvent"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "textContinueKey"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "trackingDataLogging"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "replayDataLogging"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "experimentSummaryLogging"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "timeLineLogging"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "fixationLogging"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "startPoint"
+        },
+        {
+         "default": "None",
+         "kind": "positional",
+         "name": "startEuler"
+        }
+       ],
+       "signature": "startTrial(condition=None, trialLength=-1, trialLabel=None, startTrialText=None, startExperimentText=None, startRatings=None, textContinueEvent='triggerPress', textContinueKey=None, trackingDataLogging=None, replayDataLogging=None, experimentSummaryLogging=None, timeLineLogging=None, fixationLogging=None, startPoint=None, startEuler=None)"
+      },
+      "storeReplayExecCode": {
+       "doc": "Store Python source code for replay execution.\n\nExtracts and stores source code from a method for later replay.\n\nArgs:\n    method: Python method to extract source from.\n    \nReturns:\n    str: The extracted source code.",
+       "is_generator": false,
+       "lineno": 11776,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "method"
+        }
+       ],
+       "signature": "storeReplayExecCode(method)"
+      },
+      "toggleGazePoint": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 8499,
+       "params": [],
+       "signature": "toggleGazePoint()"
+      },
+      "toggleHUD": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 8496,
+       "params": [],
+       "signature": "toggleHUD()"
+      },
+      "toggleMediaPause": {
+       "doc": "Toggle play/pause on the current 360 or SBS 180 video.\n\nBound by default to Shift+P (uppercase 'P'). No-op when the current\ntrial has no media object (e.g. 3D model trials).",
+       "is_generator": false,
+       "lineno": 11311,
+       "params": [],
+       "signature": "toggleMediaPause()"
+      },
+      "togglePoint": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 8476,
+       "params": [],
+       "signature": "togglePoint()"
+      }
+     }
+    },
+    "SightLabClient": {
+     "bases": [
+      "SightLab"
+     ],
+     "doc": null,
+     "init_params": [
+      {
+       "default": "None",
+       "kind": "positional",
+       "name": "biopac"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "gui"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "timer"
+      },
+      {
+       "default": "False",
+       "kind": "positional",
+       "name": "mouselock"
+      },
+      {
+       "default": "False",
+       "kind": "positional",
+       "name": "headlight"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "fadequad"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "gazepointvisible"
+      },
+      {
+       "default": "ADDITIONAL_SETTINGS['Console']",
+       "kind": "positional",
+       "name": "console"
+      },
+      {
+       "default": "False",
+       "kind": "positional",
+       "name": "screenrecord"
+      },
+      {
+       "default": "LOAD_ALL",
+       "kind": "positional",
+       "name": "loadenvironmentmode"
+      },
+      {
+       "default": "None",
+       "kind": "positional",
+       "name": "configpath"
+      },
+      {
+       "default": "None",
+       "kind": "positional",
+       "name": "hardwareconfig"
+      },
+      {
+       "default": "False",
+       "kind": "positional",
+       "name": "highlighttool"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "avatarintersect"
+      },
+      {
+       "default": "None",
+       "kind": "positional",
+       "name": "vizconnectconfig"
+      },
+      {
+       "default": "None",
+       "kind": "positional",
+       "name": "vizconnectconfiglist"
+      },
+      {
+       "default": "None",
+       "kind": "positional",
+       "name": "server"
+      },
+      {
+       "default": "SIGHTLAB_VERSION",
+       "kind": "positional",
+       "name": "title"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "individual_eye_intersect"
+      },
+      {
+       "default": "None",
+       "kind": "positional",
+       "name": "mumble_server"
+      },
+      {
+       "default": "64738",
+       "kind": "positional",
+       "name": "mumble_port"
+      },
+      {
+       "default": "''",
+       "kind": "positional",
+       "name": "mumble_password"
+      },
+      {
+       "default": "'SightLab'",
+       "kind": "positional",
+       "name": "mumble_channel"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "optimizeintersect"
+      },
+      {
+       "default": "False",
+       "kind": "positional",
+       "name": "fastload"
+      },
+      {
+       "default": "False",
+       "kind": "positional",
+       "name": "fullbody"
+      },
+      {
+       "default": "None",
+       "kind": "positional",
+       "name": "fullbodyavatar"
+      }
+     ],
+     "lineno": 12804,
+     "methods": {
+      "clientAvatarsOFF": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 13048,
+       "params": [],
+       "signature": "clientAvatarsOFF()"
+      },
+      "clientAvatarsON": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 13044,
+       "params": [],
+       "signature": "clientAvatarsON()"
+      },
+      "clientAvatarsVisible": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 13130,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "state"
+        }
+       ],
+       "signature": "clientAvatarsVisible(state)"
+      },
+      "disconnectVoice": {
+       "doc": "Disconnect from voice server",
+       "is_generator": false,
+       "lineno": 13458,
+       "params": [],
+       "signature": "disconnectVoice()"
+      },
+      "endTrialClient": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 13004,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "e"
+        }
+       ],
+       "signature": "endTrialClient(e)"
+      },
+      "getClientName": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 13007,
+       "params": [],
+       "signature": "getClientName()"
+      },
+      "receiveSharedServerData": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 12991,
+       "params": [],
+       "signature": "receiveSharedServerData()"
+      },
+      "runClient": {
+       "doc": null,
+       "is_generator": true,
+       "lineno": 13140,
+       "params": [],
+       "signature": "runClient()"
+      },
+      "setStartPointSuffix": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 13040,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "suffix"
+        }
+       ],
+       "signature": "setStartPointSuffix(suffix)"
+      },
+      "startTrialClient": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 12994,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "e"
+        }
+       ],
+       "signature": "startTrialClient(e)"
+      },
+      "toggleDeafen": {
+       "doc": "Toggle audio deafen",
+       "is_generator": false,
+       "lineno": 13448,
+       "params": [],
+       "signature": "toggleDeafen()"
+      },
+      "toggleMute": {
+       "doc": "Toggle microphone mute",
+       "is_generator": false,
+       "lineno": 13438,
+       "params": [],
+       "signature": "toggleMute()"
+      }
+     }
+    },
+    "SightLabServer": {
+     "bases": [
+      "SightLab"
+     ],
+     "doc": null,
+     "init_params": [
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "gui"
+      },
+      {
+       "default": "None",
+       "kind": "positional",
+       "name": "biopac"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "timer"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "fadequad"
+      },
+      {
+       "default": "'Desktop Server'",
+       "kind": "positional",
+       "name": "hardwareconfig"
+      },
+      {
+       "default": "False",
+       "kind": "positional",
+       "name": "headlight"
+      },
+      {
+       "default": "False",
+       "kind": "positional",
+       "name": "mouselock"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "gazepointvisible"
+      },
+      {
+       "default": "ADDITIONAL_SETTINGS['Gaze Path Visible']",
+       "kind": "positional",
+       "name": "gazepathvisible"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "gazerayvisible"
+      },
+      {
+       "default": "ADDITIONAL_SETTINGS['Console']",
+       "kind": "positional",
+       "name": "console"
+      },
+      {
+       "default": "False",
+       "kind": "positional",
+       "name": "screenrecord"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "trackingdatalogging"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "replaydatalogging"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "experimentdatalogging"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "timelinelogging"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "fixationlogging"
+      },
+      {
+       "default": "False",
+       "kind": "positional",
+       "name": "continuekey"
+      },
+      {
+       "default": "None",
+       "kind": "positional",
+       "name": "trialcount"
+      },
+      {
+       "default": "None",
+       "kind": "positional",
+       "name": "configpath"
+      },
+      {
+       "default": "LOAD_ALL",
+       "kind": "positional",
+       "name": "loadenvironmentmode"
+      },
+      {
+       "default": "None",
+       "kind": "positional",
+       "name": "directory"
+      },
+      {
+       "default": "1",
+       "kind": "positional",
+       "name": "repetitions"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "avatarintersect"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "individualeyeintersect"
+      },
+      {
+       "default": "PER_TRIAL",
+       "kind": "positional",
+       "name": "datafilesaving"
+      },
+      {
+       "default": "viz.OFF",
+       "kind": "positional",
+       "name": "loglevel"
+      },
+      {
+       "default": "None",
+       "kind": "positional",
+       "name": "vizconnectconfig"
+      },
+      {
+       "default": "None",
+       "kind": "positional",
+       "name": "vizconnectconfiglist"
+      },
+      {
+       "default": "SIGHTLAB_VERSION",
+       "kind": "positional",
+       "name": "title"
+      },
+      {
+       "default": "None",
+       "kind": "positional",
+       "name": "mumble_server"
+      },
+      {
+       "default": "64738",
+       "kind": "positional",
+       "name": "mumble_port"
+      },
+      {
+       "default": "''",
+       "kind": "positional",
+       "name": "mumble_password"
+      },
+      {
+       "default": "'SightLab'",
+       "kind": "positional",
+       "name": "mumble_channel"
+      },
+      {
+       "default": "True",
+       "kind": "positional",
+       "name": "optimizeintersect"
+      },
+      {
+       "default": "False",
+       "kind": "positional",
+       "name": "fastload"
+      }
+     ],
+     "lineno": 12164,
+     "methods": {
+      "clientAvatarsVisible": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 12452,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "state"
+        }
+       ],
+       "signature": "clientAvatarsVisible(state)"
+      },
+      "disconnectVoice": {
+       "doc": "Disconnect from voice server",
+       "is_generator": false,
+       "lineno": 12796,
+       "params": [],
+       "signature": "disconnectVoice()"
+      },
+      "endTrialServer": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 12432,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "e"
+        }
+       ],
+       "signature": "endTrialServer(e)"
+      },
+      "runServer": {
+       "doc": null,
+       "is_generator": true,
+       "lineno": 12681,
+       "params": [],
+       "signature": "runServer()"
+      },
+      "startConfirmFlag": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 12435,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "e"
+        }
+       ],
+       "signature": "startConfirmFlag(e)"
+      },
+      "startTrialServer": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 12429,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "e"
+        }
+       ],
+       "signature": "startTrialServer(e)"
+      },
+      "toggleDeafen": {
+       "doc": "Toggle audio deafen",
+       "is_generator": false,
+       "lineno": 12786,
+       "params": [],
+       "signature": "toggleDeafen()"
+      },
+      "toggleMute": {
+       "doc": "Toggle microphone mute",
+       "is_generator": false,
+       "lineno": 12776,
+       "params": [],
+       "signature": "toggleMute()"
+      },
+      "updateSharedServerData": {
+       "doc": null,
+       "is_generator": false,
+       "lineno": 12727,
+       "params": [
+        {
+         "default": null,
+         "kind": "positional",
+         "name": "data"
+        }
+       ],
+       "signature": "updateSharedServerData(data)"
+      }
+     }
+    }
+   },
+   "constants": [
+    "DASHBOARD_EMBEDDED_INSPECTOR_HOOK",
+    "DASHBOARD_TRIAL_CHANGED_HOOK"
+   ],
+   "functions": {}
+  }
+ },
+ "settings_constants": [
+  "LANGUAGE",
+  "WINDOW_SIZE",
+  "WINDOW_FOV",
+  "WINDOW_X_SIZE",
+  "WINDOW_Y_SIZE",
+  "SCALE_FACTOR",
+  "VIZCONNECT_DICT",
+  "DEFAULT_VIZCONNECT_CONFIG_LIST",
+  "FULL_BODY_VIZCONNECT_CONFIG_LIST",
+  "VIZCONNECT_CONFIG_LIST",
+  "VIZCONNECT_CONFIG",
+  "OPENXR_VIZCONNECTS",
+  "CONTINUE_EVENT_KEY",
+  "CONTINUE_ON_LEFT",
+  "COMPRESS_VIDEOS",
+  "VIDEO_FILE_TYPE",
+  "BIT_RATE",
+  "VIDEO_RECORDING_WINDOW_HEIGHT",
+  "VIDEO_RECORDING_WINDOW_WIDTH",
+  "START_TEXT",
+  "BIOPAC_TOGGLE",
+  "DISPERSION_THRESHOLD_VALUE",
+  "DURATION_THRESHOLD_VALUE",
+  "DWELL_THRESHOLD_VALUE",
+  "SERVER_CONNECT_RETRY_INTERVAL",
+  "AUTO_SERVER_FROM_SIGHTLAB_SYNC",
+  "ROUND_VALUES",
+  "FADE_IN_TIME",
+  "FADE_OUT_TIME",
+  "TRIAL_OR_SCENE",
+  "SHIFT_LOCK_TOGGLE",
+  "ADDITIONAL_SETTINGS",
+  "PARTICIPANT_INFO1",
+  "PARTICIPANT_INFO2"
+ ],
+ "sightlab_utils_version": "2.8.21"
+}

@@ -1,0 +1,6 @@
+# SightLab data and test runs never belong in version control
+data/
+.autopilot/
+recordings/
+__pycache__/
+*.pyc
