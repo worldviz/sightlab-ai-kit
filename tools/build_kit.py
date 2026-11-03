@@ -190,12 +190,12 @@ def write_marketplaces(root: Path, dist_name: str, version: str, openai_name: st
     claude = {
         "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
         "name": MARKETPLACE_NAME,
-        "description": "WorldViz plugins: the SightLab 2.x AI Kit for building and testing SightLab (Vizard) experiments.",
+        "description": "WorldViz plugins: the SightLab AI Kit for building and testing SightLab (Vizard) experiments.",
         "owner": {"name": "WorldViz", "url": "https://www.worldviz.com"},
         "plugins": [{
-            "name": "sightlab-2x",
+            "name": "sightlab",
             "source": f"./{dist_name}/claude-plugin",
-            "description": "Build, check and test WorldViz SightLab 2.x (Vizard) eye-tracking experiments from a research brief.",
+            "description": "Build, check and test WorldViz SightLab (Vizard) experiments from a research brief. Carries one skill per SightLab generation; SightLab 2.x today.",
             "version": version,
             "category": "Science",
             "tags": ["sightlab", "vizard", "vr", "eye-tracking", "experiment"],

@@ -8,7 +8,7 @@ once; this folder only gives a new study a tidy place to live.
 
 1. Install SightLab 2 (core, Resources and Projects) and Vizard 8 on a Windows PC.
 2. Install the kit once, for every project on the PC:
-   - Claude Code: `claude plugin install sightlab-2x --marketplace worldviz/sightlab-ai-kit`
+   - Claude Code: `claude plugin install sightlab --marketplace worldviz/sightlab-ai-kit`
    - Codex: `codex plugin marketplace add worldviz/sightlab-ai-kit`, then install the
      SightLab VR Assistant from `/plugins`.
    Both come from https://github.com/worldviz/sightlab-ai-kit, which also says how to update.

@@ -1,16 +1,20 @@
-# SightLab 2.x AI Kit
+# SightLab AI Kit
 
-One kit that teaches an AI coding agent to build, check and test WorldViz SightLab 2.x
-experiments (the Python eye-tracking library that runs inside Vizard on Windows), published
-as a plugin for Claude Code, claude.ai, Codex and ChatGPT. This repository is also the
+One plugin that teaches an AI coding agent to build, check and test WorldViz SightLab
+experiments, published for Claude Code, claude.ai, Codex and ChatGPT. It carries one skill per
+SightLab generation: `sightlab-2x` today, for SightLab 2.x (the Python eye-tracking library
+that runs inside Vizard on Windows); a SightLab 3 skill will sit beside it. This repository is also the
 marketplace those tools install from, so one `git tag` is a release.
 
 | Where you work | Install once | Updates |
 |---|---|---|
-| Claude Code (terminal, VS Code, desktop app Code tab) | `claude plugin install sightlab-2x --marketplace worldviz/sightlab-ai-kit` | `claude plugin update sightlab-2x@worldviz`, or turn on auto-update for the `worldviz` marketplace in `/plugin` > Marketplaces |
-| claude.ai chat and Cowork | Customize > Plugins > Add > Add marketplace, enter `worldviz/sightlab-ai-kit`, then add **SightLab 2.x AI Kit** | automatic when **Sync automatically** is on for the marketplace; per Anthropic's docs the same plugin then also appears in your Claude Code as a synced plugin |
+| Claude Code (terminal, VS Code, desktop app Code tab) | `claude plugin install sightlab --marketplace worldviz/sightlab-ai-kit` | `claude plugin update sightlab@worldviz`, or turn on auto-update for the `worldviz` marketplace in `/plugin` > Marketplaces |
+| claude.ai chat and Cowork | Customize > Plugins > Add > Add marketplace, enter `worldviz/sightlab-ai-kit`, then add **SightLab** | automatic when **Sync automatically** is on for the marketplace; per Anthropic's docs the same plugin then also appears in your Claude Code as a synced plugin |
 | Codex CLI and the ChatGPT desktop app | `codex plugin marketplace add worldviz/sightlab-ai-kit`, then install **SightLab VR Assistant** from `/plugins` in the CLI and start a new session (the ChatGPT desktop app shares Codex's configuration, so the plugin should also appear in its Plugins tab; not yet verified) | `codex plugin marketplace upgrade worldviz`, then reinstall from `/plugins` |
 | ChatGPT web | the **SightLab VR Assistant** plugin in ChatGPT's Plugins directory | automatic, after each version clears OpenAI's review |
+
+**Installed 2026.11.2 as `sightlab-2x`?** Run `claude plugin uninstall sightlab-2x@worldviz`, then install
+`sightlab` as above. Codex: `codex plugin marketplace upgrade worldviz`, then reinstall from `/plugins`.
 
 The plugins are the same content built two ways: `dist/claude-plugin` (Claude's layout) and
 `dist/openai-plugin` (OpenAI's `.codex-plugin` layout, the successor of SightLab VR Assistant
@@ -43,7 +47,7 @@ brief template). Nothing of the kit is copied into projects; the plugin is the k
 
 | Path | What |
 |---|---|
-| `src/` | the single source: `SKILL.md`, `rules/`, `patterns/`, `guides/`, `api/` (generated from `sightlab_utils`), `examples/`, `register/`, `brief/`, `evals/`, `harness/`, `reference/` |
+| `src/` | one folder per skill. `sightlab-2x/`: `SKILL.md`, `rules/`, `patterns/`, `guides/`, `api/` (generated from `sightlab_utils`), `examples/`, `register/`, `brief/`, `evals/`, `harness/`, `reference/`, `agents/openai.yaml`. A SightLab 3 skill will sit beside it |
 | `templates/` | per-wrapper files that are not content: manifests, commands, README, LICENSE, the project template |
 | `tools/` | `build_kit.py` (builds `dist/` and the two marketplace manifests), `lint_kit.py`, generators for the API map, examples index and resources, `score_eval.py`, tests |
 | `dist/` | the built wrappers, committed so the marketplaces resolve: `claude-plugin/`, `openai-plugin/` (+ `.zip` for the OpenAI directory), `starter-project/`, `chat-bundle.zip`, `BUILD.json` |

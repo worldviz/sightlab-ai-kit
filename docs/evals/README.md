@@ -14,7 +14,7 @@ scoreboards, one Markdown file per month, appended by `tools/score_eval.py`.
    folder, copy `src/evals/<slug>/brief.md` into its `brief/`. The starter carries no copy of
    the kit: load the built plugin with `--plugin-dir dist/claude-plugin` (or install it).
 2. Have the agent build the study from the brief (Claude Code: `claude -p --plugin-dir
-   dist/claude-plugin "..."` or interactively with `/sightlab-2x:sightlab-new`). Ask for the
+   dist/claude-plugin "..."` or interactively with `/sightlab:new`). Ask for the
    complete build, through the responses and data checkpoints, taking the kit's defaults for
    open questions and marking them `(assumed)`; "stop after the skeleton checkpoint" is read
    literally by some runs and then needs a second "carry on" message (2026-10-31, evals 3–4).

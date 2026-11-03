@@ -27,7 +27,7 @@ plugin and brings back the overhead and the relative paths.
 
 ## What to try
 
-1. **Claude Code, install once:** `claude plugin install sightlab-2x --marketplace worldviz/sightlab-ai-kit`.
+1. **Claude Code, install once:** `claude plugin install sightlab --marketplace worldviz/sightlab-ai-kit`.
    Then, in any study folder, `claude`. Ask one question ("what does `endFade` do?"), one small
    edit (add a 1–7 rating to an existing script), and one build (two sentences describing a
    study). Time each; the first two should be well under a minute and launch nothing.
@@ -37,7 +37,7 @@ plugin and brings back the overhead and the relative paths.
 3. **claude.ai:** Customize > Plugins > Add marketplace `worldviz/sightlab-ai-kit`, add the
    plugin, ask the `endFade` question in chat; it should quote `reference/sightlab.py`.
 4. **The harness on one of your scripts**, from the installed plugin's folder (Claude Code
-   caches it under `~/.claude/plugins/cache/worldviz/sightlab-2x/<version>/`;
+   caches it under `~/.claude/plugins/cache/worldviz/sightlab/<version>/`;
    `claude plugin list --json` prints `installPath`):
    `winviz.exe "<plugin>\skills\sightlab-2x\harness\autopilot.py" "<absolute script path>"`.
    Look for `rating-selected` interventions and no look-at at a parked object.

@@ -4,7 +4,7 @@
 https://code.claude.com/docs/en/plugins-reference, read on 2026-10-30. Points that matter:
 
 - `name` is the only required field; kebab-case; every component is namespaced under it
-  (`/sightlab-2x:sightlab-new`).
+  (`/sightlab:new`).
 - `version`, `description`, `author` (`name` required; `email`, `url` optional), `homepage`
   (must parse as a URL), `repository`, `license`, `keywords` are recognised metadata.
   Unrecognised top-level keys are stripped with a warning.

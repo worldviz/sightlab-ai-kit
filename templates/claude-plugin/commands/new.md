@@ -2,7 +2,7 @@
 description: Start a new SightLab 2.x experiment from a description, a paper, or a Fit Check brief
 ---
 
-Use the `sightlab-2x` skill. The researcher's description follows this command (or ask for
+Use the SightLab skill for this project's generation (today `sightlab-2x`; its first section says how to tell). The researcher's description follows this command (or ask for
 it if empty): $ARGUMENTS
 
 1. Run the scope guard against `register/cannot.md` and say which list the request is in.

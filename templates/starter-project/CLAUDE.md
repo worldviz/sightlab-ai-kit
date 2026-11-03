@@ -1,11 +1,11 @@
 # SightLab 2.x experiment project
 
 This folder holds one SightLab 2.x (Vizard) experiment. The SightLab AI kit is the installed
-`sightlab-2x` plugin; nothing of it is copied here.
+`sightlab` plugin (its `sightlab-2x` skill); nothing of it is copied here.
 
 - Use the `sightlab-2x` skill for anything SightLab. It sizes the request first (a question,
   a small edit, or a build) and names the checks each one needs. If the skill is missing,
-  install it once: `claude plugin install sightlab-2x --marketplace worldviz/sightlab-ai-kit`.
+  install it once: `claude plugin install sightlab --marketplace worldviz/sightlab-ai-kit`.
 - The brief lives in `brief/` (start from `TEMPLATE.md`; `EXAMPLE-gaze-dwell.md` is a finished one).
 - The checks run from the plugin's folder, never from here: `check.py` after every edit; the
   autopilot (`autopilot.py`, the experiment unattended in desktop mode) for builds and for

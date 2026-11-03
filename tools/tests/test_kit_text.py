@@ -29,7 +29,7 @@ def test_starter_templates_point_at_the_installed_plugin(kit: Path):
     readme = (t / "README.md").read_text(encoding="utf-8")
     for text in (claude, agents, readme):
         assert ".claude/skills" not in text and "harness/check.py" not in text
-    assert "claude plugin install sightlab-2x --marketplace worldviz/sightlab-ai-kit" in claude
+    assert "claude plugin install sightlab --marketplace worldviz/sightlab-ai-kit" in claude
     assert "codex plugin marketplace add worldviz/sightlab-ai-kit" in agents
     assert "worldviz/sightlab-ai-kit" in readme
 
@@ -39,3 +39,27 @@ def test_host_sections_give_kit_relative_paths(kit: Path):
     assert "${CLAUDE_PLUGIN_ROOT}/skills/sightlab-2x/harness/autopilot.py" in host_sections.HOST["sightlab-2x"]["claude-plugin"]
     assert "harness/autopilot.py" in host_sections.HOST["sightlab-2x"]["openai-plugin"]  # Codex runs it from the plugin's skill folder
     assert "worldviz/sightlab-ai-kit" in host_sections.HOST["sightlab-2x"]["chat-bundle"]
+
+
+# --- 2026.11.3: the plugin is product-neutral; the skill keeps the generation in its name ------
+
+OLD_INSTALL = "claude plugin install sightlab-2x"
+
+
+def test_plugin_is_named_sightlab_everywhere(kit: Path):
+    import json
+    manifest = json.loads((kit / "templates" / "claude-plugin" / ".claude-plugin" / "plugin.json").read_text())
+    assert manifest["name"] == "sightlab"
+    cmds = sorted(p.name for p in (kit / "templates" / "claude-plugin" / "commands").glob("*.md"))
+    assert cmds == ["check.md", "new.md", "review.md"]
+    files = list((kit / "templates").rglob("*.md")) + list((kit / "docs").rglob("*.md")) + [kit / "README.md", kit / "tools" / "host_sections.py"]
+    for path in files:
+        if path.name == "CHANGELOG.md":
+            continue
+        text = path.read_text(encoding="utf-8")
+        assert OLD_INSTALL not in text and "/sightlab-2x:" not in text and "update sightlab-2x@worldviz" not in text, path
+
+
+def test_readme_tells_2026_11_2_installs_to_reinstall(kit: Path):
+    text = (kit / "README.md").read_text(encoding="utf-8")
+    assert "claude plugin uninstall sightlab-2x@worldviz" in text

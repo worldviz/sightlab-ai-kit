@@ -29,7 +29,7 @@ def test_build_outputs_exist(kit, kit_copy):
     d = kit_copy / "dist"
     for rel in (
         "claude-plugin/.claude-plugin/plugin.json", "claude-plugin/skills/sightlab-2x/SKILL.md",
-        "claude-plugin/commands/sightlab-new.md",
+        "claude-plugin/commands/new.md",
         "openai-plugin/.codex-plugin/plugin.json", "openai-plugin/skills/sightlab-2x/SKILL.md",
         "openai-plugin/skills/sightlab-2x/agents/openai.yaml", "openai-plugin/assets/gpt-icon.png",
         "openai-plugin/skills/sightlab-2x/harness/autopilot.py", "openai-plugin/README.md",
@@ -140,7 +140,7 @@ def test_marketplace_manifests_match_version(kit, kit_copy):
     codex = json.loads((kit_copy / ".agents" / "plugins" / "marketplace.json").read_text())
     assert claude["name"] == "worldviz" and claude["owner"]["name"]
     entry = claude["plugins"][0]
-    assert entry["name"] == "sightlab-2x" and entry["source"] == "./dist/claude-plugin" and entry["version"] == "0.90.0"
+    assert entry["name"] == "sightlab" and entry["source"] == "./dist/claude-plugin" and entry["version"] == "0.90.0"
     assert (kit_copy / entry["source"]).is_dir()
     assert codex["name"] == "worldviz" and codex["interface"]["displayName"]
     centry = codex["plugins"][0]
@@ -210,7 +210,7 @@ def test_claude_host_section_uses_plugin_root(kit, kit_copy):
     _build(kit, kit_copy)
     claude = (kit_copy / "dist" / "claude-plugin" / "skills" / "sightlab-2x" / "SKILL.md").read_text()
     assert "${CLAUDE_PLUGIN_ROOT}/skills/sightlab-2x/harness/check.py" in claude
-    cmd = (kit_copy / "dist" / "claude-plugin" / "commands" / "sightlab-check.md").read_text()
+    cmd = (kit_copy / "dist" / "claude-plugin" / "commands" / "check.md").read_text()
     assert "${CLAUDE_PLUGIN_ROOT}/skills/sightlab-2x/harness/check.py" in cmd
 
 
@@ -220,7 +220,7 @@ def test_autopilot_documented_everywhere(kit, kit_copy):
     d = kit_copy / "dist"
     files = [
         kit / "src" / "sightlab-2x" / "SKILL.md", kit / "src" / "sightlab-2x" / "harness" / "README.md",
-        kit / "templates" / "claude-plugin" / "commands" / "sightlab-check.md",
+        kit / "templates" / "claude-plugin" / "commands" / "check.md",
         kit / "templates" / "starter-project" / "CLAUDE.md", kit / "templates" / "starter-project" / "AGENTS.md",
         kit / "templates" / "starter-project" / "README.md",
         d / "claude-plugin" / "skills" / "sightlab-2x" / "SKILL.md",

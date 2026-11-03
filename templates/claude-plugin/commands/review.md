@@ -2,7 +2,7 @@
 description: Write the REVIEW.md note for the current build step of a SightLab 2.x experiment
 ---
 
-Use the `sightlab-2x` skill. Write or update `REVIEW.md` in the project folder with:
+Use the SightLab skill for this project's generation (today `sightlab-2x`; its first section says how to tell). Write or update `REVIEW.md` in the project folder with:
 
 - what changed since the last review, as a short list;
 - the latest `check.py` result and, when available, the autopilot verdict with every

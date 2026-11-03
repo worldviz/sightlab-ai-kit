@@ -28,7 +28,7 @@ get the version once it clears OpenAI's review.
    ```
    git tag v2026.MM.N && git push origin v2026.MM.N
    gh release create v2026.MM.N dist/openai-plugin.zip dist/chat-bundle.zip \
-     --title "SightLab 2.x AI Kit 2026.MM.N" --notes-file <notes>
+     --title "SightLab AI Kit 2026.MM.N" --notes-file <notes>
    ```
    `openai-plugin.zip` is what the OpenAI directory submission takes
    (`docs/submission/openai-directory.md`); `chat-bundle.zip` is for a ChatGPT or claude.ai
@@ -40,7 +40,7 @@ get the version once it clears OpenAI's review.
 
 ## What users do
 
-- Claude Code: `claude plugin update sightlab-2x@worldviz`, or nothing if auto-update is on.
+- Claude Code: `claude plugin update sightlab@worldviz`, or nothing if auto-update is on.
 - claude.ai: nothing when **Sync automatically** is on; otherwise **Check for updates**.
 - Codex: `codex plugin marketplace upgrade worldviz`, then reinstall from `/plugins`.
 - ChatGPT: nothing; the directory serves the approved version.
