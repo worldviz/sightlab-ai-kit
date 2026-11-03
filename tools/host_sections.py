@@ -12,7 +12,7 @@ HOST = {
 
 You are running as the `sightlab-2x` skill of the `sightlab` Claude Code plugin, with file and command access. The
 kit's files live under the plugin root, not in the researcher's project: `<kit>` is
-`${CLAUDE_PLUGIN_ROOT}/skills/sightlab-2x`. Size the request first (section 0); for a build
+`${CLAUDE_PLUGIN_ROOT}/skills/sightlab-2x`. Confirm the generation, then size the request (section 0); for a build
 the checks are expected, not optional:
 
 - `python "${CLAUDE_PLUGIN_ROOT}/skills/sightlab-2x/harness/check.py" <script> --sightlab-utils "<installed package dir>"`
@@ -32,7 +32,7 @@ SightLab PC. Never say a check ran when it did not.
 
 This plugin provides instructions and reference material for SightLab 2.x, plus the harness
 under `harness/` in this skill's folder (`<kit>` is the folder that holds this SKILL.md).
-Size the request first (section 0). Whether this host may run the checks depends on the
+Confirm the generation, then size the request (section 0). Whether this host may run the checks depends on the
 product you are using and its permissions:
 
 <!-- openai-review-wording -->
@@ -53,8 +53,8 @@ Generated scripts target the researcher's own licensed SightLab/Vizard installat
 """,
     "chat-bundle": """## On this host
 
-You are in a chat without access to the researcher's files or commands. Size the request
-first (section 0). For a build, write the brief and the script here; you cannot run
+You are in a chat without access to the researcher's files or commands. Confirm the generation, then size the request
+(section 0). For a build, write the brief and the script here; you cannot run
 `check.py` or the experiment. In every `REVIEW.md` list the checks you could not run and ask
 the researcher to run them with the installed kit:
 

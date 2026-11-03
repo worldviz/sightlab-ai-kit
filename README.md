@@ -14,7 +14,8 @@ marketplace those tools install from, so one `git tag` is a release.
 | ChatGPT web | the **SightLab VR Assistant** plugin in ChatGPT's Plugins directory | automatic, after each version clears OpenAI's review |
 
 **Installed 2026.11.2 as `sightlab-2x`?** Run `claude plugin uninstall sightlab-2x@worldviz`, then install
-`sightlab` as above. Codex: `codex plugin marketplace upgrade worldviz`, then reinstall from `/plugins`.
+`sightlab` as above. claude.ai: remove **SightLab 2.x AI Kit** under Customize > Plugins, then add **SightLab**
+from the same marketplace. Codex: `codex plugin marketplace upgrade worldviz`, then reinstall from `/plugins`.
 
 The plugins are the same content built two ways: `dist/claude-plugin` (Claude's layout) and
 `dist/openai-plugin` (OpenAI's `.codex-plugin` layout, the successor of SightLab VR Assistant

@@ -53,6 +53,7 @@ def test_plugin_is_named_sightlab_everywhere(kit: Path):
     cmds = sorted(p.name for p in (kit / "templates" / "claude-plugin" / "commands").glob("*.md"))
     assert cmds == ["check.md", "new.md", "review.md"]
     files = list((kit / "templates").rglob("*.md")) + list((kit / "docs").rglob("*.md")) + [kit / "README.md", kit / "tools" / "host_sections.py"]
+    files += [p for p in (kit / "src").rglob("*.md") if "reference" not in p.parts]  # shipped content too (review #1)
     for path in files:
         if path.name == "CHANGELOG.md":
             continue
@@ -63,6 +64,7 @@ def test_plugin_is_named_sightlab_everywhere(kit: Path):
 def test_readme_tells_2026_11_2_installs_to_reinstall(kit: Path):
     text = (kit / "README.md").read_text(encoding="utf-8")
     assert "claude plugin uninstall sightlab-2x@worldviz" in text
+    assert "claude.ai" in text[text.index("Installed 2026.11.2"):][:600]  # review #7: claude.ai users remove the old plugin too
 
 
 def test_skill_routes_between_generations_first(kit: Path):
@@ -74,3 +76,15 @@ def test_skill_routes_between_generations_first(kit: Path):
     for signal in ("sightlab_utils", ".oep.json", ".oep-project.json", "from sightlab import", "_sightlab_version.py", "Ask once", "`sightlab-3`", "not covered"):
         assert signal in section, signal
     assert "class named `SightLab`" in section
+
+
+def test_routing_decides_in_chat_and_defers_sizing(kit: Path):
+    """Review #2: a chat host has no files, so an explicit statement or a pasted script decides; ask once otherwise."""
+    import host_sections
+    text = (kit / "src" / "sightlab-2x" / "SKILL.md").read_text(encoding="utf-8")
+    section = text[text.index("## Which SightLab"):text.index("<!-- host-section -->")]
+    assert "3. **What the researcher says" in section and "pasted" in section
+    assert "`import sightlab`" in section and "vocabulary" in section
+    assert "Do not guess from the wording" not in section
+    for wrapper, host in host_sections.HOST["sightlab-2x"].items():
+        assert "then size the request" in host and "Size the request first" not in host, wrapper

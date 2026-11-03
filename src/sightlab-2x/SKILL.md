@@ -14,18 +14,22 @@ compose from `patterns/`, and look up every method in `api/sightlab-api.md` befo
 ## Which SightLab
 
 SightLab 2.x and SightLab 3 are installed side by side on many machines during the SightLab 3
-transition, and they do not share an API. Confirm the generation before anything else, in
+transition, and they do not share an API. Confirm the generation before sizing the request, in
 this order, and say which you found:
 
 1. **The project's files.** A script that imports `sightlab_utils` is SightLab 2.x. A
-   `.oep.json` or `.oep-project.json` file, or a script with `from sightlab import ...`, is
-   SightLab 3. Both generations define a class named `SightLab`; the import line is the signal,
-   never the class name.
+   `.oep.json` or `.oep-project.json` file, or a script with `from sightlab import ...` or
+   `import sightlab`, is SightLab 3. Both generations define a class named `SightLab`; the
+   import line is the signal, never the class name.
 2. **What is installed**, for a new project on a host that can read files: Vizard's
    `bin\lib\site-packages\sightlab_utils` is 2.x; `site-packages\sightlab` with a
    `_sightlab_version.py` is 3.
-3. **Ask once** when both are installed and nothing above decides it: a SightLab 2.x script,
-   or a SightLab 3 experiment? Do not guess from the wording of the request.
+3. **What the researcher says or pastes.** "My SightLab 2 script", "a SightLab 3
+   experiment", a pasted script (read its import line) or a pasted `.oep.json` decides. In a
+   chat without files this is the only signal, so read the message for it first.
+4. **Ask once** when nothing above decides it: a SightLab 2.x script, or a SightLab 3
+   experiment? An explicit statement counts; vocabulary alone ("trial", "gaze object") does
+   not, because both generations use the same words.
 
 This skill covers SightLab 2.x. For a SightLab 3 project, or a request to port a 2.x script to
 SightLab 3, use the `sightlab-3` skill if it is installed beside this one; otherwise say that
