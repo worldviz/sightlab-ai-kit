@@ -36,6 +36,6 @@ def test_starter_templates_point_at_the_installed_plugin(kit: Path):
 
 def test_host_sections_give_kit_relative_paths(kit: Path):
     import host_sections
-    assert "${CLAUDE_PLUGIN_ROOT}/skills/sightlab-2x/harness/autopilot.py" in host_sections.HOST["claude-plugin"]
-    assert "harness/autopilot.py" in host_sections.HOST["openai-plugin"]  # Codex runs it from the plugin's skill folder
-    assert "worldviz/sightlab-ai-kit" in host_sections.HOST["chat-bundle"]
+    assert "${CLAUDE_PLUGIN_ROOT}/skills/sightlab-2x/harness/autopilot.py" in host_sections.HOST["sightlab-2x"]["claude-plugin"]
+    assert "harness/autopilot.py" in host_sections.HOST["sightlab-2x"]["openai-plugin"]  # Codex runs it from the plugin's skill folder
+    assert "worldviz/sightlab-ai-kit" in host_sections.HOST["sightlab-2x"]["chat-bundle"]

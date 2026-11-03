@@ -41,7 +41,7 @@ def test_shipped_in_wrappers(tmp_path, kit):
     build(tmp_path / "src", kit / "templates", tmp_path / "dist", "0.0.0-test", kit / "SightLab-VR-Assistant-0.80.6")
     d = tmp_path / "dist"
     for rel in ("claude-plugin/skills/sightlab-2x/api/resources.json",
-                "openai-plugin/skills/instructions/api/resources.md"):
+                "openai-plugin/skills/sightlab-2x/api/resources.md"):
         assert (d / rel).is_file(), rel
     assert any(n.endswith("api/resources.json") for n in zipfile.ZipFile(d / "chat-bundle.zip").namelist())
 

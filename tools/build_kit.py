@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """Build the public wrappers from src/ (design §6.7) and the repo's two marketplace manifests.
 
-  dist/claude-plugin/     Claude Code / claude.ai plugin: manifest, commands, README, LICENSE, skills/sightlab-2x/
-  dist/openai-plugin/     the SightLab VR Assistant (ChatGPT/Codex) layout, next version; harness included
+src/ holds one folder per skill (src/sightlab-2x/ today; a SightLab 3 skill beside it later); every
+skill folder is rendered into skills/<name>/ of both plugins and into the chat bundle.
+
+  dist/claude-plugin/     Claude Code / claude.ai plugin: manifest, commands, README, LICENSE, skills/<skill>/
+  dist/openai-plugin/     the SightLab VR Assistant (ChatGPT/Codex) layout, next version; skills/<skill>/ with the harness
   dist/openai-plugin.zip  the same folder zipped, as the OpenAI directory submission wants it
   dist/starter-project/   a project template: CLAUDE.md, AGENTS.md, README, brief/; no copy of the kit
   dist/chat-bundle.zip    the content only, for claude.ai Projects and ChatGPT Projects
@@ -13,8 +16,8 @@
 Rules enforced here: outputs are built from allowlists (tools/allowlists.py), never by
 copying a folder; a secrets scan runs over every output; a fenced block longer than
 MAX_FENCED_LINES fails the build; every wrapper's
-skill text equals src/SKILL.md apart from the front matter and the generated "On this
-host" section (tools/host_sections.py).
+skill text equals its src/<skill>/SKILL.md apart from the front matter and the generated "On this
+host" section (tools/host_sections.py, keyed by skill; a skill without one fails the build).
 
 Usage: build_kit.py --version 2026.11.0 [--out dist]
 """
@@ -32,7 +35,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from allowlists import ALLOW, MAX_FENCED_LINES, MAX_PY_LINES, PY_HEADER  # noqa: E402
-from host_sections import HOST  # noqa: E402
+from host_sections import host_section  # noqa: E402
+from kit_paths import skill_dirs  # noqa: E402
 
 KIT = Path(__file__).resolve().parents[1]
 HOST_MARKER = "<!-- host-section -->"
@@ -77,19 +81,29 @@ def skill_body(text: str) -> str:
 
 
 def substitute(text: str, info: dict) -> str:
-    return text.replace("{{SIGHTLAB_VERSION}}", info["sightlab_utils_version"]).replace("{{KIT_DATE}}", info["date"])
+    """Fill the placeholders a skill or template may use; a placeholder the info cannot fill fails the build."""
+    out = text.replace("{{KIT_DATE}}", info["date"]).replace("{{VERSION}}", info["version"])
+    if "{{SIGHTLAB_VERSION}}" in out:
+        if "sightlab_utils_version" not in info:
+            raise BuildError("{{SIGHTLAB_VERSION}} used by a skill that has no api/sightlab-api.json")
+        out = out.replace("{{SIGHTLAB_VERSION}}", info["sightlab_utils_version"])
+    return out
 
 
 def render_skill(src_text: str, wrapper: str, skill_name: str, info: dict) -> str:
     t = substitute(_lf(src_text), info)
     m = FRONT_RE.match(t)
     if not m:
-        raise BuildError("src/SKILL.md has no front matter")
+        raise BuildError(f"{skill_name}/SKILL.md has no front matter")
     front = re.sub(r"^name:.*$", f"name: {skill_name}", m.group(1), flags=re.M)
     body = t[m.end():]
     if body.count(HOST_MARKER) != 1:
-        raise BuildError("src/SKILL.md must contain exactly one host-section marker")
-    body = body.replace(HOST_MARKER, HOST[wrapper].strip() + "\n")
+        raise BuildError(f"{skill_name}/SKILL.md must contain exactly one host-section marker")
+    try:
+        host = host_section(skill_name, wrapper)
+    except KeyError as e:
+        raise BuildError(str(e)) from None
+    body = body.replace(HOST_MARKER, host.strip() + "\n")
     return f"---\n{front}\n---\n{body}"
 
 
@@ -152,7 +166,7 @@ def _copy_template(templates: Path, name: str, dest: Path, info: dict) -> list[P
         out = dest / path.relative_to(root)
         out.parent.mkdir(parents=True, exist_ok=True)
         if path.suffix in TEXT_SUFFIXES or path.name in (".gitignore",):
-            text = substitute(_lf(path.read_text(encoding="utf-8")), info).replace("{{VERSION}}", info["version"])
+            text = substitute(_lf(path.read_text(encoding="utf-8")), info)
             _scan_secrets(out, text)
             out.write_text(text, encoding="utf-8", newline="\n")
         else:
@@ -207,12 +221,25 @@ def write_marketplaces(root: Path, dist_name: str, version: str, openai_name: st
 
 # ----------------------------------------------------------------------------- build
 
+def _skill_info(skill: Path, version: str, today: str) -> dict:
+    """Substitution values for one skill: the plugin version and date, plus what the skill was generated from."""
+    info = {"version": version, "date": today}
+    api = skill / "api" / "sightlab-api.json"
+    if api.is_file():
+        info["sightlab_utils_version"] = json.loads(api.read_text(encoding="utf-8"))["sightlab_utils_version"]
+    return info
+
+
 def build(src: Path, templates: Path, out: Path, version: str, base_plugin: Path) -> dict:
     src, templates, out, base_plugin = Path(src), Path(templates), Path(out), Path(base_plugin)
-    if (src / "sightlab-2x" / "SKILL.md").is_file():  # Task 1 shim: src/ holds skill folders now; Task 2 loops over them
-        src = src / "sightlab-2x"
-    api = json.loads((src / "api" / "sightlab-api.json").read_text(encoding="utf-8"))
-    info = {"version": version, "date": date.today().isoformat(), "sightlab_utils_version": api["sightlab_utils_version"]}
+    skills = skill_dirs(src)
+    if not skills:
+        raise BuildError(f"{src}: no skill folders (a folder holding SKILL.md)")
+    today = date.today().isoformat()
+    infos = {s.name: _skill_info(s, version, today) for s in skills}
+    if "sightlab_utils_version" not in infos.get("sightlab-2x", {}):
+        raise BuildError("src/sightlab-2x/api/sightlab-api.json is missing; the plugin-level templates cite its version")
+    info = {"version": version, "date": today, "sightlab_utils_version": infos["sightlab-2x"]["sightlab_utils_version"]}
     if out.exists():
         shutil.rmtree(out)
     out.mkdir(parents=True)
@@ -221,9 +248,10 @@ def build(src: Path, templates: Path, out: Path, version: str, base_plugin: Path
     # claude-plugin
     cp = out / "claude-plugin"
     _copy_template(templates, "claude-plugin", cp, info)
-    _copy_content(src, cp / "skills" / "sightlab-2x", "claude-plugin", "sightlab-2x", info)
+    for s in skills:
+        _copy_content(s, cp / "skills" / s.name, "claude-plugin", s.name, infos[s.name])
 
-    # openai-plugin: the existing listing's manifest and display files, next version
+    # openai-plugin: the existing listing's manifest and icon, next version; one skills/<name>/ per skill
     op = out / "openai-plugin"
     manifest = json.loads((base_plugin / ".codex-plugin" / "plugin.json").read_text(encoding="utf-8"))
     manifest["version"] = version
@@ -232,12 +260,13 @@ def build(src: Path, templates: Path, out: Path, version: str, base_plugin: Path
     }
     (op / ".codex-plugin").mkdir(parents=True)
     (op / ".codex-plugin" / "plugin.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8", newline="\n")
-    for rel, srcf in (("assets/gpt-icon.png", base_plugin / "assets" / "gpt-icon.png"), ("skills/instructions/agents/openai.yaml", src / "agents" / "openai.yaml")):
-        if srcf.is_file():
-            (op / rel).parent.mkdir(parents=True, exist_ok=True)
-            shutil.copyfile(srcf, op / rel)
+    icon = base_plugin / "assets" / "gpt-icon.png"
+    if icon.is_file():
+        (op / "assets").mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(icon, op / "assets" / "gpt-icon.png")
     _copy_template(templates, "openai-plugin", op, info)
-    _copy_content(src, op / "skills" / "instructions", "openai-plugin", "instructions", info)
+    for s in skills:
+        _copy_content(s, op / "skills" / s.name, "openai-plugin", s.name, infos[s.name])
     with zipfile.ZipFile(out / "openai-plugin.zip", "w", zipfile.ZIP_DEFLATED) as z:
         for p in sorted(op.rglob("*")):
             if p.is_file():
@@ -248,38 +277,47 @@ def build(src: Path, templates: Path, out: Path, version: str, base_plugin: Path
     _copy_template(templates, "starter-project", sp, info)
     for name in ("TEMPLATE.md", "EXAMPLE-gaze-dwell.md"):
         (sp / "brief").mkdir(parents=True, exist_ok=True)
-        text = substitute(_lf((src / "brief" / name).read_text(encoding="utf-8-sig")), info)
+        text = substitute(_lf((src / "sightlab-2x" / "brief" / name).read_text(encoding="utf-8-sig")), info)
         (sp / "brief" / name).write_text(text, encoding="utf-8", newline="\n")
 
     write_marketplaces(out.parent, out.name, version, manifest["name"], manifest["interface"]["displayName"])
 
-    # chat-bundle.zip
+    # chat-bundle.zip: <skill>/ per skill
     cb = out / "_chat-bundle"
-    _copy_content(src, cb / "sightlab-2x", "chat-bundle", "sightlab-2x", info)
+    for s in skills:
+        _copy_content(s, cb / s.name, "chat-bundle", s.name, infos[s.name])
     with zipfile.ZipFile(out / "chat-bundle.zip", "w", zipfile.ZIP_DEFLATED) as z:
         for p in sorted(cb.rglob("*")):
             if p.is_file():
                 z.write(p, p.relative_to(cb).as_posix())
     shutil.rmtree(cb)
 
-    # identity check across wrappers
-    bodies = {
-        "claude-plugin": skill_body((cp / "skills" / "sightlab-2x" / "SKILL.md").read_text(encoding="utf-8")),
-        "openai-plugin": skill_body((op / "skills" / "instructions" / "SKILL.md").read_text(encoding="utf-8")),
-    }
+    # identity check across wrappers, per skill
+    skill_shas: dict[str, str] = {}
     with zipfile.ZipFile(out / "chat-bundle.zip") as z:
-        bodies["chat-bundle"] = skill_body(z.read("sightlab-2x/SKILL.md").decode("utf-8"))
-    expected = skill_body(substitute(_lf((src / "SKILL.md").read_text(encoding="utf-8-sig")), info))
-    for name, body in bodies.items():
-        if body != expected:
-            raise BuildError(f"{name}: skill text differs from src/SKILL.md beyond the host section")
+        for s in skills:
+            bodies = {
+                "claude-plugin": skill_body((cp / "skills" / s.name / "SKILL.md").read_text(encoding="utf-8")),
+                "openai-plugin": skill_body((op / "skills" / s.name / "SKILL.md").read_text(encoding="utf-8")),
+                "chat-bundle": skill_body(z.read(f"{s.name}/SKILL.md").decode("utf-8")),
+            }
+            expected = skill_body(substitute(_lf((s / "SKILL.md").read_text(encoding="utf-8-sig")), infos[s.name]))
+            for name, body in bodies.items():
+                if body != expected:
+                    raise BuildError(f"{name}: {s.name} skill text differs from src/{s.name}/SKILL.md beyond the host section")
+            skill_shas[s.name] = hashlib.sha256(expected.encode("utf-8")).hexdigest()
 
     for wrapper in ("claude-plugin", "openai-plugin", "starter-project"):
         root = out / wrapper
         files[wrapper] = {p.relative_to(root).as_posix(): _sha(p) for p in sorted(root.rglob("*")) if p.is_file()}
     with zipfile.ZipFile(out / "chat-bundle.zip") as z:
         files["chat-bundle"] = {n: hashlib.sha256(z.read(n)).hexdigest() for n in z.namelist()}
-    result = {**info, "skill_body_sha256": hashlib.sha256(expected.encode("utf-8")).hexdigest(), "files": files}
+    result = {
+        **info,
+        "skill_body_sha256": skill_shas["sightlab-2x"],
+        "skills": {name: {k: v for k, v in infos[name].items() if k not in ("version", "date")} | {"skill_body_sha256": skill_shas[name]} for name in infos},
+        "files": files,
+    }
     (out / "BUILD.json").write_text(json.dumps(result, indent=1) + "\n", encoding="utf-8", newline="\n")
     return result
 

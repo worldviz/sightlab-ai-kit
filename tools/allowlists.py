@@ -1,4 +1,4 @@
-"""What each public wrapper may contain, as globs relative to src/ (design §6.7).
+"""What each public wrapper may contain, as globs relative to a skill folder under src/ (design §6.7).
 
 A file not matched here does not ship, whatever else is in src/. Add a glob deliberately.
 """
@@ -39,7 +39,7 @@ HARNESS = [
 
 ALLOW = {
     "claude-plugin": CONTENT + HARNESS,
-    "openai-plugin": CONTENT + HARNESS,  # Codex users install this one; the harness runs from its skill folder
+    "openai-plugin": CONTENT + HARNESS + ["agents/openai.yaml"],  # Codex users install this one; the harness runs from its skill folder; openai.yaml is its UI metadata
     "starter-project": [],               # a project template: the kit is the installed plugin, never a copy
     "chat-bundle": CONTENT,
 }

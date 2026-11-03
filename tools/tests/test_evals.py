@@ -77,7 +77,7 @@ def test_evals_ship_in_all_wrappers(tmp_path: Path, kit: Path):
     build(tmp_path / "src", kit / "templates", tmp_path / "dist", "0.0.0-test", kit / "SightLab-VR-Assistant-0.80.6")
     d = tmp_path / "dist"
     assert (d / "claude-plugin" / "skills" / "sightlab-2x" / "evals" / "gaze-dwell-rating" / "brief.md").is_file()
-    assert (d / "openai-plugin" / "skills" / "instructions" / "evals" / "gaze-dwell-rating" / "autopilot-assertions.json").is_file()
+    assert (d / "openai-plugin" / "skills" / "sightlab-2x" / "evals" / "gaze-dwell-rating" / "autopilot-assertions.json").is_file()
     assert not (d / "starter-project" / ".claude").exists()  # the starter is a template; the plugin carries the evals
     import zipfile
     assert any(n.endswith("evals/gaze-dwell-rating/acceptance.md") for n in zipfile.ZipFile(d / "chat-bundle.zip").namelist())

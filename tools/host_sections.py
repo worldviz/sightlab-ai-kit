@@ -1,10 +1,13 @@
 """The one permitted per-wrapper difference in SKILL.md: the "On this host" section (§6.5).
 
-Inserted where src/SKILL.md has `<!-- host-section -->`. Keep each short and factual. `<kit>`
-in the skill text is the folder that holds SKILL.md; each section says what that is here.
+Inserted where a skill's SKILL.md has `<!-- host-section -->`. Keyed by skill, then by
+wrapper: every skill folder under src/ needs all three wrappers here, or the build refuses
+it (a skill must never ship with another skill's host text). Keep each short and factual.
+`<kit>` in the skill text is the folder that holds SKILL.md; each section says what that is.
 """
 
 HOST = {
+    "sightlab-2x": {
     "claude-plugin": """## On this host
 
 You are running as the `sightlab-2x` Claude Code plugin with file and command access. The
@@ -62,4 +65,13 @@ the researcher to run them with the installed kit:
 
 and to paste the output back so you can fix what they find.
 """,
+    },
 }
+
+
+def host_section(skill: str, wrapper: str) -> str:
+    """The "On this host" text for one skill on one wrapper; KeyError names the skill when it has none."""
+    try:
+        return HOST[skill][wrapper]
+    except KeyError:
+        raise KeyError(f"no host section for skill {skill!r} on {wrapper}") from None
