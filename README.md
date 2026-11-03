@@ -8,8 +8,8 @@ marketplace those tools install from, so one `git tag` is a release.
 | Where you work | Install once | Updates |
 |---|---|---|
 | Claude Code (terminal, VS Code, desktop app Code tab) | `claude plugin install sightlab-2x --marketplace worldviz/sightlab-ai-kit` | `claude plugin update sightlab-2x@worldviz`, or turn on auto-update for the `worldviz` marketplace in `/plugin` > Marketplaces |
-| claude.ai chat and Cowork | Customize > Plugins > Add > Add marketplace, enter `worldviz/sightlab-ai-kit`, then add **SightLab 2.x AI Kit** | automatic when **Sync automatically** is on for the marketplace; the same plugin then also appears in your Claude Code as `sightlab-2x@synced` |
-| Codex CLI and the ChatGPT desktop app | `codex plugin marketplace add worldviz/sightlab-ai-kit`, then install **SightLab VR Assistant** from `/plugins` (CLI) or the Plugins tab (app) and start a new session | `codex plugin marketplace upgrade worldviz`, then reinstall from `/plugins` |
+| claude.ai chat and Cowork | Customize > Plugins > Add > Add marketplace, enter `worldviz/sightlab-ai-kit`, then add **SightLab 2.x AI Kit** | automatic when **Sync automatically** is on for the marketplace; per Anthropic's docs the same plugin then also appears in your Claude Code as a synced plugin |
+| Codex CLI and the ChatGPT desktop app | `codex plugin marketplace add worldviz/sightlab-ai-kit`, then install **SightLab VR Assistant** from `/plugins` in the CLI and start a new session (the ChatGPT desktop app shares Codex's configuration, so the plugin should also appear in its Plugins tab; not yet verified) | `codex plugin marketplace upgrade worldviz`, then reinstall from `/plugins` |
 | ChatGPT web | the **SightLab VR Assistant** plugin in ChatGPT's Plugins directory | automatic, after each version clears OpenAI's review |
 
 The plugins are the same content built two ways: `dist/claude-plugin` (Claude's layout) and
@@ -26,13 +26,18 @@ SightLab 2 and Vizard 8 they also check and run them.
 3. **Runs the experiment itself** at the end of each build step: `autopilot.py` launches
    Vizard in desktop mode, drives the prompts, ratings and gaze targets like a participant,
    and writes `autopilot-report.json` with a verdict (`failed`, `smoke-passed`,
-   `behaviour-verified`), every intervention it had to make, and the data files. It asks
-   before launching, and never launches when a file named `NO_AUTOPILOT` is in the project.
+   `behaviour-verified`), every intervention it had to make, and the data files. It says what
+   the run will check and asks once per session before the first launch, and never launches
+   when a file named `NO_AUTOPILOT` is in the project.
 4. **Writes `REVIEW.md`** at each stop: what changed, the verdict, what to check in the
    headset, the open questions.
 
 `dist/starter-project/` is an optional empty project template (`CLAUDE.md`, `AGENTS.md`, a
 brief template). Nothing of the kit is copied into projects; the plugin is the kit.
+
+**Upgrading a project made with the 2026.11.0 starter:** delete its `.claude/skills/` and
+`harness/` folders and replace its `CLAUDE.md` and `AGENTS.md` with the ones in
+`dist/starter-project/`; otherwise the old project-local copy competes with the plugin.
 
 ## Repository layout
 
@@ -48,10 +53,10 @@ brief template). Nothing of the kit is copied into projects; the plugin is the k
 ## Building
 
 ```
-python3 -m venv .venv && .venv/bin/pip install pytest
+python3 -m venv .venv && .venv/bin/pip install pytest     # Windows: .venv\Scripts\python
 .venv/bin/python -m pytest tools/tests -q
 .venv/bin/python tools/lint_kit.py
-.venv/bin/python tools/build_kit.py --version 2026.11.1
+.venv/bin/python tools/build_kit.py --version 2026.11.2
 claude plugin validate ./dist/claude-plugin && claude plugin validate .
 ```
 

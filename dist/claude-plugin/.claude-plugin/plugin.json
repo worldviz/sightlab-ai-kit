@@ -1,6 +1,6 @@
 {
   "name": "sightlab-2x",
-  "version": "2026.11.1",
+  "version": "2026.11.2",
   "description": "Build, check and test WorldViz SightLab 2.x (Vizard) eye-tracking experiments from a research brief.",
   "author": {
     "name": "WorldViz",

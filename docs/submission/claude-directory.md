@@ -42,6 +42,9 @@ resubmission. Listing is for discovery; our users can install from the marketpla
   downloads the validator couldn't inspect". The README explains what they are. A reviewer
   clears it; it is not a rejection. Every later version raises the same hold until a
   reviewer stops applying it, so expect a delay per release unless auto-publish is granted.
+- The listing icon is `dist/claude-plugin/.claude-plugin/icon.png` (512×512, the SightLab VR
+  Assistant icon). The directory takes it from the first save or submission only and never
+  changes it afterwards, so make sure it is the wanted one before the first **Validate**.
 - No hooks, no MCP servers, no executables, no package launchers, no credentials.
 - The skill tells Claude to run `python .../check.py` and `winviz.exe .../autopilot.py`; a
   script that SKILL.md only tells Claude to run is not part of the automated check. The

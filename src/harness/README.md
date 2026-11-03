@@ -16,8 +16,10 @@ python check.py <experiment.py> [--sightlab-utils "<installed package dir>"] [--
 ```
 
 Exit 1 on any error. Prefer `--sightlab-utils` on a customer machine so the checks use the
-installed API; without flags it finds `sightlab-api.json` beside itself, in `../api/`, or in
-the project's `.claude/skills/*/api/`. Findings and their meaning: `rules/common-mistakes.md`.
+installed API; without flags it finds `sightlab-api.json` beside itself or in `../api/`. Both
+tools run from the installed plugin's skill folder (`<kit>/harness/`), take the script's
+absolute path, and write only beside the script (`autopilot.py`: under `.autopilot/` there, or
+under `--run-root`). Findings and their meaning: `rules/common-mistakes.md`.
 `W_NO_INSTANCE` means nothing was checked; silence is never a pass.
 
 ## autopilot.py
@@ -66,7 +68,7 @@ What one run does, in order:
     evaluates the assertions, computes the verdict, and writes the report. Exit code 1 only
     for `failed`.
 
-Before any of that, a file named `NO_AUTOPILOT` in the experiment folder (or in `--run-root`)
+Before any of that, a file named `NO_AUTOPILOT` in the experiment's folder (the script's folder, or `--run-root`)
 makes the harness refuse with exit code 3 and no run folder. The agent's instructions honour
 the same file; this is the enforcement that does not depend on the agent remembering.
 

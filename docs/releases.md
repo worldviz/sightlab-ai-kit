@@ -34,7 +34,8 @@ get the version once it clears OpenAI's review.
    (`docs/submission/openai-directory.md`); `chat-bundle.zip` is for a ChatGPT or claude.ai
    Project's files.
 6. OpenAI directory: upload the zip as a new version (Sado; see the submission note).
-   Claude directory, once listed: nothing to do, it follows `main`.
+   Claude directory, once listed: it follows `main`; each version is scanned and, because of
+   the two large reference files, may be held for a reviewer, so check the portal.
 7. Tell the users in a three-line email: version, what changed, the update command.
 
 ## What users do

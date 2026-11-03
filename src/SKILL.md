@@ -30,7 +30,7 @@ Not every request is a build. Decide which of these it is, and say so in one lin
 
 When in doubt between the first two, do the smaller thing and offer the larger one.
 
-## 1. Scope guard, before anything else
+## 1. Scope guard, before any edit or build
 
 Read `register/cannot.md` and classify the request:
 
@@ -57,8 +57,10 @@ read files:
 - resources: `C:\Program Files\WorldViz\Sightlab2\sightlab_resources`;
 - Vizard: `C:\Program Files\WorldViz\Vizard8\bin\winviz.exe`.
 
-Note the installed version in your first message. When you can read the install, run
-`<kit>/harness/check.py --sightlab-utils <package dir>` so the checks use the real API.
+For an edit or a build, note the installed version in your first message (a question needs
+it only when the answer depends on the version). When you can read the install, run
+`python <kit>/harness/check.py <script> --sightlab-utils <package dir>` so the checks use the
+real API.
 
 `<kit>` is the folder this `SKILL.md` lives in (the plugin's skill folder; the host section
 above gives its exact form). The harness runs from there, never from a copy in the project,
@@ -82,7 +84,7 @@ Start the skeleton as soon as design, procedure, responses, trials and hardware 
 
 Work through these steps on your own: **skeleton → trials → responses → data → polish.**
 
-- after every edit, run `<kit>/harness/check.py <script>` and fix every error; read every
+- after every edit, run `python <kit>/harness/check.py <script>` and fix every error; read every
   warning against the brief (`W_NO_GAZE_OBJECT` is a question, not noise);
 - at the end of every build step, where the host can run commands, run the experiment in
   desktop mode: `"C:\Program Files\WorldViz\Vizard8\bin\winviz.exe" <kit>/harness/autopilot.py
@@ -90,7 +92,8 @@ Work through these steps on your own: **skeleton → trials → responses → da
   (`harness/README.md` explains it): `failed` means fix it; `smoke-passed` means it runs but
   the harness had to intervene, say where; `behaviour-verified` means it did what the brief
   says, in desktop mode. Write the brief's measures as `autopilot-assertions.json` beside the
-  script so the report checks them. Say what the run will check before launching it.
+  script so the report checks them. Say what the run will check, and ask once, before the
+  first launch in a session; later launches in the same session need only the one line.
   **Opt-out:** when the researcher says not to run Vizard, or a file named `NO_AUTOPILOT`
   sits in the project folder, do not launch the autopilot (the harness refuses on its own
   when it sees that file): run `check.py` only, and say in `REVIEW.md` that the run was
@@ -100,8 +103,9 @@ Work through these steps on your own: **skeleton → trials → responses → da
   at the scene and trial flow) and before handoff. The researcher can ask for one after
   every step.
 
-At each stop write `REVIEW.md`: what changed, the verdict and interventions, what to look for
-in the headset, the questions you need answered. Everything on the report's `needs_human`
+At each stop write `REVIEW.md`, starting with the kit version from the line at the top of
+this file: what changed, the verdict and interventions, what to look for in the headset, the
+questions you need answered. Everything on the report's `needs_human`
 list (real eye tracking, BIOPAC delivery, timing feel) is always theirs to check.
 
 ## 5. Rules

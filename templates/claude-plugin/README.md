@@ -19,12 +19,14 @@ hand over a review note with what the headset still has to confirm.
 
 ## What it runs, sends and fetches
 
-In Claude Code or Cowork on a PC with SightLab 2 and Vizard 8 installed, the skill may run
+In Claude Code on a Windows PC with SightLab 2 and Vizard 8 installed, the skill may run
 `python .../harness/check.py <script>` and
 `"C:\Program Files\WorldViz\Vizard8\bin\winviz.exe" .../harness/autopilot.py <script>`, which
 launches Vizard on that PC for about a minute and writes `.autopilot/` beside the script. It
-asks before launching Vizard, and never does so when a file named `NO_AUTOPILOT` is in the
-project folder. The plugin sends nothing anywhere and fetches nothing from the network. In
+says what the run will check and asks once per session before the first launch, and never
+launches when a file named `NO_AUTOPILOT` is in the project folder. Where it cannot run
+Windows programs (claude.ai chat, Cowork) it answers from its files and writes scripts for
+you to run. The plugin sends nothing anywhere and fetches nothing from the network. In
 claude.ai chat it answers from its files and writes scripts for you to run.
 
 ## Install

@@ -41,6 +41,9 @@ Manifest facts (from `.codex-plugin/plugin.json`, carried over from 0.80.6 and r
 Skills-only plugins need no review test cases and no demo recording. No MCP server, no
 hooks (lifecycle hooks are not eligible for the directory), no `.app.json`.
 
+`skills/instructions/agents/openai.yaml` (Codex UI metadata) carried a truncated
+`short_description` from 0.80.6; it is fixed in this build ("Build SightLab VR experiments").
+
 ## What the reviewer will read
 
 The execution wording. The skill's host section (`tools/host_sections.py`, marker

@@ -255,3 +255,27 @@ def test_reference_source_ships_in_every_wrapper(kit, tmp_path):
     names = zipfile.ZipFile(d / "chat-bundle.zip").namelist()
     for name in ("sightlab.py", "viz.py", "replay.py"):
         assert any(n.endswith("reference/" + name) for n in names), name
+
+
+def test_codex_marketplace_entry_carries_version(kit, kit_copy):
+    _build(kit, kit_copy, version="0.91.0")
+    codex = json.loads((kit_copy / ".agents" / "plugins" / "marketplace.json").read_text())
+    assert codex["plugins"][0]["version"] == "0.91.0"
+
+
+def test_claude_plugin_has_icon(kit, kit_copy):
+    """Review I-5: the directory takes the listing icon from the first save only; ship it from day one."""
+    _build(kit, kit_copy)
+    assert (kit_copy / "dist" / "claude-plugin" / ".claude-plugin" / "icon.png").is_file()
+
+
+def test_claude_validate_passes_when_cli_present(kit, kit_copy):
+    """Review focus 5: the built plugin and the marketplace root validate with the real CLI (skipped without it)."""
+    import shutil as _sh
+    import subprocess
+    if not _sh.which("claude"):
+        pytest.skip("claude CLI not installed")
+    _build(kit, kit_copy)
+    for target in (str(kit_copy / "dist" / "claude-plugin"), str(kit_copy)):
+        r = subprocess.run(["claude", "plugin", "validate", target], capture_output=True, text=True)
+        assert r.returncode == 0 and "Validation passed" in r.stdout, (target, r.stdout, r.stderr)

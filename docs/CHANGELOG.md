@@ -1,5 +1,15 @@
 # SightLab 2.x AI Kit — changelog
 
+Entries before 2026.11.1 cite `docs/audits/`, `docs/plans/` and `tools/fetch_sources.sh`,
+which live in the team's internal repository, not here.
+
+## 2026.11.2 (2026-11-03)
+
+Review fixes on 2026.11.1 (never installed by anyone): the agent asks once per session before
+the first Vizard launch; claude.ai and Cowork get chat rules; far gaze objects are still looked
+at when nothing nearer is visible; the Claude plugin ships its listing icon; migration note for
+2026.11.0 starter projects; Codex PowerShell wording; the OpenAI plugin's Codex UI metadata.
+
 ## 2026.11.1 (2026-11-03)
 
 Distribution moved to GitHub: `worldviz/sightlab-ai-kit` is a marketplace for Claude Code,

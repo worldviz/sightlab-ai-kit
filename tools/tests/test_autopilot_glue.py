@@ -134,3 +134,23 @@ def test_glue_performs_rating_select_with_press_right(kit: Path):
     text = (kit / "src" / "harness" / "autopilot.py").read_text(encoding="utf-8")
     assert '"rating-select"' in text and 'getEventID("pressRight")' in text
     assert "n_options=" in text  # the options count reaches push_prompt from showRatings' ratingScale
+
+
+def test_autopilot_refuses_before_touching_anything(kit: Path, tmp_path: Path):
+    """Review focus 1, as behaviour: with the marker present the harness exits 3 and creates no run folder,
+    before it ever imports viz (so this runs on any Python)."""
+    import subprocess
+    import sys
+    exp = tmp_path / "exp"
+    exp.mkdir()
+    (exp / "study.py").write_text("print('never runs')\n", encoding="utf-8")
+    (exp / "NO_AUTOPILOT").write_text("", encoding="utf-8")
+    r = subprocess.run([sys.executable, str(kit / "src" / "harness" / "autopilot.py"), str(exp / "study.py")],
+                       capture_output=True, text=True, cwd=tmp_path)
+    assert r.returncode == 3, (r.returncode, r.stderr)
+    assert "NO_AUTOPILOT" in r.stderr and not (exp / ".autopilot").exists()
+
+
+def test_glue_uses_core_rating_helpers(kit: Path):
+    text = (kit / "src" / "harness" / "autopilot.py").read_text(encoding="utf-8")
+    assert "perform_rating_select(" in text and "rating_options(" in text

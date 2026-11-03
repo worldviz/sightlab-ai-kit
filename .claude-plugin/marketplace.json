@@ -11,7 +11,7 @@
       "name": "sightlab-2x",
       "source": "./dist/claude-plugin",
       "description": "Build, check and test WorldViz SightLab 2.x (Vizard) eye-tracking experiments from a research brief.",
-      "version": "2026.11.1",
+      "version": "2026.11.2",
       "category": "Science",
       "tags": [
         "sightlab",

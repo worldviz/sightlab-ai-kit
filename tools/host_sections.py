@@ -19,6 +19,11 @@ the checks are expected, not optional:
   at the end of every build step; read `autopilot-report.json` in the run folder it names;
 - `/sightlab-2x:sightlab-new`, `/sightlab-2x:sightlab-check` and `/sightlab-2x:sightlab-review`
   are shortcuts for the brief, the checks and the review note.
+
+If you cannot run Windows programs here (claude.ai chat, Cowork, any non-Windows sandbox),
+this is a chat: answer questions from the files, write the brief and the script, list the
+checks you could not run, and give the researcher the two commands above to run on the
+SightLab PC. Never say a check ran when it did not.
 """,
     "openai-plugin": """## On this host
 
@@ -29,11 +34,17 @@ product you are using and its permissions:
 
 <!-- openai-review-wording -->
 - in ChatGPT (no local files): you cannot run the checks; say so, and for a build ask the
-  researcher to run `check.py` and the experiment from the kit's folder and paste the results;
+  researcher to run them on the SightLab PC with the installed kit (Claude Code:
+  `claude plugin install sightlab-2x --marketplace worldviz/sightlab-ai-kit`, then
+  `/sightlab-2x:sightlab-check <script>`; Codex: `codex plugin marketplace add
+  worldviz/sightlab-ai-kit`, install the SightLab VR Assistant, ask it to check the script)
+  and paste the results back;
 - in Codex with command access and the researcher's permission: run the checks as the skill
   describes, from this skill's folder: `python "<kit>/harness/check.py" <script>` after every
   edit, and `"C:\\Program Files\\WorldViz\\Vizard8\\bin\\winviz.exe" "<kit>/harness/autopilot.py" "<absolute path to script>"`
-  at the end of every build step. Say what a run will check before launching it.
+  at the end of every build step (in PowerShell, Codex's shell on Windows, prefix the quoted
+  executable with `&`). Say what a run will check, and ask once before the first launch in a
+  session.
 
 Generated scripts target the researcher's own licensed SightLab/Vizard installation.
 """,

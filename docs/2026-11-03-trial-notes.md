@@ -18,6 +18,13 @@ Your 2026-11-03 findings and Astra's review drove this version. In order:
 | NO_AUTOPILOT only in instructions | `autopilot.py` refuses on its own (exit 3) when the file is in the experiment folder. |
 | Codex untested | Still untested end to end by us; the Codex marketplace route below is what to try. |
 
+## Before you start
+
+A project made from the 2026.11.0 starter still holds the old kit in `.claude/skills/` and
+`harness/`. Delete both folders and replace its `CLAUDE.md`/`AGENTS.md` with the ones in
+`dist/starter-project/`, or start in a fresh folder; otherwise the old copy competes with the
+plugin and brings back the overhead and the relative paths.
+
 ## What to try
 
 1. **Claude Code, install once:** `claude plugin install sightlab-2x --marketplace worldviz/sightlab-ai-kit`.
@@ -30,7 +37,8 @@ Your 2026-11-03 findings and Astra's review drove this version. In order:
 3. **claude.ai:** Customize > Plugins > Add marketplace `worldviz/sightlab-ai-kit`, add the
    plugin, ask the `endFade` question in chat; it should quote `reference/sightlab.py`.
 4. **The harness on one of your scripts**, from the installed plugin's folder (Claude Code
-   caches it under `~/.claude/plugins/`; `claude plugin list` prints the path):
+   caches it under `~/.claude/plugins/cache/worldviz/sightlab-2x/<version>/`;
+   `claude plugin list --json` prints `installPath`):
    `winviz.exe "<plugin>\skills\sightlab-2x\harness\autopilot.py" "<absolute script path>"`.
    Look for `rating-selected` interventions and no look-at at a parked object.
 5. **The OpenAI directory:** `dist/openai-plugin.zip` is the upload for the SightLab VR

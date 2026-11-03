@@ -14,14 +14,14 @@ import shutil
 import sys
 import time
 
-HARNESS_VERSION = "2026.11.1"
+HARNESS_VERSION = "2026.11.2"
 NO_AUTOPILOT = "NO_AUTOPILOT"  # a file of this name in the experiment folder (or --run-root) stops the harness
 
 # Interventions of these kinds mean the harness had to force its way through: the run can be
 # smoke-passed at best (a blind-continue whose effect was "none" is exempt). Everything else
 # (forced-kwarg, trial-cap, prompt-continue, rating-confirmed, key-continue, look-at) is the
 # harness doing what a person would do at a prompt.
-COUNTED_KINDS = {"forced-advance", "popup-suppressed", "blind-continue", "timeout"}
+COUNTED_KINDS = {"forced-advance", "popup-suppressed", "blind-continue", "timeout"}  # not: prompt-continue, rating-selected, rating-confirmed, key-continue, look-at, forced-kwarg, trial-cap
 
 # Always a human's or the hardware's to check, whatever the verdict says.
 NEEDS_HUMAN = ["real eye tracking on the headset", "BIOPAC marker delivery", "timing and interaction feel"]
@@ -261,6 +261,26 @@ def rating_steps(prompt_number, n_options):
     return max(0, min(choice, n - 1))
 
 
+def rating_options(args, kwargs):
+    """How many options a showRatings call offers, from its arguments: showRatings(message, ratingScale=...),
+    showRatings(message, scale) or SightLab's own showRatings(**startRatings); None means the default."""
+    scale = kwargs.get("ratingScale") if "ratingScale" in kwargs else (args[1] if len(args) > 1 else None)
+    try:
+        return len(scale) if scale else None
+    except TypeError:
+        return None
+
+
+def perform_rating_select(state, t, steps, send):
+    """Move the rating highlight `steps` options to the right by calling `send()` that many times, then
+    mark the prompt selected so the next tick confirms it; returns the number of presses sent."""
+    for _ in range(int(steps)):
+        send()
+    state["rating_selected"] = True
+    state["last_continue"] = t
+    return int(steps)
+
+
 def push_prompt(state, kind, n_options=None):
     """A prompt went up. Prompts nest (startTrial shows its text through showInstructions), so keep a stack.
     A ratings prompt also decides which option this run will choose (see rating_steps)."""
@@ -326,19 +346,32 @@ def within_reach(center, eye, max_dist=LOOK_REACH_M):
 
 
 def pick_look_target(names, index, is_visible, is_reachable=None):
-    """The next visible, reachable gaze object from `index`, or None: (name, next_index)."""
+    """The next visible gaze object from `index`, preferring one within reach, or None: (name, next_index).
+
+    Reach orders the choice, it never starves it: when every visible object is far (an outdoor
+    scene, a whole-environment gaze mesh) the far ones are looked at as before; a parked object
+    only gets a look when nothing nearer is visible."""
     if not names:
         return None, index
     n = len(names)
+    fallback = None
     for k in range(n):
         name = names[(index + k) % n]
         try:
-            ok = bool(is_visible(name)) and (is_reachable is None or bool(is_reachable(name)))
+            visible = bool(is_visible(name))
         except Exception:  # noqa: BLE001
-            ok = True
-        if ok:
+            visible = True
+        if not visible:
+            continue
+        try:
+            reachable = is_reachable is None or bool(is_reachable(name))
+        except Exception:  # noqa: BLE001
+            reachable = True
+        if reachable:
             return name, index + k + 1
-    return None, index  # nothing to look at: hidden objects sit wherever they were parked
+        if fallback is None:
+            fallback = (name, index + k + 1)
+    return fallback if fallback else (None, index)  # nothing visible: hidden objects sit wherever they were parked
 
 
 class MarkerSink(object):

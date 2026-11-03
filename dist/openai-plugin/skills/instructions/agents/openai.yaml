@@ -1,4 +1,3 @@
 interface:
   display_name: SightLab VR Assistant
-  short_description: Assistant specializing in VR experiment setup and design with
-    Si
+  short_description: Build SightLab VR experiments

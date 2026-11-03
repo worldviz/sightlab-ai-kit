@@ -475,7 +475,7 @@ def test_pick_look_target_skips_unreachable():
     assert name == "near" and nxt == 2
     name, nxt = pick_look_target(names, 2, lambda n: True, lambda n: reach[n])
     assert name == "near"
-    assert pick_look_target(names, 0, lambda n: True, lambda n: False) == (None, 0)
+    assert pick_look_target(names, 0, lambda n: True, lambda n: False) == ("parked", 1)  # nothing nearer: fall back
 
 
 # --- 2026-11-03: ratings vary across prompts (Sado finding: the harness always chose 1) ----------
@@ -498,3 +498,56 @@ def test_decide_selects_before_confirming_rating():
     st["rating_selected"] = True
     st["last_continue"] = 7.0
     assert [a[0] for a in decide(st, t=9.0, spt=15.0, timeout=120.0)] == ["rating-confirmed"]
+
+
+# --- 2026-11-03 review fixes ---------------------------------------------------------------------
+
+def test_pick_look_target_falls_back_to_visible_when_nothing_is_in_reach():
+    """Review I-6: a scene whose real targets are far must still get looks; reach only orders, never starves."""
+    from autopilot_core import pick_look_target
+    names = ["far-a", "far-b"]
+    name, nxt = pick_look_target(names, 0, lambda n: True, lambda n: False)
+    assert name == "far-a" and nxt == 1
+    assert pick_look_target(names, 0, lambda n: False, lambda n: False) == (None, 0)
+
+
+def test_rating_steps_never_exceed_options():
+    """Review focus 3 as a property: presses are at most n_options - 1 for every prompt number."""
+    from autopilot_core import rating_steps
+    for n in range(1, 21):
+        for prompt in range(6):
+            assert 0 <= rating_steps(prompt, n) <= n - 1
+
+
+def test_rating_options_from_call_shapes():
+    """SightLab calls showRatings(message, ratingScale=...) and showRatings(message, scale) and showRatings(**kw)."""
+    from autopilot_core import rating_options
+    assert rating_options(("Q?", ["1", "2", "3"]), {}) == 3
+    assert rating_options(("Q?",), {"ratingScale": ["a", "b"]}) == 2
+    assert rating_options(("Q?",), {}) is None
+    assert rating_options((), {"message": "Q?"}) is None
+
+
+def test_perform_rating_select_then_confirm_over_three_prompts():
+    """Review I-7: the full sequence through the core: select (N presses), then confirm, prompt after prompt."""
+    from autopilot_core import decide, perform_rating_select, pop_prompt, push_prompt
+    sent = []
+    st = _state(last_continue=0.0)
+    seen = []
+    t = 0.0
+    for prompt in range(3):
+        push_prompt(st, "ratings", n_options=5)
+        st["last_continue"] = t
+        t += 2.0
+        actions = decide(st, t=t, spt=15.0, timeout=120.0)
+        if actions and actions[0][0] == "rating-select":
+            perform_rating_select(st, t, actions[0][1], lambda: sent.append("pressRight"))
+            seen.append(("select", actions[0][1]))
+            assert st["rating_selected"] is True and st["last_continue"] == t
+            t += 2.0
+            actions = decide(st, t=t, spt=15.0, timeout=120.0)
+        assert [a[0] for a in actions] == ["rating-confirmed"], (prompt, actions)
+        seen.append(("confirm", prompt))
+        pop_prompt(st)
+    assert seen == [("confirm", 0), ("select", 2), ("confirm", 1), ("select", 4), ("confirm", 2)]
+    assert sent.count("pressRight") == 6

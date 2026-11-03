@@ -10,5 +10,5 @@ it if empty): $ARGUMENTS
 3. Assemble `brief/<study-name>.md` from `brief/TEMPLATE.md`; ask only the consequential
    questions; mark defaults `(assumed)`.
 4. When design, procedure, responses, trials and hardware are settled, build the skeleton,
-   run `"${CLAUDE_PLUGIN_ROOT}/skills/sightlab-2x/harness/check.py"` on it, and stop at the first
+   run `python "${CLAUDE_PLUGIN_ROOT}/skills/sightlab-2x/harness/check.py" <script>` on it, and stop at the first
    headset checkpoint with `REVIEW.md`.

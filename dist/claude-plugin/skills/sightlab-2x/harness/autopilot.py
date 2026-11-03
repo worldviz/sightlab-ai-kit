@@ -22,7 +22,8 @@ sys.path.insert(0, HERE)
 from autopilot_core import (MarkerSink, RunDirTooLarge, autopilot_blocked, cap_trialcount, decide, demo_mode, finish, load_assertions,  # noqa: E402
                             new_report, pop_prompt, prepare_run_dir, push_prompt, record,
                             should_count_trial_end, write_report,
-                            gaze_euler, perform_key_continue, pick_look_target, register_wait, within_reach)
+                            gaze_euler, perform_key_continue, perform_rating_select, pick_look_target, rating_options,
+                            register_wait, within_reach)
 
 
 def parse_args(argv):
@@ -253,11 +254,7 @@ def _wrap_generator(method, before=None, after=None):
         if kind:
             # Prompts nest: startTrial shows its text through showInstructions. A stack keeps the
             # outer prompt up while the inner one comes down (harness review fix 1).
-            n_options = None
-            if kind == "ratings":
-                scale = kw.get("ratingScale") if "ratingScale" in kw else (a[1] if len(a) > 1 else None)
-                n_options = len(scale) if scale else None
-            push_prompt(state, kind, n_options=n_options)
+            push_prompt(state, kind, n_options=rating_options(a, kw) if kind == "ratings" else None)
             state["last_continue"] = now()
         try:
             gen = orig(self, *a, **kw)
@@ -386,11 +383,10 @@ def tick():
             return
         if kind == "rating-select":
             # Move the highlighted option before confirming, as a person would with the controller.
-            for _ in range(int(detail)):
-                viz.sendEvent(viz.getEventID("pressRight"), viz.Event(name="pressRight"))
-            state["rating_selected"] = True
-            state["last_continue"] = t
-            record(report, "rating-selected", t, presses=int(detail), prompt=state.get("rating_prompt"))
+            presses = perform_rating_select(state, t, detail,
+                                            lambda: viz.sendEvent(viz.getEventID("pressRight"), viz.Event(name="pressRight")))
+            record(report, "rating-selected", t, presses=presses, prompt=state.get("rating_prompt"),
+                   landed=getattr(lab, "currChoice", None))
         elif kind in ("prompt-continue", "rating-confirmed"):
             state["last_continue"] = t
             viz.sendEvent(viz.getEventID("triggerPress"), viz.Event(name="triggerPress"))
