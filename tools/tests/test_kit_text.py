@@ -63,3 +63,14 @@ def test_plugin_is_named_sightlab_everywhere(kit: Path):
 def test_readme_tells_2026_11_2_installs_to_reinstall(kit: Path):
     text = (kit / "README.md").read_text(encoding="utf-8")
     assert "claude plugin uninstall sightlab-2x@worldviz" in text
+
+
+def test_skill_routes_between_generations_first(kit: Path):
+    """Both generations will be installed side by side for a year; the import line is the signal."""
+    text = (kit / "src" / "sightlab-2x" / "SKILL.md").read_text(encoding="utf-8")
+    i = text.index("## Which SightLab")
+    assert i < text.index("<!-- host-section -->") < text.index("## 0. Size the request")
+    section = text[i:text.index("<!-- host-section -->")]
+    for signal in ("sightlab_utils", ".oep.json", ".oep-project.json", "from sightlab import", "_sightlab_version.py", "Ask once", "`sightlab-3`", "not covered"):
+        assert signal in section, signal
+    assert "class named `SightLab`" in section

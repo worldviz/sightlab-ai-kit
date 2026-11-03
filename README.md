@@ -23,6 +23,8 @@ SightLab 2 and Vizard 8 they also check and run them.
 
 ## What the agent does with it
 
+0. **Confirms the generation.** SightLab 2.x and 3 coexist on many machines; the skill reads the
+   import line and the project files first, and asks once when they do not decide it.
 1. **Sizes the request.** A question gets an answer with the file and line. A small edit
    gets the edit and the static check. A new study or a run-time bug gets the full workflow.
 2. **Builds from a brief** (yours, a paper, or a Fit Check brief) in steps: skeleton, trials,
