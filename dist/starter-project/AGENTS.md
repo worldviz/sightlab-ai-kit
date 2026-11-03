@@ -1,6 +1,6 @@
 # Instructions for coding agents
 
-This is a SightLab 2.x (Vizard, Windows) experiment project. The SightLab AI kit is an
+This is a SightLab 2 (Vizard, Windows) experiment project. The SightLab AI kit is an
 installed plugin, not a folder in this project.
 
 1. Use the SightLab VR Assistant plugin's skill for anything SightLab. If it is not installed:
@@ -15,4 +15,4 @@ installed plugin, not a folder in this project.
    sees one.
 4. The brief lives in `brief/`; experiment data goes to `data/`.
 
-Kit version 2026.11.3, generated from sightlab_utils 2.8.21 on 2026-11-03.
+Kit version 2026.11.4, generated from sightlab_utils 2.8.21 on 2026-11-03.

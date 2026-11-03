@@ -18,7 +18,7 @@ scoreboards, one Markdown file per month, appended by `tools/score_eval.py`.
    complete build, through the responses and data checkpoints, taking the kit's defaults for
    open questions and marking them `(assumed)`; "stop after the skeleton checkpoint" is read
    literally by some runs and then needs a second "carry on" message (2026-10-31, evals 3–4).
-3. `python dist/claude-plugin/skills/sightlab-2x/harness/check.py <script> --json > check.json`.
+3. `python dist/claude-plugin/skills/sightlab-2/harness/check.py <script> --json > check.json`.
 4. On the Vizard machine, with the plugin's skill folder staged beside the experiment:
    `winviz.exe <skill>\harness\autopilot.py <absolute script path> --assertions
    <eval>\autopilot-assertions.json`; copy back `autopilot-report.json`.

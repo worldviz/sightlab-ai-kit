@@ -3,6 +3,14 @@
 Entries before 2026.11.1 cite `docs/audits/`, `docs/plans/` and `tools/fetch_sources.sh`,
 which live in the team's internal repository, not here.
 
+## 2026.11.4 (2026-11-03)
+
+Naming cleaned up before anyone installs (Andy): the skill is `sightlab-2` (was `sightlab-2x`;
+the product calls itself SightLab 2, and the future skill is `sightlab-3`), prose says
+"SightLab 2" rather than "2.x", and the OpenAI listing's manifest and icon live in
+`templates/openai-plugin/` instead of a folder named after the 0.80.6 build. No content or
+harness change. If you installed 2026.11.3, `claude plugin update sightlab@worldviz` is enough.
+
 ## 2026.11.3 (2026-11-03)
 
 The plugin is now `sightlab` and carries one skill per SightLab generation (`sightlab-2x`

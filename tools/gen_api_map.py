@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the SightLab 2.x API map from a `sightlab_utils` package, using `ast` only.
+"""Generate the SightLab 2 API map from a `sightlab_utils` package, using `ast` only.
 
 No Vizard import is needed, so this runs on any Python 3.9+. Output (design §6.4):
 
@@ -19,11 +19,11 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from kit_paths import SKILL_2X  # noqa: E402
+from kit_paths import SKILL_2  # noqa: E402
 
 MODULES = ("sightlab", "settings", "eye_tracker_utils", "gaze_events")
 PAGE_CLASSES_PREFIX = "SightLab"  # classes shown on the Markdown page; GUI/HUD/SessionRecorder stay JSON-only
-DEFAULT_SOURCES = Path.home() / "development" / "sightlab-2x-sources"
+DEFAULT_SOURCES = Path.home() / "development" / "sightlab-2-sources"
 
 
 def _is_public(name: str) -> bool:
@@ -133,7 +133,7 @@ def build_api_map(package_dir: Path) -> dict:
 
 def _md_page(api: dict) -> str:
     lines = [
-        f"# SightLab 2.x API map (sightlab_utils {api['sightlab_utils_version']})",
+        f"# SightLab 2 API map (sightlab_utils {api['sightlab_utils_version']})",
         "",
         f"Generated {api['generated']} by `tools/gen_api_map.py`. Do not edit; regenerate.",
         "Signatures are what the installed package exposes; docstrings are the first paragraph only.",
@@ -201,7 +201,7 @@ def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     p.add_argument("--sources", type=Path, default=DEFAULT_SOURCES, help="folder holding sightlab_utils/ (from fetch_sources.sh)")
     p.add_argument("--package", type=Path, default=None, help="a sightlab_utils package dir (overrides --sources)")
-    p.add_argument("--out", type=Path, default=SKILL_2X / "api")
+    p.add_argument("--out", type=Path, default=SKILL_2 / "api")
     a = p.parse_args(argv)
     package = a.package or (a.sources / "sightlab_utils")
     api = build_api_map(package)

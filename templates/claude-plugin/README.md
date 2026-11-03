@@ -1,7 +1,7 @@
 # SightLab AI Kit
 
-A plugin that carries one skill per SightLab generation: `sightlab-2x` today, for building,
-checking and testing WorldViz SightLab 2.x experiments, the Python eye-tracking library that
+A plugin that carries one skill per SightLab generation: `sightlab-2` today, for building,
+checking and testing WorldViz SightLab 2 experiments, the Python eye-tracking library that
 runs inside Vizard on Windows. The skill gives Claude the workflow a
 SightLab engineer follows: size the request, assemble a brief, build the script in steps,
 run the static checker after every edit, run the experiment unattended in desktop mode, and
@@ -9,11 +9,11 @@ hand over a review note with what the headset still has to confirm.
 
 ## What it contains
 
-- `skills/sightlab-2x/SKILL.md`: the workflow, with the rules, patterns, guides and the API
+- `skills/sightlab-2/SKILL.md`: the workflow, with the rules, patterns, guides and the API
   map generated from the SightLab source beside it.
-- `skills/sightlab-2x/reference/`: `sightlab.py`, `viz.py` and `replay.py`, the SightLab and
+- `skills/sightlab-2/reference/`: `sightlab.py`, `viz.py` and `replay.py`, the SightLab and
   Vizard source that every SightLab licensee receives, so answers cite real lines.
-- `skills/sightlab-2x/harness/`: `check.py` (static checks, any Python 3.8+) and
+- `skills/sightlab-2/harness/`: `check.py` (static checks, any Python 3.8+) and
   `autopilot.py` (runs the experiment in Vizard's desktop mode and writes a report).
 - Three commands: `/sightlab:new`, `/sightlab:check`, `/sightlab:review`.
 

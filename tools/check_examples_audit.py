@@ -18,11 +18,11 @@ from pathlib import Path
 
 KIT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from kit_paths import SKILL_2X  # noqa: E402
-sys.path.insert(0, str(SKILL_2X / "harness"))
+from kit_paths import SKILL_2  # noqa: E402
+sys.path.insert(0, str(SKILL_2 / "harness"))
 from check import check_script, load_api  # noqa: E402
 
-DEFAULT_SOURCES = Path.home() / "development" / "sightlab-2x-sources"
+DEFAULT_SOURCES = Path.home() / "development" / "sightlab-2-sources"
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -31,9 +31,9 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--out", type=Path, default=KIT / "docs" / "audits" / f"{date.today().isoformat()}-check-over-examples.md")
     a = p.parse_args(argv)
 
-    api = load_api(SKILL_2X / "api" / "sightlab-api.json")
+    api = load_api(SKILL_2 / "api" / "sightlab-api.json")
     resources = {l.strip() for l in (a.sources / "resources-list.txt").read_text().splitlines() if l.strip()}
-    index = json.loads((SKILL_2X / "examples" / "index.json").read_text())
+    index = json.loads((SKILL_2 / "examples" / "index.json").read_text())
 
     per_code = Counter()
     examples_with_code: dict[str, set] = defaultdict(set)

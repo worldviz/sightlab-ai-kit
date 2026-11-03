@@ -296,7 +296,7 @@ def test_prepare_run_dir_refuses_huge_folders(tmp_path):
 
 
 def test_core_parses_as_python38(kit: Path):
-    src = (kit / "src" / "sightlab-2x" / "harness" / "autopilot_core.py").read_text()
+    src = (kit / "src" / "sightlab-2" / "harness" / "autopilot_core.py").read_text()
     ast.parse(src, feature_version=(3, 8))
     assert "f\"" not in src.replace("f\"{", "") or True  # f-strings are fine in 3.8; walrus/match are not
     assert " match " not in src and ":=" not in src

@@ -38,10 +38,10 @@ def test_markdown_lists_every_environment(tmp_path, res):
 
 def test_shipped_in_wrappers(tmp_path, kit):
     shutil.copytree(kit / "src", tmp_path / "src")
-    build(tmp_path / "src", kit / "templates", tmp_path / "dist", "0.0.0-test", kit / "SightLab-VR-Assistant-0.80.6")
+    build(tmp_path / "src", kit / "templates", tmp_path / "dist", "0.0.0-test")
     d = tmp_path / "dist"
-    for rel in ("claude-plugin/skills/sightlab-2x/api/resources.json",
-                "openai-plugin/skills/sightlab-2x/api/resources.md"):
+    for rel in ("claude-plugin/skills/sightlab-2/api/resources.json",
+                "openai-plugin/skills/sightlab-2/api/resources.md"):
         assert (d / rel).is_file(), rel
     assert any(n.endswith("api/resources.json") for n in zipfile.ZipFile(d / "chat-bundle.zip").namelist())
 

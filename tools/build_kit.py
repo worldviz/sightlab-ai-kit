@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build the public wrappers from src/ (design §6.7) and the repo's two marketplace manifests.
 
-src/ holds one folder per skill (src/sightlab-2x/ today; a SightLab 3 skill beside it later); every
+src/ holds one folder per skill (src/sightlab-2/ today; a SightLab 3 skill beside it later); every
 skill folder is rendered into skills/<name>/ of both plugins and into the chat bundle.
 
   dist/claude-plugin/     Claude Code / claude.ai plugin: manifest, commands, README, LICENSE, skills/<skill>/
@@ -195,7 +195,7 @@ def write_marketplaces(root: Path, dist_name: str, version: str, openai_name: st
         "plugins": [{
             "name": "sightlab",
             "source": f"./{dist_name}/claude-plugin",
-            "description": "Build, check and test WorldViz SightLab (Vizard) experiments from a research brief. Carries one skill per SightLab generation; SightLab 2.x today.",
+            "description": "Build, check and test WorldViz SightLab (Vizard) experiments from a research brief. Carries one skill per SightLab generation; SightLab 2 today.",
             "version": version,
             "category": "Science",
             "tags": ["sightlab", "vizard", "vr", "eye-tracking", "experiment"],
@@ -230,16 +230,16 @@ def _skill_info(skill: Path, version: str, today: str) -> dict:
     return info
 
 
-def build(src: Path, templates: Path, out: Path, version: str, base_plugin: Path) -> dict:
-    src, templates, out, base_plugin = Path(src), Path(templates), Path(out), Path(base_plugin)
+def build(src: Path, templates: Path, out: Path, version: str) -> dict:
+    src, templates, out = Path(src), Path(templates), Path(out)
     skills = skill_dirs(src)
     if not skills:
         raise BuildError(f"{src}: no skill folders (a folder holding SKILL.md)")
     today = date.today().isoformat()
     infos = {s.name: _skill_info(s, version, today) for s in skills}
-    if "sightlab_utils_version" not in infos.get("sightlab-2x", {}):
-        raise BuildError("src/sightlab-2x/api/sightlab-api.json is missing; the plugin-level templates cite its version")
-    info = {"version": version, "date": today, "sightlab_utils_version": infos["sightlab-2x"]["sightlab_utils_version"]}
+    if "sightlab_utils_version" not in infos.get("sightlab-2", {}):
+        raise BuildError("src/sightlab-2/api/sightlab-api.json is missing; the plugin-level templates cite its version")
+    info = {"version": version, "date": today, "sightlab_utils_version": infos["sightlab-2"]["sightlab_utils_version"]}
     if out.exists():
         shutil.rmtree(out)
     out.mkdir(parents=True)
@@ -251,20 +251,16 @@ def build(src: Path, templates: Path, out: Path, version: str, base_plugin: Path
     for s in skills:
         _copy_content(s, cp / "skills" / s.name, "claude-plugin", s.name, infos[s.name])
 
-    # openai-plugin: the existing listing's manifest and icon, next version; one skills/<name>/ per skill
+    # openai-plugin: the listing's manifest (templates/openai-plugin/.codex-plugin, stamped) and icon; one skills/<name>/ per skill
     op = out / "openai-plugin"
-    manifest = json.loads((base_plugin / ".codex-plugin" / "plugin.json").read_text(encoding="utf-8"))
+    _copy_template(templates, "openai-plugin", op, info)
+    manifest_path = op / ".codex-plugin" / "plugin.json"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     manifest["version"] = version
     manifest.setdefault("extensions", {}).setdefault("com.openai", {})["publication"] = {
         "release_notes": f"Kit {version}: skill, rules, patterns, API map, reference source and the test harness, generated from sightlab_utils {info['sightlab_utils_version']}."
     }
-    (op / ".codex-plugin").mkdir(parents=True)
-    (op / ".codex-plugin" / "plugin.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8", newline="\n")
-    icon = base_plugin / "assets" / "gpt-icon.png"
-    if icon.is_file():
-        (op / "assets").mkdir(parents=True, exist_ok=True)
-        shutil.copyfile(icon, op / "assets" / "gpt-icon.png")
-    _copy_template(templates, "openai-plugin", op, info)
+    manifest_path.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8", newline="\n")
     for s in skills:
         _copy_content(s, op / "skills" / s.name, "openai-plugin", s.name, infos[s.name])
     with zipfile.ZipFile(out / "openai-plugin.zip", "w", zipfile.ZIP_DEFLATED) as z:
@@ -277,7 +273,7 @@ def build(src: Path, templates: Path, out: Path, version: str, base_plugin: Path
     _copy_template(templates, "starter-project", sp, info)
     for name in ("TEMPLATE.md", "EXAMPLE-gaze-dwell.md"):
         (sp / "brief").mkdir(parents=True, exist_ok=True)
-        text = substitute(_lf((src / "sightlab-2x" / "brief" / name).read_text(encoding="utf-8-sig")), info)
+        text = substitute(_lf((src / "sightlab-2" / "brief" / name).read_text(encoding="utf-8-sig")), info)
         (sp / "brief" / name).write_text(text, encoding="utf-8", newline="\n")
 
     write_marketplaces(out.parent, out.name, version, manifest["name"], manifest["interface"]["displayName"])
@@ -314,7 +310,7 @@ def build(src: Path, templates: Path, out: Path, version: str, base_plugin: Path
         files["chat-bundle"] = {n: hashlib.sha256(z.read(n)).hexdigest() for n in z.namelist()}
     result = {
         **info,
-        "skill_body_sha256": skill_shas["sightlab-2x"],
+        "skill_body_sha256": skill_shas["sightlab-2"],
         "skills": {name: {k: v for k, v in infos[name].items() if k not in ("version", "date")} | {"skill_body_sha256": skill_shas[name]} for name in infos},
         "files": files,
     }
@@ -328,10 +324,9 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--src", type=Path, default=KIT / "src")
     p.add_argument("--templates", type=Path, default=KIT / "templates")
     p.add_argument("--out", type=Path, default=KIT / "dist")
-    p.add_argument("--base-plugin", type=Path, default=KIT / "SightLab-VR-Assistant-0.80.6")
     a = p.parse_args(argv)
     try:
-        info = build(a.src, a.templates, a.out, a.version, a.base_plugin)
+        info = build(a.src, a.templates, a.out, a.version)
     except BuildError as e:
         print(f"BUILD FAILED: {e}", file=sys.stderr)
         return 1

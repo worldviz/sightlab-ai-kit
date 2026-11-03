@@ -14,7 +14,7 @@ SECTION_IDS = ["purpose", "design", "stimuli", "procedure", "instructions", "res
 
 @pytest.fixture(scope="module")
 def evals(kit: Path) -> Path:
-    return kit / "src" / "sightlab-2x" / "evals"
+    return kit / "src" / "sightlab-2" / "evals"
 
 
 def test_four_evals_present(evals: Path):
@@ -74,10 +74,10 @@ def test_acceptance_sections(evals: Path):
 
 def test_evals_ship_in_all_wrappers(tmp_path: Path, kit: Path):
     shutil.copytree(kit / "src", tmp_path / "src")
-    build(tmp_path / "src", kit / "templates", tmp_path / "dist", "0.0.0-test", kit / "SightLab-VR-Assistant-0.80.6")
+    build(tmp_path / "src", kit / "templates", tmp_path / "dist", "0.0.0-test")
     d = tmp_path / "dist"
-    assert (d / "claude-plugin" / "skills" / "sightlab-2x" / "evals" / "gaze-dwell-rating" / "brief.md").is_file()
-    assert (d / "openai-plugin" / "skills" / "sightlab-2x" / "evals" / "gaze-dwell-rating" / "autopilot-assertions.json").is_file()
+    assert (d / "claude-plugin" / "skills" / "sightlab-2" / "evals" / "gaze-dwell-rating" / "brief.md").is_file()
+    assert (d / "openai-plugin" / "skills" / "sightlab-2" / "evals" / "gaze-dwell-rating" / "autopilot-assertions.json").is_file()
     assert not (d / "starter-project" / ".claude").exists()  # the starter is a template; the plugin carries the evals
     import zipfile
     assert any(n.endswith("evals/gaze-dwell-rating/acceptance.md") for n in zipfile.ZipFile(d / "chat-bundle.zip").namelist())

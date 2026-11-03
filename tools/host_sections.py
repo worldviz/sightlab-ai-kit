@@ -7,18 +7,18 @@ it (a skill must never ship with another skill's host text). Keep each short and
 """
 
 HOST = {
-    "sightlab-2x": {
+    "sightlab-2": {
     "claude-plugin": """## On this host
 
-You are running as the `sightlab-2x` skill of the `sightlab` Claude Code plugin, with file and command access. The
+You are running as the `sightlab-2` skill of the `sightlab` Claude Code plugin, with file and command access. The
 kit's files live under the plugin root, not in the researcher's project: `<kit>` is
-`${CLAUDE_PLUGIN_ROOT}/skills/sightlab-2x`. Confirm the generation, then size the request (section 0); for a build
+`${CLAUDE_PLUGIN_ROOT}/skills/sightlab-2`. Confirm the generation, then size the request (section 0); for a build
 the checks are expected, not optional:
 
-- `python "${CLAUDE_PLUGIN_ROOT}/skills/sightlab-2x/harness/check.py" <script> --sightlab-utils "<installed package dir>"`
+- `python "${CLAUDE_PLUGIN_ROOT}/skills/sightlab-2/harness/check.py" <script> --sightlab-utils "<installed package dir>"`
   after every edit (the package dir is in "Find the install"; any Python 3.8+ runs the
   checker, Vizard is not needed for it);
-- `"C:\\Program Files\\WorldViz\\Vizard8\\bin\\winviz.exe" "${CLAUDE_PLUGIN_ROOT}/skills/sightlab-2x/harness/autopilot.py" "<absolute path to script>"`
+- `"C:\\Program Files\\WorldViz\\Vizard8\\bin\\winviz.exe" "${CLAUDE_PLUGIN_ROOT}/skills/sightlab-2/harness/autopilot.py" "<absolute path to script>"`
   at the end of every build step; read `autopilot-report.json` in the run folder it names;
 - `/sightlab:new`, `/sightlab:check` and `/sightlab:review`
   are shortcuts for the brief, the checks and the review note.
@@ -30,7 +30,7 @@ SightLab PC. Never say a check ran when it did not.
 """,
     "openai-plugin": """## On this host
 
-This plugin provides instructions and reference material for SightLab 2.x, plus the harness
+This plugin provides instructions and reference material for SightLab 2, plus the harness
 under `harness/` in this skill's folder (`<kit>` is the folder that holds this SKILL.md).
 Confirm the generation, then size the request (section 0). Whether this host may run the checks depends on the
 product you are using and its permissions:

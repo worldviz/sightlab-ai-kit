@@ -1,8 +1,8 @@
 ---
-description: Start a new SightLab 2.x experiment from a description, a paper, or a Fit Check brief
+description: Start a new SightLab 2 experiment from a description, a paper, or a Fit Check brief
 ---
 
-Use the SightLab skill for this project's generation (today `sightlab-2x`; its first section says how to tell). The researcher's description follows this command (or ask for
+Use the SightLab skill for this project's generation (today `sightlab-2`; its first section says how to tell). The researcher's description follows this command (or ask for
 it if empty): $ARGUMENTS
 
 1. Run the scope guard against `register/cannot.md` and say which list the request is in.
@@ -10,5 +10,5 @@ it if empty): $ARGUMENTS
 3. Assemble `brief/<study-name>.md` from `brief/TEMPLATE.md`; ask only the consequential
    questions; mark defaults `(assumed)`.
 4. When design, procedure, responses, trials and hardware are settled, build the skeleton,
-   run `python "${CLAUDE_PLUGIN_ROOT}/skills/sightlab-2x/harness/check.py" <script>` on it, and stop at the first
+   run `python "${CLAUDE_PLUGIN_ROOT}/skills/sightlab-2/harness/check.py" <script>` on it, and stop at the first
    headset checkpoint with `REVIEW.md`.

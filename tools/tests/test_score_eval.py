@@ -7,7 +7,7 @@ from score_eval import append_scoreboard, score
 
 
 def _eval_dir(kit: Path) -> Path:
-    return kit / "src" / "sightlab-2x" / "evals" / "gaze-dwell-rating"
+    return kit / "src" / "sightlab-2" / "evals" / "gaze-dwell-rating"
 
 
 def _check(errors=0, warnings=1) -> dict:

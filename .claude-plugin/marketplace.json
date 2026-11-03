@@ -10,8 +10,8 @@
     {
       "name": "sightlab",
       "source": "./dist/claude-plugin",
-      "description": "Build, check and test WorldViz SightLab (Vizard) experiments from a research brief. Carries one skill per SightLab generation; SightLab 2.x today.",
-      "version": "2026.11.3",
+      "description": "Build, check and test WorldViz SightLab (Vizard) experiments from a research brief. Carries one skill per SightLab generation; SightLab 2 today.",
+      "version": "2026.11.4",
       "category": "Science",
       "tags": [
         "sightlab",

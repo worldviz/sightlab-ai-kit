@@ -1,9 +1,9 @@
-# SightLab 2.x experiment project
+# SightLab 2 experiment project
 
-This folder holds one SightLab 2.x (Vizard) experiment. The SightLab AI kit is the installed
-`sightlab` plugin (its `sightlab-2x` skill); nothing of it is copied here.
+This folder holds one SightLab 2 (Vizard) experiment. The SightLab AI kit is the installed
+`sightlab` plugin (its `sightlab-2` skill); nothing of it is copied here.
 
-- Use the `sightlab-2x` skill for anything SightLab. It sizes the request first (a question,
+- Use the `sightlab-2` skill for anything SightLab. It sizes the request first (a question,
   a small edit, or a build) and names the checks each one needs. If the skill is missing,
   install it once: `claude plugin install sightlab --marketplace worldviz/sightlab-ai-kit`.
 - The brief lives in `brief/` (start from `TEMPLATE.md`; `EXAMPLE-gaze-dwell.md` is a finished one).
@@ -12,4 +12,4 @@ This folder holds one SightLab 2.x (Vizard) experiment. The SightLab AI kit is t
   edits that change what happens at run time, after saying what it will check. An empty file
   named `NO_AUTOPILOT` in this folder stops it; the harness refuses on its own when it sees one.
 - Experiment data goes to `data/` and test runs to `.autopilot/`; both are git-ignored.
-- Kit version 2026.11.3, generated from sightlab_utils 2.8.21 on 2026-11-03.
+- Kit version 2026.11.4, generated from sightlab_utils 2.8.21 on 2026-11-03.

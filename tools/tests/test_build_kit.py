@@ -21,18 +21,18 @@ def kit_copy(tmp_path: Path, kit: Path) -> Path:
 
 
 def _build(kit: Path, root: Path, version: str = "2026.11.0-test") -> dict:
-    return build(root / "src", kit / "templates", root / "dist", version, kit / "SightLab-VR-Assistant-0.80.6")
+    return build(root / "src", kit / "templates", root / "dist", version)
 
 
 def test_build_outputs_exist(kit, kit_copy):
     info = _build(kit, kit_copy)
     d = kit_copy / "dist"
     for rel in (
-        "claude-plugin/.claude-plugin/plugin.json", "claude-plugin/skills/sightlab-2x/SKILL.md",
+        "claude-plugin/.claude-plugin/plugin.json", "claude-plugin/skills/sightlab-2/SKILL.md",
         "claude-plugin/commands/new.md",
-        "openai-plugin/.codex-plugin/plugin.json", "openai-plugin/skills/sightlab-2x/SKILL.md",
-        "openai-plugin/skills/sightlab-2x/agents/openai.yaml", "openai-plugin/assets/gpt-icon.png",
-        "openai-plugin/skills/sightlab-2x/harness/autopilot.py", "openai-plugin/README.md",
+        "openai-plugin/.codex-plugin/plugin.json", "openai-plugin/skills/sightlab-2/SKILL.md",
+        "openai-plugin/skills/sightlab-2/agents/openai.yaml", "openai-plugin/assets/gpt-icon.png",
+        "openai-plugin/skills/sightlab-2/harness/autopilot.py", "openai-plugin/README.md",
         "claude-plugin/README.md", "claude-plugin/LICENSE",
         "starter-project/CLAUDE.md", "starter-project/AGENTS.md", "starter-project/README.md",
         "starter-project/brief/TEMPLATE.md", "starter-project/brief/EXAMPLE-gaze-dwell.md", "starter-project/.gitignore",
@@ -46,7 +46,7 @@ def test_build_outputs_exist(kit, kit_copy):
 
 def test_unlisted_file_never_ships(kit, kit_copy):
     """A file dropped into src/ that no allowlist names is simply not shipped."""
-    (kit_copy / "src" / "sightlab-2x" / "api" / "scratch-notes.md").write_text("# scratch\n\nFINGERPRINT-7f3a9c\n", encoding="utf-8")
+    (kit_copy / "src" / "sightlab-2" / "api" / "scratch-notes.md").write_text("# scratch\n\nFINGERPRINT-7f3a9c\n", encoding="utf-8")
     _build(kit, kit_copy)
     for path in (kit_copy / "dist").rglob("*"):
         if path.is_file() and path.suffix != ".zip":
@@ -59,13 +59,13 @@ def test_source_sized_block_fails_build(kit, kit_copy, SOURCES):
     """A 200+ line script dump inside a rule fails the build: patterns stay patterns."""
     from build_kit import ContentShape
     real = (SOURCES / "sightlab_utils" / "sightlab.py").read_text(encoding="utf-8-sig", errors="replace")
-    (kit_copy / "src" / "sightlab-2x" / "rules" / "renamed-core.md").write_text("# not really a rule\n\n```python\n" + real[:20000] + "\n```\n")
+    (kit_copy / "src" / "sightlab-2" / "rules" / "renamed-core.md").write_text("# not really a rule\n\n```python\n" + real[:20000] + "\n```\n")
     with pytest.raises(ContentShape):
         _build(kit, kit_copy)
 
 
 def test_secret_fails_build(kit, kit_copy):
-    (kit_copy / "src" / "sightlab-2x" / "rules" / "common-mistakes.md").write_text(
+    (kit_copy / "src" / "sightlab-2" / "rules" / "common-mistakes.md").write_text(
         "# oops\n\nUse key AKIA" + "ABCDEFGHIJKLMNOP" + " for S3.\n", encoding="utf-8")
     with pytest.raises(SecretsFound):
         _build(kit, kit_copy)
@@ -73,8 +73,8 @@ def test_secret_fails_build(kit, kit_copy):
 
 def _wrapper_bodies(dist: Path) -> dict:
     out = {
-        "claude-plugin": (dist / "claude-plugin" / "skills" / "sightlab-2x" / "SKILL.md").read_bytes(),
-        "openai-plugin": (dist / "openai-plugin" / "skills" / "sightlab-2x" / "SKILL.md").read_bytes(),
+        "claude-plugin": (dist / "claude-plugin" / "skills" / "sightlab-2" / "SKILL.md").read_bytes(),
+        "openai-plugin": (dist / "openai-plugin" / "skills" / "sightlab-2" / "SKILL.md").read_bytes(),
     }
     with zipfile.ZipFile(dist / "chat-bundle.zip") as z:
         out["chat-bundle"] = next(z.read(n) for n in z.namelist() if n.endswith("SKILL.md"))
@@ -86,7 +86,7 @@ def test_skill_text_identical_modulo_host(kit, kit_copy):
     bodies = _wrapper_bodies(kit_copy / "dist")
     assert len(set(bodies.values())) == 1, {k: hashlib.sha256(v.encode()).hexdigest()[:8] for k, v in bodies.items()}
     # Review Focus 5: a CRLF source must build to the same body.
-    skill = kit_copy / "src" / "sightlab-2x" / "SKILL.md"
+    skill = kit_copy / "src" / "sightlab-2" / "SKILL.md"
     skill.write_bytes(skill.read_text(encoding="utf-8").replace("\n", "\r\n").encode("utf-8"))
     _build(kit, kit_copy)
     assert set(_wrapper_bodies(kit_copy / "dist").values()) == set(bodies.values())
@@ -94,8 +94,8 @@ def test_skill_text_identical_modulo_host(kit, kit_copy):
 
 def test_host_sections_differ(kit, kit_copy):
     _build(kit, kit_copy)
-    claude = (kit_copy / "dist" / "claude-plugin" / "skills" / "sightlab-2x" / "SKILL.md").read_text()
-    openai = (kit_copy / "dist" / "openai-plugin" / "skills" / "sightlab-2x" / "SKILL.md").read_text()
+    claude = (kit_copy / "dist" / "claude-plugin" / "skills" / "sightlab-2" / "SKILL.md").read_text()
+    openai = (kit_copy / "dist" / "openai-plugin" / "skills" / "sightlab-2" / "SKILL.md").read_text()
     assert "## On this host" in claude and "## On this host" in openai
     assert claude != openai and "<!-- host-section -->" not in claude + openai
     assert "{{SIGHTLAB_VERSION}}" not in claude and "{{KIT_DATE}}" not in claude
@@ -105,8 +105,8 @@ def test_openai_identity_kept(kit, kit_copy):
     _build(kit, kit_copy, version="0.90.0")
     manifest = json.loads((kit_copy / "dist" / "openai-plugin" / ".codex-plugin" / "plugin.json").read_text())
     assert manifest["name"] == OPENAI_NAME and manifest["version"] == "0.90.0"
-    skill = (kit_copy / "dist" / "openai-plugin" / "skills" / "sightlab-2x" / "SKILL.md").read_text()
-    assert re.search(r"^name:\s*sightlab-2x\s*$", skill.split("---")[1], re.M)
+    skill = (kit_copy / "dist" / "openai-plugin" / "skills" / "sightlab-2" / "SKILL.md").read_text()
+    assert re.search(r"^name:\s*sightlab-2\s*$", skill.split("---")[1], re.M)
     claude_manifest = json.loads((kit_copy / "dist" / "claude-plugin" / ".claude-plugin" / "plugin.json").read_text())
     assert claude_manifest["version"] == "0.90.0"
 
@@ -115,8 +115,8 @@ def test_harness_ships_in_both_plugins_only(kit, kit_copy):
     """2026-11-03: Codex users install the OpenAI plugin, so it carries the harness too; the starter and the chat bundle never do."""
     _build(kit, kit_copy)
     d = kit_copy / "dist"
-    assert (d / "claude-plugin" / "skills" / "sightlab-2x" / "harness" / "check.py").is_file()
-    assert (d / "openai-plugin" / "skills" / "sightlab-2x" / "harness" / "check.py").is_file()
+    assert (d / "claude-plugin" / "skills" / "sightlab-2" / "harness" / "check.py").is_file()
+    assert (d / "openai-plugin" / "skills" / "sightlab-2" / "harness" / "check.py").is_file()
     assert not list((d / "starter-project").rglob("check.py"))
     assert not any(n.endswith("check.py") for n in zipfile.ZipFile(d / "chat-bundle.zip").namelist())
     assert not list(d.rglob("fixtures"))
@@ -172,12 +172,12 @@ def test_dist_check_runs_without_flags(kit, kit_copy):
     import subprocess
     import sys
     _build(kit, kit_copy)
-    fixture = kit / "src" / "sightlab-2x" / "harness" / "fixtures" / "ok_nongui.py"
+    fixture = kit / "src" / "sightlab-2" / "harness" / "fixtures" / "ok_nongui.py"
     op = kit_copy / "dist" / "openai-plugin"
-    r = subprocess.run([sys.executable, "skills/sightlab-2x/harness/check.py", str(fixture)], capture_output=True, text=True, cwd=op)
+    r = subprocess.run([sys.executable, "skills/sightlab-2/harness/check.py", str(fixture)], capture_output=True, text=True, cwd=op)
     assert r.returncode == 0 and "0 error(s)" in r.stdout, r.stderr
     cp = kit_copy / "dist" / "claude-plugin"
-    r = subprocess.run([sys.executable, "skills/sightlab-2x/harness/check.py", str(fixture)], capture_output=True, text=True, cwd=cp)
+    r = subprocess.run([sys.executable, "skills/sightlab-2/harness/check.py", str(fixture)], capture_output=True, text=True, cwd=cp)
     assert r.returncode == 0 and "0 error(s)" in r.stdout, r.stderr
 
 
@@ -186,8 +186,8 @@ def test_dist_check_flags_env_without_flags(kit, kit_copy):
     import subprocess
     import sys
     _build(kit, kit_copy)
-    fixture = kit / "src" / "sightlab-2x" / "harness" / "fixtures" / "bad_env.py"
-    for cwd, cmd in ((kit_copy / "dist" / "openai-plugin", "skills/sightlab-2x/harness/check.py"), (kit_copy / "dist" / "claude-plugin", "skills/sightlab-2x/harness/check.py")):
+    fixture = kit / "src" / "sightlab-2" / "harness" / "fixtures" / "bad_env.py"
+    for cwd, cmd in ((kit_copy / "dist" / "openai-plugin", "skills/sightlab-2/harness/check.py"), (kit_copy / "dist" / "claude-plugin", "skills/sightlab-2/harness/check.py")):
         r = subprocess.run([sys.executable, cmd, str(fixture)], capture_output=True, text=True, cwd=cwd)
         assert r.returncode == 0 and "W_UNKNOWN_ENVIRONMENT" in r.stdout, (cwd, r.stdout, r.stderr)
 
@@ -196,11 +196,11 @@ def test_curated_source_copy_fails_build(kit, kit_copy, SOURCES):
     """curated/ holds curated examples only: a long or unheaded .py there fails the build."""
     from build_kit import ContentShape
     real = (SOURCES / "sightlab_utils" / "sightlab.py").read_text(encoding="utf-8-sig", errors="replace")
-    (kit_copy / "src" / "sightlab-2x" / "examples" / "curated" / "core_copy.py").write_text(real, encoding="utf-8")
+    (kit_copy / "src" / "sightlab-2" / "examples" / "curated" / "core_copy.py").write_text(real, encoding="utf-8")
     with pytest.raises(ContentShape):
         _build(kit, kit_copy)
-    (kit_copy / "src" / "sightlab-2x" / "examples" / "curated" / "core_copy.py").unlink()
-    (kit_copy / "src" / "sightlab-2x" / "examples" / "curated" / "no_header.py").write_text("print('hi')\n", encoding="utf-8")
+    (kit_copy / "src" / "sightlab-2" / "examples" / "curated" / "core_copy.py").unlink()
+    (kit_copy / "src" / "sightlab-2" / "examples" / "curated" / "no_header.py").write_text("print('hi')\n", encoding="utf-8")
     with pytest.raises(ContentShape):
         _build(kit, kit_copy)
 
@@ -208,10 +208,10 @@ def test_curated_source_copy_fails_build(kit, kit_copy, SOURCES):
 def test_claude_host_section_uses_plugin_root(kit, kit_copy):
     """Review fix 3: inside the plugin the harness lives under the plugin root, not the project."""
     _build(kit, kit_copy)
-    claude = (kit_copy / "dist" / "claude-plugin" / "skills" / "sightlab-2x" / "SKILL.md").read_text()
-    assert "${CLAUDE_PLUGIN_ROOT}/skills/sightlab-2x/harness/check.py" in claude
+    claude = (kit_copy / "dist" / "claude-plugin" / "skills" / "sightlab-2" / "SKILL.md").read_text()
+    assert "${CLAUDE_PLUGIN_ROOT}/skills/sightlab-2/harness/check.py" in claude
     cmd = (kit_copy / "dist" / "claude-plugin" / "commands" / "check.md").read_text()
-    assert "${CLAUDE_PLUGIN_ROOT}/skills/sightlab-2x/harness/check.py" in cmd
+    assert "${CLAUDE_PLUGIN_ROOT}/skills/sightlab-2/harness/check.py" in cmd
 
 
 def test_autopilot_documented_everywhere(kit, kit_copy):
@@ -219,18 +219,18 @@ def test_autopilot_documented_everywhere(kit, kit_copy):
     _build(kit, kit_copy)
     d = kit_copy / "dist"
     files = [
-        kit / "src" / "sightlab-2x" / "SKILL.md", kit / "src" / "sightlab-2x" / "harness" / "README.md",
+        kit / "src" / "sightlab-2" / "SKILL.md", kit / "src" / "sightlab-2" / "harness" / "README.md",
         kit / "templates" / "claude-plugin" / "commands" / "check.md",
         kit / "templates" / "starter-project" / "CLAUDE.md", kit / "templates" / "starter-project" / "AGENTS.md",
         kit / "templates" / "starter-project" / "README.md",
-        d / "claude-plugin" / "skills" / "sightlab-2x" / "SKILL.md",
-        d / "openai-plugin" / "skills" / "sightlab-2x" / "SKILL.md",
+        d / "claude-plugin" / "skills" / "sightlab-2" / "SKILL.md",
+        d / "openai-plugin" / "skills" / "sightlab-2" / "SKILL.md",
     ]
     for f in files:
         text = f.read_text(encoding="utf-8")
         assert "autopilot.py" in text, f
         assert "when present" not in text and "when this kit version ships" not in text and "when that file is present" not in text, f
-    assert (d / "openai-plugin" / "skills" / "sightlab-2x" / "harness" / "README.md").is_file()
+    assert (d / "openai-plugin" / "skills" / "sightlab-2" / "harness" / "README.md").is_file()
 
 
 def test_build_json_lists_every_file(kit, kit_copy):
@@ -247,9 +247,9 @@ def test_build_json_lists_every_file(kit, kit_copy):
 def test_reference_source_ships_in_every_wrapper(kit, tmp_path):
     """sightlab.py, viz.py and replay.py ship under reference/ in all four wrappers, chat bundle included."""
     shutil.copytree(kit / "src", tmp_path / "src")
-    build(tmp_path / "src", kit / "templates", tmp_path / "dist", "0.0.0-test", kit / "SightLab-VR-Assistant-0.80.6")
+    build(tmp_path / "src", kit / "templates", tmp_path / "dist", "0.0.0-test")
     d = tmp_path / "dist"
-    for base in ("claude-plugin/skills/sightlab-2x", "openai-plugin/skills/sightlab-2x"):
+    for base in ("claude-plugin/skills/sightlab-2", "openai-plugin/skills/sightlab-2"):
         for name in ("sightlab.py", "viz.py", "replay.py", "README.md"):
             assert (d / base / "reference" / name).is_file(), f"{base}/reference/{name}"
     names = zipfile.ZipFile(d / "chat-bundle.zip").namelist()
@@ -286,14 +286,14 @@ def test_claude_validate_passes_when_cli_present(kit, kit_copy):
 def test_openai_skill_folder_matches_skill_name_and_carries_ui_metadata(kit, kit_copy):
     _build(kit, kit_copy)
     op = kit_copy / "dist" / "openai-plugin"
-    assert (op / "skills" / "sightlab-2x" / "agents" / "openai.yaml").is_file()
+    assert (op / "skills" / "sightlab-2" / "agents" / "openai.yaml").is_file()
     assert not (op / "skills" / "instructions").exists()
     assert not list((kit_copy / "dist" / "claude-plugin").rglob("openai.yaml"))
     assert not any(n.endswith("openai.yaml") for n in zipfile.ZipFile(kit_copy / "dist" / "chat-bundle.zip").namelist())
 
 
 def test_second_skill_folder_ships_in_every_wrapper(kit, kit_copy, monkeypatch):
-    """Foundation for the SightLab 3 skill: a sibling folder with SKILL.md and host sections builds beside sightlab-2x."""
+    """Foundation for the SightLab 3 skill: a sibling folder with SKILL.md and host sections builds beside sightlab-2."""
     import host_sections
     extra = kit_copy / "src" / "zz-probe"
     extra.mkdir()
@@ -306,8 +306,8 @@ def test_second_skill_folder_ships_in_every_wrapper(kit, kit_copy, monkeypatch):
     assert (d / "claude-plugin" / "skills" / "zz-probe" / "rules" / "r.md").is_file()
     assert (d / "openai-plugin" / "skills" / "zz-probe" / "SKILL.md").is_file()
     assert "zz-probe/SKILL.md" in zipfile.ZipFile(d / "chat-bundle.zip").namelist()
-    assert set(info["skills"]) == {"sightlab-2x", "zz-probe"}
-    assert (d / "claude-plugin" / "skills" / "sightlab-2x" / "SKILL.md").is_file()
+    assert set(info["skills"]) == {"sightlab-2", "zz-probe"}
+    assert (d / "claude-plugin" / "skills" / "sightlab-2" / "SKILL.md").is_file()
 
 
 def test_skill_without_host_sections_fails_the_build(kit, kit_copy):

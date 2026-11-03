@@ -1,7 +1,7 @@
 {
   "name": "sightlab",
-  "version": "2026.11.3",
-  "description": "Build, check and test WorldViz SightLab (Vizard) experiments from a research brief. Carries one skill per SightLab generation; SightLab 2.x today.",
+  "version": "2026.11.4",
+  "description": "Build, check and test WorldViz SightLab (Vizard) experiments from a research brief. Carries one skill per SightLab generation; SightLab 2 today.",
   "author": {
     "name": "WorldViz",
     "url": "https://www.worldviz.com"

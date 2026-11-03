@@ -1,6 +1,6 @@
-# SightLab 2.x project template
+# SightLab 2 project template
 
-An empty project folder for building a SightLab 2.x experiment with an AI coding agent
+An empty project folder for building a SightLab 2 experiment with an AI coding agent
 (Claude Code, Codex, or their VS Code extensions). The kit itself is a plugin you install
 once; this folder only gives a new study a tidy place to live.
 
@@ -30,4 +30,4 @@ once; this folder only gives a new study a tidy place to live.
 
 Put an empty file named `NO_AUTOPILOT` here to keep Vizard from being launched for tests.
 
-Kit version 2026.11.3, generated from sightlab_utils 2.8.21 on 2026-11-03.
+Kit version 2026.11.4, generated from sightlab_utils 2.8.21 on 2026-11-03.

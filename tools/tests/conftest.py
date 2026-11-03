@@ -12,14 +12,14 @@ import pytest
 
 KIT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(KIT / "tools"))
-from kit_paths import SKILL_2X  # noqa: E402
+from kit_paths import SKILL_2  # noqa: E402
 
-sys.path.insert(0, str(SKILL_2X / "harness"))
+sys.path.insert(0, str(SKILL_2 / "harness"))
 
 
 @pytest.fixture(scope="session")
 def SOURCES() -> Path:
-    root = Path(os.environ.get("SL2_SOURCES", Path.home() / "development" / "sightlab-2x-sources"))
+    root = Path(os.environ.get("SL2_SOURCES", Path.home() / "development" / "sightlab-2-sources"))
     if not (root / "VERSION").is_file():
         pytest.skip(f"SightLab 2 sources not fetched at {root}; run tools/fetch_sources.sh")
     return root
@@ -32,5 +32,5 @@ def kit() -> Path:
 
 @pytest.fixture(scope="session")
 def skill_src() -> Path:
-    """The SightLab 2.x skill folder, src/sightlab-2x."""
-    return SKILL_2X
+    """The SightLab 2 skill folder, src/sightlab-2."""
+    return SKILL_2

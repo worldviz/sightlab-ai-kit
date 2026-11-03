@@ -18,11 +18,11 @@ from pathlib import Path
 
 KIT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from kit_paths import SKILL_2X  # noqa: E402
-sys.path.insert(0, str(SKILL_2X / "harness"))
+from kit_paths import SKILL_2  # noqa: E402
+sys.path.insert(0, str(SKILL_2 / "harness"))
 from check import check_script, load_api  # noqa: E402
 
-DEFAULT_SOURCES = Path.home() / "development" / "sightlab-2x-sources"
+DEFAULT_SOURCES = Path.home() / "development" / "sightlab-2-sources"
 
 
 def slug(rel: str) -> str:
@@ -35,10 +35,10 @@ def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     p.add_argument("--sources", type=Path, default=DEFAULT_SOURCES)
     p.add_argument("--list", type=Path, default=KIT / "tools" / "curated-list.txt")
-    p.add_argument("--out", type=Path, default=SKILL_2X / "examples" / "curated")
+    p.add_argument("--out", type=Path, default=SKILL_2 / "examples" / "curated")
     a = p.parse_args(argv)
 
-    api = load_api(SKILL_2X / "api" / "sightlab-api.json")
+    api = load_api(SKILL_2 / "api" / "sightlab-api.json")
     rels = [l.strip() for l in a.list.read_text(encoding="utf-8").splitlines() if l.strip() and not l.startswith("#")]
     a.out.mkdir(parents=True, exist_ok=True)
     for old in a.out.glob("*.py"):
@@ -51,7 +51,7 @@ def main(argv: list[str] | None = None) -> int:
             continue
         body = src.read_text(encoding="utf-8-sig", errors="replace").replace("\r\n", "\n")
         header = (f"# Source: ExampleScripts/{rel}\n"
-                  f"# SightLab 2.x shipped example, copied unchanged below this header by the AI Kit on {date.today().isoformat()}.\n")
+                  f"# SightLab 2 shipped example, copied unchanged below this header by the AI Kit on {date.today().isoformat()}.\n")
         out = a.out / slug(rel)
         out.write_text(header + body, encoding="utf-8", newline="\n")
         report = check_script(out, api, None)
