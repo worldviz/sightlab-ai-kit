@@ -7,7 +7,7 @@ from allowlists import HARNESS
 
 
 def _src(kit: Path) -> str:
-    return (kit / "src" / "harness" / "autopilot.py").read_text(encoding="utf-8")
+    return (kit / "src" / "sightlab-2x" / "harness" / "autopilot.py").read_text(encoding="utf-8")
 
 
 def test_parses_as_python38(kit: Path):
@@ -28,7 +28,7 @@ def test_imports_core_only_from_sibling(kit: Path):
 
 
 def test_spike_deleted(kit: Path):
-    assert not (kit / "src" / "harness" / "autopilot_spike.py").exists()
+    assert not (kit / "src" / "sightlab-2x" / "harness" / "autopilot_spike.py").exists()
 
 
 def test_allowlist_ships_both():
@@ -118,20 +118,20 @@ def test_biopac_connect_is_wrapped_with_a_counting_stand_in(kit: Path):
 
 def test_glue_refuses_when_no_autopilot_marker_present(kit: Path):
     """The marker is enforced by the harness, not only by the agent's instructions: checked before any copy."""
-    text = (kit / "src" / "harness" / "autopilot.py").read_text(encoding="utf-8")
+    text = (kit / "src" / "sightlab-2x" / "harness" / "autopilot.py").read_text(encoding="utf-8")
     assert "autopilot_blocked(" in text and text.index("autopilot_blocked(") < text.index("prepare_run_dir(")
     assert "os._exit(3)" in text
 
 
 def test_look_at_filters_by_reach(kit: Path):
-    text = (kit / "src" / "harness" / "autopilot.py").read_text(encoding="utf-8")
+    text = (kit / "src" / "sightlab-2x" / "harness" / "autopilot.py").read_text(encoding="utf-8")
     assert "within_reach(" in text
     i = text.index("pick_look_target(report[\"gaze_objects\"]")
     assert "within_reach" in text[i:i + 600]
 
 
 def test_glue_performs_rating_select_with_press_right(kit: Path):
-    text = (kit / "src" / "harness" / "autopilot.py").read_text(encoding="utf-8")
+    text = (kit / "src" / "sightlab-2x" / "harness" / "autopilot.py").read_text(encoding="utf-8")
     assert '"rating-select"' in text and 'getEventID("pressRight")' in text
     assert "n_options=" in text  # the options count reaches push_prompt from showRatings' ratingScale
 
@@ -145,12 +145,12 @@ def test_autopilot_refuses_before_touching_anything(kit: Path, tmp_path: Path):
     exp.mkdir()
     (exp / "study.py").write_text("print('never runs')\n", encoding="utf-8")
     (exp / "NO_AUTOPILOT").write_text("", encoding="utf-8")
-    r = subprocess.run([sys.executable, str(kit / "src" / "harness" / "autopilot.py"), str(exp / "study.py")],
+    r = subprocess.run([sys.executable, str(kit / "src" / "sightlab-2x" / "harness" / "autopilot.py"), str(exp / "study.py")],
                        capture_output=True, text=True, cwd=tmp_path)
     assert r.returncode == 3, (r.returncode, r.stderr)
     assert "NO_AUTOPILOT" in r.stderr and not (exp / ".autopilot").exists()
 
 
 def test_glue_uses_core_rating_helpers(kit: Path):
-    text = (kit / "src" / "harness" / "autopilot.py").read_text(encoding="utf-8")
+    text = (kit / "src" / "sightlab-2x" / "harness" / "autopilot.py").read_text(encoding="utf-8")
     assert "perform_rating_select(" in text and "rating_options(" in text

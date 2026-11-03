@@ -16,6 +16,8 @@ import re
 import sys
 import warnings
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from kit_paths import SKILL_2X  # noqa: E402
 
 SKIP_FOLDERS = {"_dashboard", "_downloaded", "regenerate_test", "__pycache__"}
 SKIP_SCRIPTS = {"SightLabVR_Replay.py", "ReadMe.py", "README.py", "customSettings.py"}
@@ -204,8 +206,8 @@ def main(argv: list[str] | None = None) -> int:
     kit = Path(__file__).resolve().parents[1]
     p = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     p.add_argument("--sources", type=Path, default=DEFAULT_SOURCES)
-    p.add_argument("--api", type=Path, default=kit / "src" / "api" / "sightlab-api.json")
-    p.add_argument("--out", type=Path, default=kit / "src" / "examples")
+    p.add_argument("--api", type=Path, default=SKILL_2X / "api" / "sightlab-api.json")
+    p.add_argument("--out", type=Path, default=SKILL_2X / "examples")
     a = p.parse_args(argv)
     api = json.loads(a.api.read_text(encoding="utf-8"))
     index = build_examples_index(a.sources / "ExampleScripts", api)

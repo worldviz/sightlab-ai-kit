@@ -18,6 +18,8 @@ import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from kit_paths import SKILL_2X  # noqa: E402
 
 MODULES = ("sightlab", "settings", "eye_tracker_utils", "gaze_events")
 PAGE_CLASSES_PREFIX = "SightLab"  # classes shown on the Markdown page; GUI/HUD/SessionRecorder stay JSON-only
@@ -199,7 +201,7 @@ def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     p.add_argument("--sources", type=Path, default=DEFAULT_SOURCES, help="folder holding sightlab_utils/ (from fetch_sources.sh)")
     p.add_argument("--package", type=Path, default=None, help="a sightlab_utils package dir (overrides --sources)")
-    p.add_argument("--out", type=Path, default=Path(__file__).resolve().parents[1] / "src" / "api")
+    p.add_argument("--out", type=Path, default=SKILL_2X / "api")
     a = p.parse_args(argv)
     package = a.package or (a.sources / "sightlab_utils")
     api = build_api_map(package)

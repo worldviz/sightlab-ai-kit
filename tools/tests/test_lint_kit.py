@@ -11,12 +11,12 @@ MARKER = "<!-- host-section -->"
 
 @pytest.fixture(scope="module")
 def api(kit: Path) -> dict:
-    return json.loads((kit / "src" / "api" / "sightlab-api.json").read_text())
+    return json.loads((kit / "src" / "sightlab-2x" / "api" / "sightlab-api.json").read_text())
 
 
 @pytest.fixture(scope="module")
 def index(kit: Path) -> list:
-    return json.loads((kit / "src" / "examples" / "index.json").read_text())
+    return json.loads((kit / "src" / "sightlab-2x" / "examples" / "index.json").read_text())
 
 
 def _mini_kit(tmp_path: Path, rule_text: str, skill_text: str | None = None) -> Path:
@@ -91,7 +91,7 @@ def test_unshipped_resource_name_reported(tmp_path, api, index, kit: Path):
     import shutil
     src = _mini_kit(tmp_path, "Load `nope.osgb` from the objects folder, next to `Plant.osgb`.\n")
     (src / "api").mkdir()
-    shutil.copyfile(kit / "src" / "api" / "resources.json", src / "api" / "resources.json")
+    shutil.copyfile(kit / "src" / "sightlab-2x" / "api" / "resources.json", src / "api" / "resources.json")
     problems = lint(src, api, index)
     assert len(problems) == 1 and "nope.osgb" in problems[0]
 
@@ -101,7 +101,7 @@ def test_resource_rule_sees_fences_with_star_import(tmp_path, api, index, kit: P
     import shutil
     src = _mini_kit(tmp_path, "# p\n\n```python complete\nfrom sightlab_utils.settings import *\nenv = vizfx.addChild('sightlab_resources/objects/nope_object.osgb')\n```\n")
     (src / "api").mkdir()
-    shutil.copyfile(kit / "src" / "api" / "resources.json", src / "api" / "resources.json")
+    shutil.copyfile(kit / "src" / "sightlab-2x" / "api" / "resources.json", src / "api" / "resources.json")
     problems = [p for p in lint(src, api, index) if "nope_object.osgb" in p]
     assert len(problems) == 1
 
@@ -110,7 +110,7 @@ def test_resource_case_must_match_exactly(tmp_path, api, index, kit: Path):
     import shutil
     src = _mini_kit(tmp_path, "Use `plant.osgb` here.\n")
     (src / "api").mkdir()
-    shutil.copyfile(kit / "src" / "api" / "resources.json", src / "api" / "resources.json")
+    shutil.copyfile(kit / "src" / "sightlab-2x" / "api" / "resources.json", src / "api" / "resources.json")
     problems = lint(src, api, index)
     assert len(problems) == 1 and "Plant.osgb" in problems[0]
 
@@ -119,12 +119,12 @@ def test_rules_environment_list_matches_resources(kit: Path):
     """The hand-typed environment list in the rules may not drift from the generated resources."""
     import json
     import re
-    shipped = set(json.loads((kit / "src" / "api" / "resources.json").read_text())["folders"]["environments"])
-    text = (kit / "src" / "rules" / "environments-and-resources.md").read_text(encoding="utf-8")
+    shipped = set(json.loads((kit / "src" / "sightlab-2x" / "api" / "resources.json").read_text())["folders"]["environments"])
+    text = (kit / "src" / "sightlab-2x" / "rules" / "environments-and-resources.md").read_text(encoding="utf-8")
     para = text.split("is a real spelling for one of them):")[1].split("\n\n")[1]
     listed = set(re.findall(r"`([^`]+\.osgb)`", para, re.I))
     assert listed == shipped, (listed ^ shipped)
 
 
 def test_real_kit_is_clean(kit: Path, api, index):
-    assert lint(kit / "src", api, index) == []
+    assert lint(kit / "src" / "sightlab-2x", api, index) == []

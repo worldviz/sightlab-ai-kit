@@ -9,13 +9,13 @@ import pytest
 
 from check import check_script
 
-FIXTURES = Path(__file__).resolve().parents[2] / "src" / "harness" / "fixtures"
-CHECK = Path(__file__).resolve().parents[2] / "src" / "harness" / "check.py"
+FIXTURES = Path(__file__).resolve().parents[2] / "src" / "sightlab-2x" / "harness" / "fixtures"
+CHECK = Path(__file__).resolve().parents[2] / "src" / "sightlab-2x" / "harness" / "check.py"
 
 
 @pytest.fixture(scope="module")
 def api(kit: Path) -> dict:
-    return json.loads((kit / "src" / "api" / "sightlab-api.json").read_text())
+    return json.loads((kit / "src" / "sightlab-2x" / "api" / "sightlab-api.json").read_text())
 
 
 @pytest.fixture(scope="module")
@@ -79,15 +79,15 @@ def test_cli_default_resources(tmp_path, kit: Path):
     """With resources.json beside it, check.py flags unknown resources with no flags at all."""
     harness = tmp_path / "harness"
     harness.mkdir()
-    shutil.copyfile(kit / "src" / "harness" / "check.py", harness / "check.py")
-    shutil.copyfile(kit / "src" / "api" / "sightlab-api.json", harness / "sightlab-api.json")
-    shutil.copyfile(kit / "src" / "api" / "resources.json", harness / "resources.json")
+    shutil.copyfile(kit / "src" / "sightlab-2x" / "harness" / "check.py", harness / "check.py")
+    shutil.copyfile(kit / "src" / "sightlab-2x" / "api" / "sightlab-api.json", harness / "sightlab-api.json")
+    shutil.copyfile(kit / "src" / "sightlab-2x" / "api" / "resources.json", harness / "resources.json")
     r = subprocess.run([sys.executable, str(harness / "check.py"), str(FIXTURES / "bad_env.py")], capture_output=True, text=True, cwd=tmp_path)
     assert r.returncode == 0 and "W_UNKNOWN_ENVIRONMENT" in r.stdout, r.stdout + r.stderr
 
 
 def test_text_output_names_instances(kit: Path, SOURCES: Path):
-    r = subprocess.run([sys.executable, str(CHECK), str(FIXTURES / "ok_nongui.py"), "--api", str(kit / "src" / "api" / "sightlab-api.json")], capture_output=True, text=True)
+    r = subprocess.run([sys.executable, str(CHECK), str(FIXTURES / "ok_nongui.py"), "--api", str(kit / "src" / "sightlab-2x" / "api" / "sightlab-api.json")], capture_output=True, text=True)
     assert "instances: sightlab (SightLab)" in r.stdout
 
 
@@ -95,8 +95,8 @@ def test_default_api_found_beside_or_above(tmp_path, kit: Path):
     """Review fix 1: a copied check.py finds sightlab-api.json beside itself with no flags."""
     harness = tmp_path / "harness"
     harness.mkdir()
-    shutil.copyfile(kit / "src" / "harness" / "check.py", harness / "check.py")
-    shutil.copyfile(kit / "src" / "api" / "sightlab-api.json", harness / "sightlab-api.json")
+    shutil.copyfile(kit / "src" / "sightlab-2x" / "harness" / "check.py", harness / "check.py")
+    shutil.copyfile(kit / "src" / "sightlab-2x" / "api" / "sightlab-api.json", harness / "sightlab-api.json")
     r = subprocess.run([sys.executable, str(harness / "check.py"), str(FIXTURES / "ok_nongui.py")], capture_output=True, text=True, cwd=tmp_path)
     assert r.returncode == 0, r.stderr
     assert "0 error(s)" in r.stdout
@@ -125,7 +125,7 @@ def test_ctor_kwarg_checked(tmp_path, api, resources):
 
 
 def test_cli_exit_codes(kit: Path, SOURCES: Path):
-    api = kit / "src" / "api" / "sightlab-api.json"
+    api = kit / "src" / "sightlab-2x" / "api" / "sightlab-api.json"
     res = SOURCES / "resources-list.txt"
     ok = subprocess.run([sys.executable, str(CHECK), str(FIXTURES / "ok_nongui.py"), "--api", str(api), "--resources", str(res), "--json"], capture_output=True, text=True)
     assert ok.returncode == 0, ok.stderr

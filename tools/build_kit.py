@@ -209,6 +209,8 @@ def write_marketplaces(root: Path, dist_name: str, version: str, openai_name: st
 
 def build(src: Path, templates: Path, out: Path, version: str, base_plugin: Path) -> dict:
     src, templates, out, base_plugin = Path(src), Path(templates), Path(out), Path(base_plugin)
+    if (src / "sightlab-2x" / "SKILL.md").is_file():  # Task 1 shim: src/ holds skill folders now; Task 2 loops over them
+        src = src / "sightlab-2x"
     api = json.loads((src / "api" / "sightlab-api.json").read_text(encoding="utf-8"))
     info = {"version": version, "date": date.today().isoformat(), "sightlab_utils_version": api["sightlab_utils_version"]}
     if out.exists():
@@ -230,8 +232,7 @@ def build(src: Path, templates: Path, out: Path, version: str, base_plugin: Path
     }
     (op / ".codex-plugin").mkdir(parents=True)
     (op / ".codex-plugin" / "plugin.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8", newline="\n")
-    for rel in ("assets/gpt-icon.png", "skills/instructions/agents/openai.yaml"):
-        srcf = base_plugin / rel
+    for rel, srcf in (("assets/gpt-icon.png", base_plugin / "assets" / "gpt-icon.png"), ("skills/instructions/agents/openai.yaml", src / "agents" / "openai.yaml")):
         if srcf.is_file():
             (op / rel).parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(srcf, op / rel)

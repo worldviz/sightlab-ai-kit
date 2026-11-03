@@ -12,7 +12,9 @@ import pytest
 
 KIT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(KIT / "tools"))
-sys.path.insert(0, str(KIT / "src" / "harness"))
+from kit_paths import SKILL_2X  # noqa: E402
+
+sys.path.insert(0, str(SKILL_2X / "harness"))
 
 
 @pytest.fixture(scope="session")
@@ -26,3 +28,9 @@ def SOURCES() -> Path:
 @pytest.fixture(scope="session")
 def kit() -> Path:
     return KIT
+
+
+@pytest.fixture(scope="session")
+def skill_src() -> Path:
+    """The SightLab 2.x skill folder, src/sightlab-2x."""
+    return SKILL_2X

@@ -14,7 +14,7 @@ SECTION_IDS = ["purpose", "design", "stimuli", "procedure", "instructions", "res
 
 @pytest.fixture(scope="module")
 def evals(kit: Path) -> Path:
-    return kit / "src" / "evals"
+    return kit / "src" / "sightlab-2x" / "evals"
 
 
 def test_four_evals_present(evals: Path):

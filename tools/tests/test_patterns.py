@@ -15,12 +15,12 @@ EXPECTED = {"gaze-contingent-events", "rating-after-trial", "stim-file-stimuli",
 
 @pytest.fixture(scope="module")
 def api(kit: Path) -> dict:
-    return json.loads((kit / "src" / "api" / "sightlab-api.json").read_text())
+    return json.loads((kit / "src" / "sightlab-2x" / "api" / "sightlab-api.json").read_text())
 
 
 @pytest.fixture(scope="module")
 def patterns(kit: Path) -> dict:
-    folder = kit / "src" / "patterns"
+    folder = kit / "src" / "sightlab-2x" / "patterns"
     return {p.stem: p.read_text(encoding="utf-8") for p in folder.glob("*.md")}
 
 
@@ -40,7 +40,7 @@ def test_every_pattern_has_one_complete_script(patterns):
 def test_complete_scripts_pass_check(tmp_path, patterns, api, kit: Path):
     """Patterns are what the agent copies: clean under the shipped checker with the real resources."""
     from check import load_resources
-    resources = load_resources(str(kit / "src" / "api" / "resources.json"))
+    resources = load_resources(str(kit / "src" / "sightlab-2x" / "api" / "resources.json"))
     for name in EXPECTED:
         p = tmp_path / f"{name}.py"
         p.write_text(complete_blocks(patterns[name])[0])
@@ -63,6 +63,6 @@ def test_fragment_is_reported(tmp_path, api, kit):
     (src / "patterns").mkdir(parents=True)
     (src / "SKILL.md").write_text("---\nname: x\ndescription: y\n---\n\n<!-- host-section -->\n")
     (src / "patterns" / "broken.md").write_text("# broken\n\n## Script\n\n```python complete\nimport sightlab_utils.sightlab as sl\nsightlab = sl.SightLab(gui=False)\n```\n")
-    index = json.loads((kit / "src" / "examples" / "index.json").read_text())
+    index = json.loads((kit / "src" / "sightlab-2x" / "examples" / "index.json").read_text())
     problems = lint(src, api, index)
     assert any("patterns/broken.md" in p and "E_NO_RUN_EXPERIMENT" in p for p in problems)

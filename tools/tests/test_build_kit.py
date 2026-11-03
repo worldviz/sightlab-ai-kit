@@ -46,7 +46,7 @@ def test_build_outputs_exist(kit, kit_copy):
 
 def test_unlisted_file_never_ships(kit, kit_copy):
     """A file dropped into src/ that no allowlist names is simply not shipped."""
-    (kit_copy / "src" / "api" / "scratch-notes.md").write_text("# scratch\n\nFINGERPRINT-7f3a9c\n", encoding="utf-8")
+    (kit_copy / "src" / "sightlab-2x" / "api" / "scratch-notes.md").write_text("# scratch\n\nFINGERPRINT-7f3a9c\n", encoding="utf-8")
     _build(kit, kit_copy)
     for path in (kit_copy / "dist").rglob("*"):
         if path.is_file() and path.suffix != ".zip":
@@ -59,13 +59,13 @@ def test_source_sized_block_fails_build(kit, kit_copy, SOURCES):
     """A 200+ line script dump inside a rule fails the build: patterns stay patterns."""
     from build_kit import ContentShape
     real = (SOURCES / "sightlab_utils" / "sightlab.py").read_text(encoding="utf-8-sig", errors="replace")
-    (kit_copy / "src" / "rules" / "renamed-core.md").write_text("# not really a rule\n\n```python\n" + real[:20000] + "\n```\n")
+    (kit_copy / "src" / "sightlab-2x" / "rules" / "renamed-core.md").write_text("# not really a rule\n\n```python\n" + real[:20000] + "\n```\n")
     with pytest.raises(ContentShape):
         _build(kit, kit_copy)
 
 
 def test_secret_fails_build(kit, kit_copy):
-    (kit_copy / "src" / "rules" / "common-mistakes.md").write_text(
+    (kit_copy / "src" / "sightlab-2x" / "rules" / "common-mistakes.md").write_text(
         "# oops\n\nUse key AKIA" + "ABCDEFGHIJKLMNOP" + " for S3.\n", encoding="utf-8")
     with pytest.raises(SecretsFound):
         _build(kit, kit_copy)
@@ -86,7 +86,7 @@ def test_skill_text_identical_modulo_host(kit, kit_copy):
     bodies = _wrapper_bodies(kit_copy / "dist")
     assert len(set(bodies.values())) == 1, {k: hashlib.sha256(v.encode()).hexdigest()[:8] for k, v in bodies.items()}
     # Review Focus 5: a CRLF source must build to the same body.
-    skill = kit_copy / "src" / "SKILL.md"
+    skill = kit_copy / "src" / "sightlab-2x" / "SKILL.md"
     skill.write_bytes(skill.read_text(encoding="utf-8").replace("\n", "\r\n").encode("utf-8"))
     _build(kit, kit_copy)
     assert set(_wrapper_bodies(kit_copy / "dist").values()) == set(bodies.values())
@@ -172,7 +172,7 @@ def test_dist_check_runs_without_flags(kit, kit_copy):
     import subprocess
     import sys
     _build(kit, kit_copy)
-    fixture = kit / "src" / "harness" / "fixtures" / "ok_nongui.py"
+    fixture = kit / "src" / "sightlab-2x" / "harness" / "fixtures" / "ok_nongui.py"
     op = kit_copy / "dist" / "openai-plugin"
     r = subprocess.run([sys.executable, "skills/instructions/harness/check.py", str(fixture)], capture_output=True, text=True, cwd=op)
     assert r.returncode == 0 and "0 error(s)" in r.stdout, r.stderr
@@ -186,7 +186,7 @@ def test_dist_check_flags_env_without_flags(kit, kit_copy):
     import subprocess
     import sys
     _build(kit, kit_copy)
-    fixture = kit / "src" / "harness" / "fixtures" / "bad_env.py"
+    fixture = kit / "src" / "sightlab-2x" / "harness" / "fixtures" / "bad_env.py"
     for cwd, cmd in ((kit_copy / "dist" / "openai-plugin", "skills/instructions/harness/check.py"), (kit_copy / "dist" / "claude-plugin", "skills/sightlab-2x/harness/check.py")):
         r = subprocess.run([sys.executable, cmd, str(fixture)], capture_output=True, text=True, cwd=cwd)
         assert r.returncode == 0 and "W_UNKNOWN_ENVIRONMENT" in r.stdout, (cwd, r.stdout, r.stderr)
@@ -196,11 +196,11 @@ def test_curated_source_copy_fails_build(kit, kit_copy, SOURCES):
     """curated/ holds curated examples only: a long or unheaded .py there fails the build."""
     from build_kit import ContentShape
     real = (SOURCES / "sightlab_utils" / "sightlab.py").read_text(encoding="utf-8-sig", errors="replace")
-    (kit_copy / "src" / "examples" / "curated" / "core_copy.py").write_text(real, encoding="utf-8")
+    (kit_copy / "src" / "sightlab-2x" / "examples" / "curated" / "core_copy.py").write_text(real, encoding="utf-8")
     with pytest.raises(ContentShape):
         _build(kit, kit_copy)
-    (kit_copy / "src" / "examples" / "curated" / "core_copy.py").unlink()
-    (kit_copy / "src" / "examples" / "curated" / "no_header.py").write_text("print('hi')\n", encoding="utf-8")
+    (kit_copy / "src" / "sightlab-2x" / "examples" / "curated" / "core_copy.py").unlink()
+    (kit_copy / "src" / "sightlab-2x" / "examples" / "curated" / "no_header.py").write_text("print('hi')\n", encoding="utf-8")
     with pytest.raises(ContentShape):
         _build(kit, kit_copy)
 
@@ -219,7 +219,7 @@ def test_autopilot_documented_everywhere(kit, kit_copy):
     _build(kit, kit_copy)
     d = kit_copy / "dist"
     files = [
-        kit / "src" / "SKILL.md", kit / "src" / "harness" / "README.md",
+        kit / "src" / "sightlab-2x" / "SKILL.md", kit / "src" / "sightlab-2x" / "harness" / "README.md",
         kit / "templates" / "claude-plugin" / "commands" / "sightlab-check.md",
         kit / "templates" / "starter-project" / "CLAUDE.md", kit / "templates" / "starter-project" / "AGENTS.md",
         kit / "templates" / "starter-project" / "README.md",

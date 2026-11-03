@@ -13,6 +13,8 @@ import json
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from kit_paths import SKILL_2X  # noqa: E402
 
 DEFAULT_SOURCES = Path.home() / "development" / "sightlab-2x-sources"
 MEDIA = {".osgb", ".ive", ".obj", ".fbx", ".gltf", ".glb", ".mp4", ".avi", ".mpg", ".wav", ".mp3", ".ogg", ".jpg", ".jpeg", ".png", ".cfg", ".py", ".txt", ".csv", ".json"}
@@ -136,7 +138,7 @@ def main(argv: list[str] | None = None) -> int:
     kit = Path(__file__).resolve().parents[1]
     p = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     p.add_argument("--sources", type=Path, default=DEFAULT_SOURCES)
-    p.add_argument("--out", type=Path, default=kit / "src" / "api")
+    p.add_argument("--out", type=Path, default=SKILL_2X / "api")
     p.add_argument("--measurements", type=Path, default=kit / "tools" / "data" / "resource-measurements.json",
                    help="output of tools/vm/measure_resources.py; sizes are omitted when the file is absent")
     a = p.parse_args(argv)

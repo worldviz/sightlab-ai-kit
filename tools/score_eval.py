@@ -19,7 +19,9 @@ from datetime import date
 from pathlib import Path
 
 KIT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(KIT / "src" / "harness"))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from kit_paths import SKILL_2X  # noqa: E402
+sys.path.insert(0, str(SKILL_2X / "harness"))
 from autopilot_core import COUNTED_KINDS  # noqa: E402
 
 HEADER = "| Eval | Date | Agent | Kit | SightLab | Check E/W | Verdict | Assertions | Forced | Trials | Pass | Tokens | Wall s | Notes |"
@@ -147,7 +149,7 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--notes", default="")
     p.add_argument("--out", type=Path, default=None)
     a = p.parse_args(argv)
-    eval_dir = KIT / "src" / "evals" / a.slug
+    eval_dir = SKILL_2X / "evals" / a.slug
     if not eval_dir.is_dir():
         print("no such eval: %s" % a.slug, file=sys.stderr)
         return 2

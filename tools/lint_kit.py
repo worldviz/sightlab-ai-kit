@@ -22,7 +22,9 @@ import tempfile
 from pathlib import Path
 
 KIT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(KIT / "src" / "harness"))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from kit_paths import SKILL_2X  # noqa: E402
+sys.path.insert(0, str(SKILL_2X / "harness"))
 from check import check_script  # noqa: E402
 
 HOST_MARKER = "<!-- host-section -->"
@@ -156,9 +158,9 @@ def lint(src_dir: Path, api: dict, index: list) -> list[str]:
 
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    p.add_argument("--src", type=Path, default=KIT / "src")
-    p.add_argument("--api", type=Path, default=KIT / "src" / "api" / "sightlab-api.json")
-    p.add_argument("--index", type=Path, default=KIT / "src" / "examples" / "index.json")
+    p.add_argument("--src", type=Path, default=SKILL_2X)
+    p.add_argument("--api", type=Path, default=SKILL_2X / "api" / "sightlab-api.json")
+    p.add_argument("--index", type=Path, default=SKILL_2X / "examples" / "index.json")
     a = p.parse_args(argv)
     problems = lint(a.src, json.loads(a.api.read_text()), json.loads(a.index.read_text()))
     for line in problems:

@@ -3,21 +3,21 @@ from pathlib import Path
 
 
 def test_skill_has_request_sizing_section(kit: Path):
-    text = (kit / "src" / "SKILL.md").read_text(encoding="utf-8")
+    text = (kit / "src" / "sightlab-2x" / "SKILL.md").read_text(encoding="utf-8")
     assert "## 0. Size the request" in text
     assert "small edit" in text and "No brief" in text
     assert text.index("## 0. Size the request") < text.index("## 1. Scope guard")
 
 
 def test_skill_defines_kit_folder_and_absolute_script_path(kit: Path):
-    text = (kit / "src" / "SKILL.md").read_text(encoding="utf-8")
+    text = (kit / "src" / "sightlab-2x" / "SKILL.md").read_text(encoding="utf-8")
     assert "`<kit>`" in text and "<kit>/harness/check.py" in text and "<kit>/harness/autopilot.py" in text
     assert "absolute path" in text
     assert "`harness/check.py" not in text and "`python harness/" not in text  # no project-relative harness path remains
 
 
 def test_rating_pattern_states_endfade_truth(kit: Path):
-    text = (kit / "src" / "patterns" / "rating-after-trial.md").read_text(encoding="utf-8")
+    text = (kit / "src" / "sightlab-2x" / "patterns" / "rating-after-trial.md").read_text(encoding="utf-8")
     assert "hidden behind the scale regardless" in text
     assert "keeps the scene visible behind the scale" not in text
 
