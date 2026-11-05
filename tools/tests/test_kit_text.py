@@ -73,7 +73,7 @@ def test_skill_routes_between_generations_first(kit: Path):
     i = text.index("## Which SightLab")
     assert i < text.index("<!-- host-section -->") < text.index("## 0. Size the request")
     section = text[i:text.index("<!-- host-section -->")]
-    for signal in ("sightlab_utils", ".oep.json", ".oep-project.json", "from sightlab import", "_sightlab_version.py", "Ask once", "`sightlab-3`", "not covered"):
+    for signal in ("sightlab_utils", ".oep.json", ".oep-project.json", "from sightlab import", "_sightlab_version.py", "Assume SightLab 2", "`sightlab-3`", "not covered"):
         assert signal in section, signal
     assert "class named `SightLab`" in section
 
@@ -103,3 +103,41 @@ def test_no_version_x_baggage(kit: Path):
     for path in files:
         text = "\n".join(line for line in path.read_text(encoding="utf-8", errors="replace").splitlines() if "2026.11.2" not in line)  # migration notes may name the old plugin
         assert old_skill not in text and old_prose not in text and old_const not in text and old_folder not in text, path
+
+
+# --- 2026.11.6: Sado's pre-submission review -------------------------------------------------
+
+APPROVED_TERMS = "https://help.worldviz.com/sightlab/sightlab-assistant-privacy-policy/#part-2-assistant-terms"
+
+
+def test_license_defers_to_the_approved_assistant_terms(kit: Path):
+    """The LICENSE must not contradict the Assistant Terms OpenAI already approved: same entity, open to
+    prospective customers, no absolute liability exclusion; the harness is an amendment, not a new license."""
+    for wrapper in ("claude-plugin", "openai-plugin"):
+        text = (kit / "templates" / wrapper / "LICENSE").read_text(encoding="utf-8")
+        assert APPROVED_TERMS in text and "WorldViz Inc." in text, wrapper
+        assert "WorldViz LLC" not in text and "licensees of" not in text and "is not liable" not in text, wrapper
+        assert "check.py" in text and "autopilot.py" in text  # the amendment names the utilities it covers
+    assert "WorldViz LLC" not in (kit / "README.md").read_text(encoding="utf-8")
+
+
+def test_skill_assumes_sightlab_2_when_nothing_decides(kit: Path):
+    """Customers run SightLab 2 today; asking every undecided request which generation is friction (Sado)."""
+    text = (kit / "src" / "sightlab-2" / "SKILL.md").read_text(encoding="utf-8")
+    section = text[text.index("## Which SightLab"):text.index("<!-- host-section -->")]
+    assert "Assume SightLab 2" in section and "Ask once" not in section
+    assert "say so" in section  # the assumption is stated, so a SightLab 3 user can correct it
+
+
+def test_autopilot_ask_is_a_chat_question_and_skipped_when_the_run_was_requested(kit: Path):
+    """Codex desktop (Sado): the agent asked in its final message and the turn ended, which read as a missing
+    approval button; and it asked although the researcher had already said 'build and test it'."""
+    import host_sections
+    text = (kit / "src" / "sightlab-2" / "SKILL.md").read_text(encoding="utf-8")
+    build = text[text.index("## 4. The build"):]
+    assert "already asks for a run or a test" in build and "plain chat question" in build
+    assert "approval dialog" in build or "approval button" in build
+    for path in (kit / "tools" / "host_sections.py", kit / "templates" / "claude-plugin" / "commands" / "check.md",
+                 kit / "templates" / "claude-plugin" / "README.md", kit / "templates" / "openai-plugin" / "README.md", kit / "README.md"):
+        t = path.read_text(encoding="utf-8")
+        assert "unless the request already asked for" in t or "unless you asked for" in t, path

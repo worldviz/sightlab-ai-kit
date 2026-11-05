@@ -74,7 +74,7 @@ Good first messages:
 
 To let the kit check and run your experiment, open Claude Code or Codex in the folder that
 holds your experiment on the SightLab PC. The first time it wants to launch Vizard it tells you
-what the run will check and asks once. It only writes inside a `.autopilot` folder next to your
+what the run will check and asks once, unless you asked for the run yourself. It only writes inside a `.autopilot` folder next to your
 script and keeps the last five runs there; you can delete that folder at any time. Put an empty
 file named `NO_AUTOPILOT` in a project folder to stop it from ever launching there.
 

@@ -62,4 +62,4 @@ resubmission. Listing is for discovery; our users can install from the marketpla
 ## Open for Andy
 
 - Which claude.ai organization and account submit (listing ownership is permanent).
-- The LICENSE wording in `templates/claude-plugin/LICENSE` is a draft, not legal review.
+- LICENSE (2026.11.6) defers to the approved SightLab VR Assistant Terms with an amendment for the harness; no separate legal read needed.

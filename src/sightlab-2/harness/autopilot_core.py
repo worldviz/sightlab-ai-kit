@@ -6,6 +6,7 @@ machine: run folders, the report, the verdict rules, assertions over the CSVs, d
 from __future__ import annotations
 
 import csv
+import fnmatch
 import glob
 import json
 import math
@@ -26,14 +27,21 @@ COUNTED_KINDS = {"forced-advance", "popup-suppressed", "blind-continue", "timeou
 # Always a human's or the hardware's to check, whatever the verdict says.
 NEEDS_HUMAN = ["real eye tracking on the headset", "BIOPAC marker delivery", "timing and interaction feel"]
 
-ASSERTION_TYPES = {"column_present", "column_nonempty", "value_in", "min_rows", "trials_completed", "gaze_events_min", "marker_calls_min"}
+ASSERTION_TYPES = {"column_present", "column_nonempty", "value_in", "min_rows", "trials_completed", "trials_exact", "gaze_events_min", "marker_calls_min"}
 FILE_KINDS = {
     "summary": "*_experiment_summary.csv",
     "trial_data": os.path.join("trial_data", "*_trial_data_*.csv"),
     "dwell": "*_trial_timeline_dwell_*.csv",
     "fixation": "*_trial_timeline_fixation_saccade_*.csv",
 }
-RUN_IGNORE = ("data", ".autopilot", "recordings", "__pycache__")
+# Never copied into a run: the experiment's data, earlier runs, recordings, caches, version control,
+# secrets, virtualenvs and project-local agent folders (Sado's review, 2026-11-05). Globs allowed.
+RUN_IGNORE = ("data", ".autopilot", "recordings", "__pycache__", ".git", ".env", ".env.*", ".venv", "venv",
+              ".claude", ".codex", ".agents", "node_modules")
+
+
+def _ignored(name):
+    return any(fnmatch.fnmatch(name, pat) for pat in RUN_IGNORE)
 REPORT_NAME = "autopilot-report.json"
 MAX_RUN_FILES = 5000
 MAX_RUN_BYTES = 500 * 1024 * 1024
@@ -47,8 +55,10 @@ def _measure(exp_dir, max_files, max_bytes):
     files = 0
     size = 0
     for root, dirs, names in os.walk(exp_dir):
-        dirs[:] = [d for d in dirs if d not in RUN_IGNORE]
+        dirs[:] = [d for d in dirs if not _ignored(d)]
         for n in names:
+            if _ignored(n):
+                continue
             files += 1
             try:
                 size += os.path.getsize(os.path.join(root, n))
@@ -157,7 +167,7 @@ def load_assertions(path):
             raise ValueError("%s: assertion %d needs file (one of %s) and column" % (path, i, sorted(FILE_KINDS)))
         if a["type"] == "min_rows" and not (a.get("file") in FILE_KINDS and isinstance(a.get("n"), int)):
             raise ValueError("%s: assertion %d needs file and integer n" % (path, i))
-        if a["type"] in ("trials_completed", "gaze_events_min", "marker_calls_min") and not isinstance(a.get("n"), int):
+        if a["type"] in ("trials_completed", "trials_exact", "gaze_events_min", "marker_calls_min") and not isinstance(a.get("n"), int):
             raise ValueError("%s: assertion %d needs integer n" % (path, i))
         if a["type"] == "value_in" and not isinstance(a.get("allowed"), list):
             raise ValueError("%s: assertion %d needs an allowed list" % (path, i))
@@ -183,6 +193,9 @@ def _check_one(report, run_dir, a):
     if t == "trials_completed":
         ok = report["trials_completed"] >= a["n"]
         return ok, "trials_completed=%d, need %d" % (report["trials_completed"], a["n"])
+    if t == "trials_exact":
+        ok = report["trials_completed"] == a["n"]
+        return ok, "trials_completed=%d, need exactly %d" % (report["trials_completed"], a["n"])
     if t == "gaze_events_min":
         ok = report["gaze_events_seen"] >= a["n"]
         return ok, "gaze_events_seen=%d, need %d" % (report["gaze_events_seen"], a["n"])

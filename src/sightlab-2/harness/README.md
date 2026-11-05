@@ -35,7 +35,8 @@ What one run does, in order:
 1. Copies the experiment's folder (never its parent, never `data/`) to
    `<experiment folder>/.autopilot/runs/<timestamp>/` and keeps the last five runs. Nothing
    outside that `.autopilot/` folder is written to, and the experiment's own `data/` is never
-   touched. A folder with more than 5000 files or 500 MB is refused (move the experiment
+   touched. `.git`, `.env` files, virtualenvs, `node_modules` and project-local agent folders
+   (`.claude`, `.codex`, `.agents`) are not copied either. A folder with more than 5000 files or 500 MB is refused (move the experiment
    into its own folder).
 2. Writes a provisional `autopilot-report.json` (`failed`, not launched) so a dead Vizard
    still leaves a record.
@@ -105,8 +106,10 @@ Interventions that count against the behaviour tier: `forced-advance`, `blind-co
 (a person would have done the same at that point).
 
 Whatever the verdict, the `needs_human` items are the researcher's or the hardware's to
-check. A `behaviour-verified` run says the logic is right on a desktop, not that the study
-is ready.
+check. A `behaviour-verified` run says that every trial completed without a counted
+intervention and that the listed assertions passed, on a desktop. It does not say the study
+matches the brief in every respect: only what the assertions checked is verified, so report
+which assertions passed and what remains unverified, and never call a run "fully verified".
 
 ### Assertions
 
@@ -120,6 +123,7 @@ writes these from the brief's measures; the evals ship their own.
 | `value_in` | `file`, `column`, `allowed` | every value is one of `allowed` |
 | `min_rows` | `file`, `n` | every matching CSV has at least `n` data rows |
 | `trials_completed` | `n` | at least `n` trials completed |
+| `trials_exact` | `n` | exactly `n` trials completed; use it when the brief fixes the count, so extra trials fail too |
 | `gaze_events_min` | `n` | at least `n` dwell events seen |
 | `marker_calls_min` | `n` | at least `n` BIOPAC marker calls made |
 

@@ -2,7 +2,7 @@
   "author": {
     "name": "Worldviz"
   },
-  "description": "Help with SightLab VR experiment design, GUI workflows, Python scripting, and troubleshooting using bundled documentation and code references.",
+  "description": "Build, check and test SightLab 2 experiments: design, GUI workflows, Python scripting and troubleshooting, with bundled documentation, source references and optional local testing.",
   "interface": {
     "capabilities": [
       "skills"
@@ -12,8 +12,8 @@
     "developerName": "Worldviz",
     "displayName": "SightLab VR Assistant",
     "logo": "./assets/gpt-icon.png",
-    "longDescription": "SightLab VR Assistant helps researchers, educators, and developers design and configure virtual reality experiments with WorldViz SightLab VR.\n\nGet guidance on GUI workflows, Python scripting, trial setup, participant instructions, gaze-based interactions, grabbable objects, rating scales, and data collection. Ask questions about SightLab documentation, understand example scripts, or troubleshoot code using the bundled reference material.\n\nThe plugin provides instructions and reference files. It does not include a remote MCP service or directly connect to VR hardware. Running generated experiment scripts requires a compatible SightLab/Vizard installation and any hardware needed for your study. Reference material may differ from your installed version; review and test generated code before using it in an experiment.",
-    "shortDescription": "Build, check and test SightLab 2 experiments",
+    "longDescription": "SightLab VR Assistant helps researchers, educators, and developers design, build and test virtual reality experiments with WorldViz SightLab 2.\n\nGet guidance on GUI workflows, Python scripting, trial setup, participant instructions, gaze-based interactions, grabbable objects, rating scales, and data collection. Ask questions about SightLab documentation, understand example scripts, or troubleshoot code using the bundled reference material. Describe a study, or paste a paper, and it builds the SightLab script in checked steps.\n\nThe plugin provides instructions, reference files and two optional local utilities. In Codex on a Windows PC with SightLab 2 and Vizard 8 installed, it can run a static check of a script and launch your installed Vizard in desktop mode to test the experiment, writing a report, screenshots and a copy of the experiment folder under .autopilot/ beside the script (the last five runs are kept). It asks before the first launch unless you asked for the run, and never launches when a NO_AUTOPILOT file is in the project. It does not include a remote MCP service, does not connect to VR hardware, and sends nothing over the network. In ChatGPT it answers from its files and writes scripts for you to run.\n\nRunning generated experiment scripts requires a compatible SightLab/Vizard installation and any hardware needed for your study. Reference material may differ from your installed version; review and test generated code before using it in an experiment.",
+    "shortDescription": "Build SightLab 2 experiments",
     "websiteURL": "https://help.worldviz.com/sightlab/",
     "supportURL": "https://www.worldviz.com/virtual-reality-support",
     "privacyPolicyURL": "https://help.worldviz.com/sightlab/sightlab-assistant-privacy-policy/",

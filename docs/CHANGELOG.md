@@ -3,6 +3,26 @@
 Entries before 2026.11.1 cite `docs/audits/`, `docs/plans/` and `tools/fetch_sources.sh`,
 which live in the team's internal repository, not here.
 
+## 2026.11.6 (2026-11-05)
+
+Sado's pre-submission review, the items that gate the OpenAI directory update:
+
+- LICENSE now defers to the approved SightLab VR Assistant Terms (WorldViz Inc.; open to
+  prospective customers; warranties and liability as the Terms state them) with a short
+  amendment covering `check.py` and `autopilot.py`; the reference source keeps its
+  no-redistribution request, separately from the adaptable examples.
+- OpenAI subtitle is "Build SightLab 2 experiments" (28 characters; the directory allows 30);
+  the long description and the plugin READMEs now describe the optional local checks, the
+  Vizard runs, what a run writes and keeps, and qualify the "sends nothing" statement.
+- Autopilot: run copies skip `.git`, `.env` files, virtualenvs, `node_modules` and
+  project-local agent folders; new `trials_exact` assertion for briefs that fix the trial
+  count; README says what `behaviour-verified` does and does not claim.
+- Skill: when nothing decides the generation it assumes SightLab 2 and says so, instead of
+  asking. Before the first Vizard launch it still says what the run will check, but a request
+  that already asks for a run or a test counts as the permission; otherwise it asks as a
+  plain chat question and never implies an approval dialog.
+- CI: GitHub Actions runs the tests and the lint on every push and pull request.
+
 ## 2026.11.5 (2026-11-05)
 
 The Codex skill card now reads **SightLab 2 AI Kit / Build, check and test SightLab 2

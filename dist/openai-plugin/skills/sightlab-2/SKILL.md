@@ -27,9 +27,11 @@ this order, and say which you found:
 3. **What the researcher says or pastes.** "My SightLab 2 script", "a SightLab 3
    experiment", a pasted script (read its import line) or a pasted `.oep.json` decides. In a
    chat without files this is the only signal, so read the message for it first.
-4. **Ask once** when nothing above decides it: a SightLab 2 script, or a SightLab 3
-   experiment? An explicit statement counts; vocabulary alone ("trial", "gaze object") does
-   not, because both generations use the same words.
+4. **Assume SightLab 2** when nothing above decides it, and say so in one line ("assuming
+   SightLab 2; tell me if this is a SightLab 3 project"), because SightLab 2 is what is
+   installed today; switch as soon as the researcher corrects you. An explicit statement
+   counts as a decision; vocabulary alone ("trial", "gaze object") does not, because both
+   generations use the same words.
 
 This skill covers SightLab 2. For a SightLab 3 project, or a request to port a 2.x script to
 SightLab 3, use the `sightlab-3` skill if it is installed beside this one; otherwise say that
@@ -54,8 +56,8 @@ product you are using and its permissions:
   describes, from this skill's folder: `python "<kit>/harness/check.py" <script>` after every
   edit, and `"C:\Program Files\WorldViz\Vizard8\bin\winviz.exe" "<kit>/harness/autopilot.py" "<absolute path to script>"`
   at the end of every build step (in PowerShell, Codex's shell on Windows, prefix the quoted
-  executable with `&`). Say what a run will check, and ask once before the first launch in a
-  session.
+  executable with `&`). Say what a run will check; before the first launch in a session ask, as a
+  plain chat question, unless the request already asked for a run or a test.
 
 Generated scripts target the researcher's own licensed SightLab/Vizard installation.
 
@@ -138,9 +140,15 @@ Work through these steps on your own: **skeleton → trials → responses → da
   <absolute path to script>`, then read `autopilot-report.json` in the run folder it names
   (`harness/README.md` explains it): `failed` means fix it; `smoke-passed` means it runs but
   the harness had to intervene, say where; `behaviour-verified` means it did what the brief
-  says, in desktop mode. Write the brief's measures as `autopilot-assertions.json` beside the
-  script so the report checks them. Say what the run will check, and ask once, before the
-  first launch in a session; later launches in the same session need only the one line.
+  says, in desktop mode: every trial completed, every assertion passed; say which assertions,
+  never "fully verified". Write the brief's measures as `autopilot-assertions.json` beside the
+  script so the report checks them (`trials_exact` when the brief fixes the trial count).
+  Before the first launch in a session, say what the run will check. When the request
+  already asks for a run or a test ("build and test it", "make sure it runs"), that is the
+  permission: go ahead. Otherwise ask, as a plain chat question that ends your turn and
+  waits for the reply; there is no approval dialog or button you can summon, so never imply
+  one. The host's own command-approval step, where it has one, is not a reason to ask twice.
+  Later launches in the same session need only the one line.
   **Opt-out:** when the researcher says not to run Vizard, or a file named `NO_AUTOPILOT`
   sits in the project folder, do not launch the autopilot (the harness refuses on its own
   when it sees that file): run `check.py` only, and say in `REVIEW.md` that the run was

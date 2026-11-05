@@ -27,7 +27,7 @@ SightLab 2 and Vizard 8 they also check and run them.
 ## What the agent does with it
 
 0. **Confirms the generation.** SightLab 2 and 3 coexist on many machines; the skill reads the
-   import line and the project files first, and asks once when they do not decide it.
+   import line and the project files first, and assumes SightLab 2, saying so, when they do not decide it.
 1. **Sizes the request.** A question gets an answer with the file and line. A small edit
    gets the edit and the static check. A new study or a run-time bug gets the full workflow.
 2. **Builds from a brief** (yours, a paper, or a Fit Check brief) in steps: skeleton, trials,
@@ -36,7 +36,7 @@ SightLab 2 and Vizard 8 they also check and run them.
    Vizard in desktop mode, drives the prompts, ratings and gaze targets like a participant,
    and writes `autopilot-report.json` with a verdict (`failed`, `smoke-passed`,
    `behaviour-verified`), every intervention it had to make, and the data files. It says what
-   the run will check and asks once per session before the first launch, and never launches
+   the run will check and, unless you asked for the run, asks once per session before the first launch; it never launches
    when a file named `NO_AUTOPILOT` is in the project.
 4. **Writes `REVIEW.md`** at each stop: what changed, the verdict, what to check in the
    headset, the open questions.
@@ -75,6 +75,6 @@ version instead, so a newer SightLab is checked against its own API.
 
 ## License
 
-Copyright WorldViz LLC; see `dist/claude-plugin/LICENSE`. The bundled `sightlab.py`, `viz.py`
+Copyright WorldViz Inc.; the kit is provided under the [SightLab VR Assistant Terms](https://help.worldviz.com/sightlab/sightlab-assistant-privacy-policy/#part-2-assistant-terms), with an amendment for the local checking and testing utilities; see `dist/claude-plugin/LICENSE`. The bundled `sightlab.py`, `viz.py`
 and `replay.py` are the source every SightLab licensee receives, included so the agent can
 cite real lines; they are not for redistribution.

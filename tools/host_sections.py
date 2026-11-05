@@ -46,8 +46,8 @@ product you are using and its permissions:
   describes, from this skill's folder: `python "<kit>/harness/check.py" <script>` after every
   edit, and `"C:\\Program Files\\WorldViz\\Vizard8\\bin\\winviz.exe" "<kit>/harness/autopilot.py" "<absolute path to script>"`
   at the end of every build step (in PowerShell, Codex's shell on Windows, prefix the quoted
-  executable with `&`). Say what a run will check, and ask once before the first launch in a
-  session.
+  executable with `&`). Say what a run will check; before the first launch in a session ask, as a
+  plain chat question, unless the request already asked for a run or a test.
 
 Generated scripts target the researcher's own licensed SightLab/Vizard installation.
 """,

@@ -1,14 +1,33 @@
 SightLab AI Kit
-Copyright (c) 2026 WorldViz LLC. All rights reserved.
+Copyright (c) 2026 WorldViz Inc. All rights reserved.
 
-This kit, including the SightLab and Vizard source files bundled under reference/, is
-provided to licensees of WorldViz SightLab 2 and Vizard for use with their licensed
-installation. You may install it with an AI assistant (Claude, ChatGPT, Codex or similar),
-and read, copy and adapt its instructions, patterns and example scripts for your own
-experiments. Experiment scripts you build with it are yours.
+The SightLab AI Kit and its assistant plugins are provided under the SightLab VR Assistant
+Terms, published at
+https://help.worldviz.com/sightlab/sightlab-assistant-privacy-policy/#part-2-assistant-terms
+which govern wherever this file differs from them. In short: WorldViz grants you nonexclusive
+permission to install the kit with an AI assistant, read its bundled materials, and use them
+to learn, evaluate and develop SightLab workflows. You may copy and adapt WorldViz-owned code
+examples for your own workflows, subject to the applicable product licenses, and must
+preserve copyright and license notices. WorldViz and other rights holders keep ownership of
+the supplied materials; the Terms claim no ownership of your inputs or independently created
+work, and do not change the AI provider's terms concerning generated output.
 
-You may not redistribute the bundled SightLab or Vizard source files, sell the kit, or
-present it as your own work. The kit is provided "as is", without warranty of any kind, and
-WorldViz is not liable for any damage arising from its use.
+Amendment for the checking and testing utilities. The same permission covers running the
+included utilities, harness/check.py and harness/autopilot.py, on your own computer. They
+read your experiment scripts; write reports, screenshots and copies of the experiment folder
+under a .autopilot/ folder beside the script; and launch your installed Vizard in desktop
+mode. They send nothing to WorldViz or to anyone else.
 
+Reference source. The SightLab and Vizard source files under reference/ are made available
+by WorldViz through its authorized distribution channels as reference material for the
+assistant. Their inclusion does not grant a license to run SightLab or Vizard, remove trial
+restrictions or bypass licensing controls; those products remain subject to their separate
+licenses. Please do not redistribute the reference source files on their own; adapting the
+WorldViz-owned examples is permitted as above. Third-party materials remain subject to their
+own terms.
+
+Availability, responsibility, warranties and liability are as stated in the Terms, to the
+extent permitted by applicable law.
+
+Privacy notice: https://help.worldviz.com/sightlab/sightlab-assistant-privacy-policy/
 Support: https://www.worldviz.com/virtual-reality-support

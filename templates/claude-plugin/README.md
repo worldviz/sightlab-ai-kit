@@ -23,10 +23,14 @@ In Claude Code on a Windows PC with SightLab 2 and Vizard 8 installed, the skill
 `python .../harness/check.py <script>` and
 `"C:\Program Files\WorldViz\Vizard8\bin\winviz.exe" .../harness/autopilot.py <script>`, which
 launches Vizard on that PC for about a minute and writes `.autopilot/` beside the script. It
-says what the run will check and asks once per session before the first launch, and never
-launches when a file named `NO_AUTOPILOT` is in the project folder. Where it cannot run
+says what the run will check and, unless you asked for the run, asks once per session before
+the first launch; it never launches when a file named `NO_AUTOPILOT` is in the project folder.
+A run copies the experiment folder (never its `data/`, `.git`, `.env` files or virtualenvs) to
+`.autopilot/runs/<timestamp>/`, writes its report and screenshots there, and keeps the last five. Where it cannot run
 Windows programs (claude.ai chat, Cowork) it answers from its files and writes scripts for
-you to run. The plugin sends nothing anywhere and fetches nothing from the network. In
+you to run. The plugin itself sends nothing anywhere and fetches nothing from the network; the
+experiment scripts it runs and the installed SightLab and Vizard applications have their
+own network behaviour, which this notice does not describe. In
 claude.ai chat it answers from its files and writes scripts for you to run.
 
 ## Install

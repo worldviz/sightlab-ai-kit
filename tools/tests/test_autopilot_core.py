@@ -49,6 +49,37 @@ def test_prepare_run_dir_copies_only_experiment_folder(tmp_path):
     assert not (run / "data").exists() and not list(run.rglob("big.bin"))
 
 
+def test_prepare_run_dir_skips_git_env_and_skill_folders(tmp_path):
+    """Sado 2026-11-05: the run copy must not carry .git, .env files, virtualenvs or project-local skill folders."""
+    exp = tmp_path / "Study"
+    for d in (".git/objects", ".venv/lib", ".claude/skills/old", ".codex", "node_modules/x", "sightlab_configs"):
+        (exp / d).mkdir(parents=True)
+    (exp / ".git" / "objects" / "ab").write_text("blob")
+    (exp / ".env").write_text("SECRET=1")
+    (exp / ".env.local").write_text("SECRET=2")
+    (exp / "sightlab_configs" / "a.stlb").write_text("cfg")
+    (exp / "study.py").write_text("x")
+    run = Path(prepare_run_dir(str(exp / "study.py")))
+    assert (run / "study.py").is_file() and (run / "sightlab_configs" / "a.stlb").is_file()
+    for gone in (".git", ".env", ".env.local", ".venv", ".claude", ".codex", "node_modules"):
+        assert not (run / gone).exists(), gone
+
+
+def test_trials_exact_assertion_fails_on_extra_trials(tmp_path):
+    """Sado 2026-11-05: trials_completed means at least n, so a script that runs extra trials still passes; trials_exact pins it."""
+    spec = [{"name": "exact", "type": "trials_exact", "n": 6}]
+    (tmp_path / "autopilot-assertions.json").write_text(json.dumps(spec))
+    items = load_assertions(str(tmp_path / "autopilot-assertions.json"))
+    assert items[0]["type"] == "trials_exact"
+    exact = evaluate_assertions(_launched(trials_expected=6, trials_completed=6), str(tmp_path), items)
+    assert exact[0]["pass"] is True
+    extra = evaluate_assertions(_launched(trials_expected=6, trials_completed=7), str(tmp_path), items)
+    assert extra[0]["pass"] is False and "7" in extra[0]["detail"]
+    with pytest.raises(ValueError):
+        (tmp_path / "bad.json").write_text(json.dumps([{"type": "trials_exact", "n": "6"}]))
+        load_assertions(str(tmp_path / "bad.json"))
+
+
 def test_prepare_run_dir_keeps_last_five(tmp_path):
     exp = tmp_path / "Study"
     exp.mkdir()

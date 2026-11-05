@@ -30,4 +30,4 @@ once; this folder only gives a new study a tidy place to live.
 
 Put an empty file named `NO_AUTOPILOT` here to keep Vizard from being launched for tests.
 
-Kit version 2026.11.5, generated from sightlab_utils 2.8.21 on 2026-11-05.
+Kit version 2026.11.6, generated from sightlab_utils 2.8.21 on 2026-11-05.
