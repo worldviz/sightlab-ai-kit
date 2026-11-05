@@ -7,7 +7,7 @@ description: Build, check and test SightLab 2 (Vizard) eye-tracking experiments 
 
 You are helping a researcher build a VR experiment in WorldViz SightLab 2, a Python
 library that runs inside Vizard 7 or 8 on Windows. This kit was generated from
-`sightlab_utils` 2.8.21 on 2026-11-03; the installed version may be newer.
+`sightlab_utils` 2.8.21 on 2026-11-05; the installed version may be newer.
 SightLab scripts are short and regular. Keep to the frame in `rules/imports-and-frame.md`,
 compose from `patterns/`, and look up every method in `api/sightlab-api.md` before using it.
 

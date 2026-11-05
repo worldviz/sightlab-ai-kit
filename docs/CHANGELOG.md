@@ -3,6 +3,14 @@
 Entries before 2026.11.1 cite `docs/audits/`, `docs/plans/` and `tools/fetch_sources.sh`,
 which live in the team's internal repository, not here.
 
+## 2026.11.5 (2026-11-05)
+
+The Codex skill card now reads **SightLab 2 AI Kit / Build, check and test SightLab 2
+experiments** (was "SightLab VR Assistant / Build SightLab VR experiments", the same text as
+the 0.80.x listing in OpenAI's directory), so a Plugins page that lists both copies tells
+them apart. The plugin's own name stays SightLab VR Assistant. No content or harness change.
+New: `docs/install.md`, the customer install guide with screenshots.
+
 ## 2026.11.4 (2026-11-03)
 
 Naming cleaned up before anyone installs (Andy): the skill is `sightlab-2` (was `sightlab-2x`;

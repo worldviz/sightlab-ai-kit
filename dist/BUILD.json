@@ -1,24 +1,24 @@
 {
- "version": "2026.11.4",
- "date": "2026-11-03",
+ "version": "2026.11.5",
+ "date": "2026-11-05",
  "sightlab_utils_version": "2.8.21",
- "skill_body_sha256": "089558e66ccf7677fea5fd34686f4b2614f777f00492f9ee2d96a0c1c4c010b1",
+ "skill_body_sha256": "00fecc3d8f1096fdc7d22dd020e505d9af8f67bf9a47b4127fc5c912da4084e4",
  "skills": {
   "sightlab-2": {
    "sightlab_utils_version": "2.8.21",
-   "skill_body_sha256": "089558e66ccf7677fea5fd34686f4b2614f777f00492f9ee2d96a0c1c4c010b1"
+   "skill_body_sha256": "00fecc3d8f1096fdc7d22dd020e505d9af8f67bf9a47b4127fc5c912da4084e4"
   }
  },
  "files": {
   "claude-plugin": {
    ".claude-plugin/icon.png": "79d27be6b5978e3498fcb38d051385f1ef9b6cbe8333a84cb679031169d049b1",
-   ".claude-plugin/plugin.json": "9f88bcff480c281ac50ae59505031ca61187220bce6465081e68d563903dd09d",
+   ".claude-plugin/plugin.json": "b20d38a1bf7ea119a926d52f1c86b8f5e54c1360f6bcf9b03bd55bc40f16421f",
    "LICENSE": "939e981c1ce147e5e954a1827a37fd535d7483495c9921ced99c63f5640cdf3b",
-   "README.md": "05e72cae5b7c124fbc7bab9838b950889359839c21e4bfac0410ca5e0310a364",
+   "README.md": "c3cc882d2d95fd089a76eb9e68bc877d69d61fb1b0d5251b46b6700fc8688e83",
    "commands/check.md": "5b4e467ef94922b256f272e6686444f7eef509d086bec5f073fb2d98be0c2ccb",
    "commands/new.md": "96323bc9eb444deef1eed89ef6a302d4b490712a76d8d57f908f824413fec9dc",
    "commands/review.md": "0ad2dfe3642d6810bc9c973145953688d590b5537c83c88d67fd79a2c29da8e8",
-   "skills/sightlab-2/SKILL.md": "eaafb9ab867c35c5de93b86050213f61da5500509e7d5cec299c5fca895f0e64",
+   "skills/sightlab-2/SKILL.md": "0051a920b6399bb128e128c09ee9f09701e762504ceb836da1a99767c3dd1010",
    "skills/sightlab-2/api/resources.json": "675fd9484031952ef88cecad49829563c10499035dc010bf9593a04242b35cf1",
    "skills/sightlab-2/api/resources.md": "9cedc87f3d67d653a0782e25cda411a0b5fb142fa01a84e0f439e5032d0ac23a",
    "skills/sightlab-2/api/sightlab-api.json": "aaf9e1a1b6f025f7e31cd6d8071b82bc5a87c8ae90571d302b2306a394629d3f",
@@ -85,12 +85,12 @@
    "skills/sightlab-2/rules/trials-and-instructions.md": "56290428c8833513e992b6df4e02672f9e139ff5a784490d6ad3c43c4b42526b"
   },
   "openai-plugin": {
-   ".codex-plugin/plugin.json": "baa979040545992bb569024d3e9188226f4bc8d8588f0d4813bc2b74038a29a8",
+   ".codex-plugin/plugin.json": "f0016ea3f726f4fbabfef3eec7800cf19498e6b71c06d59def218faae7c5263e",
    "LICENSE": "939e981c1ce147e5e954a1827a37fd535d7483495c9921ced99c63f5640cdf3b",
-   "README.md": "de75d306b3f374889927db007db3e080e7399b2e33f7296b8e7f557857e70d56",
+   "README.md": "6f2ecea0c94281fbf22a1bdb1dcb5efc61b312b075eb21abdeb27aa66b546919",
    "assets/gpt-icon.png": "79d27be6b5978e3498fcb38d051385f1ef9b6cbe8333a84cb679031169d049b1",
-   "skills/sightlab-2/SKILL.md": "2e3bb21a7a9c50b264e11c7bb12a95b47425f368136cae9d117efdaa1c97a0d2",
-   "skills/sightlab-2/agents/openai.yaml": "7fd31cff2b5f159ea588a18c51a752733fbd5ee4e407066e7cf1f2ac2fea1ebb",
+   "skills/sightlab-2/SKILL.md": "9059cb355188da9defff333d300ac750ac7211108f97a83b86f9cf7aabce3fe8",
+   "skills/sightlab-2/agents/openai.yaml": "9928d70ac3034e4b39b3e0c7479f9e702504cb5e5f63c792eb8d02317fe72d21",
    "skills/sightlab-2/api/resources.json": "675fd9484031952ef88cecad49829563c10499035dc010bf9593a04242b35cf1",
    "skills/sightlab-2/api/resources.md": "9cedc87f3d67d653a0782e25cda411a0b5fb142fa01a84e0f439e5032d0ac23a",
    "skills/sightlab-2/api/sightlab-api.json": "aaf9e1a1b6f025f7e31cd6d8071b82bc5a87c8ae90571d302b2306a394629d3f",
@@ -159,14 +159,14 @@
   "starter-project": {
    ".gitignore": "b1bcf5c22cad2482044f252b3c537c3261565a05c7cddc1bdec8bb7539a31a62",
    ".vscode/settings.json": "df9ed6257e759a9372e499d8b271cc225cbff23595edafefa06718843b67d681",
-   "AGENTS.md": "901e07544f76092fd4990c0364a70c6f1e00a1401233d90dfaaa7dbc7bce5f59",
-   "CLAUDE.md": "d497abb0b635e16d92e4d2c8dfc32e59af76b66c54ada14e5db41693b0608ba7",
-   "README.md": "8999212e2434a7357ba25151fb487ed2f41aeb14e757e81d07dc099607e99d57",
+   "AGENTS.md": "70bc6dc159c30d9938edc2dfa20109c73e4fe5a06e6a4e852687814bcd19ca9b",
+   "CLAUDE.md": "feb49c4faa1466f6043271e54eadec61241f152341e0fd2a1e9eb450793c6bff",
+   "README.md": "8fda4add96f6153116ea117558600a0ba3182f63e12deb396bedee7d1fdc4357",
    "brief/EXAMPLE-gaze-dwell.md": "5a331ad9cee127fa7c8c060423d39bb58506a5656108b34f7f3eae758fa5a424",
    "brief/TEMPLATE.md": "ad7a76ea298767741033f210a650ee76145a1055fe6ab7d7dd55ab5becb18ca4"
   },
   "chat-bundle": {
-   "sightlab-2/SKILL.md": "af7214890dae2445db94f4b222c7964f12a279aae798decdead9d68e36ce6efb",
+   "sightlab-2/SKILL.md": "e4a7411479b4abc1b085912be3feb3742d1750430425958712c0c45e700d0a4d",
    "sightlab-2/api/resources.json": "675fd9484031952ef88cecad49829563c10499035dc010bf9593a04242b35cf1",
    "sightlab-2/api/resources.md": "9cedc87f3d67d653a0782e25cda411a0b5fb142fa01a84e0f439e5032d0ac23a",
    "sightlab-2/api/sightlab-api.json": "aaf9e1a1b6f025f7e31cd6d8071b82bc5a87c8ae90571d302b2306a394629d3f",

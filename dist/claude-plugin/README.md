@@ -35,4 +35,4 @@ Claude Code: `claude plugin install sightlab --marketplace worldviz/sightlab-ai-
 claude.ai: Customize, Plugins, Add marketplace, `worldviz/sightlab-ai-kit`.
 Source, releases and the Codex version: https://github.com/worldviz/sightlab-ai-kit
 
-Kit version 2026.11.4, generated from sightlab_utils 2.8.21 on 2026-11-03.
+Kit version 2026.11.5, generated from sightlab_utils 2.8.21 on 2026-11-05.
