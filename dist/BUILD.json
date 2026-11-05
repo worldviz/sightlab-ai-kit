@@ -1,5 +1,5 @@
 {
- "version": "2026.11.6",
+ "version": "2026.11.7",
  "date": "2026-11-05",
  "sightlab_utils_version": "2.8.21",
  "skill_body_sha256": "090327c2497c9ca33b1b8ee47cdb1599436bf084a08f6a57a84a3722c94a123c",
@@ -12,9 +12,9 @@
  "files": {
   "claude-plugin": {
    ".claude-plugin/icon.png": "79d27be6b5978e3498fcb38d051385f1ef9b6cbe8333a84cb679031169d049b1",
-   ".claude-plugin/plugin.json": "4ce95242d94f8e17ba5ff18c1ba23e3ba9128beab968c1a0927214c4565e2f16",
+   ".claude-plugin/plugin.json": "10a2b64a3169a92c10922db8a2037036f530b5c8e57418211e190cafd56f55e7",
    "LICENSE": "edacfa246c78f4f83ff6d325a11651f36e85b0701a2903bacacf760679ce6612",
-   "README.md": "ac6222b322346c45d77141be94d25fc8060328eabb42d6135b99256ab0399e97",
+   "README.md": "ffb0b85bf1c293f480a8719d47ffad1f0be404c5dd751192e9c370e94e4e4967",
    "commands/check.md": "8beef27dc735797f46db18158fec9b21f1b55b615283f31110f3efa7d079b1c2",
    "commands/new.md": "96323bc9eb444deef1eed89ef6a302d4b490712a76d8d57f908f824413fec9dc",
    "commands/review.md": "0ad2dfe3642d6810bc9c973145953688d590b5537c83c88d67fd79a2c29da8e8",
@@ -85,9 +85,9 @@
    "skills/sightlab-2/rules/trials-and-instructions.md": "56290428c8833513e992b6df4e02672f9e139ff5a784490d6ad3c43c4b42526b"
   },
   "openai-plugin": {
-   ".codex-plugin/plugin.json": "c512af5b612df4af851c1119b997e2942840bf2dd308e8727a3f7c8aa0311da0",
+   ".codex-plugin/plugin.json": "483ae8490b310069f611d16a16b353e41d43230adaba1def9e3c7af0965d481d",
    "LICENSE": "edacfa246c78f4f83ff6d325a11651f36e85b0701a2903bacacf760679ce6612",
-   "README.md": "637ff8fbd513c34f10402a6c96d26386367c4127971d304bf714f231f6fd9f55",
+   "README.md": "933dd955ba4b9fb85a55b05ceec18e805b52004542f65624f24b6a54fc7cb801",
    "assets/gpt-icon.png": "79d27be6b5978e3498fcb38d051385f1ef9b6cbe8333a84cb679031169d049b1",
    "skills/sightlab-2/SKILL.md": "65eb24166faac5048e8e91dce4b9638697a379555cbc16765a299e65de5987fe",
    "skills/sightlab-2/agents/openai.yaml": "ea670b6de27755e92ed44a64e10d1504f131500a6b34d51bbb6c46ac9826fece",
@@ -159,9 +159,9 @@
   "starter-project": {
    ".gitignore": "b1bcf5c22cad2482044f252b3c537c3261565a05c7cddc1bdec8bb7539a31a62",
    ".vscode/settings.json": "df9ed6257e759a9372e499d8b271cc225cbff23595edafefa06718843b67d681",
-   "AGENTS.md": "4d911f98ebe92b7d8ba5c4831e8e5b9336ca1f783687d433c6685bdccda1563d",
-   "CLAUDE.md": "fa6fea94ab5d74db53fe8e7cfc872151a025acbcf6925d00d77493356a54f842",
-   "README.md": "348b5bd9f50c64adcc97cb6130968339b304c6b8368f86984875d1905ae0b226",
+   "AGENTS.md": "c7faac60616a1e8ce1bf81c9dfeb3c8bac55f5eff6b33e99138f60ecf2480377",
+   "CLAUDE.md": "15aff9d41b47a8704038bdc9ef0c833b19d9de15ce2b63c4d697b893f93ebcb7",
+   "README.md": "d24fd9f42da251d57216b516d77934de32375cff0ca6ab6a58c38eb49bd6d778",
    "brief/EXAMPLE-gaze-dwell.md": "5a331ad9cee127fa7c8c060423d39bb58506a5656108b34f7f3eae758fa5a424",
    "brief/TEMPLATE.md": "ad7a76ea298767741033f210a650ee76145a1055fe6ab7d7dd55ab5becb18ca4"
   },

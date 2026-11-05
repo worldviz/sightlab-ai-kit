@@ -25,3 +25,15 @@ def test_openai_subtitles_fit_the_directory_limit():
     manifest = json.loads((KIT / "templates" / "openai-plugin" / ".codex-plugin" / "plugin.json").read_text(encoding="utf-8"))
     assert len(manifest["interface"]["shortDescription"]) <= 30, manifest["interface"]["shortDescription"]
     assert "check" in manifest["interface"]["longDescription"] and "Vizard" in manifest["interface"]["longDescription"]
+
+
+def test_claude_manifest_carries_the_directory_listing_fields():
+    """The Claude directory reads displayName and the policy/support links from plugin.json (portal, 2026-11-05)."""
+    import json
+    from kit_paths import KIT
+    m = json.loads((KIT / "templates" / "claude-plugin" / ".claude-plugin" / "plugin.json").read_text(encoding="utf-8"))
+    assert m["displayName"] == "SightLab AI Kit"
+    assert m["repository"] == "https://github.com/worldviz/sightlab-ai-kit"
+    for key in ("documentationUrl", "supportUrl", "privacyPolicyUrl", "termsOfServiceUrl"):
+        assert m[key].startswith("https://"), key
+    assert m["termsOfServiceUrl"].endswith("#part-2-assistant-terms")

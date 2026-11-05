@@ -3,6 +3,11 @@
 Entries before 2026.11.1 cite `docs/audits/`, `docs/plans/` and `tools/fetch_sources.sh`,
 which live in the team's internal repository, not here.
 
+## 2026.11.7 (2026-11-05)
+
+Claude manifest only: `displayName` "SightLab AI Kit" and the repository, documentation,
+support, privacy and terms links the Claude directory shows on a listing. No content change.
+
 ## 2026.11.6 (2026-11-05)
 
 Sado's pre-submission review, the items that gate the OpenAI directory update:

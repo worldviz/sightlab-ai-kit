@@ -1,5 +1,6 @@
 {
   "name": "sightlab",
+  "displayName": "SightLab AI Kit",
   "version": "{{VERSION}}",
   "description": "Build, check and test WorldViz SightLab (Vizard) experiments from a research brief. Carries one skill per SightLab generation; SightLab 2 today.",
   "author": {
@@ -7,6 +8,11 @@
     "url": "https://www.worldviz.com"
   },
   "homepage": "https://help.worldviz.com/sightlab/",
+  "repository": "https://github.com/worldviz/sightlab-ai-kit",
+  "documentationUrl": "https://help.worldviz.com/sightlab/sightlab-ai-kit/",
+  "supportUrl": "https://www.worldviz.com/virtual-reality-support",
+  "privacyPolicyUrl": "https://help.worldviz.com/sightlab/sightlab-assistant-privacy-policy/",
+  "termsOfServiceUrl": "https://help.worldviz.com/sightlab/sightlab-assistant-privacy-policy/#part-2-assistant-terms",
   "keywords": [
     "sightlab",
     "vizard",
