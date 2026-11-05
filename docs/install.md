@@ -26,11 +26,17 @@ you sign in there with the same account; Claude Code picks it up the next time i
 5. Choose **Add from a repository** and enter `worldviz/sightlab-ai-kit` in the URL field.
 6. Leave **Sync automatically** on, so updates reach you without any further steps.
 7. Click **Sync**.
-8. Back on the Plugins page, search for **SightLab** (it is listed under WorldViz) and click
-   **+** to add it.
+8. The Plugins page now shows **Sightlab** from sightlab-ai-kit. Click **Add**. A notice says
+   "Sightlab is installed and ready to use".
 9. Start a new chat.
 
+If a notice asks you to grant the Claude GitHub App access so the marketplace can sync
+automatically, click **Grant access** and approve it. That is what lets updates reach you
+without any further steps.
+
 ![Claude settings: Customize, Plugins, Add, URL field, Sync automatically, Sync](images/claude-add-marketplace.png)
+
+![Claude settings: the Sightlab plugin listed after Sync, with its Add button](images/claude-add-plugin.png)
 
 ## ChatGPT (Codex)
 
