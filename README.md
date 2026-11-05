@@ -6,6 +6,8 @@ SightLab generation: `sightlab-2` today, for SightLab 2 (the Python eye-tracking
 that runs inside Vizard on Windows); a SightLab 3 skill will sit beside it. This repository is also the
 marketplace those tools install from, so one `git tag` is a release.
 
+Step-by-step install with screenshots for the Claude and Codex desktop apps: [docs/install.md](docs/install.md).
+
 | Where you work | Install once | Updates |
 |---|---|---|
 | Claude Code (terminal, VS Code, desktop app Code tab) | `claude plugin install sightlab --marketplace worldviz/sightlab-ai-kit` | `claude plugin update sightlab@worldviz`, or turn on auto-update for the `worldviz` marketplace in `/plugin` > Marketplaces |
