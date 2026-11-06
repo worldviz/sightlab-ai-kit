@@ -7,7 +7,7 @@ description: Build, check and test SightLab 2 (Vizard) eye-tracking experiments 
 
 You are helping a researcher build a VR experiment in WorldViz SightLab 2, a Python
 library that runs inside Vizard 7 or 8 on Windows. This kit was generated from
-`sightlab_utils` 2.9.3 on 2026-11-05; the installed version may be newer.
+`sightlab_utils` 2.9.3 on 2026-11-06; the installed version may be newer.
 SightLab scripts are short and regular. Keep to the frame in `rules/imports-and-frame.md`,
 compose from `patterns/`, and look up every method in `api/sightlab-api.md` before using it.
 
@@ -40,23 +40,26 @@ released functionality as described in `register/capabilities-and-custom-develop
 
 This plugin provides instructions and reference material for SightLab 2, plus the harness
 under `harness/` in this skill's folder (`<kit>` is the folder that holds this SKILL.md).
-Confirm the generation, then size the request (section 0). Whether this host may run the checks depends on the
-product you are using and its permissions:
+Confirm the generation, then size the request (section 0). What you can run depends on the
+tools and environment this session actually has, not on the product's name; check them
+first. The two checks need different things:
 
 <!-- openai-review-wording -->
-- in ChatGPT (no local files): you cannot run the checks; say so, and for a build ask the
-  researcher to run them on the SightLab PC with the installed kit (Claude Code:
+- Static check: access to the script and this skill's folder, and a Python 3.8+
+  interpreter. When you have them, run `python "<kit>/harness/check.py" <script>` after
+  every edit.
+- Vizard test: additionally a Windows environment where you can run the installed programs,
+  with SightLab 2 and Vizard 8. When you have it and the researcher's permission, run
+  `"C:\Program Files\WorldViz\Vizard8\bin\winviz.exe" "<kit>/harness/autopilot.py" "<absolute path to script>"`
+  once at the end of a simple build, or at the end of every build step otherwise (in
+  PowerShell, prefix the quoted executable with `&`). Say what a run will check; before the
+  first launch in a session ask, unless the request already asked for a run or a test.
+- For any check you cannot run here: give the researcher the script and the command to run
+  on the SightLab PC, or the installed kit (Claude Code:
   `claude plugin install sightlab --marketplace worldviz/sightlab-ai-kit`, then
   `/sightlab:check <script>`; Codex: `codex plugin marketplace add
-  worldviz/sightlab-ai-kit`, install the SightLab VR Assistant, ask it to check the script)
-  and paste the results back;
-- in Codex with command access and the researcher's permission: run the checks as the skill
-  describes, from this skill's folder: `python "<kit>/harness/check.py" <script>` after every
-  edit, and `"C:\Program Files\WorldViz\Vizard8\bin\winviz.exe" "<kit>/harness/autopilot.py" "<absolute path to script>"`
-  once at the end of a simple build, or at the end of every build step otherwise (in
-  PowerShell, Codex's shell on Windows, prefix the quoted
-  executable with `&`). Say what a run will check; before the first launch in a session ask, as a
-  plain chat question, unless the request already asked for a run or a test.
+  worldviz/sightlab-ai-kit`, install the SightLab VR Assistant, ask it to check the script),
+  ask them to paste the results back, and say clearly which checks were not performed.
 
 Generated scripts target the researcher's own licensed SightLab/Vizard installation.
 

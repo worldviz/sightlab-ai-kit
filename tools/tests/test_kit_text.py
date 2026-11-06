@@ -135,6 +135,20 @@ def test_kit_answers_how_to_create_a_first_experiment(kit: Path):
     assert "How do I create my first SightLab experiment?" in (skill / "evals" / "README.md").read_text(encoding="utf-8")
 
 
+def test_host_sections_decide_from_tools_not_product_names(kit: Path):
+    """2026.11.10 review: 'in ChatGPT (no local files): you cannot run the checks' assumed capabilities from the
+    app's name; a desktop session may have the files and Windows. Each plugin checks the session's tools, with the
+    static check (files + Python) and the Vizard test (also Windows + SightLab/Vizard) as separate needs."""
+    import host_sections
+    hosts = host_sections.HOST["sightlab-2"]
+    for wrapper in ("claude-plugin", "openai-plugin"):
+        h = hosts[wrapper]
+        assert "not on the" in h and "Python 3.8+" in h and "Windows" in h and "not performed" in h, wrapper
+        assert "no local files" not in h and "cannot run the checks" not in h and "this is a chat" not in h, wrapper
+    assert "<!-- openai-review-wording -->" in hosts["openai-plugin"]
+    assert "without its harness" in hosts["chat-bundle"]  # the bundle really has no check.py; say why, not "a chat"
+
+
 def test_network_claims_are_qualified(kit: Path):
     """2026.11.8 review: the utilities run the researcher's experiment, which may talk to BIOPAC or an API;
     the public text says what the kit itself does not do, and that experiments may communicate."""

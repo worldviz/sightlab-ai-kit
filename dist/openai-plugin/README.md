@@ -37,4 +37,4 @@ Codex: `codex plugin marketplace add worldviz/sightlab-ai-kit`, then install fro
 ChatGPT: the SightLab VR Assistant in the Plugins directory.
 Source, releases and the Claude version: https://github.com/worldviz/sightlab-ai-kit
 
-Kit version 2026.11.9, generated from sightlab_utils 2.9.3 on 2026-11-05.
+Kit version 2026.11.10, generated from sightlab_utils 2.9.3 on 2026-11-06.

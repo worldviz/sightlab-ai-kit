@@ -3,6 +3,17 @@
 Entries before 2026.11.1 cite `docs/audits/`, `docs/plans/` and `tools/fetch_sources.sh`,
 which live in the team's internal repository, not here.
 
+## 2026.11.10 (2026-11-06)
+
+- Host sections decide what to run from the session's tools and environment, not the
+  product's name. The static check needs the script, the skill folder and Python 3.8+; the
+  Vizard test also needs Windows with SightLab 2 and Vizard 8, and the researcher's
+  permission. Anything that cannot run is handed to the researcher with the command, and the
+  assistant says which checks were not performed. The OpenAI section no longer says
+  "in ChatGPT (no local files): you cannot run the checks"; the Claude section no longer
+  calls every non-Windows session "a chat", since `check.py` needs only Python. The chat
+  bundle says why it cannot run the checks: it carries no harness.
+
 ## 2026.11.9 (2026-11-05)
 
 - "Which SightLab" decides by the import line again: `sightlab_utils` is SightLab 2;
