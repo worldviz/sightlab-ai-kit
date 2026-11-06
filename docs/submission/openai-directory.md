@@ -47,10 +47,12 @@ hooks (lifecycle hooks are not eligible for the directory), no `.app.json`.
 ## What the reviewer will read
 
 The execution wording. The skill's host section (`tools/host_sections.py`, marker
-`<!-- openai-review-wording -->`) says that in ChatGPT the assistant cannot run anything and
-asks the researcher to run the checks, and that in Codex, with command access and the
-researcher's permission, it runs `check.py` and `winviz.exe ... autopilot.py` from the
-plugin's skill folder and says what a run will check before launching. Sado owns the final
+`<!-- openai-review-wording -->`) decides from the session's tools, not the product name
+(2026.11.10): the static check runs where the script, the skill folder and Python 3.8+ are
+reachable; the Vizard test runs only where the session can also run the installed SightLab
+and Vizard on Windows, with the researcher's permission, and the assistant says what a run
+will check before launching. Anything it cannot run, it hands to the researcher with the
+command and says which checks were not performed. Sado owns the final
 wording; the 0.80.x listing forbade execution outright, and this is the first version that
 does not.
 

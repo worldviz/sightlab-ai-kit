@@ -7,7 +7,7 @@ description: Build, check and test SightLab 2 (Vizard) eye-tracking experiments 
 
 You are helping a researcher build a VR experiment in WorldViz SightLab 2, a Python
 library that runs inside Vizard 7 or 8 on Windows. This kit was generated from
-`sightlab_utils` 2.9.3 on 2026-11-05; the installed version may be newer.
+`sightlab_utils` 2.9.3 on 2026-11-06; the installed version may be newer.
 SightLab scripts are short and regular. Keep to the frame in `rules/imports-and-frame.md`,
 compose from `patterns/`, and look up every method in `api/sightlab-api.md` before using it.
 
@@ -38,7 +38,7 @@ released functionality as described in `register/capabilities-and-custom-develop
 
 ## On this host
 
-You are running as the `sightlab-2` skill of the `sightlab` Claude Code plugin, with file and command access. The
+You are running as the `sightlab-2` skill of the `sightlab` plugin. The
 kit's files live under the plugin root, not in the researcher's project: `<kit>` is
 `${CLAUDE_PLUGIN_ROOT}/skills/sightlab-2`. Confirm the generation, then size the request (section 0); for a build
 the checks are expected, not optional:
@@ -52,10 +52,13 @@ the checks are expected, not optional:
 - `/sightlab:new`, `/sightlab:check` and `/sightlab:review`
   are shortcuts for the brief, the checks and the review note.
 
-If you cannot run Windows programs here (claude.ai chat, Cowork, any non-Windows sandbox),
-this is a chat: answer questions from the files, write the brief and the script, list the
-checks you could not run, and give the researcher the two commands above to run on the
-SightLab PC. Never say a check ran when it did not.
+What you can run depends on this session's tools and environment, not on the app; check
+them first. The static check needs the script, this plugin's folder and a Python 3.8+
+interpreter (a sandbox with the files can run it); the Vizard test also needs a Windows
+environment where you can run the installed SightLab 2 and Vizard 8. Run whichever you can.
+For the rest, give the researcher the commands above to run on the SightLab PC, say which
+checks were not performed (in `REVIEW.md` for a build), and never say a check ran when it did
+not.
 
 
 ## 0. Size the request
@@ -134,8 +137,9 @@ First decide which way the build runs, and say so in one line:
 - **A simple study** (one 3D scene; responses by key, trigger or rating scale; no multi-user,
   360 media, external application, AI agent, object detection, trackers or custom
   vizconnect; BIOPAC markers alone do not count against it): build all the steps straight
-  through, with `check.py` after every edit, then one desktop run at the end; fix and run
-  again until it passes. Stop only at handoff.
+  through, with `check.py` after every edit, then one desktop run at the end. If it fails,
+  fix it and run again, up to two attempts (the stop rule below). No headset stop mid-build:
+  the only checkpoint is handoff.
 - **Anything else**, or whenever the researcher asks for it: a desktop run at the end of
   every step, and a stop for a headset look after the skeleton.
 
@@ -194,7 +198,8 @@ Write BIOPAC in capitals.
 | a shipped example to learn from or copy | `examples/index.md`, then the script in the researcher's `ExampleScripts/` or `examples/curated/` here |
 | whether an environment, object or media file ships, and its exact name | `api/resources.md` (never guess a file name) |
 | capability constraints, platform alternatives and custom integrations | `register/capabilities-and-custom-development.md` |
-| a topic in depth (instructions, hardware configurations, Inspector scene editing, multi-user, object detection, replay, dashboard, virtual screen, driving, external apps, AI agents, analysis) | `guides/index.md`, then the guide it names |
+| a topic in depth (a first project in the GUI, instructions, controls, models and assets, hardware configurations, full-body avatars, Inspector scene editing, multi-user, object detection, 360 media, 360 moving regions, scripted avatar agents, E-Learning Lab, Street Walking, replay, dashboard, virtual screen, driving, external apps, AI agents, analysis) | `guides/index.md`, then the guide it names |
+| a feature, device or example this kit does not cover (one not in `guides/index.md` or `examples/index.md`, such as another downloadable demo) | the SightLab documentation at help.worldviz.com/sightlab (fetch the page when this host can browse) and the example's own scripts in the researcher's `ExampleScripts/`; when a page and the installed code disagree, the code wins, since some pages are out of date; say which source you used |
 | what SightLab or Vizard actually does when the rules and the API map are silent (what a prompt does to the scene, what an event carries, what a method does with its argument) | `reference/sightlab.py`, `reference/viz.py`, `reference/replay.py` (`reference/README.md`); on an installed machine the installed copies first |
 
 Do not paste large parts of the reference files or the source into your answers; cite the

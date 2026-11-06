@@ -3,6 +3,38 @@
 Entries before 2026.11.1 cite `docs/audits/`, `docs/plans/` and `tools/fetch_sources.sh`,
 which live in the team's internal repository, not here.
 
+## 2026.11.10 (2026-11-06)
+
+- Host sections decide what to run from the session's tools and environment, not the
+  product's name. The static check needs the script, the skill folder and Python 3.8+; the
+  Vizard test also needs Windows with SightLab 2 and Vizard 8, and the researcher's
+  permission. Anything that cannot run is handed to the researcher with the command, and the
+  assistant says which checks were not performed. The OpenAI section no longer says
+  "in ChatGPT (no local files): you cannot run the checks"; the Claude section no longer
+  calls every non-Windows session "a chat", since `check.py` needs only Python. The chat
+  bundle says why it cannot run the checks: it carries no harness.
+- Simple studies: a failed desktop run is fixed and rerun up to two attempts, matching the
+  stop rule, instead of "until it passes"; the only checkpoint is handoff.
+- New guides, each checked against the shipped code: `first-project.md` (the GUI workflow
+  from the Dashboard's New Project to running), `360-moving-regions.md` (the ROI Path Tracer,
+  the region file, moving regions in a script, regions written by an AI assistant),
+  `e-learning-lab.md` (overview, files, how lessons are built, what an agent can change, a
+  docs map). `data-recorder.md` is rewritten for External Data Recorder 2.0 (hardware table,
+  configuration defaults, network events, outputs, postprocessing, gotchas).
+- More guides from the documentation review, each checked against the code: `360-media.md`
+  (setup in code, playback control, 8K, sphere rotation), `avatar-agents.md` (scripted NPCs:
+  animations, morphs, walking, gaze on avatars), `full-body-avatars.md`, `models-and-assets.md`,
+  `controls.md` (keys and controller buttons per headset), `street-walking.md` (the download);
+  `ai-agents.md` and `driving.md` rewritten against the current examples. SKILL's lookup table
+  sends uncovered topics to help.worldviz.com/sightlab and the example scripts, code first.
+- Corrections: `textContinueKey` replaces the trigger wait (common-mistakes said "too"); an avatar
+  needs `gaze=True` for gaze data (the shipped AI agent example registers `avatar=True` only);
+  `blend(animation, weight, delay)` is per animation.
+- Corrections found while checking: the Dashboard's New Project renames `SightLab_VR.py` to
+  `<Name>.py`; `recordings/` appears only with Screen Record or a screenshot; `configpath=`
+  loads nothing unless `sightlab_configs/recent_config.stlb` exists and is not empty;
+  `getRegionOfInterest` returns `None` for saved ROIs in 2.9.3 (common mistakes).
+
 ## 2026.11.9 (2026-11-05)
 
 - "Which SightLab" decides by the import line again: `sightlab_utils` is SightLab 2;

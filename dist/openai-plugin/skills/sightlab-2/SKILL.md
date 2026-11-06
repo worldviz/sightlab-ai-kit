@@ -7,7 +7,7 @@ description: Build, check and test SightLab 2 (Vizard) eye-tracking experiments 
 
 You are helping a researcher build a VR experiment in WorldViz SightLab 2, a Python
 library that runs inside Vizard 7 or 8 on Windows. This kit was generated from
-`sightlab_utils` 2.9.3 on 2026-11-05; the installed version may be newer.
+`sightlab_utils` 2.9.3 on 2026-11-06; the installed version may be newer.
 SightLab scripts are short and regular. Keep to the frame in `rules/imports-and-frame.md`,
 compose from `patterns/`, and look up every method in `api/sightlab-api.md` before using it.
 
@@ -40,23 +40,26 @@ released functionality as described in `register/capabilities-and-custom-develop
 
 This plugin provides instructions and reference material for SightLab 2, plus the harness
 under `harness/` in this skill's folder (`<kit>` is the folder that holds this SKILL.md).
-Confirm the generation, then size the request (section 0). Whether this host may run the checks depends on the
-product you are using and its permissions:
+Confirm the generation, then size the request (section 0). What you can run depends on the
+tools and environment this session actually has, not on the product's name; check them
+first. The two checks need different things:
 
 <!-- openai-review-wording -->
-- in ChatGPT (no local files): you cannot run the checks; say so, and for a build ask the
-  researcher to run them on the SightLab PC with the installed kit (Claude Code:
+- Static check: access to the script and this skill's folder, and a Python 3.8+
+  interpreter. When you have them, run `python "<kit>/harness/check.py" <script>` after
+  every edit.
+- Vizard test: additionally a Windows environment where you can run the installed programs,
+  with SightLab 2 and Vizard 8. When you have it and the researcher's permission, run
+  `"C:\Program Files\WorldViz\Vizard8\bin\winviz.exe" "<kit>/harness/autopilot.py" "<absolute path to script>"`
+  once at the end of a simple build, or at the end of every build step otherwise (in
+  PowerShell, prefix the quoted executable with `&`). Say what a run will check; before the
+  first launch in a session ask, unless the request already asked for a run or a test.
+- For any check you cannot run here: give the researcher the script and the command to run
+  on the SightLab PC, or the installed kit (Claude Code:
   `claude plugin install sightlab --marketplace worldviz/sightlab-ai-kit`, then
   `/sightlab:check <script>`; Codex: `codex plugin marketplace add
-  worldviz/sightlab-ai-kit`, install the SightLab VR Assistant, ask it to check the script)
-  and paste the results back;
-- in Codex with command access and the researcher's permission: run the checks as the skill
-  describes, from this skill's folder: `python "<kit>/harness/check.py" <script>` after every
-  edit, and `"C:\Program Files\WorldViz\Vizard8\bin\winviz.exe" "<kit>/harness/autopilot.py" "<absolute path to script>"`
-  once at the end of a simple build, or at the end of every build step otherwise (in
-  PowerShell, Codex's shell on Windows, prefix the quoted
-  executable with `&`). Say what a run will check; before the first launch in a session ask, as a
-  plain chat question, unless the request already asked for a run or a test.
+  worldviz/sightlab-ai-kit`, install the SightLab VR Assistant, ask it to check the script),
+  ask them to paste the results back, and say clearly which checks were not performed.
 
 Generated scripts target the researcher's own licensed SightLab/Vizard installation.
 
@@ -137,8 +140,9 @@ First decide which way the build runs, and say so in one line:
 - **A simple study** (one 3D scene; responses by key, trigger or rating scale; no multi-user,
   360 media, external application, AI agent, object detection, trackers or custom
   vizconnect; BIOPAC markers alone do not count against it): build all the steps straight
-  through, with `check.py` after every edit, then one desktop run at the end; fix and run
-  again until it passes. Stop only at handoff.
+  through, with `check.py` after every edit, then one desktop run at the end. If it fails,
+  fix it and run again, up to two attempts (the stop rule below). No headset stop mid-build:
+  the only checkpoint is handoff.
 - **Anything else**, or whenever the researcher asks for it: a desktop run at the end of
   every step, and a stop for a headset look after the skeleton.
 
@@ -197,7 +201,8 @@ Write BIOPAC in capitals.
 | a shipped example to learn from or copy | `examples/index.md`, then the script in the researcher's `ExampleScripts/` or `examples/curated/` here |
 | whether an environment, object or media file ships, and its exact name | `api/resources.md` (never guess a file name) |
 | capability constraints, platform alternatives and custom integrations | `register/capabilities-and-custom-development.md` |
-| a topic in depth (instructions, hardware configurations, Inspector scene editing, multi-user, object detection, replay, dashboard, virtual screen, driving, external apps, AI agents, analysis) | `guides/index.md`, then the guide it names |
+| a topic in depth (a first project in the GUI, instructions, controls, models and assets, hardware configurations, full-body avatars, Inspector scene editing, multi-user, object detection, 360 media, 360 moving regions, scripted avatar agents, E-Learning Lab, Street Walking, replay, dashboard, virtual screen, driving, external apps, AI agents, analysis) | `guides/index.md`, then the guide it names |
+| a feature, device or example this kit does not cover (one not in `guides/index.md` or `examples/index.md`, such as another downloadable demo) | the SightLab documentation at help.worldviz.com/sightlab (fetch the page when this host can browse) and the example's own scripts in the researcher's `ExampleScripts/`; when a page and the installed code disagree, the code wins, since some pages are out of date; say which source you used |
 | what SightLab or Vizard actually does when the rules and the API map are silent (what a prompt does to the scene, what an event carries, what a method does with its argument) | `reference/sightlab.py`, `reference/viz.py`, `reference/replay.py` (`reference/README.md`); on an installed machine the installed copies first |
 
 Do not paste large parts of the reference files or the source into your answers; cite the

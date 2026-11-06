@@ -135,6 +135,40 @@ def test_kit_answers_how_to_create_a_first_experiment(kit: Path):
     assert "How do I create my first SightLab experiment?" in (skill / "evals" / "README.md").read_text(encoding="utf-8")
 
 
+def test_host_sections_decide_from_tools_not_product_names(kit: Path):
+    """2026.11.10 review: 'in ChatGPT (no local files): you cannot run the checks' assumed capabilities from the
+    app's name; a desktop session may have the files and Windows. Each plugin checks the session's tools, with the
+    static check (files + Python) and the Vizard test (also Windows + SightLab/Vizard) as separate needs."""
+    import host_sections
+    hosts = host_sections.HOST["sightlab-2"]
+    for wrapper in ("claude-plugin", "openai-plugin"):
+        h = hosts[wrapper]
+        assert "not on the" in h and "Python 3.8+" in h and "Windows" in h and "not performed" in h, wrapper
+        assert "no local files" not in h and "cannot run the checks" not in h and "this is a chat" not in h, wrapper
+    assert "<!-- openai-review-wording -->" in hosts["openai-plugin"]
+    assert "without its harness" in hosts["chat-bundle"]  # the bundle really has no check.py; say why, not "a chat"
+
+
+def test_guides_index_lists_every_guide(kit: Path):
+    """Every guide file is listed in guides/index.md, and every listed guide exists (2026.11.10: four new or rewritten)."""
+    import re
+    guides = kit / "src" / "sightlab-2" / "guides"
+    listed = set(re.findall(r"^\| `([\w.-]+\.md)` \|", (guides / "index.md").read_text(encoding="utf-8"), re.M))
+    files = {p.name for p in guides.glob("*.md")} - {"index.md"}
+    assert listed == files, (sorted(files - listed), sorted(listed - files))
+    for g in ("first-project.md", "360-moving-regions.md", "e-learning-lab.md", "data-recorder.md", "360-media.md",
+              "avatar-agents.md", "full-body-avatars.md", "models-and-assets.md", "controls.md", "street-walking.md"):
+        assert g in files, g
+
+
+def test_skill_points_to_the_docs_for_gaps_with_code_first(kit: Path):
+    """2026.11.10: gaps (NPC animation, full body, downloadable examples) are researched in the online docs and the
+    example scripts; the installed code wins over a page, since the docs review found many out-of-date pages."""
+    text = (kit / "src" / "sightlab-2" / "SKILL.md").read_text(encoding="utf-8")
+    table = text[text.index("## 6. When to read what"):]
+    assert "help.worldviz.com/sightlab" in table and "the code wins" in table and "`ExampleScripts/`" in table
+
+
 def test_network_claims_are_qualified(kit: Path):
     """2026.11.8 review: the utilities run the researcher's experiment, which may talk to BIOPAC or an API;
     the public text says what the kit itself does not do, and that experiments may communicate."""
@@ -150,7 +184,8 @@ def test_simple_studies_build_straight_through(kit: Path):
     anything else keeps a run per step and the skeleton checkpoint."""
     text = (kit / "src" / "sightlab-2" / "SKILL.md").read_text(encoding="utf-8")
     build = text[text.index("## 4. The build"):text.index("At each stop")]
-    assert "**A simple study**" in build and "one desktop run at the end" in build and "Stop only at handoff" in build
+    assert "**A simple study**" in build and "one desktop run at the end" in build and "the only checkpoint is handoff" in build
+    assert "until it passes" not in build and "up to two attempts" in build  # agrees with the two-attempt stop rule
     assert "**Anything else**" in build and "after the skeleton" in build
     assert "unless the study is simple" in build
     review = text[text.index("At each stop write"):][:400]

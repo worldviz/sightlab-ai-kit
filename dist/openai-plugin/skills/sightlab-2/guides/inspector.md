@@ -55,7 +55,8 @@ sightlab.addSceneObject('Dashboard', dashboard, gaze=True)
 
 A region of interest is registered the same way, with `addSceneObject(..., gaze=True)`. In
 2.9.3 `addRegionOfInterest()` has an empty body (`reference/sightlab.py`); do not use it for
-3D scenes. Regions of interest on 360 media are drawn in the SightLab GUI, not in Inspector.
+3D scenes. Regions of interest on 360 media are drawn in the SightLab GUI, not in Inspector;
+moving ones are traced (`guides/360-moving-regions.md`).
 
 ## Set where the participant starts
 

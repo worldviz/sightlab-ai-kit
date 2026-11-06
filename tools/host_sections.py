@@ -10,7 +10,7 @@ HOST = {
     "sightlab-2": {
     "claude-plugin": """## On this host
 
-You are running as the `sightlab-2` skill of the `sightlab` Claude Code plugin, with file and command access. The
+You are running as the `sightlab-2` skill of the `sightlab` plugin. The
 kit's files live under the plugin root, not in the researcher's project: `<kit>` is
 `${CLAUDE_PLUGIN_ROOT}/skills/sightlab-2`. Confirm the generation, then size the request (section 0); for a build
 the checks are expected, not optional:
@@ -24,41 +24,49 @@ the checks are expected, not optional:
 - `/sightlab:new`, `/sightlab:check` and `/sightlab:review`
   are shortcuts for the brief, the checks and the review note.
 
-If you cannot run Windows programs here (claude.ai chat, Cowork, any non-Windows sandbox),
-this is a chat: answer questions from the files, write the brief and the script, list the
-checks you could not run, and give the researcher the two commands above to run on the
-SightLab PC. Never say a check ran when it did not.
+What you can run depends on this session's tools and environment, not on the app; check
+them first. The static check needs the script, this plugin's folder and a Python 3.8+
+interpreter (a sandbox with the files can run it); the Vizard test also needs a Windows
+environment where you can run the installed SightLab 2 and Vizard 8. Run whichever you can.
+For the rest, give the researcher the commands above to run on the SightLab PC, say which
+checks were not performed (in `REVIEW.md` for a build), and never say a check ran when it did
+not.
 """,
     "openai-plugin": """## On this host
 
 This plugin provides instructions and reference material for SightLab 2, plus the harness
 under `harness/` in this skill's folder (`<kit>` is the folder that holds this SKILL.md).
-Confirm the generation, then size the request (section 0). Whether this host may run the checks depends on the
-product you are using and its permissions:
+Confirm the generation, then size the request (section 0). What you can run depends on the
+tools and environment this session actually has, not on the product's name; check them
+first. The two checks need different things:
 
 <!-- openai-review-wording -->
-- in ChatGPT (no local files): you cannot run the checks; say so, and for a build ask the
-  researcher to run them on the SightLab PC with the installed kit (Claude Code:
+- Static check: access to the script and this skill's folder, and a Python 3.8+
+  interpreter. When you have them, run `python "<kit>/harness/check.py" <script>` after
+  every edit.
+- Vizard test: additionally a Windows environment where you can run the installed programs,
+  with SightLab 2 and Vizard 8. When you have it and the researcher's permission, run
+  `"C:\\Program Files\\WorldViz\\Vizard8\\bin\\winviz.exe" "<kit>/harness/autopilot.py" "<absolute path to script>"`
+  once at the end of a simple build, or at the end of every build step otherwise (in
+  PowerShell, prefix the quoted executable with `&`). Say what a run will check; before the
+  first launch in a session ask, unless the request already asked for a run or a test.
+- For any check you cannot run here: give the researcher the script and the command to run
+  on the SightLab PC, or the installed kit (Claude Code:
   `claude plugin install sightlab --marketplace worldviz/sightlab-ai-kit`, then
   `/sightlab:check <script>`; Codex: `codex plugin marketplace add
-  worldviz/sightlab-ai-kit`, install the SightLab VR Assistant, ask it to check the script)
-  and paste the results back;
-- in Codex with command access and the researcher's permission: run the checks as the skill
-  describes, from this skill's folder: `python "<kit>/harness/check.py" <script>` after every
-  edit, and `"C:\\Program Files\\WorldViz\\Vizard8\\bin\\winviz.exe" "<kit>/harness/autopilot.py" "<absolute path to script>"`
-  once at the end of a simple build, or at the end of every build step otherwise (in
-  PowerShell, Codex's shell on Windows, prefix the quoted
-  executable with `&`). Say what a run will check; before the first launch in a session ask, as a
-  plain chat question, unless the request already asked for a run or a test.
+  worldviz/sightlab-ai-kit`, install the SightLab VR Assistant, ask it to check the script),
+  ask them to paste the results back, and say clearly which checks were not performed.
 
 Generated scripts target the researcher's own licensed SightLab/Vizard installation.
 """,
     "chat-bundle": """## On this host
 
-You are in a chat without access to the researcher's files or commands. Confirm the generation, then size the request
-(section 0). For a build, write the brief and the script here; you cannot run
-`check.py` or the experiment. In every `REVIEW.md` list the checks you could not run and ask
-the researcher to run them with the installed kit:
+This is the chat bundle: the kit's content without its harness, so `check.py` and the
+autopilot are not in these files and cannot be run from them.
+Confirm the generation, then size the request (section 0). For a build, write the brief and
+the script here. In every
+`REVIEW.md` say which checks were not performed and ask the researcher to run them with the
+installed kit:
 
 - Claude Code: `claude plugin install sightlab --marketplace worldviz/sightlab-ai-kit`,
   then `/sightlab:check <script>`;

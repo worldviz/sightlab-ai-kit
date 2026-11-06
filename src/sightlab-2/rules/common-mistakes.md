@@ -19,6 +19,7 @@ it prints.
 | `vizshape` objects invisible or black | no light in the scene | `sl.SightLab(..., headlight=True)` and `import vizshape` | — |
 | `addCustomTrialDataColumn(...)`, as some documentation pages write it | not a method in 2.9.3; the script crashes | delete it: there is no declare step; `sightlab.setCustomTrialData(value, 'Column Name')` writes the value for the current frame (call it each frame for a continuous value such as heart rate); one value per trial is `setExperimentSummaryData` | `E_UNKNOWN_METHOD` |
 | `setEnvironment(env, trial=n)` to give trial n its own 3D scene | `trial=` is ignored for 3D models; the last call wins for every trial | load every scene and switch with `visible()` (`rules/environments-and-resources.md`) | — |
+| `sightlab.getRegionOfInterest('name')` to find a 360 ROI | returns `None` in 2.9.3 for ROIs the GUI or the tracer saves (it compares the key's last element, the Z scale) | match `key[4]` in `sightlab.sceneObjects[REGIONS_OF_INTEREST]` (`guides/360-moving-regions.md`) | — |
 | `sl.Sightlab(...)` | wrong case; the class is `SightLab` | `sl.SightLab(...)` | `E_SYNTAX`-adjacent: Python raises AttributeError |
 | Writing gaze detection by hand | duplicates and fights the built-in events | subscribe to `sightlab.GAZE_TIME_EVENT` and friends | — |
 | Calling `setEnvironment` with `gui=True` | overrides what the researcher chose in the GUI | leave it to the GUI, or go `gui=False` | — |
@@ -31,7 +32,9 @@ it prints.
 - Gaze events never fire on the desktop: the Desktop configuration uses the view centre as
   the gaze ray; look straight at the object, or test with the harness, which steers the view.
 - Text prompts never dismiss: the continue event is the controller trigger (left mouse on
-  the desktop); add `textContinueKey=' '` to accept the space bar too.
+  the desktop). `textContinueKey=' '` makes the space bar the continue key instead: it
+  replaces the trigger wait, so use it only in desktop-only studies
+  (`rules/trials-and-instructions.md`).
 
 ## Guessing when the source is right there
 

@@ -46,8 +46,9 @@ name in `VIZCONNECT_DICT`. In GUI mode the researcher picks it in the GUI. In co
 
 ## Controller buttons are events
 
-Each vizconnect file names its own events (`_name = 'triggerPress'` in the file). Wait for
-one, or call back on it:
+Each vizconnect file names its own events (`_name = 'triggerPress'` in the file); which
+physical button raises which, per headset, is in `guides/controls.md`. A tracked full body
+is `guides/full-body-avatars.md`. Wait for one, or call back on it:
 
 ```python
 yield viztask.waitEvent(viz.getEventID('triggerPress'))
