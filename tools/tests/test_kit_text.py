@@ -68,15 +68,17 @@ def test_readme_tells_2026_11_2_installs_to_reinstall(kit: Path):
 
 
 def test_skill_routes_between_generations_first(kit: Path):
-    """Both generations will be installed side by side for a year. Default to SightLab 2;
-    `sightlab_utils` is the SightLab 2 signal, and a bare `import sightlab` or class name does not prove 3."""
+    """Both generations will be installed side by side for a year. Default to SightLab 2; the import line
+    decides (2026.11.9: `sightlab_utils` is SightLab 2, `import sightlab` / `from sightlab import` is SightLab 3)."""
     text = (kit / "src" / "sightlab-2" / "SKILL.md").read_text(encoding="utf-8")
     i = text.index("## Which SightLab")
     assert i < text.index("<!-- host-section -->") < text.index("## 0. Size the request")
     section = text[i:text.index("<!-- host-section -->")]
-    for signal in ("sightlab_utils", "Default to SightLab 2", "`import sightlab`", "class name", "SightLab 3 skill", "coverage gap",
+    for signal in ("sightlab_utils", "Default to SightLab 2", "`import sightlab`", "`from sightlab import ...` is SightLab 3",
+                   ".oep.json", ".oep-project.json", "_sightlab_version.py", "class", "SightLab 3 skill", "coverage gap",
                    "register/capabilities-and-custom-development.md"):
         assert signal in section, signal
+    assert "does not establish SightLab 3" not in section
 
 
 def test_routing_decides_in_chat_and_defers_sizing(kit: Path):

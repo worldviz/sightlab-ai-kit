@@ -20,10 +20,14 @@ Ask only when conflicting or ambiguous version information materially changes th
 When nothing indicates the generation, say in one line that you are assuming SightLab 2,
 so a SightLab 3 user can correct it.
 
-An import of `sightlab_utils` is evidence of SightLab 2. For other projects, use package
-metadata, project structure and documentation together. A generic `import sightlab`,
-filename or class name alone does not establish SightLab 3; it may refer to a local module.
-Keep each generation's APIs and examples separate.
+The import line decides. `import sightlab_utils.sightlab as sl` (any `sightlab_utils`
+import) is SightLab 2; `import sightlab` or `from sightlab import ...` is SightLab 3, unless
+the project has its own `sightlab.py` beside the script. A `.oep.json` or `.oep-project.json`
+file in the project is SightLab 3. On a PC that can be read: Vizard's
+`bin\lib\site-packages\sightlab_utils` is SightLab 2, and `site-packages\sightlab` with a
+`_sightlab_version.py` is SightLab 3; both can be installed side by side, so the project's
+import line still decides. Both generations define a class named `SightLab`, so the class
+name alone decides nothing. Keep each generation's APIs and examples separate.
 
 This skill contains SightLab 2 references. For confirmed SightLab 3 work, use a relevant
 SightLab 3 skill if available; otherwise disclose the coverage gap and consult authoritative
