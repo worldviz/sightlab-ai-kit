@@ -3,6 +3,14 @@
 Entries before 2026.11.1 cite `docs/audits/`, `docs/plans/` and `tools/fetch_sources.sh`,
 which live in the team's internal repository, not here.
 
+## 2026.11.9 (2026-11-05)
+
+- "Which SightLab" decides by the import line again: `sightlab_utils` is SightLab 2;
+  `import sightlab` or `from sightlab import ...` is SightLab 3 (unless the project has its
+  own `sightlab.py`), as is a `.oep.json` or `.oep-project.json` file; on the PC,
+  `site-packages\sightlab` with `_sightlab_version.py` is SightLab 3. When nothing decides,
+  it still assumes SightLab 2 and says so.
+
 ## 2026.11.8 (2026-11-05)
 
 SightLab 2.9.3, the capabilities register, and the rest of Sado's review.
@@ -37,6 +45,9 @@ SightLab 2.9.3, the capabilities register, and the rest of Sado's review.
 - Autopilot: run copies also skip keys and credentials (`keys/`, `*api_key*`,
   `*credentials*`, `*.pem`, `*.key`, `*.pfx`, `*.p12`); the report names what it left out and
   adds what needed it to `needs_human`. Harness version 2026.11.8.
+- Listing description and LICENSE: the kit sends nothing to WorldViz and runs no service of
+  its own; experiments it runs, and the installed SightLab and Vizard, may communicate with
+  the devices and services they are set up to use.
 - The GitHub distribution is marked as a preview in the READMEs and the install guide.
 - Tests: the first-experiment answer, register references, the key exclusions; the
   scoreboard test reads UTF-8 so it passes on Windows.
