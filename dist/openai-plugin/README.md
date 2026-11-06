@@ -7,9 +7,6 @@ SightLab engineer follows: size the request, assemble a brief, build the script 
 run the static checker after every edit, run the experiment unattended in desktop mode, and
 hand over a review note with what the headset still has to confirm.
 
-Installed from GitHub (`codex plugin marketplace add worldviz/sightlab-ai-kit`), the kit is a
-preview until WorldViz announces its general release.
-
 ## What it contains
 
 - `skills/sightlab-2/SKILL.md`: the workflow, with the rules, patterns, guides and the API
