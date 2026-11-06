@@ -7,7 +7,9 @@
   produces no dwell, fixation or view-count data.
 - Make an object grabbable with the same call: `sightlab.addSceneObject('name', node,
   gaze=True, grab=True)`. Register after the node exists.
-- Regions rather than objects: `sightlab.addRegionOfInterest(regionObject)`.
+- Regions rather than objects: place a `RegionOfInterest.osgb` node in the scene
+  (`guides/inspector.md`) and register it the same way, `addSceneObject('name', roi, gaze=True)`.
+  `addRegionOfInterest()` exists but its body is empty in 2.9.3; it records nothing.
 - Registered objects are reachable later as `sightlab.sceneObjects[GAZE_OBJECTS]['name']` and
   `sightlab.sceneObjects[GRAB_OBJECTS]['name']`.
 - In GUI mode (`gui=True`) the researcher registers objects in the GUI instead; code
@@ -66,4 +68,18 @@ Under the script's folder, `data/<date>_<participant>_experiment_data/`:
 - Condition labels: `sightlab.setConditionName('A')` or `startTrial(trialLabel='A')`, plus a
   summary column via `setExperimentSummaryData('Condition', 'A')`. (`startTrial(condition=...)`
   is the GUI's start-condition event, not a label.)
+- An event on the timeline file: `sightlab.addToTimeline(flag='target shown')`.
+- Where this session's files go: `sightlab.getExperimentDataFolderPath()` (absolute), for a
+  script that writes its own file beside SightLab's.
+- Turning a file off for one trial: `startTrial(trackingDataLogging=False)` and likewise
+  `replayDataLogging`, `experimentSummaryLogging`, `timeLineLogging`, `fixationLogging`
+  (the constructor has the same switches for the whole session).
 - See `examples/Custom Data Saving` and `patterns/randomized-conditions.md`.
+
+## Participant IDs and dialogs
+
+- No underscore in the participant ID or the participant name fields: the replay then cannot
+  find the session's files.
+- `vizinput` dialogs (questionnaires, demographics) are Windows dialogs on the desktop
+  monitor, not in the headset: use them before the participant puts the headset on, or for
+  the researcher; in VR use SightLab's rating scales and instructions.

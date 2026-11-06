@@ -70,7 +70,43 @@ SightLab(gui=True, pid=True, biopac=None, headlight=False, console=..., screenre
   `rules/gui-vs-code.md`); `False` means the script sets everything.
 - `headlight=True` whenever the scene uses `vizshape` primitives or an unlit model.
 - `pid=False` skips the participant-ID dialog (useful for tests; keep `True` for real runs).
-- `hardwareconfig='Desktop'` (or another name from the hardware list) selects the vizconnect
-  configuration without the chooser dialog.
+- `hardwareconfig='Desktop'` selects the vizconnect configuration without the chooser
+  dialog; the name must be an exact key of `VIZCONNECT_DICT` or Vizard quits
+  (`guides/hardware.md`).
 - `biopac=True` turns on BIOPAC marker sending; see `patterns/biopac-markers.md`.
 - The full list, with defaults, is in `api/sightlab-api.md` under `class SightLab`.
+
+## Global settings (`settings.py`)
+
+`sightlab_utils/settings.py` holds global defaults: `START_TEXT`, the dwell, fixation and
+saccade thresholds, `VIZCONNECT_DICT` and `VIZCONNECT_CONFIG_LIST`, `PARTICIPANT_INFO1`/`2`
+(which rename the summary's participant columns), fades, video compression, `LANGUAGE`.
+
+- Prefer a constructor argument or a method when one exists (`setStartText`,
+  `vizconnectconfig=`, `setFixationSaccadeThresholds`, ...).
+- Never edit the installed `settings.py`: it is shared by every project on the PC, sits under
+  Program Files, and the next SightLab install replaces it.
+- To change a value for one script, set it before SightLab is imported, because
+  `sightlab.py` copies the settings when it loads:
+  ```python
+  from sightlab_utils import settings
+  settings.START_TEXT = 'Press the trigger to begin'
+  import sightlab_utils.sightlab as sl
+  from sightlab_utils.settings import *
+  ```
+- `LANGUAGE` cannot be changed this way: it is applied the moment `settings.py` is first
+  imported.
+
+## Adding SightLab to an existing Vizard script
+
+- SightLab starts Vizard and loads vizconnect itself: delete the script's own `viz.go()` and
+  `vizconnect.go(...)`. A custom vizconnect file goes in `vizconnectconfig=`
+  (`guides/hardware.md`).
+- Then the usual frame: `sl.SightLab(gui=False)`, `setEnvironment(env)`, `addSceneObject` for
+  anything that needs data, `yield sightlab.startTrial()` and `yield sightlab.endTrial()`
+  around the session (after `yield viztask.waitEvent(EXPERIMENT_START)` when it starts at
+  once), and
+  `viztask.schedule(sightlab.runExperiment)` after the scene is built.
+- For replay, copy `SightLabVR_Replay.py` from `Projects\SampleProject` beside the script.
+- To run a Vizard script under SightLab without recording anything:
+  `sl.SightLab(gui=False, pid=False, fadequad=False, headlight=True)`.

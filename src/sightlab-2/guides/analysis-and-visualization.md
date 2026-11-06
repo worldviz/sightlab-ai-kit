@@ -19,6 +19,15 @@ In the Dashboard, a project's detail page offers "Generate Barchart" (grouped ba
 and average dwell time per object from a summary CSV; no AI) and "Generate Visualizations"
 (an LLM, local through Ollama or OpenAI or Anthropic, proposes a set of charts for a CSV).
 
+The scripts behind them sit in the projects folder (`Documents\Sightlab2`) and can be run
+directly for the researcher:
+
+- `generate_barchart.py <summary.csv> [--data-dir DIR]`: one PNG per `Label` (condition) in a
+  `Charts/` folder beside the CSV or under `DIR`; skips the `ENTIRE_SCENE` row; needs pandas
+  and matplotlib, no AI.
+- `generate_visualizations.py <csv>`: the LLM route; the default is a local Gemma model
+  through Ollama, `-p openai` or `-p claude` use an API key the researcher has set.
+
 ## Shipped analysis scripts
 
 - `examples/Barchart`: a matplotlib bar chart of gaze on objects of interest; the simplest
@@ -49,7 +58,13 @@ it saves the figure; keep the loading and saving.
 ## Gotchas
 
 - Column names contain spaces and parentheses; quote them exactly.
-- Rows for objects that were never looked at still exist (zeros); do not drop them silently.
+- Rows for objects that were never looked at still exist, with zeros and a time to first
+  fixation of `-1`; do not drop them silently, and leave the `-1` out of any average.
+- Fixation counts depend on the fixation thresholds in force when the data was recorded
+  (`setFixationSaccadeThresholds`; defaults 1° dispersion, 0.1 s duration); compare studies
+  only at the same thresholds.
+- A study run with `oldHeaders=True` writes the older column names (`Object`, `View Count`,
+  `Total Dwell Time`, `Avg Time`); read the header row before assuming a name.
 - Per-frame files are large; aggregate per trial before plotting.
 - The autopilot's `.autopilot/runs/` folders contain test data, not research data; exclude
   them.

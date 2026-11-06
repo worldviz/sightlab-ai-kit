@@ -7,6 +7,8 @@ SightLab engineer follows: size the request, assemble a brief, build the script 
 run the static checker after every edit, run the experiment unattended in desktop mode, and
 hand over a review note with what the headset still has to confirm.
 
+**Preview:** this GitHub distribution is a preview until WorldViz announces its general release.
+
 ## What it contains
 
 - `skills/sightlab-2/SKILL.md`: the workflow, with the rules, patterns, guides and the API
@@ -25,7 +27,8 @@ In Claude Code on a Windows PC with SightLab 2 and Vizard 8 installed, the skill
 launches Vizard on that PC for about a minute and writes `.autopilot/` beside the script. It
 says what the run will check and, unless you asked for the run, asks once per session before
 the first launch; it never launches when a file named `NO_AUTOPILOT` is in the project folder.
-A run copies the experiment folder (never its `data/`, `.git`, `.env` files or virtualenvs) to
+A run copies the experiment folder (never its `data/`, `.git`, `.env` files, virtualenvs, API
+keys or credential files) to
 `.autopilot/runs/<timestamp>/`, writes its report and screenshots there, and keeps the last five. Where it cannot run
 Windows programs (claude.ai chat, Cowork) it answers from its files and writes scripts for
 you to run. The plugin itself sends nothing anywhere and fetches nothing from the network; the

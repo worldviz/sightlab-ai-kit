@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-31T06:22Z",
+ "generated": "2026-11-05T23:53Z",
  "modules": {
   "eye_tracker_utils": {
    "classes": {
@@ -1698,14 +1698,14 @@
       "addGazePointWindow": {
        "doc": null,
        "is_generator": false,
-       "lineno": 11852,
+       "lineno": 11854,
        "params": [],
        "signature": "addGazePointWindow()"
       },
       "addRegionOfInterest": {
        "doc": null,
        "is_generator": false,
-       "lineno": 11606,
+       "lineno": 11608,
        "params": [
         {
          "default": null,
@@ -1718,7 +1718,7 @@
       "addSceneObject": {
        "doc": "Add an object to the scene with optional gaze tracking and grab interaction.\n\nArgs:\n    objectName: Unique identifier for the object.\n    sceneObject: The viz object to add to the scene.\n    gaze: Enable gaze-based interaction tracking (default False).\n    grab: Enable VR controller grab interaction (default False).\n    visible: Make object visible (False hides and disables shadow casting, default True).\n    avatar: Mark as an avatar component object (default False).\n    customChildOf: Name of parent object to link to (default None).",
        "is_generator": false,
-       "lineno": 10277,
+       "lineno": 10279,
        "params": [
         {
          "default": null,
@@ -1761,7 +1761,7 @@
       "addToTimeline": {
        "doc": "Add an event to the timeline log.\n\nRecords timestamped events for timeline reconstruction during replay.\n\nArgs:\n    flag: Event flag/label (default None).\n    objectName: Name of object involved in event (default None).\n    dwellTime: Duration of gaze dwell if applicable (default None).",
        "is_generator": false,
-       "lineno": 11790,
+       "lineno": 11792,
        "params": [
         {
          "default": "None",
@@ -1784,7 +1784,7 @@
       "addTrackingTrialDataColumn": {
        "doc": null,
        "is_generator": false,
-       "lineno": 11170,
+       "lineno": 11172,
        "params": [
         {
          "default": null,
@@ -1812,7 +1812,7 @@
       "compressRecording": {
        "doc": null,
        "is_generator": false,
-       "lineno": 8347,
+       "lineno": 8349,
        "params": [
         {
          "default": null,
@@ -1835,14 +1835,14 @@
       "disableMixedReality": {
        "doc": "Disable passthrough and remove the chroma-key shader.",
        "is_generator": false,
-       "lineno": 11485,
+       "lineno": 11487,
        "params": [],
        "signature": "disableMixedReality()"
       },
       "enableEnvironmentNudgeKeys": {
        "doc": "Bind keys to nudge the 360/180 environment sphere along Z.\n\nPressing ``forwardKey`` pushes the scene away from the viewer; pressing\n``backKey`` pulls it closer. Each press shifts by ``step`` meters.\n\nArgs:\n    forwardKey (str): Key for +Z (push away). Default ']'.\n    backKey (str): Key for -Z (pull closer). Default '['.\n    step (float): Distance per keypress, in meters. Default 0.1.",
        "is_generator": false,
-       "lineno": 11225,
+       "lineno": 11227,
        "params": [
         {
          "default": "']'",
@@ -1865,7 +1865,7 @@
       "enableEnvironmentPitchKeys": {
        "doc": "Bind keys to pitch-rotate the 360/180 environment sphere.\n\nPressing ``upKey`` tilts the scene up (increases pitch); pressing\n``downKey`` tilts it down. Each press rotates by ``step`` degrees.\n\nArgs:\n    upKey (str): Key for +pitch (tilt up). Default '7'.\n    downKey (str): Key for -pitch (tilt down). Default '8'.\n    step (float): Degrees per keypress. Default 5.0.",
        "is_generator": false,
-       "lineno": 11259,
+       "lineno": 11261,
        "params": [
         {
          "default": "'7'",
@@ -1888,7 +1888,7 @@
       "enableEnvironmentVerticalKeys": {
        "doc": "Bind keys to nudge the 360/180 environment sphere along Y.\n\nPressing ``upKey`` raises the scene; pressing ``downKey`` lowers it.\nEach press shifts by ``step`` meters.\n\nArgs:\n    upKey: Key for +Y (raise). Default '0'.\n    downKey: Key for -Y (lower). Default '9'.\n    step (float): Distance per keypress, in meters. Default 0.1.",
        "is_generator": false,
-       "lineno": 11239,
+       "lineno": 11241,
        "params": [
         {
          "default": "'0'",
@@ -1911,7 +1911,7 @@
       "enableMediaSkipKeys": {
        "doc": "Bind keys to skip forward/back in the current 360 or SBS 180 video.\n\nArgs:\n    forwardKey (str): Key to skip forward. Default 'v'.\n    backKey (str): Key to skip backward. Default 'c'.\n    step (float): Seconds to jump per keypress. Default 5.0.",
        "is_generator": false,
-       "lineno": 11286,
+       "lineno": 11288,
        "params": [
         {
          "default": "'v'",
@@ -1934,7 +1934,7 @@
       "enableMixedReality": {
        "doc": "Enable OpenXR passthrough and chroma-key the current 180 SBS video.\n\nConvenience wrapper: turns on passthrough via ``setPassthrough()`` and,\nif the current environment object is a ``Stereo180Sphere``, applies\nthe chroma-key shader so the solid backdrop in the video is keyed out\nand the real world shows through.\n\nArgs:\n    keyColor (tuple): Backdrop color (r, g, b) in 0..1.\n    threshold (float): Chroma distance cutoff (see\n        ``Stereo180Sphere.setChromaKey``).\n    softness (float): Soft-edge width.\n    spill (float): Spill suppression strength (0 disables).",
        "is_generator": false,
-       "lineno": 11459,
+       "lineno": 11461,
        "params": [
         {
          "default": "(0.2, 0.23, 0.28)",
@@ -1962,7 +1962,7 @@
       "enableTransportToggleKey": {
        "doc": "Bind a keyboard key to toggle the main transport on/off.\n\nUseful in 360/Stereo180 modes where the transport may be disabled by\ndefault but you want to be able to walk/fly during the trial.\n\nArgs:\n    key (str): Keyboard key to bind. Default 'y'.",
        "is_generator": false,
-       "lineno": 11214,
+       "lineno": 11216,
        "params": [
         {
          "default": "'y'",
@@ -1975,7 +1975,7 @@
       "endTrial": {
        "doc": "End the current trial and save data.\n\ncondition=NO_CONDITION, endTrialText=None\nendExperimentText=None, endRatings=None\ntextContinueEvent='triggerPress'\ntextContinueKey=None, textContinueTimer=None",
        "is_generator": true,
-       "lineno": 10537,
+       "lineno": 10539,
        "params": [
         {
          "default": "NO_CONDITION",
@@ -2018,98 +2018,98 @@
       "experimentSetupCompleteStatus": {
        "doc": null,
        "is_generator": false,
-       "lineno": 11748,
+       "lineno": 11750,
        "params": [],
        "signature": "experimentSetupCompleteStatus()"
       },
       "getAvatarHead": {
        "doc": "Get the avatar head object.\n\nReturns:\n    viz.VizNode or None: The avatar head object.",
        "is_generator": false,
-       "lineno": 10245,
+       "lineno": 10247,
        "params": [],
        "signature": "getAvatarHead()"
       },
       "getAvatarLHand": {
        "doc": "Get the avatar left hand object.\n\nReturns:\n    viz.VizNode or None: The avatar left hand object.",
        "is_generator": false,
-       "lineno": 10261,
+       "lineno": 10263,
        "params": [],
        "signature": "getAvatarLHand()"
       },
       "getAvatarRHand": {
        "doc": "Get the avatar right hand object.\n\nReturns:\n    viz.VizNode or None: The avatar right hand object.",
        "is_generator": false,
-       "lineno": 10253,
+       "lineno": 10255,
        "params": [],
        "signature": "getAvatarRHand()"
       },
       "getConditionName": {
        "doc": null,
        "is_generator": false,
-       "lineno": 11636,
+       "lineno": 11638,
        "params": [],
        "signature": "getConditionName()"
       },
       "getConfig": {
        "doc": "Get the current vizconnect configuration name.\n\nReturns:\n    str: The vizconnect hardware configuration name.",
        "is_generator": false,
-       "lineno": 11373,
+       "lineno": 11375,
        "params": [],
        "signature": "getConfig()"
       },
       "getCurrentEnvironmentName": {
        "doc": "Get the filename of the current environment.\n\nReturns:\n    str: Base filename of the current environment (e.g., 'room.osgb').",
        "is_generator": false,
-       "lineno": 10204,
+       "lineno": 10206,
        "params": [],
        "signature": "getCurrentEnvironmentName()"
       },
       "getCurrentGazeEventData": {
        "doc": "Get the current gaze event data.\n\nReturns:\n    dict: Current gaze event data (object, duration, timestamps, etc.).",
        "is_generator": false,
-       "lineno": 11598,
+       "lineno": 11600,
        "params": [],
        "signature": "getCurrentGazeEventData()"
       },
       "getCurrentRepetition": {
        "doc": "Get the current repetition number.\n\nReturns:\n    int: The current repetition number.",
        "is_generator": false,
-       "lineno": 10397,
+       "lineno": 10399,
        "params": [],
        "signature": "getCurrentRepetition()"
       },
       "getCurrentTrialDirectory": {
        "doc": "Get the directory path for the current trial's environment.\n\nReturns:\n    str: Absolute path to the directory containing the trial environment.",
        "is_generator": false,
-       "lineno": 10212,
+       "lineno": 10214,
        "params": [],
        "signature": "getCurrentTrialDirectory()"
       },
       "getEnvironment": {
        "doc": "Get the current environment object.\n\nReturns:\n    viz.VizNode: The current environment (3D model or 360\u00b0 sphere).",
        "is_generator": false,
-       "lineno": 10196,
+       "lineno": 10198,
        "params": [],
        "signature": "getEnvironment()"
       },
       "getExperimentDataFolderPath": {
        "doc": "Get the absolute path to the experiment data folder.\n\nReturns:\n    str: Path to the data folder for this participant and date. In the\n    extended-length form when the folder is too deep for Windows' path\n    limit; long_paths.plain_path gives the ordinary spelling for display.",
        "is_generator": false,
-       "lineno": 11765,
+       "lineno": 11767,
        "params": [],
        "signature": "getExperimentDataFolderPath()"
       },
       "getEyeTracker": {
        "doc": "Get the eye tracker object.\n\nReturns:\n    Eye tracker object or None: The active eye tracker instance.",
        "is_generator": false,
-       "lineno": 10269,
+       "lineno": 10271,
        "params": [],
        "signature": "getEyeTracker()"
       },
       "getGazePointObject": {
        "doc": "Get the gaze point visualization object.\n\nArgs:\n    clientNumber: Client ID (default 1, currently unused).\n    \nReturns:\n    viz.VizNode or None: The gaze point object if set.",
        "is_generator": false,
-       "lineno": 10234,
+       "lineno": 10236,
        "params": [
         {
          "default": "1",
@@ -2122,28 +2122,28 @@
       "getGazeTimeObject": {
        "doc": null,
        "is_generator": false,
-       "lineno": 11198,
+       "lineno": 11200,
        "params": [],
        "signature": "getGazeTimeObject()"
       },
       "getMediaObject": {
        "doc": "Get the 360\u00b0 media object (video or image texture).\n\nReturns:\n    viz.VizNode or None: The media object if in 360\u00b0 mode, None otherwise.",
        "is_generator": false,
-       "lineno": 10220,
+       "lineno": 10222,
        "params": [],
        "signature": "getMediaObject()"
       },
       "getPlotData": {
        "doc": null,
        "is_generator": false,
-       "lineno": 11195,
+       "lineno": 11197,
        "params": [],
        "signature": "getPlotData()"
       },
       "getRegionOfInterest": {
        "doc": null,
        "is_generator": false,
-       "lineno": 11609,
+       "lineno": 11611,
        "params": [
         {
          "default": null,
@@ -2156,7 +2156,7 @@
       "getTimeLineData": {
        "doc": "Get timeline event data.\n\nArgs:\n    client: Client ID for multi-user mode (default None).\n    \nReturns:\n    dict: Timeline data with timestamps as keys.",
        "is_generator": false,
-       "lineno": 11809,
+       "lineno": 11811,
        "params": [
         {
          "default": "None",
@@ -2169,21 +2169,21 @@
       "getTrialCount": {
        "doc": "Get the total number of trials in the experiment.\n\nReturns:\n    int: Number of trials (default is 1).",
        "is_generator": false,
-       "lineno": 10405,
+       "lineno": 10407,
        "params": [],
        "signature": "getTrialCount()"
       },
       "getTrialNumber": {
        "doc": "Get the current trial number.\n\nReturns:\n    int: The current trial number (1-indexed).",
        "is_generator": false,
-       "lineno": 11492,
+       "lineno": 11494,
        "params": [],
        "signature": "getTrialNumber()"
       },
       "hideInstructions": {
        "doc": "Hide the instruction screen and resume scene.\n\nThis is a generator function. Optionally resumes data logging and fades out.\n\nArgs:\n    pauseTimer: Resume data logging after hiding (default False).\n    endFade: Fade out before hiding (default True).\n    \nYields:\n    Waits for fade-out to complete (if endFade=True).",
        "is_generator": true,
-       "lineno": 9654,
+       "lineno": 9656,
        "params": [
         {
          "default": "False",
@@ -2201,7 +2201,7 @@
       "hideRatings": {
        "doc": null,
        "is_generator": true,
-       "lineno": 10066,
+       "lineno": 10068,
        "params": [
         {
          "default": null,
@@ -2214,14 +2214,14 @@
       "identifyStartPoint": {
        "doc": null,
        "is_generator": false,
-       "lineno": 9106,
+       "lineno": 9108,
        "params": [],
        "signature": "identifyStartPoint()"
       },
       "regenerateDataFiles": {
        "doc": "folderPath, \ndispersionThreshold = DISPERSION_THRESHOLD_VALUE, \ndurationThreshold = DURATION_THRESHOLD_VALUE, \ndwellThreshold = DWELL_THRESHOLD_VALUE, \nfileType = PER_TRIAL,\nnoiseReductionThreshold = 0,\nflipEyePitch = False):",
        "is_generator": false,
-       "lineno": 11856,
+       "lineno": 11858,
        "params": [
         {
          "default": null,
@@ -2264,7 +2264,7 @@
       "removeGazeObject": {
        "doc": "Remove an object from gaze tracking.\n\nArgs:\n    objectName: Name of the object to remove from gaze tracking.",
        "is_generator": false,
-       "lineno": 10337,
+       "lineno": 10339,
        "params": [
         {
          "default": null,
@@ -2277,14 +2277,14 @@
       "removeGazePointWindow": {
        "doc": null,
        "is_generator": false,
-       "lineno": 11848,
+       "lineno": 11850,
        "params": [],
        "signature": "removeGazePointWindow()"
       },
       "removeGrabObject": {
        "doc": "Remove an object from grab interaction.\n\nArgs:\n    objectName: Name of the object to remove from grab interaction.",
        "is_generator": false,
-       "lineno": 10346,
+       "lineno": 10348,
        "params": [
         {
          "default": null,
@@ -2297,7 +2297,7 @@
       "removeInvisibleObject": {
        "doc": "Make an invisible object visible again.\n\nArgs:\n    objectName: Name of the invisible object to make visible.",
        "is_generator": false,
-       "lineno": 10361,
+       "lineno": 10363,
        "params": [
         {
          "default": null,
@@ -2310,7 +2310,7 @@
       "removeSceneObject": {
        "doc": "Remove a scene object and clean up all associated tracking.\n\nAutomatically removes from gaze tracking, grab interaction, and invisible\nobject lists as needed, then removes the object from the scene.\n\nArgs:\n    objectName: Name of the object to remove.",
        "is_generator": false,
-       "lineno": 10371,
+       "lineno": 10373,
        "params": [
         {
          "default": null,
@@ -2323,28 +2323,28 @@
       "resetExperiment": {
        "doc": null,
        "is_generator": false,
-       "lineno": 9510,
+       "lineno": 9512,
        "params": [],
        "signature": "resetExperiment()"
       },
       "resetTimer": {
        "doc": "Reset the trial timer to zero.\n\nClears the start time and buffer time, typically called at trial start.",
        "is_generator": false,
-       "lineno": 11365,
+       "lineno": 11367,
        "params": [],
        "signature": "resetTimer()"
       },
       "resetTrial": {
        "doc": null,
        "is_generator": false,
-       "lineno": 9332,
+       "lineno": 9334,
        "params": [],
        "signature": "resetTrial()"
       },
       "resetViewPoint": {
        "doc": null,
        "is_generator": false,
-       "lineno": 9309,
+       "lineno": 9311,
        "params": [
         {
          "default": "None",
@@ -2367,14 +2367,14 @@
       "runExperiment": {
        "doc": null,
        "is_generator": true,
-       "lineno": 9459,
+       "lineno": 9461,
        "params": [],
        "signature": "runExperiment()"
       },
       "sceneToggle": {
        "doc": "Toggle visibility of scene objects.\n\nControls visibility of environment, avatars, gaze points, and custom objects.\nUsed during instruction screens to hide/show the experiment scene.\n\nArgs:\n    state: viz.ON to show objects, viz.OFF to hide objects.",
        "is_generator": false,
-       "lineno": 9586,
+       "lineno": 9588,
        "params": [
         {
          "default": null,
@@ -2387,14 +2387,14 @@
       "screenCapture": {
        "doc": null,
        "is_generator": false,
-       "lineno": 11645,
+       "lineno": 11647,
        "params": [],
        "signature": "screenCapture()"
       },
       "setAvatarHead": {
        "doc": null,
        "is_generator": false,
-       "lineno": 10588,
+       "lineno": 10590,
        "params": [
         {
          "default": null,
@@ -2407,7 +2407,7 @@
       "setAvatarLeftHand": {
        "doc": null,
        "is_generator": false,
-       "lineno": 10599,
+       "lineno": 10601,
        "params": [
         {
          "default": null,
@@ -2420,7 +2420,7 @@
       "setAvatarRightHand": {
        "doc": null,
        "is_generator": false,
-       "lineno": 10605,
+       "lineno": 10607,
        "params": [
         {
          "default": null,
@@ -2433,7 +2433,7 @@
       "setConditionName": {
        "doc": null,
        "is_generator": false,
-       "lineno": 11633,
+       "lineno": 11635,
        "params": [
         {
          "default": null,
@@ -2446,7 +2446,7 @@
       "setConfigDirectory": {
        "doc": null,
        "is_generator": false,
-       "lineno": 11616,
+       "lineno": 11618,
        "params": [
         {
          "default": null,
@@ -2459,7 +2459,7 @@
       "setConsoleState": {
        "doc": null,
        "is_generator": false,
-       "lineno": 11201,
+       "lineno": 11203,
        "params": [
         {
          "default": null,
@@ -2472,7 +2472,7 @@
       "setCustomReplayFlag": {
        "doc": null,
        "is_generator": false,
-       "lineno": 11845,
+       "lineno": 11847,
        "params": [
         {
          "default": null,
@@ -2490,7 +2490,7 @@
       "setCustomTrialData": {
        "doc": null,
        "is_generator": false,
-       "lineno": 11186,
+       "lineno": 11188,
        "params": [
         {
          "default": null,
@@ -2508,7 +2508,7 @@
       "setDataDirectory": {
        "doc": null,
        "is_generator": false,
-       "lineno": 11629,
+       "lineno": 11631,
        "params": [
         {
          "default": null,
@@ -2521,7 +2521,7 @@
       "setDataLoggingState": {
        "doc": "Enable or disable data logging and timer tracking.\n\nControls whether tracking data is being recorded. When disabled, pauses\nthe data collection timer to exclude instruction/rating screen time.\n\nArgs:\n    state: True to enable logging, False to disable.\n    buffer: Track buffer time for timer adjustment (default True).",
        "is_generator": false,
-       "lineno": 11343,
+       "lineno": 11345,
        "params": [
         {
          "default": null,
@@ -2539,7 +2539,7 @@
       "setDwellTimeThreshold": {
        "doc": "Set the dwell time threshold for gaze events.\n\nControls how long gaze must remain on an object before triggering\nan onGazeTime event. Updates the global threshold value.\n\nArgs:\n    dwellTime: Threshold in seconds (default from DWELL_THRESHOLD_VALUE).",
        "is_generator": false,
-       "lineno": 11526,
+       "lineno": 11528,
        "params": [
         {
          "default": "DWELL_THRESHOLD_VALUE",
@@ -2552,7 +2552,7 @@
       "setEnvironment": {
        "doc": "Set the experiment environment or 360\u00b0 media.\n\nConfigures the virtual environment for trials. Supports both 3D model environments\nand 360\u00b0 video/image media. Handles display parenting and headlight intensity.\n\nArgs:\n    environmentObject: Vizard 3D object or media file path\n    trial (str, optional): Trial ID to configure. Default DEFAULT\n    mode (str, optional): Environment mode (MODEL_3D or MEDIA_360). Default MODEL_3D\n    mediaType (str, optional): Media type for 360\u00b0 mode (\"video\" or \"image\"). Default \"video\"\n    mediaFormat (str, optional): Stereoscopic format for 360\u00b0 media. Default \"Stereoscopic T/B\"\n    headlightIntensity (float, optional): Scene headlight brightness (0-1). Default 0\n    \nReturns:\n    None. Updates experiment settings and scene configuration",
        "is_generator": false,
-       "lineno": 10092,
+       "lineno": 10094,
        "params": [
         {
          "default": null,
@@ -2590,7 +2590,7 @@
       "setEnvironmentDirectory": {
        "doc": null,
        "is_generator": false,
-       "lineno": 11622,
+       "lineno": 11624,
        "params": [
         {
          "default": null,
@@ -2608,7 +2608,7 @@
       "setEnvironmentFolder": {
        "doc": "Set the resource folder for environments or media files.\n\nUpdates the GUI resource lists with files from the specified directory.\nUsed to dynamically change where environment/media files are loaded from.\n\nArgs:\n    path: Absolute path to the resource folder.\n    mode: MODEL_3D for 3D environments or MEDIA_360 for 360\u00b0 media (default MODEL_3D).",
        "is_generator": false,
-       "lineno": 11549,
+       "lineno": 11551,
        "params": [
         {
          "default": null,
@@ -2626,7 +2626,7 @@
       "setEnvironmentOffset": {
        "doc": "Shift the 360/180 environment sphere relative to the viewer.\n\nUseful for nudging the captured scene up/down/forward so that the\nsubject in a stereo 180 video sits at a comfortable position.\n\nArgs:\n    pos (tuple): (x, y, z) offset in meters. +x = right, +y = up,\n        +z = forward (away from viewer). Default (0, 0, 0).\n    euler (tuple, optional): (yaw, pitch, roll) in degrees applied\n        to the sphere itself (re-orient the scene).\n    scale (float or tuple, optional): Uniform scale (float) or per-axis\n        scale (tuple) for the sphere. Smaller = subject appears closer.",
        "is_generator": false,
-       "lineno": 10166,
+       "lineno": 10168,
        "params": [
         {
          "default": "(0.0, 0.0, 0.0)",
@@ -2649,7 +2649,7 @@
       "setExperimentSummaryData": {
        "doc": null,
        "is_generator": false,
-       "lineno": 11183,
+       "lineno": 11185,
        "params": [
         {
          "default": null,
@@ -2667,7 +2667,7 @@
       "setFixationSaccadeThresholds": {
        "doc": "Set thresholds for fixation/saccade detection algorithm.\n\nArgs:\n    dispersionThreshold: Maximum angle dispersion for fixation in degrees (default 1).\n    durationThreshold: Minimum duration for fixation in seconds (default 0.1).",
        "is_generator": false,
-       "lineno": 11539,
+       "lineno": 11541,
        "params": [
         {
          "default": "1",
@@ -2685,7 +2685,7 @@
       "setGazePointObject": {
        "doc": null,
        "is_generator": false,
-       "lineno": 10228,
+       "lineno": 10230,
        "params": [
         {
          "default": null,
@@ -2698,7 +2698,7 @@
       "setHeadlight": {
        "doc": null,
        "is_generator": false,
-       "lineno": 11751,
+       "lineno": 11753,
        "params": [
         {
          "default": null,
@@ -2721,7 +2721,7 @@
       "setHighlighter": {
        "doc": null,
        "is_generator": false,
-       "lineno": 11823,
+       "lineno": 11825,
        "params": [
         {
          "default": "None",
@@ -2749,7 +2749,7 @@
       "setMaxDistance": {
        "doc": "Set the maximum distance for gaze intersection checks.\n\nArgs:\n    distance: Maximum ray cast distance in meters.",
        "is_generator": false,
-       "lineno": 11587,
+       "lineno": 11589,
        "params": [
         {
          "default": null,
@@ -2762,7 +2762,7 @@
       "setPassthrough": {
        "doc": "Enable or disable OpenXR video passthrough (mixed reality).\n\nUses the first passthrough extension the headset's OpenXR runtime\noffers: FB (Meta Quest 3, Quest Pro), HTC (Vive Focus Vision) or\nVarjo (XR-3, XR-4). Every hardware profile of those headsets works,\nthe hand, full body and eye-tracker variants included. Sets the\nframebuffer clear alpha to 0 so the OpenXR compositor composites the\nVizard scene over the real world.\n\nUses only the OpenXR client the headset's rig has made: on Desktop it\nwarns and does nothing, and never starts the OpenXR runtime.\n\nArgs:\n    state (bool): True to enable passthrough, False to disable.\n    clearColor: Clear color to use while passthrough is on. Alpha is\n        always forced to 0 when enabling.",
        "is_generator": false,
-       "lineno": 11381,
+       "lineno": 11383,
        "params": [
         {
          "default": "True",
@@ -2780,7 +2780,7 @@
       "setRecordingsDirectory": {
        "doc": null,
        "is_generator": false,
-       "lineno": 11639,
+       "lineno": 11641,
        "params": [
         {
          "default": null,
@@ -2793,7 +2793,7 @@
       "setSeatedMode": {
        "doc": "Enable or disable seated mode for avatar leg positioning.\n\nLocks the avatar's legs in a seated position, overriding IK tracking.\nWorks for both single-user and multi-user (client/server) scenarios.\n\nArgs:\n    state: True to enable seated mode, False to disable (default True).",
        "is_generator": false,
-       "lineno": 10611,
+       "lineno": 10613,
        "params": [
         {
          "default": "True",
@@ -2806,7 +2806,7 @@
       "setSeatedModeHeadOnly": {
        "doc": "Enable or disable seated head-only mode for avatar positioning.\n\nLocks ALL bones below the neck so only the head tracks the HMD.\nLegs are placed in a seated position; arms, spine, and everything\nelse remain in their rest (T-pose) orientation.\n\nThis implies regular seated mode. When enabled, seated mode is also\nactivated automatically. When disabled, regular seated mode remains\nactive unless explicitly disabled separately.\n\nArgs:\n    state: True to enable head-only seated mode, False to disable (default True).\n    mode: Arm pose style - 'default' (arms at sides) or 'coaster' (arms raised forward).\n    transport_euler: Euler values [yaw, pitch, roll] matching the transportNode orientation.\n        The yaw is added to each locked arm bone's global yaw so that the arms\n        face the correct direction when the transport is rotated (e.g. [180,0,0]).",
        "is_generator": false,
-       "lineno": 10830,
+       "lineno": 10832,
        "params": [
         {
          "default": "True",
@@ -2829,7 +2829,7 @@
       "setStartPoint": {
        "doc": null,
        "is_generator": false,
-       "lineno": 9401,
+       "lineno": 9403,
        "params": [
         {
          "default": "None",
@@ -2847,7 +2847,7 @@
       "setStartText": {
        "doc": "Set the text displayed on the start trial button.\n\nArgs:\n    startText: Text to display on the trial start button.",
        "is_generator": false,
-       "lineno": 11578,
+       "lineno": 11580,
        "params": [
         {
          "default": null,
@@ -2860,7 +2860,7 @@
       "setTransportPosition": {
        "doc": null,
        "is_generator": false,
-       "lineno": 11337,
+       "lineno": 11339,
        "params": [
         {
          "default": null,
@@ -2878,7 +2878,7 @@
       "setTransportState": {
        "doc": null,
        "is_generator": false,
-       "lineno": 11207,
+       "lineno": 11209,
        "params": [
         {
          "default": "viz.TOGGLE",
@@ -2891,7 +2891,7 @@
       "setTrialCount": {
        "doc": "Set the number of trials and initialize their settings.\n\nCreates a deep copy of the default settings for each trial.\n\nArgs:\n    trialCount: Number of trials to run.",
        "is_generator": false,
-       "lineno": 10413,
+       "lineno": 10415,
        "params": [
         {
          "default": null,
@@ -2904,7 +2904,7 @@
       "setTrialLength": {
        "doc": "Set the trial duration in seconds.\n\nArgs:\n    length: Trial duration in seconds.",
        "is_generator": false,
-       "lineno": 10426,
+       "lineno": 10428,
        "params": [
         {
          "default": null,
@@ -2917,7 +2917,7 @@
       "setfadeQuadState": {
        "doc": "Control the fade quad visibility.\n\nArgs:\n    state: True to show fade quad, False to hide it.",
        "is_generator": false,
-       "lineno": 11500,
+       "lineno": 11502,
        "params": [
         {
          "default": null,
@@ -2930,14 +2930,14 @@
       "setupHighlighter": {
        "doc": null,
        "is_generator": false,
-       "lineno": 8383,
+       "lineno": 8385,
        "params": [],
        "signature": "setupHighlighter()"
       },
       "showGazePath": {
        "doc": null,
        "is_generator": false,
-       "lineno": 9525,
+       "lineno": 9527,
        "params": [
         {
          "default": "GAZE",
@@ -2955,7 +2955,7 @@
       "showInstructions": {
        "doc": "Display an instruction screen with optional image.\n\nThis is a generator function. Fades in, shows text/image, and optionally pauses data logging.\n\nArgs:\n    message: Instruction text to display (default '').\n    image: Path to image file to display (default None).\n    pauseTimer: Pause data logging during display (default False).\n    \nYields:\n    Waits for fade-in to complete.\n    \nReturns:\n    viz.VizNode: The image quad if image provided, None otherwise.",
        "is_generator": true,
-       "lineno": 9618,
+       "lineno": 9620,
        "params": [
         {
          "default": "''",
@@ -2978,7 +2978,7 @@
       "showRatings": {
        "doc": "Display a rating scale interface for participant responses.\n\nThis is a generator function. Shows a message with selectable rating options.\nAutomatically switches to vertical layout for long answer options.\n\nArgs:\n    message: Question or prompt text to display.\n    ratingScale: List of rating options (default ['0'..'10']).\n    color: Text color (default viz.WHITE).\n    characterLimit: Maximum characters in text input (default 8).\n    pauseTimer: Pause data logging during display (default True).\n    endFade: Fade out after selection (default True).\n    \nYields:\n    Waits for fade-in, user selection, and optional fade-out.\n    \nReturns:\n    str: The selected rating value.",
        "is_generator": true,
-       "lineno": 9831,
+       "lineno": 9833,
        "params": [
         {
          "default": null,
@@ -3021,7 +3021,7 @@
       "startTrial": {
        "doc": "Start a trial with optional configuration.\n\ncondition=None, trialLength=-1, trialLabel=None\nstartTrialText=None, startExperimentText=None\nstartRatings=None, textContinueKey=None\ntextContinueEvent='triggerPress'\ntrackingDataLogging=None, replayDataLogging=None\nexperimentSummaryLogging=None, timeLineLogging=None\nfixationLogging=None, startPoint=None, startEuler=None",
        "is_generator": true,
-       "lineno": 10434,
+       "lineno": 10436,
        "params": [
         {
          "default": "None",
@@ -3104,7 +3104,7 @@
       "storeReplayExecCode": {
        "doc": "Store Python source code for replay execution.\n\nExtracts and stores source code from a method for later replay.\n\nArgs:\n    method: Python method to extract source from.\n    \nReturns:\n    str: The extracted source code.",
        "is_generator": false,
-       "lineno": 11776,
+       "lineno": 11778,
        "params": [
         {
          "default": null,
@@ -3117,28 +3117,28 @@
       "toggleGazePoint": {
        "doc": null,
        "is_generator": false,
-       "lineno": 8499,
+       "lineno": 8501,
        "params": [],
        "signature": "toggleGazePoint()"
       },
       "toggleHUD": {
        "doc": null,
        "is_generator": false,
-       "lineno": 8496,
+       "lineno": 8498,
        "params": [],
        "signature": "toggleHUD()"
       },
       "toggleMediaPause": {
        "doc": "Toggle play/pause on the current 360 or SBS 180 video.\n\nBound by default to Shift+P (uppercase 'P'). No-op when the current\ntrial has no media object (e.g. 3D model trials).",
        "is_generator": false,
-       "lineno": 11311,
+       "lineno": 11313,
        "params": [],
        "signature": "toggleMediaPause()"
       },
       "togglePoint": {
        "doc": null,
        "is_generator": false,
-       "lineno": 8476,
+       "lineno": 8478,
        "params": [],
        "signature": "togglePoint()"
       }
@@ -3286,26 +3286,26 @@
        "name": "fullbodyavatar"
       }
      ],
-     "lineno": 12804,
+     "lineno": 12806,
      "methods": {
       "clientAvatarsOFF": {
        "doc": null,
        "is_generator": false,
-       "lineno": 13048,
+       "lineno": 13050,
        "params": [],
        "signature": "clientAvatarsOFF()"
       },
       "clientAvatarsON": {
        "doc": null,
        "is_generator": false,
-       "lineno": 13044,
+       "lineno": 13046,
        "params": [],
        "signature": "clientAvatarsON()"
       },
       "clientAvatarsVisible": {
        "doc": null,
        "is_generator": false,
-       "lineno": 13130,
+       "lineno": 13132,
        "params": [
         {
          "default": null,
@@ -3318,14 +3318,14 @@
       "disconnectVoice": {
        "doc": "Disconnect from voice server",
        "is_generator": false,
-       "lineno": 13458,
+       "lineno": 13460,
        "params": [],
        "signature": "disconnectVoice()"
       },
       "endTrialClient": {
        "doc": null,
        "is_generator": false,
-       "lineno": 13004,
+       "lineno": 13006,
        "params": [
         {
          "default": null,
@@ -3338,28 +3338,28 @@
       "getClientName": {
        "doc": null,
        "is_generator": false,
-       "lineno": 13007,
+       "lineno": 13009,
        "params": [],
        "signature": "getClientName()"
       },
       "receiveSharedServerData": {
        "doc": null,
        "is_generator": false,
-       "lineno": 12991,
+       "lineno": 12993,
        "params": [],
        "signature": "receiveSharedServerData()"
       },
       "runClient": {
        "doc": null,
        "is_generator": true,
-       "lineno": 13140,
+       "lineno": 13142,
        "params": [],
        "signature": "runClient()"
       },
       "setStartPointSuffix": {
        "doc": null,
        "is_generator": false,
-       "lineno": 13040,
+       "lineno": 13042,
        "params": [
         {
          "default": null,
@@ -3372,7 +3372,7 @@
       "startTrialClient": {
        "doc": null,
        "is_generator": false,
-       "lineno": 12994,
+       "lineno": 12996,
        "params": [
         {
          "default": null,
@@ -3385,14 +3385,14 @@
       "toggleDeafen": {
        "doc": "Toggle audio deafen",
        "is_generator": false,
-       "lineno": 13448,
+       "lineno": 13450,
        "params": [],
        "signature": "toggleDeafen()"
       },
       "toggleMute": {
        "doc": "Toggle microphone mute",
        "is_generator": false,
-       "lineno": 13438,
+       "lineno": 13440,
        "params": [],
        "signature": "toggleMute()"
       }
@@ -3585,12 +3585,12 @@
        "name": "fastload"
       }
      ],
-     "lineno": 12164,
+     "lineno": 12166,
      "methods": {
       "clientAvatarsVisible": {
        "doc": null,
        "is_generator": false,
-       "lineno": 12452,
+       "lineno": 12454,
        "params": [
         {
          "default": null,
@@ -3603,14 +3603,14 @@
       "disconnectVoice": {
        "doc": "Disconnect from voice server",
        "is_generator": false,
-       "lineno": 12796,
+       "lineno": 12798,
        "params": [],
        "signature": "disconnectVoice()"
       },
       "endTrialServer": {
        "doc": null,
        "is_generator": false,
-       "lineno": 12432,
+       "lineno": 12434,
        "params": [
         {
          "default": null,
@@ -3623,14 +3623,14 @@
       "runServer": {
        "doc": null,
        "is_generator": true,
-       "lineno": 12681,
+       "lineno": 12683,
        "params": [],
        "signature": "runServer()"
       },
       "startConfirmFlag": {
        "doc": null,
        "is_generator": false,
-       "lineno": 12435,
+       "lineno": 12437,
        "params": [
         {
          "default": null,
@@ -3643,7 +3643,7 @@
       "startTrialServer": {
        "doc": null,
        "is_generator": false,
-       "lineno": 12429,
+       "lineno": 12431,
        "params": [
         {
          "default": null,
@@ -3656,21 +3656,21 @@
       "toggleDeafen": {
        "doc": "Toggle audio deafen",
        "is_generator": false,
-       "lineno": 12786,
+       "lineno": 12788,
        "params": [],
        "signature": "toggleDeafen()"
       },
       "toggleMute": {
        "doc": "Toggle microphone mute",
        "is_generator": false,
-       "lineno": 12776,
+       "lineno": 12778,
        "params": [],
        "signature": "toggleMute()"
       },
       "updateSharedServerData": {
        "doc": null,
        "is_generator": false,
-       "lineno": 12727,
+       "lineno": 12729,
        "params": [
         {
          "default": null,
@@ -3726,5 +3726,5 @@
   "PARTICIPANT_INFO1",
   "PARTICIPANT_INFO2"
  ],
- "sightlab_utils_version": "2.8.21"
+ "sightlab_utils_version": "2.9.3"
 }

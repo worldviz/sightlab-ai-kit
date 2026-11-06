@@ -1,11 +1,13 @@
 # Shipped resources (`sightlab_resources/`)
 
-Generated 2026-10-31T21:03Z by `tools/gen_resources.py` from the SightLab 2 resource folder; names only.
+Generated 2026-11-06T00:08Z by `tools/gen_resources.py` from the SightLab 2 resource folder; names only.
 Load an environment with `vizfx.addChild('sightlab_resources/environments/<name>')` and an object with
 `vizfx.addChild('sightlab_resources/objects/<name>')`. Use the spelling shown here: the shipped
 files are found through the Windows file system, which forgives case, but the GUI lists and any
 case-sensitive copy of the resources do not.
-A file not listed here does not ship; use a primitive or the researcher's own model instead.
+A file not listed here does not ship with the installer. Researchers can add more from the WorldViz
+Asset Browser or online downloads, so look in their `sightlab_resources` and project `Resources/`
+before using such a name (`check.py` still warns about it); otherwise use a primitive or their own model.
 
 Sizes are bounding boxes in metres (width × height × depth) measured in Vizard on 2026-10-31T21:00Z.
 The models are built at real-world size unless the table says otherwise; pick by class: **hand-held**

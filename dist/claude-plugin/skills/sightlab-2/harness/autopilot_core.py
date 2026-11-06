@@ -15,7 +15,7 @@ import shutil
 import sys
 import time
 
-HARNESS_VERSION = "2026.11.2"
+HARNESS_VERSION = "2026.11.8"
 NO_AUTOPILOT = "NO_AUTOPILOT"  # a file of this name in the experiment folder (or --run-root) stops the harness
 
 # Interventions of these kinds mean the harness had to force its way through: the run can be
@@ -34,14 +34,29 @@ FILE_KINDS = {
     "dwell": "*_trial_timeline_dwell_*.csv",
     "fixation": "*_trial_timeline_fixation_saccade_*.csv",
 }
+# Keys and credentials are never copied into a run. SightLab's AI examples read API keys from a keys/
+# folder (keys/openai_api_key.txt); a run without them cannot test those calls, and the report says so.
+SECRETS = (".env", ".env.*", "keys", "*api_key*", "*credentials*", "*.pem", "*.key", "*.pfx", "*.p12")
 # Never copied into a run: the experiment's data, earlier runs, recordings, caches, version control,
 # secrets, virtualenvs and project-local agent folders (Sado's review, 2026-11-05). Globs allowed.
-RUN_IGNORE = ("data", ".autopilot", "recordings", "__pycache__", ".git", ".env", ".env.*", ".venv", "venv",
-              ".claude", ".codex", ".agents", "node_modules")
+RUN_IGNORE = ("data", ".autopilot", "recordings", "__pycache__", ".git", ".venv", "venv",
+              ".claude", ".codex", ".agents", "node_modules") + SECRETS
 
 
 def _ignored(name):
     return any(fnmatch.fnmatch(name, pat) for pat in RUN_IGNORE)
+
+
+def skipped_secrets(exp_dir):
+    """Relative paths of the keys and credential files a run copy of exp_dir leaves out, for the report."""
+    found = []
+    for root, dirs, files in os.walk(exp_dir):
+        rel_root = os.path.relpath(root, exp_dir)
+        for name in sorted(dirs) + sorted(files):
+            if any(fnmatch.fnmatch(name, pat) for pat in SECRETS):
+                found.append(os.path.normpath(os.path.join(rel_root, name)).replace(os.sep, "/"))
+        dirs[:] = [d for d in dirs if not _ignored(d)]
+    return sorted(found)
 REPORT_NAME = "autopilot-report.json"
 MAX_RUN_FILES = 5000
 MAX_RUN_BYTES = 500 * 1024 * 1024

@@ -7,36 +7,30 @@ description: Build, check and test SightLab 2 (Vizard) eye-tracking experiments 
 
 You are helping a researcher build a VR experiment in WorldViz SightLab 2, a Python
 library that runs inside Vizard 7 or 8 on Windows. This kit was generated from
-`sightlab_utils` 2.8.21 on 2026-11-05; the installed version may be newer.
+`sightlab_utils` 2.9.3 on 2026-11-05; the installed version may be newer.
 SightLab scripts are short and regular. Keep to the frame in `rules/imports-and-frame.md`,
 compose from `patterns/`, and look up every method in `api/sightlab-api.md` before using it.
 
 ## Which SightLab
 
-SightLab 2 and SightLab 3 are installed side by side on many machines during the SightLab 3
-transition, and they do not share an API. Confirm the generation before sizing the request, in
-this order, and say which you found:
+Default to SightLab 2 unless the user or project indicates SightLab 3. Answer general
+questions and generate SightLab 2 examples without requiring a generation choice.
+Respect an explicitly stated version; inspect relevant project files when editing code.
+Ask only when conflicting or ambiguous version information materially changes the answer.
+When nothing indicates the generation, say in one line that you are assuming SightLab 2,
+so a SightLab 3 user can correct it.
 
-1. **The project's files.** A script that imports `sightlab_utils` is SightLab 2. A
-   `.oep.json` or `.oep-project.json` file, or a script with `from sightlab import ...` or
-   `import sightlab`, is SightLab 3. Both generations define a class named `SightLab`; the
-   import line is the signal, never the class name.
-2. **What is installed**, for a new project on a host that can read files: Vizard's
-   `bin\lib\site-packages\sightlab_utils` is 2.x; `site-packages\sightlab` with a
-   `_sightlab_version.py` is 3.
-3. **What the researcher says or pastes.** "My SightLab 2 script", "a SightLab 3
-   experiment", a pasted script (read its import line) or a pasted `.oep.json` decides. In a
-   chat without files this is the only signal, so read the message for it first.
-4. **Assume SightLab 2** when nothing above decides it, and say so in one line ("assuming
-   SightLab 2; tell me if this is a SightLab 3 project"), because SightLab 2 is what is
-   installed today; switch as soon as the researcher corrects you. An explicit statement
-   counts as a decision; vocabulary alone ("trial", "gaze object") does not, because both
-   generations use the same words.
+An import of `sightlab_utils` is evidence of SightLab 2. For other projects, use package
+metadata, project structure and documentation together. A generic `import sightlab`,
+filename or class name alone does not establish SightLab 3; it may refer to a local module.
+Keep each generation's APIs and examples separate.
 
-This skill covers SightLab 2. For a SightLab 3 project, or a request to port a 2.x script to
-SightLab 3, use the `sightlab-3` skill if it is installed beside this one; otherwise say that
-SightLab 3 (OEP experiments, the Conductor, and Hybrid Python) is not covered by this kit yet,
-and stop.
+This skill contains SightLab 2 references. For confirmed SightLab 3 work, use a relevant
+SightLab 3 skill if available; otherwise disclose the coverage gap and consult authoritative
+documentation where available. Continue useful planning and version-independent work
+without inventing SightLab 3 APIs or applying SightLab 2 code as if it were compatible.
+Mention planned SightLab 3 platform support only when relevant, distinguishing plans from
+released functionality as described in `register/capabilities-and-custom-development.md`.
 
 ## On this host
 
@@ -76,18 +70,18 @@ Not every request is a build. Decide which of these it is, and say so in one lin
 
 When in doubt between the first two, do the smaller thing and offer the larger one.
 
-## 1. Scope guard, before any edit or build
+## 1. Capabilities and custom development
 
-Read `register/cannot.md` and classify the request:
+When capability, platform or integration constraints matter, consult
+`register/capabilities-and-custom-development.md`. Use it to guide implementation and
+explain limitations, not to reject requests merely because they require custom development.
 
-- **not possible in SightLab 2** → say so plainly, name the nearest thing that is, and stop;
-- **possible, but custom work** (avatar animation, generated worlds, bespoke hardware) → say
-  what it will take before starting, and suggest WorldViz support where the register says so;
-- **needs hardware** (an eye-tracking headset, BIOPAC, trackers) → build it, and say which
-  parts cannot be tested without the device.
-
-Never promise something because it sounds plausible. If the API map has no method for it,
-it is not a one-liner.
+Distinguish built-in features, custom extensions, unverified approaches and specific
+technical incompatibilities. Investigate relevant source, examples and authoritative
+documentation when needed; an absent API-map entry does not establish impossibility.
+Help with new features, drivers and complex tasks in manageable stages. Explain what
+requires hardware or additional information, and continue work that can be done reliably.
+WorldViz support can complement this work rather than automatically ending assistance.
 
 ## 2. Find the install
 
@@ -181,8 +175,8 @@ Write BIOPAC in capitals.
 | how to do a kind of study (gaze-contingent, ratings, STIM files, conditions, BIOPAC markers) | `patterns/<name>.md`, then copy its complete script |
 | a shipped example to learn from or copy | `examples/index.md`, then the script in the researcher's `ExampleScripts/` or `examples/curated/` here |
 | whether an environment, object or media file ships, and its exact name | `api/resources.md` (never guess a file name) |
-| whether something can be done at all | `register/cannot.md` |
-| a topic in depth (instructions, replay, dashboard, virtual screen, driving, external apps, AI agents, analysis) | `guides/index.md`, then the guide it names |
+| capability constraints, platform alternatives and custom integrations | `register/capabilities-and-custom-development.md` |
+| a topic in depth (instructions, hardware configurations, Inspector scene editing, multi-user, object detection, replay, dashboard, virtual screen, driving, external apps, AI agents, analysis) | `guides/index.md`, then the guide it names |
 | what SightLab or Vizard actually does when the rules and the API map are silent (what a prompt does to the scene, what an event carries, what a method does with its argument) | `reference/sightlab.py`, `reference/viz.py`, `reference/replay.py` (`reference/README.md`); on an installed machine the installed copies first |
 
 Do not paste large parts of the reference files or the source into your answers; cite the

@@ -130,6 +130,70 @@
   ]
  },
  {
+  "folder": "Adaptive_Learning",
+  "scripts": [
+   "Adaptive_Learning_ReactionTime.py",
+   "Adaptive_Learning_ReactionTime_Staircase.py"
+  ],
+  "main_script": "Adaptive_Learning_ReactionTime.py",
+  "readme": null,
+  "summary": "Adaptive_Sphere_SKLEARN.py ------------------------------------------------------- Shows a red sphere in VR. Its visible duration expands or shrinks online usi\u2026",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getTrialCount",
+   "setCustomTrialData",
+   "setEnvironment",
+   "setStartPoint",
+   "setTrialCount",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": true,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "dojo.osgb"
+  ]
+ },
+ {
+  "folder": "Adding_NPC",
+  "scripts": [
+   "Adding_NPCs.py",
+   "Adding_NPCs_GUI.py",
+   "Adding_NPCs_Replay.py"
+  ],
+  "main_script": "Adding_NPCs.py",
+  "readme": null,
+  "summary": "sightlab.addSceneObject('avatarObject', avatarObject, gaze=True, avatar=True) sightlab.addSceneObject('avatarObject2', avatarObject2, gaze=True, avatar=True)",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getTrialCount",
+   "setEnvironment",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": true,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "Business_Office.OSGB"
+  ]
+ },
+ {
   "folder": "AI_3D_Model_Spawner",
   "scripts": [
    "AI_3D_Model_Spawner.py",
@@ -280,6 +344,7 @@
    "configs/Seated_Male_Patient.py",
    "configs/Seated_Woman_Patient.py",
    "configs/Template_Female.py",
+   "configs/Template_Male - Copy.py",
    "configs/Template_Male.py",
    "configs/VCC_Male2.py",
    "configs/x_Multi_RocketBoxFemale.py",
@@ -364,70 +429,6 @@
   "environments": [
    "direction_arrow.osgb",
    "homeOffice.osgb"
-  ]
- },
- {
-  "folder": "Adaptive_Learning",
-  "scripts": [
-   "Adaptive_Learning_ReactionTime.py",
-   "Adaptive_Learning_ReactionTime_Staircase.py"
-  ],
-  "main_script": "Adaptive_Learning_ReactionTime.py",
-  "readme": null,
-  "summary": "Adaptive_Sphere_SKLEARN.py ------------------------------------------------------- Shows a red sphere in VR. Its visible duration expands or shrinks online usi\u2026",
-  "methods": [
-   "addSceneObject",
-   "endTrial",
-   "getTrialCount",
-   "setCustomTrialData",
-   "setEnvironment",
-   "setStartPoint",
-   "setTrialCount",
-   "startTrial"
-  ],
-  "flags": {
-   "gui": false,
-   "gaze": true,
-   "grab": false,
-   "biopac": false,
-   "ratings": false,
-   "stim_files": false,
-   "multi_user": false
-  },
-  "hardware_hints": [],
-  "environments": [
-   "dojo.osgb"
-  ]
- },
- {
-  "folder": "Adding_NPC",
-  "scripts": [
-   "Adding_NPCs.py",
-   "Adding_NPCs_GUI.py",
-   "Adding_NPCs_Replay.py"
-  ],
-  "main_script": "Adding_NPCs.py",
-  "readme": null,
-  "summary": "sightlab.addSceneObject('avatarObject', avatarObject, gaze=True, avatar=True) sightlab.addSceneObject('avatarObject2', avatarObject2, gaze=True, avatar=True)",
-  "methods": [
-   "addSceneObject",
-   "endTrial",
-   "getTrialCount",
-   "setEnvironment",
-   "startTrial"
-  ],
-  "flags": {
-   "gui": false,
-   "gaze": true,
-   "grab": false,
-   "biopac": false,
-   "ratings": false,
-   "stim_files": false,
-   "multi_user": false
-  },
-  "hardware_hints": [],
-  "environments": [
-   "Business_Office.OSGB"
   ]
  },
  {
@@ -704,6 +705,34 @@
   ]
  },
  {
+  "folder": "cobiFNIR",
+  "scripts": [
+   "Chart.py",
+   "cobi_FNIR.py",
+   "cobi_FNIR2.py",
+   "cobibiopac.py"
+  ],
+  "main_script": "Chart.py",
+  "readme": null,
+  "summary": "Display virtually unlimited number of waveforms Change color on the fly Change position on the fly Hide the display on the fly Change transperancy level on the\u2026",
+  "methods": [
+   "endTrial",
+   "setCustomTrialData",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": []
+ },
+ {
   "folder": "Collision",
   "scripts": [
    "Collision_Test.py",
@@ -731,6 +760,28 @@
    "RockyCavern.osgb",
    "ramp.osgb"
   ]
+ },
+ {
+  "folder": "convert_to_pixels",
+  "scripts": [
+   "convert_to_pixels.py",
+   "convert_to_pixels_folder.py"
+  ],
+  "main_script": "convert_to_pixels.py",
+  "readme": null,
+  "summary": "for row in reader: if not row or len(row) != len(headers): continue",
+  "methods": [],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": []
  },
  {
   "folder": "Custom Data Saving",
@@ -812,6 +863,37 @@
   "hardware_hints": [],
   "environments": [
    "dojo2.osgb"
+  ]
+ },
+ {
+  "folder": "doorExample",
+  "scripts": [
+   "SightLab_Door/SightLabVR_door_proximity.py",
+   "door_animation2.py",
+   "door_animation_timing.py"
+  ],
+  "main_script": "door_animation2.py",
+  "readme": null,
+  "summary": "",
+  "methods": [
+   "endTrial",
+   "getTrialCount",
+   "setEnvironment",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "DoorAnimated.osgb",
+   "Door_Scene.osgb"
   ]
  },
  {
@@ -897,6 +979,7 @@
    "vizconnect_configs/vizconnect_config_desktop_driving_thrustmaster.py",
    "vizconnect_configs/vizconnect_config_desktop_driving_wheel.py",
    "vizconnect_configs/vizconnect_config_meta_driving.py",
+   "vizconnect_configs/vizconnect_config_meta_driving2.py",
    "vizconnect_configs/vizconnect_config_meta_driving_controller.py",
    "vizconnect_configs/vizconnect_config_omnicept_driving.py",
    "vizconnect_configs/vizconnect_config_openxr_driving _controller.py",
@@ -1355,38 +1438,6 @@
   ]
  },
  {
-  "folder": "HandPath_Tracking",
-  "scripts": [
-   "Hand_Tracking.py",
-   "Plotly_Hand_Path.py"
-  ],
-  "main_script": "Hand_Tracking.py",
-  "readme": null,
-  "summary": "bodyTracking.addTrialDataColumns()",
-  "methods": [
-   "addSceneObject",
-   "addTrackingTrialDataColumn",
-   "endTrial",
-   "getTrialCount",
-   "setEnvironment",
-   "setTrialCount",
-   "startTrial"
-  ],
-  "flags": {
-   "gui": false,
-   "gaze": true,
-   "grab": true,
-   "biopac": false,
-   "ratings": false,
-   "stim_files": false,
-   "multi_user": false
-  },
-  "hardware_hints": [],
-  "environments": [
-   "dojo.osgb"
-  ]
- },
- {
   "folder": "Hand_Tracking_Grabbing_Physics",
   "scripts": [
    "Hand_Grabbing_Physics.py",
@@ -1434,6 +1485,38 @@
    "empty.osgb",
    "empty_xr_cube.osgb",
    "lab_modified3.osgb"
+  ]
+ },
+ {
+  "folder": "HandPath_Tracking",
+  "scripts": [
+   "Hand_Tracking.py",
+   "Plotly_Hand_Path.py"
+  ],
+  "main_script": "Hand_Tracking.py",
+  "readme": null,
+  "summary": "bodyTracking.addTrialDataColumns()",
+  "methods": [
+   "addSceneObject",
+   "addTrackingTrialDataColumn",
+   "endTrial",
+   "getTrialCount",
+   "setEnvironment",
+   "setTrialCount",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": true,
+   "grab": true,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "dojo.osgb"
   ]
  },
  {
@@ -1613,11 +1696,41 @@
   ]
  },
  {
+  "folder": "Large List of Items",
+  "scripts": [
+   "gaze_time_subnodes.py",
+   "gaze_time_subnodes2.py"
+  ],
+  "main_script": "gaze_time_subnodes.py",
+  "readme": null,
+  "summary": "for item in sceneDict: sightlab.addSceneObject(item, env.getChild(item), gaze = sceneDict[item][0], grab = sceneDict[item][1])",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "setEnvironment",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": false,
+   "gaze": true,
+   "grab": true,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "complete_scene.osgb"
+  ]
+ },
+ {
   "folder": "LSL_Sample",
   "scripts": [
    "LSL_Biopac_Stream.py",
    "LSLmousecoordinates.py",
    "LSLpupil_diameter.py",
+   "iworx_lsl_bridge.py",
    "lsl_list_streams.py",
    "lsl_receiver.py",
    "lsl_sample_receive.py",
@@ -1653,35 +1766,6 @@
   ],
   "environments": [
    "dojo.osgb"
-  ]
- },
- {
-  "folder": "Large List of Items",
-  "scripts": [
-   "gaze_time_subnodes.py",
-   "gaze_time_subnodes2.py"
-  ],
-  "main_script": "gaze_time_subnodes.py",
-  "readme": null,
-  "summary": "for item in sceneDict: sightlab.addSceneObject(item, env.getChild(item), gaze = sceneDict[item][0], grab = sceneDict[item][1])",
-  "methods": [
-   "addSceneObject",
-   "endTrial",
-   "setEnvironment",
-   "startTrial"
-  ],
-  "flags": {
-   "gui": false,
-   "gaze": true,
-   "grab": true,
-   "biopac": false,
-   "ratings": false,
-   "stim_files": false,
-   "multi_user": false
-  },
-  "hardware_hints": [],
-  "environments": [
-   "complete_scene.osgb"
   ]
  },
  {
@@ -2533,45 +2617,6 @@
   "environments": []
  },
  {
-  "folder": "STIM Files",
-  "scripts": [
-   "Data_Analysis/visualization_of_data_combined.py",
-   "Data_Analysis/visualization_of_data_simple.py",
-   "STIM_File_Config.py",
-   "STIM_File_example.py",
-   "STIM_File_example_random.py",
-   "SessionReplay_STIM.py"
-  ],
-  "main_script": "STIM_File_Config.py",
-  "readme": "ReadMe.txt",
-  "summary": "}",
-  "methods": [
-   "addSceneObject",
-   "endTrial",
-   "getCurrentTime",
-   "runExperiment",
-   "setDwellTimeThreshold",
-   "setEnvironment",
-   "setExperimentSummaryData",
-   "setTrialCount",
-   "startTrial"
-  ],
-  "flags": {
-   "gui": null,
-   "gaze": true,
-   "grab": true,
-   "biopac": false,
-   "ratings": false,
-   "stim_files": true,
-   "multi_user": false
-  },
-  "hardware_hints": [],
-  "environments": [
-   "basketball.osgb",
-   "dojo.osgb"
-  ]
- },
- {
   "folder": "Sample Code",
   "scripts": [
    "SightLabVR_NonGUI.py",
@@ -2894,6 +2939,45 @@
   },
   "hardware_hints": [],
   "environments": [
+   "dojo.osgb"
+  ]
+ },
+ {
+  "folder": "STIM Files",
+  "scripts": [
+   "Data_Analysis/visualization_of_data_combined.py",
+   "Data_Analysis/visualization_of_data_simple.py",
+   "STIM_File_Config.py",
+   "STIM_File_example.py",
+   "STIM_File_example_random.py",
+   "SessionReplay_STIM.py"
+  ],
+  "main_script": "STIM_File_Config.py",
+  "readme": "ReadMe.txt",
+  "summary": "}",
+  "methods": [
+   "addSceneObject",
+   "endTrial",
+   "getCurrentTime",
+   "runExperiment",
+   "setDwellTimeThreshold",
+   "setEnvironment",
+   "setExperimentSummaryData",
+   "setTrialCount",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": true,
+   "grab": true,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": true,
+   "multi_user": false
+  },
+  "hardware_hints": [],
+  "environments": [
+   "basketball.osgb",
    "dojo.osgb"
   ]
  },
@@ -3265,6 +3349,52 @@
   ]
  },
  {
+  "folder": "VisualizationTools",
+  "scripts": [
+   "Plotly_Walk_Path.py",
+   "Plotly_Walk_Path_Combined.py",
+   "Ploty_Barchart_Views.py",
+   "Ploty_Walk_and_Gaze.py",
+   "SightLab_VR_Data_Test.py",
+   "SightLab_VR_MatPlotLib_RealTime.py",
+   "barchart_histogram.py",
+   "barchart_histogram_entireFolder.py",
+   "boxPlot_2_by_3.py",
+   "comparison_label.py",
+   "heatmap.py",
+   "heatmap_point_cloud.py",
+   "point_cloud2.py",
+   "point_cloud_color.py",
+   "visualization_of_data_combined.py"
+  ],
+  "main_script": "heatmap.py",
+  "readme": null,
+  "summary": "fileList.sort(reverse=True) # Sort the list if needed choice = vizinput.choose('Please select a data file', fileList) filename = fileList[choice]",
+  "methods": [
+   "endTrial",
+   "getTrialCount",
+   "hideInstructions",
+   "showInstructions",
+   "startTrial"
+  ],
+  "flags": {
+   "gui": null,
+   "gaze": false,
+   "grab": false,
+   "biopac": false,
+   "ratings": false,
+   "stim_files": false,
+   "multi_user": false
+  },
+  "hardware_hints": [
+   "Projection"
+  ],
+  "environments": [
+   "beachball.osgb",
+   "ground.osgb"
+  ]
+ },
+ {
   "folder": "VisualSearch",
   "scripts": [
    "VisualSearch1_SingleObject/Config_Visual_Search.py",
@@ -3362,52 +3492,6 @@
   ]
  },
  {
-  "folder": "VisualizationTools",
-  "scripts": [
-   "Plotly_Walk_Path.py",
-   "Plotly_Walk_Path_Combined.py",
-   "Ploty_Barchart_Views.py",
-   "Ploty_Walk_and_Gaze.py",
-   "SightLab_VR_Data_Test.py",
-   "SightLab_VR_MatPlotLib_RealTime.py",
-   "barchart_histogram.py",
-   "barchart_histogram_entireFolder.py",
-   "boxPlot_2_by_3.py",
-   "comparison_label.py",
-   "heatmap.py",
-   "heatmap_point_cloud.py",
-   "point_cloud2.py",
-   "point_cloud_color.py",
-   "visualization_of_data_combined.py"
-  ],
-  "main_script": "heatmap.py",
-  "readme": null,
-  "summary": "fileList.sort(reverse=True) # Sort the list if needed choice = vizinput.choose('Please select a data file', fileList) filename = fileList[choice]",
-  "methods": [
-   "endTrial",
-   "getTrialCount",
-   "hideInstructions",
-   "showInstructions",
-   "startTrial"
-  ],
-  "flags": {
-   "gui": null,
-   "gaze": false,
-   "grab": false,
-   "biopac": false,
-   "ratings": false,
-   "stim_files": false,
-   "multi_user": false
-  },
-  "hardware_hints": [
-   "Projection"
-  ],
-  "environments": [
-   "beachball.osgb",
-   "ground.osgb"
-  ]
- },
- {
   "folder": "ViveTrackers",
   "scripts": [
    "Plotly_Tracker_Path.py",
@@ -3455,8 +3539,8 @@
    "SteamVR"
   ],
   "environments": [
-   "C:\\Program Files\\WorldViz\\Sightlab2\\sightlab_resources\\avatar\\TrackedAvatars\\RocketBox_Female1.osgb",
    "Interior_Empty.osgb",
+   "RocketBox_Female1.osgb",
    "Stimulus.osgb",
    "basketball.osgb",
    "beachball.osgb",
@@ -3509,87 +3593,6 @@
    "pit_drop.osgb",
    "platform.osgb",
    "rightShoe.osgb"
-  ]
- },
- {
-  "folder": "cobiFNIR",
-  "scripts": [
-   "Chart.py",
-   "cobi_FNIR.py",
-   "cobi_FNIR2.py",
-   "cobibiopac.py"
-  ],
-  "main_script": "Chart.py",
-  "readme": null,
-  "summary": "Display virtually unlimited number of waveforms Change color on the fly Change position on the fly Hide the display on the fly Change transperancy level on the\u2026",
-  "methods": [
-   "endTrial",
-   "setCustomTrialData",
-   "startTrial"
-  ],
-  "flags": {
-   "gui": null,
-   "gaze": false,
-   "grab": false,
-   "biopac": false,
-   "ratings": false,
-   "stim_files": false,
-   "multi_user": false
-  },
-  "hardware_hints": [],
-  "environments": []
- },
- {
-  "folder": "convert_to_pixels",
-  "scripts": [
-   "convert_to_pixels.py",
-   "convert_to_pixels_folder.py"
-  ],
-  "main_script": "convert_to_pixels.py",
-  "readme": null,
-  "summary": "for row in reader: if not row or len(row) != len(headers): continue",
-  "methods": [],
-  "flags": {
-   "gui": null,
-   "gaze": false,
-   "grab": false,
-   "biopac": false,
-   "ratings": false,
-   "stim_files": false,
-   "multi_user": false
-  },
-  "hardware_hints": [],
-  "environments": []
- },
- {
-  "folder": "doorExample",
-  "scripts": [
-   "SightLab_Door/SightLabVR_door_proximity.py",
-   "door_animation2.py",
-   "door_animation_timing.py"
-  ],
-  "main_script": "door_animation2.py",
-  "readme": null,
-  "summary": "",
-  "methods": [
-   "endTrial",
-   "getTrialCount",
-   "setEnvironment",
-   "startTrial"
-  ],
-  "flags": {
-   "gui": null,
-   "gaze": false,
-   "grab": false,
-   "biopac": false,
-   "ratings": false,
-   "stim_files": false,
-   "multi_user": false
-  },
-  "hardware_hints": [],
-  "environments": [
-   "DoorAnimated.osgb",
-   "Door_Scene.osgb"
   ]
  }
 ]

@@ -21,11 +21,11 @@
   },
   "name": "gpt-8fac8a955f2dc675005d97a73ee481f2",
   "skills": "./skills/",
-  "version": "2026.11.7",
+  "version": "2026.11.8",
   "extensions": {
     "com.openai": {
       "publication": {
-        "release_notes": "Kit 2026.11.7: skill, rules, patterns, API map, reference source and the test harness, generated from sightlab_utils 2.8.21."
+        "release_notes": "Kit 2026.11.8: skill, rules, patterns, API map, reference source and the test harness, generated from sightlab_utils 2.9.3."
       }
     }
   }

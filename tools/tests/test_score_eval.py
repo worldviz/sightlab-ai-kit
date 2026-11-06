@@ -74,6 +74,6 @@ def test_scoreboard_appends_once_header(tmp_path, kit):
     out = tmp_path / "2026-11.md"
     append_scoreboard(score(_eval_dir(kit), _check(), _autopilot(), META), out)
     append_scoreboard(score(_eval_dir(kit), _check(errors=2), None, META), out)
-    text = out.read_text()
+    text = out.read_text(encoding="utf-8")  # the scoreboard is written as UTF-8; Windows' default codec garbles ✔/✘
     assert text.count("| Eval |") == 1 and text.count("\n| gaze-dwell-rating |") == 2
     assert "behaviour-verified" in text and "✔" in text and "✘" in text

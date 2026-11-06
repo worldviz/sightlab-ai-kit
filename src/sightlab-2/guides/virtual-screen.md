@@ -34,7 +34,8 @@ with the video.
 ## Gaze on the screen
 
 Register regions of the screen (or the whole screen) with `addSceneObject(..., gaze=True)`,
-or use `addRegionOfInterest` for a region node, so dwell and fixation data exist per region.
+including region nodes (not `addRegionOfInterest`, which records nothing in 2.9.3), so dwell
+and fixation data exist per region.
 Shipped videos for testing: `sightlab_resources/media_2D/`.
 
 ## Gotchas
