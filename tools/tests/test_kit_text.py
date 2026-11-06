@@ -161,6 +161,9 @@ def test_autopilot_ask_is_a_chat_question_and_skipped_when_the_run_was_requested
     build = text[text.index("## 4. The build"):]
     assert "already asks for a run or a test" in build and "plain chat question" in build
     assert "approval dialog" in build or "approval button" in build
+    assert "question tool" in build and "Never ask twice" in build  # 2026.11.8 review: use the host's tool when it has one
+    sizing = text[text.index("## 0. Size the request"):text.index("## 1.")]
+    assert "already asked for a test" in sizing  # a small edit honours "fix it and test it" too
     for path in (kit / "tools" / "host_sections.py", kit / "templates" / "claude-plugin" / "commands" / "check.md",
                  kit / "templates" / "claude-plugin" / "README.md", kit / "templates" / "openai-plugin" / "README.md", kit / "README.md"):
         t = path.read_text(encoding="utf-8")

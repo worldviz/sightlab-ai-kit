@@ -66,8 +66,9 @@ Not every request is a build. Decide which of these it is, and say so in one lin
 - **A small edit** (a rating scale, a column, a trial count, a text, a resource swap): make
   the minimal change, run `check.py` on the script, fix what it reports, and say in two lines
   what changed and what the checker found. No brief, no `REVIEW.md`. Run the autopilot only
-  when the edit changes what happens at run time (trial flow, prompts, events, data written)
-  and the researcher agrees: say what it would check, then ask.
+  when the edit changes what happens at run time (trial flow, prompts, events, data written):
+  say what it will check; when the request already asked for a test ("fix it and test it"),
+  go ahead, otherwise ask as section 4 describes.
 - **A new study, a restructuring, or a bug you can only see by running**: the full workflow
   below, from the brief to the autopilot and `REVIEW.md`.
 
@@ -139,9 +140,10 @@ Work through these steps on your own: **skeleton → trials → responses → da
   script so the report checks them (`trials_exact` when the brief fixes the trial count).
   Before the first launch in a session, say what the run will check. When the request
   already asks for a run or a test ("build and test it", "make sure it runs"), that is the
-  permission: go ahead. Otherwise ask, as a plain chat question that ends your turn and
-  waits for the reply; there is no approval dialog or button you can summon, so never imply
-  one. The host's own command-approval step, where it has one, is not a reason to ask twice.
+  permission: go ahead. Otherwise ask once: with the host's question tool where it has one,
+  or else as a plain chat question that ends your turn and waits for the reply. Never imply
+  an approval dialog or button the host has not shown you. Never ask twice: an earlier yes in
+  the session, or the host's own command-approval step, is the permission.
   Later launches in the same session need only the one line.
   **Opt-out:** when the researcher says not to run Vizard, or a file named `NO_AUTOPILOT`
   sits in the project folder, do not launch the autopilot (the harness refuses on its own
