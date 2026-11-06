@@ -2,11 +2,11 @@
  "version": "2026.11.10",
  "date": "2026-11-06",
  "sightlab_utils_version": "2.9.3",
- "skill_body_sha256": "80ad0cf7811d019d181e2762241c18c5cce354e59a6ee8cefa511fe806798d68",
+ "skill_body_sha256": "1eb22bfbcab93d0d5de3763acc47e54ccff527ad9fd4994afebcf8119b23bdf1",
  "skills": {
   "sightlab-2": {
    "sightlab_utils_version": "2.9.3",
-   "skill_body_sha256": "80ad0cf7811d019d181e2762241c18c5cce354e59a6ee8cefa511fe806798d68"
+   "skill_body_sha256": "1eb22bfbcab93d0d5de3763acc47e54ccff527ad9fd4994afebcf8119b23bdf1"
   }
  },
  "files": {
@@ -58,7 +58,7 @@
    "skills/sightlab-2/guides/dashboard.md": "508c0c3c1ad567cb8a40cb152eb34654a159b4437e12cd3f7f16b35ec6a18cd9",
    "skills/sightlab-2/guides/data-recorder.md": "0c97e99db7f3734ce9afb3680a8e2ff493a621405c86043b397fe94083d4acdf",
    "skills/sightlab-2/guides/driving.md": "1c81e06845c5e2a9f4990c745bda9845fe63b1d121b84d9b057286473c4244e7",
-   "skills/sightlab-2/guides/e-learning-lab.md": "5a8013d59ec1e99c4d5247381bf0de77684491a2810fe7e054f67fa8802c42d5",
+   "skills/sightlab-2/guides/e-learning-lab.md": "01a4b48750bcfdf6b6a8264e915f867b0f4efbd9ad6744a6e8f126f24eeca88d",
    "skills/sightlab-2/guides/first-project.md": "1e683e1a72b52240885b37acdf61d7aa949ef0773eb3120eddf8bdab81193393",
    "skills/sightlab-2/guides/hardware.md": "ee48322ceb08cafd9740d63cb324be1716db690584b3cc656faf88ca99a9b85f",
    "skills/sightlab-2/guides/index.md": "b4924d7d1c17e4e8e7ee6768e3a9d33ff8a5900b740484c5a44f206e69d3b089",
@@ -89,7 +89,7 @@
    "skills/sightlab-2/rules/gui-vs-code.md": "62c04f9062b807439792f6e40a970772c5179f0f2d621e44dd0dd2a1399e2d24",
    "skills/sightlab-2/rules/imports-and-frame.md": "4941f0f47b6fe3fdcf14edddb6d4fab429e47e613115d1b81734c30c60c4843c",
    "skills/sightlab-2/rules/trials-and-instructions.md": "56290428c8833513e992b6df4e02672f9e139ff5a784490d6ad3c43c4b42526b",
-   "skills/sightlab-2/SKILL.md": "20c18cd0b0791d8baa5431476528c1d238bc56794fb1d318c7b1bd3ce1e9afa0"
+   "skills/sightlab-2/SKILL.md": "ff82a21b11085fa36931924345beeda5dc7bb85eac1c20f69fe604115e7c8c49"
   },
   "openai-plugin": {
    ".codex-plugin/plugin.json": "3aff3367dd2836a22949e0656399d111fbda1231c26b9f152a7667aa8d219f34",
@@ -137,7 +137,7 @@
    "skills/sightlab-2/guides/dashboard.md": "508c0c3c1ad567cb8a40cb152eb34654a159b4437e12cd3f7f16b35ec6a18cd9",
    "skills/sightlab-2/guides/data-recorder.md": "0c97e99db7f3734ce9afb3680a8e2ff493a621405c86043b397fe94083d4acdf",
    "skills/sightlab-2/guides/driving.md": "1c81e06845c5e2a9f4990c745bda9845fe63b1d121b84d9b057286473c4244e7",
-   "skills/sightlab-2/guides/e-learning-lab.md": "5a8013d59ec1e99c4d5247381bf0de77684491a2810fe7e054f67fa8802c42d5",
+   "skills/sightlab-2/guides/e-learning-lab.md": "01a4b48750bcfdf6b6a8264e915f867b0f4efbd9ad6744a6e8f126f24eeca88d",
    "skills/sightlab-2/guides/first-project.md": "1e683e1a72b52240885b37acdf61d7aa949ef0773eb3120eddf8bdab81193393",
    "skills/sightlab-2/guides/hardware.md": "ee48322ceb08cafd9740d63cb324be1716db690584b3cc656faf88ca99a9b85f",
    "skills/sightlab-2/guides/index.md": "b4924d7d1c17e4e8e7ee6768e3a9d33ff8a5900b740484c5a44f206e69d3b089",
@@ -168,7 +168,7 @@
    "skills/sightlab-2/rules/gui-vs-code.md": "62c04f9062b807439792f6e40a970772c5179f0f2d621e44dd0dd2a1399e2d24",
    "skills/sightlab-2/rules/imports-and-frame.md": "4941f0f47b6fe3fdcf14edddb6d4fab429e47e613115d1b81734c30c60c4843c",
    "skills/sightlab-2/rules/trials-and-instructions.md": "56290428c8833513e992b6df4e02672f9e139ff5a784490d6ad3c43c4b42526b",
-   "skills/sightlab-2/SKILL.md": "cc070fefa67444788a4ef1109b0902b5f64b4af6083e39d8b2d7536f95a1016d"
+   "skills/sightlab-2/SKILL.md": "267a54d806432dc179f5f9cc2e3778a30ec6f1b0bbb5973b54a4e09f2d06e056"
   },
   "starter-project": {
    ".gitignore": "b1bcf5c22cad2482044f252b3c537c3261565a05c7cddc1bdec8bb7539a31a62",
@@ -220,7 +220,7 @@
    "sightlab-2/guides/dashboard.md": "508c0c3c1ad567cb8a40cb152eb34654a159b4437e12cd3f7f16b35ec6a18cd9",
    "sightlab-2/guides/data-recorder.md": "0c97e99db7f3734ce9afb3680a8e2ff493a621405c86043b397fe94083d4acdf",
    "sightlab-2/guides/driving.md": "1c81e06845c5e2a9f4990c745bda9845fe63b1d121b84d9b057286473c4244e7",
-   "sightlab-2/guides/e-learning-lab.md": "5a8013d59ec1e99c4d5247381bf0de77684491a2810fe7e054f67fa8802c42d5",
+   "sightlab-2/guides/e-learning-lab.md": "01a4b48750bcfdf6b6a8264e915f867b0f4efbd9ad6744a6e8f126f24eeca88d",
    "sightlab-2/guides/first-project.md": "1e683e1a72b52240885b37acdf61d7aa949ef0773eb3120eddf8bdab81193393",
    "sightlab-2/guides/hardware.md": "ee48322ceb08cafd9740d63cb324be1716db690584b3cc656faf88ca99a9b85f",
    "sightlab-2/guides/index.md": "b4924d7d1c17e4e8e7ee6768e3a9d33ff8a5900b740484c5a44f206e69d3b089",
@@ -247,7 +247,7 @@
    "sightlab-2/rules/gui-vs-code.md": "62c04f9062b807439792f6e40a970772c5179f0f2d621e44dd0dd2a1399e2d24",
    "sightlab-2/rules/imports-and-frame.md": "4941f0f47b6fe3fdcf14edddb6d4fab429e47e613115d1b81734c30c60c4843c",
    "sightlab-2/rules/trials-and-instructions.md": "56290428c8833513e992b6df4e02672f9e139ff5a784490d6ad3c43c4b42526b",
-   "sightlab-2/SKILL.md": "f35cc568028d48f891fd4c8a1c2dbadf3cd866a3100cb210896e0284e438fb85"
+   "sightlab-2/SKILL.md": "c8464500b86539657920335afac4824e33c32cc2c4f193af0ff4ac1016913cbb"
   }
  }
 }

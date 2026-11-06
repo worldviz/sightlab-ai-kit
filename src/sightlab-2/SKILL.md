@@ -176,6 +176,7 @@ Write BIOPAC in capitals.
 | whether an environment, object or media file ships, and its exact name | `api/resources.md` (never guess a file name) |
 | capability constraints, platform alternatives and custom integrations | `register/capabilities-and-custom-development.md` |
 | a topic in depth (a first project in the GUI, instructions, hardware configurations, Inspector scene editing, multi-user, object detection, 360 moving regions, E-Learning Lab, replay, dashboard, virtual screen, driving, external apps, AI agents, analysis) | `guides/index.md`, then the guide it names |
+| a feature, device or example this kit does not cover (NPC avatar animation, full-body avatars, a downloadable example such as Street Walking) | the SightLab documentation at help.worldviz.com/sightlab (fetch the page when this host can browse) and the example's own scripts in the researcher's `ExampleScripts/`; when a page and the installed code disagree, the code wins, since some pages are out of date; say which source you used |
 | what SightLab or Vizard actually does when the rules and the API map are silent (what a prompt does to the scene, what an event carries, what a method does with its argument) | `reference/sightlab.py`, `reference/viz.py`, `reference/replay.py` (`reference/README.md`); on an installed machine the installed copies first |
 
 Do not paste large parts of the reference files or the source into your answers; cite the

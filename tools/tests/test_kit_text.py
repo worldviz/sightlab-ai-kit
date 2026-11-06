@@ -160,6 +160,14 @@ def test_guides_index_lists_every_guide(kit: Path):
         assert g in files, g
 
 
+def test_skill_points_to_the_docs_for_gaps_with_code_first(kit: Path):
+    """2026.11.10: gaps (NPC animation, full body, downloadable examples) are researched in the online docs and the
+    example scripts; the installed code wins over a page, since the docs review found many out-of-date pages."""
+    text = (kit / "src" / "sightlab-2" / "SKILL.md").read_text(encoding="utf-8")
+    table = text[text.index("## 6. When to read what"):]
+    assert "help.worldviz.com/sightlab" in table and "the code wins" in table and "`ExampleScripts/`" in table
+
+
 def test_network_claims_are_qualified(kit: Path):
     """2026.11.8 review: the utilities run the researcher's experiment, which may talk to BIOPAC or an API;
     the public text says what the kit itself does not do, and that experiments may communicate."""
