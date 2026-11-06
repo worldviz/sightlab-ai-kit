@@ -2,11 +2,11 @@
  "version": "2026.11.10",
  "date": "2026-11-06",
  "sightlab_utils_version": "2.9.3",
- "skill_body_sha256": "cc552ef852292a5420c877237c47cd80f676209cc46a5d4ac0153ddcda57225f",
+ "skill_body_sha256": "f52dad08ae86afbeb182b79a0aa942dbb0cf7b191e8d4ee6796513ec6327f492",
  "skills": {
   "sightlab-2": {
    "sightlab_utils_version": "2.9.3",
-   "skill_body_sha256": "cc552ef852292a5420c877237c47cd80f676209cc46a5d4ac0153ddcda57225f"
+   "skill_body_sha256": "f52dad08ae86afbeb182b79a0aa942dbb0cf7b191e8d4ee6796513ec6327f492"
   }
  },
  "files": {
@@ -86,7 +86,7 @@
    "skills/sightlab-2/rules/gui-vs-code.md": "bc5c5fa929cfb572495fbac82183977e2d2e85aeb916e44d10de7dbeea863bbd",
    "skills/sightlab-2/rules/imports-and-frame.md": "4941f0f47b6fe3fdcf14edddb6d4fab429e47e613115d1b81734c30c60c4843c",
    "skills/sightlab-2/rules/trials-and-instructions.md": "56290428c8833513e992b6df4e02672f9e139ff5a784490d6ad3c43c4b42526b",
-   "skills/sightlab-2/SKILL.md": "3c2567d1cdc0e57b7f480e113bac14d4e9ae9af5c01877afdaf6fea1203c97ea"
+   "skills/sightlab-2/SKILL.md": "993764afc35b7cb40e0cd2a4a59f7ee2f7127eceb74c470ef89bebd4c3032a78"
   },
   "openai-plugin": {
    ".codex-plugin/plugin.json": "3aff3367dd2836a22949e0656399d111fbda1231c26b9f152a7667aa8d219f34",
@@ -162,7 +162,7 @@
    "skills/sightlab-2/rules/gui-vs-code.md": "bc5c5fa929cfb572495fbac82183977e2d2e85aeb916e44d10de7dbeea863bbd",
    "skills/sightlab-2/rules/imports-and-frame.md": "4941f0f47b6fe3fdcf14edddb6d4fab429e47e613115d1b81734c30c60c4843c",
    "skills/sightlab-2/rules/trials-and-instructions.md": "56290428c8833513e992b6df4e02672f9e139ff5a784490d6ad3c43c4b42526b",
-   "skills/sightlab-2/SKILL.md": "4ab2b19bdec47f79e825b304351e102b4e9dd2668509aa4c822ac363767c70fa"
+   "skills/sightlab-2/SKILL.md": "6d0e1d5504ce04c43d63c9a82b4f27cce0b0a66d4206a3388874562bc8c3fb90"
   },
   "starter-project": {
    ".gitignore": "b1bcf5c22cad2482044f252b3c537c3261565a05c7cddc1bdec8bb7539a31a62",
@@ -238,7 +238,7 @@
    "sightlab-2/rules/gui-vs-code.md": "bc5c5fa929cfb572495fbac82183977e2d2e85aeb916e44d10de7dbeea863bbd",
    "sightlab-2/rules/imports-and-frame.md": "4941f0f47b6fe3fdcf14edddb6d4fab429e47e613115d1b81734c30c60c4843c",
    "sightlab-2/rules/trials-and-instructions.md": "56290428c8833513e992b6df4e02672f9e139ff5a784490d6ad3c43c4b42526b",
-   "sightlab-2/SKILL.md": "f0430af0f27887d764261527e69c20f07c18885dd41bfe67097edb77342293ca"
+   "sightlab-2/SKILL.md": "3dd58c0ee8dd2b54968979b400f91a85047964edf1e4aa9f019800e447ee3d26"
   }
  }
 }

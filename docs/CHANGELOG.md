@@ -13,6 +13,8 @@ which live in the team's internal repository, not here.
   "in ChatGPT (no local files): you cannot run the checks"; the Claude section no longer
   calls every non-Windows session "a chat", since `check.py` needs only Python. The chat
   bundle says why it cannot run the checks: it carries no harness.
+- Simple studies: a failed desktop run is fixed and rerun up to two attempts, matching the
+  stop rule, instead of "until it passes"; the only checkpoint is handoff.
 
 ## 2026.11.9 (2026-11-05)
 

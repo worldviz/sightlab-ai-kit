@@ -137,8 +137,9 @@ First decide which way the build runs, and say so in one line:
 - **A simple study** (one 3D scene; responses by key, trigger or rating scale; no multi-user,
   360 media, external application, AI agent, object detection, trackers or custom
   vizconnect; BIOPAC markers alone do not count against it): build all the steps straight
-  through, with `check.py` after every edit, then one desktop run at the end; fix and run
-  again until it passes. Stop only at handoff.
+  through, with `check.py` after every edit, then one desktop run at the end. If it fails,
+  fix it and run again, up to two attempts (the stop rule below). No headset stop mid-build:
+  the only checkpoint is handoff.
 - **Anything else**, or whenever the researcher asks for it: a desktop run at the end of
   every step, and a stop for a headset look after the skeleton.
 

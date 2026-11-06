@@ -164,7 +164,8 @@ def test_simple_studies_build_straight_through(kit: Path):
     anything else keeps a run per step and the skeleton checkpoint."""
     text = (kit / "src" / "sightlab-2" / "SKILL.md").read_text(encoding="utf-8")
     build = text[text.index("## 4. The build"):text.index("At each stop")]
-    assert "**A simple study**" in build and "one desktop run at the end" in build and "Stop only at handoff" in build
+    assert "**A simple study**" in build and "one desktop run at the end" in build and "the only checkpoint is handoff" in build
+    assert "until it passes" not in build and "up to two attempts" in build  # agrees with the two-attempt stop rule
     assert "**Anything else**" in build and "after the skeleton" in build
     assert "unless the study is simple" in build
     review = text[text.index("At each stop write"):][:400]
