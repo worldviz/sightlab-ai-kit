@@ -16,7 +16,8 @@ sightlab.setEnvironment(env)
   mediaFormat='Monoscopic')` (`examples/360 non GUI`). `mediaFormat` defaults to
   `'Stereoscopic T/B'`; the others are `'Monoscopic'` and `'Stereoscopic L/R'` (180°). A mono
   file needs `'Monoscopic'`, or it is split as top/bottom stereo. Regions of interest that
-  follow something moving in the video: `guides/360-moving-regions.md`.
+  follow something moving in the video: `guides/360-moving-regions.md`; playback control,
+  8K and sphere rotation: `guides/360-media.md`.
 - In GUI mode do not call `setEnvironment` at all; the researcher picks it in the GUI.
 
 ## Shipped environments and objects
@@ -53,6 +54,7 @@ resource list; `.OSGB` is a real spelling for one of them):
   `check.py`'s warning about it is expected.
 - A researcher's own models: any `.osgb`, `.gltf`/`.glb`, `.fbx` or `.obj` Vizard can load,
   placed in the project folder or a `Resources/` subfolder and referenced by relative path.
+  Formats, scale, conversion and performance: `guides/models-and-assets.md`.
 
 ## Sizes: pick by class, place by bottom
 

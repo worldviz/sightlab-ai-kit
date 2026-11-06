@@ -156,7 +156,8 @@ def test_guides_index_lists_every_guide(kit: Path):
     listed = set(re.findall(r"^\| `([\w.-]+\.md)` \|", (guides / "index.md").read_text(encoding="utf-8"), re.M))
     files = {p.name for p in guides.glob("*.md")} - {"index.md"}
     assert listed == files, (sorted(files - listed), sorted(listed - files))
-    for g in ("first-project.md", "360-moving-regions.md", "e-learning-lab.md", "data-recorder.md"):
+    for g in ("first-project.md", "360-moving-regions.md", "e-learning-lab.md", "data-recorder.md", "360-media.md",
+              "avatar-agents.md", "full-body-avatars.md", "models-and-assets.md", "controls.md", "street-walking.md"):
         assert g in files, g
 
 

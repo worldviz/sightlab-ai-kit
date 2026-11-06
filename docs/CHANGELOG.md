@@ -21,6 +21,15 @@ which live in the team's internal repository, not here.
   `e-learning-lab.md` (overview, files, how lessons are built, what an agent can change, a
   docs map). `data-recorder.md` is rewritten for External Data Recorder 2.0 (hardware table,
   configuration defaults, network events, outputs, postprocessing, gotchas).
+- More guides from the documentation review, each checked against the code: `360-media.md`
+  (setup in code, playback control, 8K, sphere rotation), `avatar-agents.md` (scripted NPCs:
+  animations, morphs, walking, gaze on avatars), `full-body-avatars.md`, `models-and-assets.md`,
+  `controls.md` (keys and controller buttons per headset), `street-walking.md` (the download);
+  `ai-agents.md` and `driving.md` rewritten against the current examples. SKILL's lookup table
+  sends uncovered topics to help.worldviz.com/sightlab and the example scripts, code first.
+- Corrections: `textContinueKey` replaces the trigger wait (common-mistakes said "too"); an avatar
+  needs `gaze=True` for gaze data (the shipped AI agent example registers `avatar=True` only);
+  `blend(animation, weight, delay)` is per animation.
 - Corrections found while checking: the Dashboard's New Project renames `SightLab_VR.py` to
   `<Name>.py`; `recordings/` appears only with Screen Record or a screenshot; `configpath=`
   loads nothing unless `sightlab_configs/recent_config.stlb` exists and is not empty;

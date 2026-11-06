@@ -32,7 +32,9 @@ it prints.
 - Gaze events never fire on the desktop: the Desktop configuration uses the view centre as
   the gaze ray; look straight at the object, or test with the harness, which steers the view.
 - Text prompts never dismiss: the continue event is the controller trigger (left mouse on
-  the desktop); add `textContinueKey=' '` to accept the space bar too.
+  the desktop). `textContinueKey=' '` makes the space bar the continue key instead: it
+  replaces the trigger wait, so use it only in desktop-only studies
+  (`rules/trials-and-instructions.md`).
 
 ## Guessing when the source is right there
 
