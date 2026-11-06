@@ -164,8 +164,8 @@ Then:
   researcher can ask for one after every step.
 
 At each stop write `REVIEW.md`, starting with the kit version from the line at the top of
-this file: what changed, the verdict and interventions, what to look for in the headset, the
-questions you need answered. Everything on the report's `needs_human`
+this file: which way the build ran (simple, or step by step) and why, what changed, the
+verdict and interventions, what to look for in the headset, the questions you need answered. Everything on the report's `needs_human`
 list (real eye tracking, BIOPAC delivery, timing feel) is always theirs to check.
 
 ## 5. Rules

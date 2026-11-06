@@ -141,6 +141,8 @@ def test_simple_studies_build_straight_through(kit: Path):
     assert "**A simple study**" in build and "one desktop run at the end" in build and "Stop only at handoff" in build
     assert "**Anything else**" in build and "after the skeleton" in build
     assert "unless the study is simple" in build
+    review = text[text.index("At each stop write"):][:400]
+    assert "which way the build ran" in review  # eval rerun: the chat line was skipped, so REVIEW.md records it
 
 
 def test_register_references_resolve(kit: Path):
