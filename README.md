@@ -36,7 +36,8 @@ SightLab 2 and Vizard 8 they also check and run them.
    gets the edit and the static check. A new study or a run-time bug gets the full workflow.
 2. **Builds from a brief** (yours, a paper, or a Fit Check brief) in steps: skeleton, trials,
    responses, data, polish, with `check.py` after every edit.
-3. **Runs the experiment itself** at the end of each build step: `autopilot.py` launches
+3. **Runs the experiment itself**, once at the end for a simple study and after each build
+   step otherwise: `autopilot.py` launches
    Vizard in desktop mode, drives the prompts, ratings and gaze targets like a participant,
    and writes `autopilot-report.json` with a verdict (`failed`, `smoke-passed`,
    `behaviour-verified`), every intervention it had to make, and the data files. It says what

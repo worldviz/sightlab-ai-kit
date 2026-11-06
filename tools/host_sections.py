@@ -19,7 +19,8 @@ the checks are expected, not optional:
   after every edit (the package dir is in "Find the install"; any Python 3.8+ runs the
   checker, Vizard is not needed for it);
 - `"C:\\Program Files\\WorldViz\\Vizard8\\bin\\winviz.exe" "${CLAUDE_PLUGIN_ROOT}/skills/sightlab-2/harness/autopilot.py" "<absolute path to script>"`
-  at the end of every build step; read `autopilot-report.json` in the run folder it names;
+  once at the end of a simple build, or at the end of every build step otherwise (section 4);
+  read `autopilot-report.json` in the run folder it names;
 - `/sightlab:new`, `/sightlab:check` and `/sightlab:review`
   are shortcuts for the brief, the checks and the review note.
 
@@ -45,7 +46,8 @@ product you are using and its permissions:
 - in Codex with command access and the researcher's permission: run the checks as the skill
   describes, from this skill's folder: `python "<kit>/harness/check.py" <script>` after every
   edit, and `"C:\\Program Files\\WorldViz\\Vizard8\\bin\\winviz.exe" "<kit>/harness/autopilot.py" "<absolute path to script>"`
-  at the end of every build step (in PowerShell, Codex's shell on Windows, prefix the quoted
+  once at the end of a simple build, or at the end of every build step otherwise (in
+  PowerShell, Codex's shell on Windows, prefix the quoted
   executable with `&`). Say what a run will check; before the first launch in a session ask, as a
   plain chat question, unless the request already asked for a run or a test.
 

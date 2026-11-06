@@ -133,6 +133,16 @@ def test_kit_answers_how_to_create_a_first_experiment(kit: Path):
     assert "How do I create my first SightLab experiment?" in (skill / "evals" / "README.md").read_text(encoding="utf-8")
 
 
+def test_simple_studies_build_straight_through(kit: Path):
+    """2026.11.8 (evals): a simple study gets one desktop run at the end and no mid-build stop;
+    anything else keeps a run per step and the skeleton checkpoint."""
+    text = (kit / "src" / "sightlab-2" / "SKILL.md").read_text(encoding="utf-8")
+    build = text[text.index("## 4. The build"):text.index("At each stop")]
+    assert "**A simple study**" in build and "one desktop run at the end" in build and "Stop only at handoff" in build
+    assert "**Anything else**" in build and "after the skeleton" in build
+    assert "unless the study is simple" in build
+
+
 def test_register_references_resolve(kit: Path):
     """The capabilities register replaced cannot.md; every `register/<file>` the skill or a command names must ship."""
     import re

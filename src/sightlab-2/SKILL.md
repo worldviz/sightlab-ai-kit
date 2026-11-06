@@ -105,11 +105,22 @@ Start the skeleton as soon as design, procedure, responses, trials and hardware 
 ## 4. The build
 
 Work through these steps on your own: **skeleton → trials → responses → data → polish.**
+First decide which way the build runs, and say so in one line:
+
+- **A simple study** (one 3D scene; responses by key, trigger or rating scale; no multi-user,
+  360 media, external application, AI agent, object detection, trackers or custom
+  vizconnect; BIOPAC markers alone do not count against it): build all the steps straight
+  through, with `check.py` after every edit, then one desktop run at the end; fix and run
+  again until it passes. Stop only at handoff.
+- **Anything else**, or whenever the researcher asks for it: a desktop run at the end of
+  every step, and a stop for a headset look after the skeleton.
+
+Then:
 
 - after every edit, run `python <kit>/harness/check.py <script>` and fix every error; read every
   warning against the brief (`W_NO_GAZE_OBJECT` is a question, not noise);
-- at the end of every build step, where the host can run commands, run the experiment in
-  desktop mode: `"C:\Program Files\WorldViz\Vizard8\bin\winviz.exe" <kit>/harness/autopilot.py
+- the desktop run (once at the end of a simple study, at the end of every step otherwise),
+  where the host can run commands: `"C:\Program Files\WorldViz\Vizard8\bin\winviz.exe" <kit>/harness/autopilot.py
   <absolute path to script>`, then read `autopilot-report.json` in the run folder it names
   (`harness/README.md` explains it): `failed` means fix it; `smoke-passed` means it runs but
   the harness had to intervene, say where; `behaviour-verified` means it did what the brief
@@ -128,9 +139,9 @@ Work through these steps on your own: **skeleton → trials → responses → da
   when it sees that file): run `check.py` only, and say in `REVIEW.md` that the run was
   skipped and what it would have checked;
 - stop only for: a decision the brief does not settle, a `failed` verdict you cannot fix in
-  two attempts, or a headset checkpoint. Default checkpoints: after the skeleton (first look
-  at the scene and trial flow) and before handoff. The researcher can ask for one after
-  every step.
+  two attempts, or a headset checkpoint. Checkpoints: before handoff always; after the
+  skeleton (first look at the scene and trial flow) unless the study is simple. The
+  researcher can ask for one after every step.
 
 At each stop write `REVIEW.md`, starting with the kit version from the line at the top of
 this file: what changed, the verdict and interventions, what to look for in the headset, the

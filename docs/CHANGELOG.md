@@ -29,6 +29,11 @@ SightLab 2.9.3, the capabilities register, and the rest of Sado's review.
   drive the GUI); per-script `settings.py` overrides; adding SightLab to an existing script;
   per-trial logging switches, no underscores in participant IDs, `vizinput` on the desktop
   only; ground following and physics; 360 `mediaFormat` values.
+- Build workflow: a simple study (one 3D scene, standard responses, no multi-user, 360,
+  external application, AI agent, detection, trackers or custom vizconnect) is built straight
+  through with one desktop run at the end and no mid-build stop; anything else keeps a run
+  per step and the skeleton checkpoint. A small edit honours a request that already asked for
+  a test; asking uses the host's question tool where there is one, and never twice.
 - Autopilot: run copies also skip keys and credentials (`keys/`, `*api_key*`,
   `*credentials*`, `*.pem`, `*.key`, `*.pfx`, `*.p12`); the report names what it left out and
   adds what needed it to `needs_human`. Harness version 2026.11.8.

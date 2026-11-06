@@ -9,6 +9,7 @@ it if empty): $ARGUMENTS
 2. Find the installed SightLab (`Find the install`) and report its version.
 3. Assemble `brief/<study-name>.md` from `brief/TEMPLATE.md`; ask only the consequential
    questions; mark defaults `(assumed)`.
-4. When design, procedure, responses, trials and hardware are settled, build the skeleton,
-   run `python "${CLAUDE_PLUGIN_ROOT}/skills/sightlab-2/harness/check.py" <script>` on it, and stop at the first
-   headset checkpoint with `REVIEW.md`.
+4. When design, procedure, responses, trials and hardware are settled, build as the skill's
+   section 4 says, running `python "${CLAUDE_PLUGIN_ROOT}/skills/sightlab-2/harness/check.py" <script>` after every edit: a
+   simple study straight through to one desktop run and `REVIEW.md`; anything else step by
+   step, stopping at the skeleton's headset checkpoint with `REVIEW.md`.
