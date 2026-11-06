@@ -16,7 +16,7 @@
    "commands/check.md": "8beef27dc735797f46db18158fec9b21f1b55b615283f31110f3efa7d079b1c2",
    "commands/new.md": "e5e91d8d6a4f025f27b7d9e6a06d110e8600730ab763d2e8375ee3d59b3ebaea",
    "commands/review.md": "0ad2dfe3642d6810bc9c973145953688d590b5537c83c88d67fd79a2c29da8e8",
-   "LICENSE": "9b126851db75943a48cdf93e6ecadf2202dc371b06899aeaf053b07111ac6935",
+   "LICENSE": "ab05f2f85720ff01115d105a3e35425d14e9828837d708e7d6f70485316b8156",
    "README.md": "400ea572156c462df3ec617d1c47cca1bb081d6015a016df28a79c6f2764b252",
    "skills/sightlab-2/api/resources.json": "7d9ce929c338b9a6f4b8296aa3e03e5e4d0e5307304feed86c18a631231625fa",
    "skills/sightlab-2/api/resources.md": "9e23c229df162c14179248461bad4f2975e94b96b99fe68d017f90dadef53b0b",
@@ -89,9 +89,9 @@
    "skills/sightlab-2/SKILL.md": "3e35eb14092838a2714bf6465484d40773524de09d93f6b1f3216393146ee6c1"
   },
   "openai-plugin": {
-   ".codex-plugin/plugin.json": "4c8a964a889f69584bdc99b79a68b9ba7ebfa7dcad49695bb675d45368763884",
+   ".codex-plugin/plugin.json": "96f30799d483441836d8861ffd52408bff9eca08bfeaec35e92ddb50d6cdd19e",
    "assets/gpt-icon.png": "79d27be6b5978e3498fcb38d051385f1ef9b6cbe8333a84cb679031169d049b1",
-   "LICENSE": "9b126851db75943a48cdf93e6ecadf2202dc371b06899aeaf053b07111ac6935",
+   "LICENSE": "ab05f2f85720ff01115d105a3e35425d14e9828837d708e7d6f70485316b8156",
    "README.md": "87346ab4792530e7277ba7a585bf5bce1084b4fa9306db4b7aa3bec6b4f87a50",
    "skills/sightlab-2/agents/openai.yaml": "ea670b6de27755e92ed44a64e10d1504f131500a6b34d51bbb6c46ac9826fece",
    "skills/sightlab-2/api/resources.json": "7d9ce929c338b9a6f4b8296aa3e03e5e4d0e5307304feed86c18a631231625fa",

@@ -27,7 +27,7 @@ resubmission. Listing is for discovery; our users can install from the marketpla
 | Plugin path | `dist/claude-plugin` |
 | Branch or tag | `main` (every release lands there; a tag would need changing per release) |
 | Listing name, description | read from `plugin.json` (`sightlab`, "Build, check and test WorldViz SightLab (Vizard) experiments from a research brief. Carries one skill per SightLab generation; SightLab 2 today.") and the plugin's `README.md` |
-| Data handling | reads no personal data; stores nothing; sends nothing to any service; keeps nothing; not for under-18s |
+| Data handling | reads no personal data; sends nothing to WorldViz and runs no service; the optional local test writes reports, screenshots and a copy of the experiment under `.autopilot/` (last five kept); experiments it runs may use the devices and services they are set up for; not for under-18s |
 | Compliance | contact email (support@ or Andy), four acknowledgements |
 | New versions | GitHub push webhook (needs repo admin to install) or scheduled check |
 | Auto-publish | on, once the reviewer allows it |

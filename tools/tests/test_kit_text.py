@@ -133,6 +133,16 @@ def test_kit_answers_how_to_create_a_first_experiment(kit: Path):
     assert "How do I create my first SightLab experiment?" in (skill / "evals" / "README.md").read_text(encoding="utf-8")
 
 
+def test_network_claims_are_qualified(kit: Path):
+    """2026.11.8 review: the utilities run the researcher's experiment, which may talk to BIOPAC or an API;
+    the public text says what the kit itself does not do, and that experiments may communicate."""
+    listing = (kit / "templates" / "openai-plugin" / ".codex-plugin" / "plugin.json").read_text(encoding="utf-8")
+    assert "sends nothing over the network" not in listing and "may communicate" in listing
+    for wrapper in ("claude-plugin", "openai-plugin"):
+        lic = (kit / "templates" / wrapper / "LICENSE").read_text(encoding="utf-8")
+        assert "or to anyone else" not in lic and "may communicate" in lic, wrapper
+
+
 def test_simple_studies_build_straight_through(kit: Path):
     """2026.11.8 (evals): a simple study gets one desktop run at the end and no mid-build stop;
     anything else keeps a run per step and the skeleton checkpoint."""
