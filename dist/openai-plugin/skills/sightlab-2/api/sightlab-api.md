@@ -1,6 +1,6 @@
-# SightLab 2 API map (sightlab_utils 2.8.21)
+# SightLab 2 API map (sightlab_utils 2.9.3)
 
-Generated 2026-10-31T06:22Z by `tools/gen_api_map.py`. Do not edit; regenerate.
+Generated 2026-11-05T23:53Z by `tools/gen_api_map.py`. Do not edit; regenerate.
 Signatures are what the installed package exposes; docstrings are the first paragraph only.
 
 ## class SightLab

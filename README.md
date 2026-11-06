@@ -6,6 +6,10 @@ SightLab generation: `sightlab-2` today, for SightLab 2 (the Python eye-tracking
 that runs inside Vizard on Windows); a SightLab 3 skill will sit beside it. This repository is also the
 marketplace those tools install from, so one `git tag` is a release.
 
+**Preview.** Installing from this GitHub repository (the Claude Code, claude.ai and Codex
+rows below) is a preview until WorldViz announces its general release; the ChatGPT directory
+listing is the reviewed release.
+
 Step-by-step install with screenshots for the Claude and Codex desktop apps: [docs/install.md](docs/install.md).
 
 | Where you work | Install once | Updates |
@@ -32,7 +36,8 @@ SightLab 2 and Vizard 8 they also check and run them.
    gets the edit and the static check. A new study or a run-time bug gets the full workflow.
 2. **Builds from a brief** (yours, a paper, or a Fit Check brief) in steps: skeleton, trials,
    responses, data, polish, with `check.py` after every edit.
-3. **Runs the experiment itself** at the end of each build step: `autopilot.py` launches
+3. **Runs the experiment itself**, once at the end for a simple study and after each build
+   step otherwise: `autopilot.py` launches
    Vizard in desktop mode, drives the prompts, ratings and gaze targets like a participant,
    and writes `autopilot-report.json` with a verdict (`failed`, `smoke-passed`,
    `behaviour-verified`), every intervention it had to make, and the data files. It says what
@@ -70,7 +75,7 @@ claude plugin validate ./dist/claude-plugin && claude plugin validate .
 ```
 
 `docs/releases.md` has the release steps. Versions are dated (`2026.11.1`). The kit is
-generated from `sightlab_utils` 2.8.21; `check.py --sightlab-utils <dir>` reads the installed
+generated from `sightlab_utils` 2.9.3; `check.py --sightlab-utils <dir>` reads the installed
 version instead, so a newer SightLab is checked against its own API.
 
 ## License

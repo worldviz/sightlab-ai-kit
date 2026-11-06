@@ -8236,17 +8236,19 @@ class SightLab:
                 if vizconnectconfig is not None and isinstance(vizconnectconfig, dict):
                     self.vizconnectPath = self.vizconnectDict[self.vizconnectConfig]
                 else:
-                    self.vizconnectPath = os.path.join(os.path.dirname(__file__),'vizconnect_configs/{}').format(self.vizconnectDict[self.vizconnectConfigList[self.vizconnectChoice]])
+                    # Separate join args: an absolute path in VIZCONNECT_DICT (e.g. 'D:/configs/x.py') overrides
+                    # the vizconnect_configs folder; a plain filename still resolves inside it.
+                    self.vizconnectPath = os.path.join(os.path.dirname(__file__), 'vizconnect_configs', self.vizconnectDict[self.vizconnectConfigList[self.vizconnectChoice]])
             else:
                 if hardwareconfig in self.vizconnectDict:
                     self.vizconnectConfig = hardwareconfig
-                    self.vizconnectPath = os.path.join(os.path.dirname(__file__),'vizconnect_configs/{}').format(self.vizconnectDict[hardwareconfig])
+                    self.vizconnectPath = os.path.join(os.path.dirname(__file__), 'vizconnect_configs', self.vizconnectDict[hardwareconfig])
                 else:
                     vizinput.message("Hardware config not found")
                     viz.quit()
             
         if firstlaunch:
-            vizconnect.go(os.path.join(os.path.dirname(__file__),'vizconnect_configs/{}').format(VIZCONNECT_DICT["Desktop"]))
+            vizconnect.go(os.path.join(os.path.dirname(__file__), 'vizconnect_configs', VIZCONNECT_DICT["Desktop"]))
             VIZCONNECT_CONFIG = "Desktop"
         else:
             vizconnect.go(self.vizconnectPath)

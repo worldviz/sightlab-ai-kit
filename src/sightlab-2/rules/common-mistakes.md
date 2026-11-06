@@ -17,6 +17,8 @@ it prints.
 | `startTrial` and `endTrial` counts differ | trials never save, or save twice | pair them in one generator | `W_UNPAIRED_TRIAL` |
 | Forgetting `yield` on `startTrial`/`endTrial` | the generator object is created and dropped; nothing happens | `yield sightlab.startTrial(...)` | (not static; the harness sees zero trials) |
 | `vizshape` objects invisible or black | no light in the scene | `sl.SightLab(..., headlight=True)` and `import vizshape` | — |
+| `addCustomTrialDataColumn(...)`, as some documentation pages write it | not a method in 2.9.3; the script crashes | delete it: there is no declare step; `sightlab.setCustomTrialData(value, 'Column Name')` writes the value for the current frame (call it each frame for a continuous value such as heart rate); one value per trial is `setExperimentSummaryData` | `E_UNKNOWN_METHOD` |
+| `setEnvironment(env, trial=n)` to give trial n its own 3D scene | `trial=` is ignored for 3D models; the last call wins for every trial | load every scene and switch with `visible()` (`rules/environments-and-resources.md`) | — |
 | `sl.Sightlab(...)` | wrong case; the class is `SightLab` | `sl.SightLab(...)` | `E_SYNTAX`-adjacent: Python raises AttributeError |
 | Writing gaze detection by hand | duplicates and fights the built-in events | subscribe to `sightlab.GAZE_TIME_EVENT` and friends | — |
 | Calling `setEnvironment` with `gui=True` | overrides what the researcher chose in the GUI | leave it to the GUI, or go `gui=False` | — |

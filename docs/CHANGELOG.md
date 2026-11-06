@@ -3,6 +3,44 @@
 Entries before 2026.11.1 cite `docs/audits/`, `docs/plans/` and `tools/fetch_sources.sh`,
 which live in the team's internal repository, not here.
 
+## 2026.11.8 (2026-11-05)
+
+SightLab 2.9.3, the capabilities register, and the rest of Sado's review.
+
+- Capabilities register: `register/cannot.md` is replaced by
+  `register/capabilities-and-custom-development.md`, which guides custom work instead of
+  gating it; SKILL section 1 and `/sightlab:new` point to it. "Which SightLab" defaults to
+  SightLab 2, says so in one line, and no longer treats a bare `import sightlab` as proof of
+  SightLab 3.
+- SightLab 2.9.3: API map regenerated from the installed `sightlab_utils` 2.9.3 (no public API
+  change since 2.8.21); `reference/sightlab.py` and `replay.py` from 2.9.3; examples index
+  from the current `ExampleScripts` (four entries gained scripts). The resource list was
+  checked against the shipped `sightlab_resources` (unchanged) and now says more can come from
+  the WorldViz Asset Browser.
+- New guides: `hardware.md` (exact configuration names, which configurations write pupil
+  data, controller events, custom vizconnect files), `inspector.md`, `object-detection.md`,
+  `multi-user.md`; the Group Heatmap Replay section of `replay.md` follows the current example.
+- Corrections found against the 2.9.3 source: `addRegionOfInterest()` records nothing (region
+  nodes are registered with `addSceneObject(..., gaze=True)`); `setEnvironment(trial=)` is
+  ignored for 3D models; time to first fixation is `-1` for objects never looked at; the
+  start-point node is `SIGHTLAB_START_POINT`; `addCustomTrialDataColumn` does not exist.
+- Rules: the projects folder and "how do I create my first experiment?" (BlankProject,
+  SampleProject; GUI only, code, or both; code stays the agent's default and computer use can
+  drive the GUI); per-script `settings.py` overrides; adding SightLab to an existing script;
+  per-trial logging switches, no underscores in participant IDs, `vizinput` on the desktop
+  only; ground following and physics; 360 `mediaFormat` values.
+- Build workflow: a simple study (one 3D scene, standard responses, no multi-user, 360,
+  external application, AI agent, detection, trackers or custom vizconnect) is built straight
+  through with one desktop run at the end and no mid-build stop; anything else keeps a run
+  per step and the skeleton checkpoint. A small edit honours a request that already asked for
+  a test; asking uses the host's question tool where there is one, and never twice.
+- Autopilot: run copies also skip keys and credentials (`keys/`, `*api_key*`,
+  `*credentials*`, `*.pem`, `*.key`, `*.pfx`, `*.p12`); the report names what it left out and
+  adds what needed it to `needs_human`. Harness version 2026.11.8.
+- The GitHub distribution is marked as a preview in the READMEs and the install guide.
+- Tests: the first-experiment answer, register references, the key exclusions; the
+  scoreboard test reads UTF-8 so it passes on Windows.
+
 ## 2026.11.7 (2026-11-05)
 
 Claude manifest only: `displayName` "SightLab AI Kit" and the repository, documentation,

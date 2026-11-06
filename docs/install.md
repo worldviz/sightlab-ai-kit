@@ -1,5 +1,8 @@
 # Installing the SightLab AI Kit
 
+> **Preview.** The kit installed from GitHub, as described here, is a preview until WorldViz
+> announces its general release.
+
 The SightLab AI Kit teaches your AI assistant how SightLab works, so it can answer SightLab
 questions, write and fix SightLab scripts, and, on a PC with SightLab and Vizard installed,
 check and run your experiment for you. You install it once in the AI app you already use. It

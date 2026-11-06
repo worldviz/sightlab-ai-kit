@@ -29,8 +29,8 @@ Manifest facts (from `.codex-plugin/plugin.json`, carried over from 0.80.6 and r
 | `name` | `gpt-8fac8a955f2dc675005d97a73ee481f2` | the listing's stable id; do not change it |
 | `version` | `2026.11.1` | explicit, raised per release |
 | `interface.displayName` | SightLab VR Assistant | ≤ 30 |
-| `interface.shortDescription` | Build SightLab VR experiments | ≤ 30 |
-| `interface.longDescription` | from 0.80.6 | ≤ 4000; **revise**: it still says the plugin only provides instructions and reference files, and the kit now includes the harness |
+| `interface.shortDescription` | Build SightLab 2 experiments (28 characters, since 2026.11.6) | ≤ 30 |
+| `interface.longDescription` | rewritten in 2026.11.6: building and troubleshooting scripts, the optional local checks and Vizard runs | ≤ 4000 |
 | `interface.developerName` | Worldviz | ≤ 80 |
 | `interface.category` | Developer Tools | from the dashboard's list |
 | `interface.capabilities` | `["skills"]` | Codex, ≤ 20 |
@@ -42,7 +42,7 @@ Skills-only plugins need no review test cases and no demo recording. No MCP serv
 hooks (lifecycle hooks are not eligible for the directory), no `.app.json`.
 
 `skills/sightlab-2/agents/openai.yaml` (Codex UI metadata; `skills/instructions/` until 2026.11.2) carried a truncated
-`short_description` from 0.80.6; it is fixed in this build ("Build SightLab VR experiments").
+`short_description` from 0.80.6; it now matches the manifest ("Build SightLab 2 experiments").
 
 ## What the reviewer will read
 

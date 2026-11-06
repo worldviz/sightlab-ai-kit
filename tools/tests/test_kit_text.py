@@ -6,7 +6,7 @@ def test_skill_has_request_sizing_section(kit: Path):
     text = (kit / "src" / "sightlab-2" / "SKILL.md").read_text(encoding="utf-8")
     assert "## 0. Size the request" in text
     assert "small edit" in text and "No brief" in text
-    assert text.index("## 0. Size the request") < text.index("## 1. Scope guard")
+    assert text.index("## 0. Size the request") < text.index("## 1. Capabilities and custom development")
 
 
 def test_skill_defines_kit_folder_and_absolute_script_path(kit: Path):
@@ -68,23 +68,24 @@ def test_readme_tells_2026_11_2_installs_to_reinstall(kit: Path):
 
 
 def test_skill_routes_between_generations_first(kit: Path):
-    """Both generations will be installed side by side for a year; the import line is the signal."""
+    """Both generations will be installed side by side for a year. Default to SightLab 2;
+    `sightlab_utils` is the SightLab 2 signal, and a bare `import sightlab` or class name does not prove 3."""
     text = (kit / "src" / "sightlab-2" / "SKILL.md").read_text(encoding="utf-8")
     i = text.index("## Which SightLab")
     assert i < text.index("<!-- host-section -->") < text.index("## 0. Size the request")
     section = text[i:text.index("<!-- host-section -->")]
-    for signal in ("sightlab_utils", ".oep.json", ".oep-project.json", "from sightlab import", "_sightlab_version.py", "Assume SightLab 2", "`sightlab-3`", "not covered"):
+    for signal in ("sightlab_utils", "Default to SightLab 2", "`import sightlab`", "class name", "SightLab 3 skill", "coverage gap",
+                   "register/capabilities-and-custom-development.md"):
         assert signal in section, signal
-    assert "class named `SightLab`" in section
 
 
 def test_routing_decides_in_chat_and_defers_sizing(kit: Path):
-    """Review #2: a chat host has no files, so an explicit statement or a pasted script decides; ask once otherwise."""
+    """Review #2: a chat host has no files, so an explicit statement decides; ask only when it materially matters."""
     import host_sections
     text = (kit / "src" / "sightlab-2" / "SKILL.md").read_text(encoding="utf-8")
     section = text[text.index("## Which SightLab"):text.index("<!-- host-section -->")]
-    assert "3. **What the researcher says" in section and "pasted" in section
-    assert "`import sightlab`" in section and "vocabulary" in section
+    assert "explicitly stated version" in section and "materially changes the answer" in section
+    assert "`import sightlab`" in section
     assert "Do not guess from the wording" not in section
     for wrapper, host in host_sections.HOST["sightlab-2"].items():
         assert "then size the request" in host and "Size the request first" not in host, wrapper
@@ -121,12 +122,57 @@ def test_license_defers_to_the_approved_assistant_terms(kit: Path):
     assert "WorldViz LLC" not in (kit / "README.md").read_text(encoding="utf-8")
 
 
+def test_kit_answers_how_to_create_a_first_experiment(kit: Path):
+    """Validation question (Sado's list, item 2): the intended workflow starts from the installed projects folder."""
+    skill = kit / "src" / "sightlab-2"
+    rules = (skill / "rules" / "gui-vs-code.md").read_text(encoding="utf-8")
+    for must in ("Documents\\Sightlab2\\Projects", "BlankProject", "SampleProject", "SightLab_VR.py",
+                 "SightLabVR_NonGUI.py", "first experiment", "GUI only", "**Code:**", "**Both:**", "writes code by default", "computer use"):
+        assert must in rules, must
+    assert "never operates" not in rules  # computer use can drive the GUI; code is the default, not the limit
+    assert "How do I create my first SightLab experiment?" in (skill / "evals" / "README.md").read_text(encoding="utf-8")
+
+
+def test_network_claims_are_qualified(kit: Path):
+    """2026.11.8 review: the utilities run the researcher's experiment, which may talk to BIOPAC or an API;
+    the public text says what the kit itself does not do, and that experiments may communicate."""
+    listing = (kit / "templates" / "openai-plugin" / ".codex-plugin" / "plugin.json").read_text(encoding="utf-8")
+    assert "sends nothing over the network" not in listing and "may communicate" in listing
+    for wrapper in ("claude-plugin", "openai-plugin"):
+        lic = (kit / "templates" / wrapper / "LICENSE").read_text(encoding="utf-8")
+        assert "or to anyone else" not in lic and "may communicate" in lic, wrapper
+
+
+def test_simple_studies_build_straight_through(kit: Path):
+    """2026.11.8 (evals): a simple study gets one desktop run at the end and no mid-build stop;
+    anything else keeps a run per step and the skeleton checkpoint."""
+    text = (kit / "src" / "sightlab-2" / "SKILL.md").read_text(encoding="utf-8")
+    build = text[text.index("## 4. The build"):text.index("At each stop")]
+    assert "**A simple study**" in build and "one desktop run at the end" in build and "Stop only at handoff" in build
+    assert "**Anything else**" in build and "after the skeleton" in build
+    assert "unless the study is simple" in build
+    review = text[text.index("At each stop write"):][:400]
+    assert "which way the build ran" in review  # eval rerun: the chat line was skipped, so REVIEW.md records it
+
+
+def test_register_references_resolve(kit: Path):
+    """The capabilities register replaced cannot.md; every `register/<file>` the skill or a command names must ship."""
+    import re
+    skill = kit / "src" / "sightlab-2"
+    sources = [skill / "SKILL.md"] + list((kit / "templates").rglob("commands/*.md"))
+    named = {m for p in sources for m in re.findall(r"register/[\w.-]+\.md", p.read_text(encoding="utf-8"))}
+    assert "register/capabilities-and-custom-development.md" in named
+    for ref in named:
+        assert (skill / ref).is_file(), ref
+    assert not (skill / "register" / "cannot.md").exists()
+
+
 def test_skill_assumes_sightlab_2_when_nothing_decides(kit: Path):
     """Customers run SightLab 2 today; asking every undecided request which generation is friction (Sado)."""
     text = (kit / "src" / "sightlab-2" / "SKILL.md").read_text(encoding="utf-8")
     section = text[text.index("## Which SightLab"):text.index("<!-- host-section -->")]
-    assert "Assume SightLab 2" in section and "Ask once" not in section
-    assert "say so" in section  # the assumption is stated, so a SightLab 3 user can correct it
+    assert "Default to SightLab 2" in section and "Ask once" not in section
+    assert "assuming SightLab 2" in section  # the assumption is stated, so a SightLab 3 user can correct it
 
 
 def test_autopilot_ask_is_a_chat_question_and_skipped_when_the_run_was_requested(kit: Path):
@@ -137,6 +183,9 @@ def test_autopilot_ask_is_a_chat_question_and_skipped_when_the_run_was_requested
     build = text[text.index("## 4. The build"):]
     assert "already asks for a run or a test" in build and "plain chat question" in build
     assert "approval dialog" in build or "approval button" in build
+    assert "question tool" in build and "Never ask twice" in build  # 2026.11.8 review: use the host's tool when it has one
+    sizing = text[text.index("## 0. Size the request"):text.index("## 1.")]
+    assert "already asked for a test" in sizing  # a small edit honours "fix it and test it" too
     for path in (kit / "tools" / "host_sections.py", kit / "templates" / "claude-plugin" / "commands" / "check.md",
                  kit / "templates" / "claude-plugin" / "README.md", kit / "templates" / "openai-plugin" / "README.md", kit / "README.md"):
         t = path.read_text(encoding="utf-8")

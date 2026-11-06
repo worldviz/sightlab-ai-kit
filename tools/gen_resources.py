@@ -82,7 +82,9 @@ def _md(res: dict) -> str:
         "`vizfx.addChild('sightlab_resources/objects/<name>')`. Use the spelling shown here: the shipped",
         "files are found through the Windows file system, which forgives case, but the GUI lists and any",
         "case-sensitive copy of the resources do not.",
-        "A file not listed here does not ship; use a primitive or the researcher's own model instead.",
+        "A file not listed here does not ship with the installer. Researchers can add more from the WorldViz",
+        "Asset Browser or online downloads, so look in their `sightlab_resources` and project `Resources/`",
+        "before using such a name (`check.py` still warns about it); otherwise use a primitive or their own model.",
         "",
     ]
     sizes = res.get("sizes")

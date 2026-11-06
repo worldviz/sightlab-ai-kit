@@ -9,7 +9,8 @@ from pathlib import Path
 import pytest
 
 from autopilot_core import (COUNTED_KINDS, HARNESS_VERSION, NEEDS_HUMAN, compute_verdict, demo_mode,
-                            evaluate_assertions, finish, load_assertions, new_report, prepare_run_dir, record)
+                            evaluate_assertions, finish, load_assertions, new_report, prepare_run_dir, record,
+                            skipped_secrets)
 
 REPORT_KEYS = {
     "verdict", "launched", "demo_mode", "sightlab_version", "vizard", "trials_expected", "trials_completed",
@@ -62,6 +63,24 @@ def test_prepare_run_dir_skips_git_env_and_skill_folders(tmp_path):
     run = Path(prepare_run_dir(str(exp / "study.py")))
     assert (run / "study.py").is_file() and (run / "sightlab_configs" / "a.stlb").is_file()
     for gone in (".git", ".env", ".env.local", ".venv", ".claude", ".codex", "node_modules"):
+        assert not (run / gone).exists(), gone
+
+
+def test_prepare_run_dir_skips_keys_and_credentials(tmp_path):
+    """SightLab's AI examples keep API keys in keys/; a run copy must not carry them, and the report must name them."""
+    exp = tmp_path / "Study"
+    (exp / "keys").mkdir(parents=True)
+    (exp / "keys" / "openai_api_key.txt").write_text("sk-1")
+    (exp / "certs").mkdir()
+    (exp / "certs" / "server.pem").write_text("pem")
+    (exp / "gemini_api_key.txt").write_text("g-1")
+    (exp / "credentials.json").write_text("{}")
+    (exp / "answer_key.txt").write_text("A,B,C")  # stimulus material, not a secret: must still be copied
+    (exp / "study.py").write_text("x")
+    assert skipped_secrets(str(exp)) == ["certs/server.pem", "credentials.json", "gemini_api_key.txt", "keys"]
+    run = Path(prepare_run_dir(str(exp / "study.py")))
+    assert (run / "study.py").is_file() and (run / "answer_key.txt").is_file() and (run / "certs").is_dir()
+    for gone in ("keys", "gemini_api_key.txt", "credentials.json", "certs/server.pem"):
         assert not (run / gone).exists(), gone
 
 

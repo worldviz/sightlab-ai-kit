@@ -36,7 +36,11 @@ What one run does, in order:
    `<experiment folder>/.autopilot/runs/<timestamp>/` and keeps the last five runs. Nothing
    outside that `.autopilot/` folder is written to, and the experiment's own `data/` is never
    touched. `.git`, `.env` files, virtualenvs, `node_modules` and project-local agent folders
-   (`.claude`, `.codex`, `.agents`) are not copied either. A folder with more than 5000 files or 500 MB is refused (move the experiment
+   (`.claude`, `.codex`, `.agents`) are not copied either, nor are keys and credentials: a
+   `keys/` folder (where SightLab's AI examples keep API keys), `*api_key*`, `*credentials*`,
+   `*.pem`, `*.key`, `*.pfx`, `*.p12`. The report's `notes` names what was left out, and
+   `needs_human` adds that anything needing those keys (an AI agent, a web API) was not
+   tested. A folder with more than 5000 files or 500 MB is refused (move the experiment
    into its own folder).
 2. Writes a provisional `autopilot-report.json` (`failed`, not launched) so a dead Vizard
    still leaves a record.

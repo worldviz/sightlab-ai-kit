@@ -24,7 +24,8 @@ In Codex on a PC with SightLab 2 and Vizard 8 installed, the skill may run
 launches Vizard on that PC for about a minute and writes `.autopilot/` beside the script. It
 says what the run will check and, unless you asked for the run, asks once per session before
 the first launch; it never launches when a file named `NO_AUTOPILOT` is in the project folder.
-A run copies the experiment folder (never its `data/`, `.git`, `.env` files or virtualenvs) to
+A run copies the experiment folder (never its `data/`, `.git`, `.env` files, virtualenvs, API
+keys or credential files) to
 `.autopilot/runs/<timestamp>/`, writes its report and screenshots there, and keeps the last five. The plugin itself sends nothing anywhere and fetches nothing from the network; the
 experiment scripts it runs and the installed SightLab and Vizard applications have their
 own network behaviour, which this notice does not describe. In

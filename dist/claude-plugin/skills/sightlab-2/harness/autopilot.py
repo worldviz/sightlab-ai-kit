@@ -20,7 +20,7 @@ import traceback
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from autopilot_core import (MarkerSink, RunDirTooLarge, autopilot_blocked, cap_trialcount, decide, demo_mode, finish, load_assertions,  # noqa: E402
-                            new_report, pop_prompt, prepare_run_dir, push_prompt, record,
+                            new_report, pop_prompt, prepare_run_dir, push_prompt, record, skipped_secrets,
                             should_count_trial_end, write_report,
                             gaze_euler, perform_key_continue, perform_rating_select, pick_look_target, rating_options,
                             register_wait, within_reach)
@@ -55,6 +55,10 @@ except RunDirTooLarge as e:
     os._exit(1)
 copied = os.path.join(run_dir, os.path.basename(script))
 report = new_report(script, run_dir)
+secrets = skipped_secrets(os.path.dirname(script))
+if secrets:
+    report["notes"].append("not copied into the run (keys and credentials): %s" % ", ".join(secrets[:10]))
+    report["needs_human"].append("anything that needs the uncopied keys or credentials (AI agent, web API calls)")
 write_report(report, run_dir)  # provisional: if Vizard dies, the folder still says "failed, not launched"
 assertions_path = args.assertions or os.path.join(os.path.dirname(script), "autopilot-assertions.json")
 try:

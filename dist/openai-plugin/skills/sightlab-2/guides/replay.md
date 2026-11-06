@@ -45,9 +45,31 @@ Any JSON-able value works (visibility, position, a condition name).
 
 ## Group heatmaps
 
-`examples/Group_Heatmap_Replay` merges several sessions of the same scene (different
-participants, or one participant across sessions) into one `_GROUP` session and replays
-the combined heatmap, with a per-client filter. Originals are read, never changed.
+`examples/Group_Heatmap_Replay` shows where people looked across many recordings of the
+same scene: different participants, or one participant over several trials and sessions.
+It works for 3D environments and 360 media.
+
+1. `merge_sessions.py`: pick the project's data folder (the one holding the
+   `<date>_experiment_data` folders, not the example's own `data`). Every scene recorded at
+   least `MIN_RECORDINGS` times (default 2) becomes one trial of a new session ending in
+   `_GROUP`, in the example's `data` folder. Each recording becomes a client, resampled onto
+   a shared `RESAMPLE_HZ` (60 Hz) timeline from the trial start; the longest recording
+   drives the scene.
+2. `group_heatmap_replay.py`: pick the `_GROUP` session. One heatmap adds up everyone's
+   gaze; the Client ID list shows one participant alone. Normal sessions also play here.
+
+`group_heatmap_config.py`: `SOURCE_DATA_FOLDER`, `GROUP_NAME` (no underscores),
+`TRIAL_NUMBERS` and `TRIAL_LABELS` (merge only those trials or conditions),
+`MIN_RECORDINGS`, `MIN_DURATION` (skip short or aborted runs), `HEATMAP_NORMALIZATION`
+(`'mean'` dwell per recording, to compare groups of different sizes, or `'sum'`),
+`HIDE_PARTICIPANT_OVERLAYS`, and `HEATMAP_START_TIME` with `HEATMAP_END_TIME` to limit it
+to a time window (for 360 video, in video time).
+
+- Originals are only read. `group_manifest.csv` in each merged session lists which
+  recording each client came from; every merge is a new session, so delete old ones.
+- Merged sessions point at the project's environment and media files: moving or renaming
+  the project means merging again.
+- It suits studies where everyone saw the same content, since one recording drives the scene.
 
 ## Gotchas
 
@@ -57,7 +79,7 @@ the combined heatmap, with a per-client filter. Originals are read, never change
   `addSceneObject`.
 - The replay uses the same environment file; a researcher's own model must stay where the
   script found it.
-- Replay cannot be driven by the autopilot; it is a human tool.
+- Replay cannot be driven by the autopilot; a person runs it, or an agent with computer use.
 
 ## Shipped examples
 

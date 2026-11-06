@@ -18,6 +18,15 @@ Each folder has:
 - `autopilot-assertions.json`: what the harness checks in the data files and the report;
 - `acceptance.md`: what a pass means, what a person still checks, and the known hard parts.
 
+## Question checks
+
+Questions, not builds: ask each in a fresh session and compare the answer with the expected
+points. `tools/tests/test_kit_text.py` checks that the kit carries each answer.
+
+| Question | The answer must |
+|---|---|
+| How do I create my first SightLab experiment? | name the three routes (GUI only, code, both); for the GUI, copy `Documents\Sightlab2\Projects\BlankProject` and run `SightLab_VR.py`; for code, start from `SightLabVR_NonGUI.py`; point to `SampleProject` as a worked example; build nothing and launch nothing |
+
 ## Running one by hand
 
 1. Copy the starter project to a new folder; copy the eval's `brief.md` into its `brief/`.

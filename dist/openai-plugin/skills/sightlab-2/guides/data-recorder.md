@@ -44,8 +44,9 @@ transcoded copy for the replay, and (2.0) an overlay video with detections and t
 
 - Calibration is per window size and position; the same window must be used for the
   recording, or the gaze mapping is off.
-- Standalone headset apps (Quest) need the headset's mirror on the desktop; the hardware
-  guides list which configurations have real eye tracking and which use the view centre.
+- Standalone headset apps (Quest) need the headset's mirror on the desktop;
+  `guides/hardware.md` says which configurations have real eye tracking and which use the
+  view centre.
 - The 2.0 beta needs extra packages and OBS set up by a person; that is WorldViz support's
   job, not the agent's.
 - BIOPAC synchronisation here uses the same NDT link as a SightLab experiment

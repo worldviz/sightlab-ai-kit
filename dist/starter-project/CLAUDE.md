@@ -12,4 +12,4 @@ This folder holds one SightLab 2 (Vizard) experiment. The SightLab AI kit is the
   edits that change what happens at run time, after saying what it will check. An empty file
   named `NO_AUTOPILOT` in this folder stops it; the harness refuses on its own when it sees one.
 - Experiment data goes to `data/` and test runs to `.autopilot/`; both are git-ignored.
-- Kit version 2026.11.7, generated from sightlab_utils 2.8.21 on 2026-11-05.
+- Kit version 2026.11.8, generated from sightlab_utils 2.9.3 on 2026-11-05.

@@ -35,6 +35,37 @@ writing anything, and say which one the script assumes.
   grab objects, BIOPAC events, repetitions. Look it up in `api/sightlab-api.md` rather than
   guessing a name.
 
+## The projects folder, and "how do I create my first experiment?"
+
+SightLab 2 installs `Documents\Sightlab2\Projects\` with two starting points:
+
+- `BlankProject`: `SightLab_VR.py` (the GUI script: `sl.SightLab()` and the trial loop above),
+  `SightLabVR_NonGUI.py` (the code template: `gui=False`, an environment, a trial count, one
+  gaze and grab object, the space bar starts and ends trials), `SightLabVR_Replay.py`,
+  `SightLab_VR_Server.py` and `SightLab_VR_Client.py` for multi-user, and `Resources/`
+  (`environments`, `media`, `scene_objects`). `sightlab_configs/`, `data/` and `recordings/`
+  appear on the first run.
+- `SampleProject`: the same layout with a worked study and its assets; a guide to how a
+  finished project is organised.
+
+A new user who asks how to create their first experiment hears the three routes and picks:
+
+1. **GUI only, no code:** copy `BlankProject` to a new folder under `Projects` (the Dashboard
+   lists it there), run `SightLab_VR.py`, choose the environment, scene objects and trials in
+   the GUI, and save the configuration. Their own models go in `Resources/environments`.
+2. **Code:** start from `SightLabVR_NonGUI.py` (or the frame in `rules/imports-and-frame.md`)
+   and put the whole study in the script. This is what the agent builds from a brief.
+3. **Both:** the GUI for environment, objects and trials; code added to `SightLab_VR.py`
+   for events, custom data and logic.
+
+When the agent creates something, it writes code by default: it adds code to a GUI
+project's script (`gui=True`) or writes a code project. A GUI-style project from scratch
+follows `BlankProject` and `SampleProject` (the folder layout and `SightLab_VR.py`), and
+either loads a saved config with `configpath=` or leaves the GUI choices to the researcher.
+Where the host gives the agent computer use (control of the screen, mouse and keyboard) and
+the researcher wants the GUI route, the agent can also work in SightLab's windows itself: the
+GUI, Inspector, the Dashboard and Replay.
+
 ## The agent's default
 
 Experiments built by an agent from a brief use `gui=False` with settings in code, because

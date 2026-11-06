@@ -16,7 +16,9 @@ Amendment for the checking and testing utilities. The same permission covers run
 included utilities, harness/check.py and harness/autopilot.py, on your own computer. They
 read your experiment scripts; write reports, screenshots and copies of the experiment folder
 under a .autopilot/ folder beside the script; and launch your installed Vizard in desktop
-mode. They send nothing to WorldViz or to anyone else.
+mode. They send nothing to WorldViz and run no service of their own; an experiment they run,
+and the installed SightLab and Vizard, may communicate with the devices and services that
+experiment is set up to use.
 
 Reference source. The SightLab and Vizard source files under reference/ are made available
 by WorldViz through its authorized distribution channels as reference material for the

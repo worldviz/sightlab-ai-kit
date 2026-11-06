@@ -8,9 +8,14 @@ sightlab.setEnvironment(env)
 ```
 
 - Use `vizfx.addChild`, not `viz.addChild`, so the environment gets SightLab's lighting.
-- `setEnvironment` has per-trial and media forms: `setEnvironment(env, trial=2)` for a
-  different scene in trial 2; `setEnvironment(media, mode=MEDIA_360, mediaType='video')` for
-  360 photos and videos (`examples/360 non GUI`, `patterns/360-media.md` when present).
+- One environment at a time: in 2.9.3 the `trial=` argument of `setEnvironment` does nothing
+  for 3D models, and each call replaces the environment for every trial. For a different
+  scene per trial, load each scene, register it with `addSceneObject`, and switch with
+  `visible(viz.ON)` / `visible(viz.OFF)` between trials (`examples/Swap_Environments`).
+- 360 photos and videos: `setEnvironment(media, mode=MEDIA_360, mediaType='video',
+  mediaFormat='Monoscopic')` (`examples/360 non GUI`). `mediaFormat` defaults to
+  `'Stereoscopic T/B'`; the others are `'Monoscopic'` and `'Stereoscopic L/R'` (180°). A mono
+  file needs `'Monoscopic'`, or it is split as top/bottom stereo.
 - In GUI mode do not call `setEnvironment` at all; the researcher picks it in the GUI.
 
 ## Shipped environments and objects
@@ -40,6 +45,11 @@ resource list; `.OSGB` is a real spelling for one of them):
   `patterns/show-hide-objects-per-trial.md`.
 - Before naming any file, confirm it exists in the installed `sightlab_resources` folder
   (`harness/check.py` warns when a path is not on the resources list).
+- `api/resources.md` lists what the installer ships. Researchers can add more from the
+  WorldViz Asset Browser or online
+  downloads, so a name missing from the list may still be on their PC: look in their
+  `sightlab_resources` and the project's `Resources/` before using it, and say that
+  `check.py`'s warning about it is expected.
 - A researcher's own models: any `.osgb`, `.gltf`/`.glb`, `.fbx` or `.obj` Vizard can load,
   placed in the project folder or a `Resources/` subfolder and referenced by relative path.
 
@@ -68,3 +78,15 @@ resource list; `.OSGB` is a real spelling for one of them):
   `vizshape.addBox(size=(0.25, 0.25, 0.25))`) need `import vizshape` and a lit scene:
   construct with `sl.SightLab(..., headlight=True)`.
 - Colour a node with `node.color(viz.BLUE)`; position it with `node.setPosition([x, y, z])`.
+
+## Walking on the ground, and physics
+
+- Ground following (go up and down ramps, fall off edges):
+  `from sightlab_utils import collision`, then `c = collision.Collision()` after `startTrial`
+  (it needs the vizconnect avatar); `c.setHeavyUpdateType('timer', 0.1)` if the frame rate drops. In cluttered outdoor
+  scenes that lift the participant onto rocks or trunks, set `c._faller.FALL_EDGE_BUFFER = 0.0`
+  and `c._faller.STEP_HEIGHT = 0.1` (`examples/Collision`).
+- Physics: `viz.phys.enable()` at the top of the script, then a collision shape on every node
+  that takes part (`env.collidePlane()`, `ball.collideSphere()`, `collideBox()`,
+  `collideMesh()`); grabbable physics objects are still registered with
+  `addSceneObject(..., grab=True)` (`examples/Physics`).
