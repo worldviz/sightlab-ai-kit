@@ -198,7 +198,7 @@ Write BIOPAC in capitals.
 | a shipped example to learn from or copy | `examples/index.md`, then the script in the researcher's `ExampleScripts/` or `examples/curated/` here |
 | whether an environment, object or media file ships, and its exact name | `api/resources.md` (never guess a file name) |
 | capability constraints, platform alternatives and custom integrations | `register/capabilities-and-custom-development.md` |
-| a topic in depth (instructions, hardware configurations, Inspector scene editing, multi-user, object detection, replay, dashboard, virtual screen, driving, external apps, AI agents, analysis) | `guides/index.md`, then the guide it names |
+| a topic in depth (a first project in the GUI, instructions, hardware configurations, Inspector scene editing, multi-user, object detection, 360 moving regions, E-Learning Lab, replay, dashboard, virtual screen, driving, external apps, AI agents, analysis) | `guides/index.md`, then the guide it names |
 | what SightLab or Vizard actually does when the rules and the API map are silent (what a prompt does to the scene, what an event carries, what a method does with its argument) | `reference/sightlab.py`, `reference/viz.py`, `reference/replay.py` (`reference/README.md`); on an installed machine the installed copies first |
 
 Do not paste large parts of the reference files or the source into your answers; cite the

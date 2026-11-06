@@ -24,7 +24,9 @@ writing anything, and say which one the script assumes.
   ```
 - Instructions before the trials: `yield sightlab.showInstructions('text')`.
 - A saved GUI config can be loaded without the windows: `sl.SightLab(configpath='sightlab_configs/MyStudy.stlb')`.
-  This is also how an automated test runs a GUI-built study.
+  This is also how an automated test runs a GUI-built study. In 2.9.3 it loads only when
+  `sightlab_configs/recent_config.stlb` also exists and is not empty (press **Continue** in the
+  GUI once); otherwise SightLab prints "No config file found" and loads nothing.
 
 ## Rules for code mode (`gui=False`)
 
@@ -43,16 +45,19 @@ SightLab 2 installs `Documents\Sightlab2\Projects\` with two starting points:
   `SightLabVR_NonGUI.py` (the code template: `gui=False`, an environment, a trial count, one
   gaze and grab object, the space bar starts and ends trials), `SightLabVR_Replay.py`,
   `SightLab_VR_Server.py` and `SightLab_VR_Client.py` for multi-user, and `Resources/`
-  (`environments`, `media`, `scene_objects`). `sightlab_configs/`, `data/` and `recordings/`
-  appear on the first run.
+  (`environments`, `media`, `scene_objects`) and `sightlab_configs/`. `data/` appears on the
+  first run; `recordings/` only with Screen Record or a screenshot.
 - `SampleProject`: the same layout with a worked study and its assets; a guide to how a
   finished project is organised.
 
 A new user who asks how to create their first experiment hears the three routes and picks:
 
-1. **GUI only, no code:** copy `BlankProject` to a new folder under `Projects` (the Dashboard
-   lists it there), run `SightLab_VR.py`, choose the environment, scene objects and trials in
-   the GUI, and save the configuration. Their own models go in `Resources/environments`.
+1. **GUI only, no code:** in the Dashboard, **Projects**, **New Project +**: it copies
+   `BlankProject` and renames the scripts after the project (`SightLab_VR.py` becomes
+   `<Name>.py`, likewise `<Name>_NonGUI.py`, `<Name>_Replay.py`). Without the Dashboard, copy
+   `BlankProject` under `Projects` by hand; `SightLab_VR.py` keeps its name. Run the GUI script,
+   choose the environment, scene objects and trials, and save the project. Their own models go
+   in `Resources/environments`. Step by step: `guides/first-project.md`.
 2. **Code:** start from `SightLabVR_NonGUI.py` (or the frame in `rules/imports-and-frame.md`)
    and put the whole study in the script. This is what the agent builds from a brief.
 3. **Both:** the GUI for environment, objects and trials; code added to `SightLab_VR.py`

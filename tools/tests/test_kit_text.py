@@ -149,6 +149,17 @@ def test_host_sections_decide_from_tools_not_product_names(kit: Path):
     assert "without its harness" in hosts["chat-bundle"]  # the bundle really has no check.py; say why, not "a chat"
 
 
+def test_guides_index_lists_every_guide(kit: Path):
+    """Every guide file is listed in guides/index.md, and every listed guide exists (2026.11.10: four new or rewritten)."""
+    import re
+    guides = kit / "src" / "sightlab-2" / "guides"
+    listed = set(re.findall(r"^\| `([\w.-]+\.md)` \|", (guides / "index.md").read_text(encoding="utf-8"), re.M))
+    files = {p.name for p in guides.glob("*.md")} - {"index.md"}
+    assert listed == files, (sorted(files - listed), sorted(listed - files))
+    for g in ("first-project.md", "360-moving-regions.md", "e-learning-lab.md", "data-recorder.md"):
+        assert g in files, g
+
+
 def test_network_claims_are_qualified(kit: Path):
     """2026.11.8 review: the utilities run the researcher's experiment, which may talk to BIOPAC or an API;
     the public text says what the kit itself does not do, and that experiments may communicate."""

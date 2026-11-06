@@ -15,6 +15,16 @@ which live in the team's internal repository, not here.
   bundle says why it cannot run the checks: it carries no harness.
 - Simple studies: a failed desktop run is fixed and rerun up to two attempts, matching the
   stop rule, instead of "until it passes"; the only checkpoint is handoff.
+- New guides, each checked against the shipped code: `first-project.md` (the GUI workflow
+  from the Dashboard's New Project to running), `360-moving-regions.md` (the ROI Path Tracer,
+  the region file, moving regions in a script, regions written by an AI assistant),
+  `e-learning-lab.md` (overview, files, how lessons are built, what an agent can change, a
+  docs map). `data-recorder.md` is rewritten for External Data Recorder 2.0 (hardware table,
+  configuration defaults, network events, outputs, postprocessing, gotchas).
+- Corrections found while checking: the Dashboard's New Project renames `SightLab_VR.py` to
+  `<Name>.py`; `recordings/` appears only with Screen Record or a screenshot; `configpath=`
+  loads nothing unless `sightlab_configs/recent_config.stlb` exists and is not empty;
+  `getRegionOfInterest` returns `None` for saved ROIs in 2.9.3 (common mistakes).
 
 ## 2026.11.9 (2026-11-05)
 

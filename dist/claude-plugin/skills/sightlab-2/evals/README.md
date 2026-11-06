@@ -25,7 +25,7 @@ points. `tools/tests/test_kit_text.py` checks that the kit carries each answer.
 
 | Question | The answer must |
 |---|---|
-| How do I create my first SightLab experiment? | name the three routes (GUI only, code, both); for the GUI, copy `Documents\Sightlab2\Projects\BlankProject` and run `SightLab_VR.py`; for code, start from `SightLabVR_NonGUI.py`; point to `SampleProject` as a worked example; build nothing and launch nothing |
+| How do I create my first SightLab experiment? | name the three routes (GUI only, code, both); for the GUI, the Dashboard's **New Project +** (a copy of `Documents\Sightlab2\Projects\BlankProject`, scripts renamed `<Name>.py`) or a hand copy that keeps `SightLab_VR.py`; for code, start from `SightLabVR_NonGUI.py`; point to `SampleProject` as a worked example; build nothing and launch nothing |
 
 ## Running one by hand
 

@@ -15,7 +15,8 @@ sightlab.setEnvironment(env)
 - 360 photos and videos: `setEnvironment(media, mode=MEDIA_360, mediaType='video',
   mediaFormat='Monoscopic')` (`examples/360 non GUI`). `mediaFormat` defaults to
   `'Stereoscopic T/B'`; the others are `'Monoscopic'` and `'Stereoscopic L/R'` (180°). A mono
-  file needs `'Monoscopic'`, or it is split as top/bottom stereo.
+  file needs `'Monoscopic'`, or it is split as top/bottom stereo. Regions of interest that
+  follow something moving in the video: `guides/360-moving-regions.md`.
 - In GUI mode do not call `setEnvironment` at all; the researcher picks it in the GUI.
 
 ## Shipped environments and objects
