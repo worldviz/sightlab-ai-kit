@@ -3,6 +3,22 @@
 Entries before 2026.11.1 cite `docs/audits/`, `docs/plans/` and `tools/fetch_sources.sh`,
 which live in the team's internal repository, not here.
 
+## Unreleased
+
+Repository docs (`README.md`, `docs/install.md`, `docs/releases.md`) are live on merge; the
+template and host-section wording reaches the plugins with the next release build.
+
+- SightLab VR Assistant is public in OpenAI's plugin directory. ChatGPT and Codex users now
+  install it from there (search the Plugins page for SightLab VR Assistant): `docs/install.md`,
+  the README, the OpenAI plugin's README, the starter project and the in-skill "On this host"
+  text no longer tell them to add this repository as a Codex marketplace. That marketplace
+  stays for internal testing (`docs/releases.md`). Claude still installs from this repository.
+- `docs/install.md` describes the SightLab Dashboard's assistant buttons: **SightLab
+  Assistant** in the upper right (browser, ChatGPT / Codex desktop app or Claude Desktop), and
+  **SightLab Assistant ▾** on a project, which opens Codex or Claude Desktop on its folder with
+  the prompt ready.
+- A test keeps `codex plugin marketplace` out of every public file and host section.
+
 ## 2026.11.10 (2026-11-06)
 
 - Host sections decide what to run from the session's tools and environment, not the

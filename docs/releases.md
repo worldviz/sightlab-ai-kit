@@ -6,8 +6,11 @@ author: Claude (Fable 5.1)
 # Releasing the kit
 
 A release is a dated version, a git tag on `main`, and two zips attached to the GitHub
-release. Claude Code, claude.ai and Codex users update from the repository; ChatGPT users
-get the version once it clears OpenAI's review.
+release. Claude Code and claude.ai users update from the repository; ChatGPT and Codex users
+get the version once it clears OpenAI's review. The repository's Codex marketplace
+(`.agents/plugins/marketplace.json`) stays for internal testing only: `codex plugin marketplace
+add worldviz/sightlab-ai-kit`, then `codex plugin marketplace upgrade worldviz` after each
+release. Public instructions point Codex users to the directory.
 
 ## Steps
 
@@ -42,7 +45,6 @@ get the version once it clears OpenAI's review.
 
 - Claude Code: `claude plugin update sightlab@worldviz`, or nothing if auto-update is on.
 - claude.ai: nothing when **Sync automatically** is on; otherwise **Check for updates**.
-- Codex: `codex plugin marketplace upgrade worldviz`, then reinstall from `/plugins`.
-- ChatGPT: nothing; the directory serves the approved version.
+- ChatGPT and Codex: nothing; the directory serves the approved version.
 
 The report and `REVIEW.md` carry the kit version, so support can see who is behind.
