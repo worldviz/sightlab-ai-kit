@@ -9,9 +9,8 @@ once; this folder only gives a new study a tidy place to live.
 1. Install SightLab 2 (core, Resources and Projects) and Vizard 8 on a Windows PC.
 2. Install the kit once, for every project on the PC:
    - Claude Code: `claude plugin install sightlab --marketplace worldviz/sightlab-ai-kit`
-   - Codex: `codex plugin marketplace add worldviz/sightlab-ai-kit`, then install the
-     SightLab VR Assistant from `/plugins`.
-   Both come from https://github.com/worldviz/sightlab-ai-kit, which also says how to update.
+   - Codex: search the Codex app's Plugins page for SightLab VR Assistant and install it.
+   https://github.com/worldviz/sightlab-ai-kit has both, step by step, and says how to update.
 3. Copy this folder next to your other SightLab projects (for example
    `Documents\Sightlab2\MyStudy`) and open a terminal in it: `claude` or `codex`.
 4. Tell the agent what the study is. It assembles `brief/MyStudy.md`, builds the script step

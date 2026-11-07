@@ -4,8 +4,8 @@ This is a SightLab 2 (Vizard, Windows) experiment project. The SightLab AI kit i
 installed plugin, not a folder in this project.
 
 1. Use the SightLab VR Assistant plugin's skill for anything SightLab. If it is not installed:
-   `codex plugin marketplace add worldviz/sightlab-ai-kit`, then install the SightLab VR
-   Assistant from `/plugins` and start a new session. (Claude Code reads `CLAUDE.md` instead.)
+   search the Codex app's Plugins page for SightLab VR Assistant, install it and start a new
+   session. (Claude Code reads `CLAUDE.md` instead.)
 2. The skill sizes the request first: a question gets an answer, a small edit gets the static
    check, a build gets the full workflow with the autopilot (`autopilot.py`, the experiment
    unattended in desktop mode) and `REVIEW.md`.

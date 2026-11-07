@@ -4,24 +4,25 @@ One plugin that teaches an AI coding agent to build, check and test WorldViz Sig
 experiments, published for Claude Code, claude.ai, Codex and ChatGPT. It carries one skill per
 SightLab generation: `sightlab-2` today, for SightLab 2 (the Python eye-tracking library
 that runs inside Vizard on Windows); a SightLab 3 skill will sit beside it. This repository is also the
-marketplace those tools install from, so one `git tag` is a release.
+marketplace Claude installs from, so one `git tag` is a release. ChatGPT and Codex install the
+same plugin, as **SightLab VR Assistant**, from OpenAI's plugin directory.
 
-**Preview.** Installing from this GitHub repository (the Claude Code, claude.ai and Codex
-rows below) is a preview until WorldViz announces its general release; the ChatGPT directory
-listing is the reviewed release.
+**Preview.** Installing from this GitHub repository (the Claude Code and claude.ai rows below)
+is a preview until WorldViz announces its general release; the OpenAI directory listing is the
+reviewed release.
 
-Step-by-step install with screenshots for the Claude and Codex desktop apps: [docs/install.md](docs/install.md).
+Step-by-step install with screenshots for the Claude and Codex desktop apps, and the
+SightLab Dashboard's assistant buttons: [docs/install.md](docs/install.md).
 
 | Where you work | Install once | Updates |
 |---|---|---|
 | Claude Code (terminal, VS Code, desktop app Code tab) | `claude plugin install sightlab --marketplace worldviz/sightlab-ai-kit` | `claude plugin update sightlab@worldviz`, or turn on auto-update for the `worldviz` marketplace in `/plugin` > Marketplaces |
 | claude.ai chat and Cowork | Customize > Plugins > Add > Add marketplace, enter `worldviz/sightlab-ai-kit`, then add **SightLab** | automatic when **Sync automatically** is on for the marketplace; per Anthropic's docs the same plugin then also appears in your Claude Code as a synced plugin |
-| Codex CLI and the ChatGPT desktop app | `codex plugin marketplace add worldviz/sightlab-ai-kit`, then install **SightLab VR Assistant** from `/plugins` in the CLI and start a new session (the ChatGPT desktop app shares Codex's configuration, so the plugin should also appear in its Plugins tab; not yet verified) | `codex plugin marketplace upgrade worldviz`, then reinstall from `/plugins` |
-| ChatGPT web | the **SightLab VR Assistant** plugin in ChatGPT's Plugins directory | automatic, after each version clears OpenAI's review |
+| ChatGPT and Codex (web, desktop apps, CLI) | search the Plugins page for **SightLab VR Assistant** and install it ([direct link](https://chatgpt.com/plugins/plugins_6abfde9851388191aa6d87959f4703c4)); the Codex command line uses the plugins installed in the Codex app | through the directory, after each version clears OpenAI's review |
 
 **Installed 2026.11.2 as `sightlab-2x`?** Run `claude plugin uninstall sightlab-2x@worldviz`, then install
 `sightlab` as above. claude.ai: remove **SightLab 2.x AI Kit** (its 2026.11.2 name) under Customize > Plugins, then add **SightLab**
-from the same marketplace. Codex: `codex plugin marketplace upgrade worldviz`, then reinstall from `/plugins`.
+from the same marketplace. Codex: uninstall it and install **SightLab VR Assistant** from the Plugins page.
 
 The plugins are the same content built two ways: `dist/claude-plugin` (Claude's layout) and
 `dist/openai-plugin` (OpenAI's `.codex-plugin` layout, the successor of SightLab VR Assistant
@@ -61,7 +62,7 @@ brief template). Nothing of the kit is copied into projects; the plugin is the k
 | `templates/` | per-wrapper files that are not content: manifests, commands, README, LICENSE, the project template |
 | `tools/` | `build_kit.py` (builds `dist/` and the two marketplace manifests), `lint_kit.py`, generators for the API map, examples index and resources, `score_eval.py`, tests |
 | `dist/` | the built wrappers, committed so the marketplaces resolve: `claude-plugin/`, `openai-plugin/` (+ `.zip` for the OpenAI directory), `starter-project/`, `chat-bundle.zip`, `BUILD.json` |
-| `.claude-plugin/marketplace.json`, `.agents/plugins/marketplace.json` | the marketplaces for Claude and Codex |
+| `.claude-plugin/marketplace.json`, `.agents/plugins/marketplace.json` | the Claude marketplace, and a Codex marketplace kept for WorldViz's internal testing (the public Codex install is the OpenAI directory) |
 | `docs/` | changelog, release steps, directory submission notes, trial notes, eval scoreboards |
 
 ## Building

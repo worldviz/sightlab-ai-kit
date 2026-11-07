@@ -53,8 +53,8 @@ first. The two checks need different things:
 - For any check you cannot run here: give the researcher the script and the command to run
   on the SightLab PC, or the installed kit (Claude Code:
   `claude plugin install sightlab --marketplace worldviz/sightlab-ai-kit`, then
-  `/sightlab:check <script>`; Codex: `codex plugin marketplace add
-  worldviz/sightlab-ai-kit`, install the SightLab VR Assistant, ask it to check the script),
+  `/sightlab:check <script>`; Codex: install SightLab VR Assistant from the Codex app's
+  Plugins page, ask it to check the script),
   ask them to paste the results back, and say clearly which checks were not performed.
 
 Generated scripts target the researcher's own licensed SightLab/Vizard installation.
@@ -70,8 +70,8 @@ installed kit:
 
 - Claude Code: `claude plugin install sightlab --marketplace worldviz/sightlab-ai-kit`,
   then `/sightlab:check <script>`;
-- Codex: `codex plugin marketplace add worldviz/sightlab-ai-kit`, install the SightLab VR
-  Assistant from `/plugins`, then ask it to check the script,
+- Codex: install SightLab VR Assistant from the Codex app's Plugins page (search for it),
+  then ask it to check the script,
 
 and to paste the output back so you can fix what they find.
 """,

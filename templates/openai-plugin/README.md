@@ -33,8 +33,7 @@ ChatGPT it answers from its files and writes scripts for you to run.
 
 ## Install
 
-Codex: `codex plugin marketplace add worldviz/sightlab-ai-kit`, then install from `/plugins`.
-ChatGPT: the SightLab VR Assistant in the Plugins directory.
+ChatGPT and Codex: search the Plugins page for SightLab VR Assistant and install it.
 Source, releases and the Claude version: https://github.com/worldviz/sightlab-ai-kit
 
 Kit version {{VERSION}}, generated from sightlab_utils {{SIGHTLAB_VERSION}} on {{KIT_DATE}}.

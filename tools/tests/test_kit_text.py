@@ -30,8 +30,28 @@ def test_starter_templates_point_at_the_installed_plugin(kit: Path):
     for text in (claude, agents, readme):
         assert ".claude/skills" not in text and "harness/check.py" not in text
     assert "claude plugin install sightlab --marketplace worldviz/sightlab-ai-kit" in claude
-    assert "codex plugin marketplace add worldviz/sightlab-ai-kit" in agents
+    assert "SightLab VR Assistant" in agents and "Plugins page" in agents
     assert "worldviz/sightlab-ai-kit" in readme
+
+
+def test_public_text_sends_codex_users_to_the_openai_directory(kit: Path):
+    """2026-11-06: SightLab VR Assistant is public in OpenAI's plugin directory. The repo's Codex
+    marketplace stays for internal testing only (docs/releases.md), so nothing users read tells
+    them to add it; Claude keeps the GitHub marketplace."""
+    import host_sections
+    public = {
+        "README.md": (kit / "README.md").read_text(encoding="utf-8"),
+        "docs/install.md": (kit / "docs" / "install.md").read_text(encoding="utf-8"),
+        **{f"templates/{p.relative_to(kit / 'templates').as_posix()}": p.read_text(encoding="utf-8")
+           for p in (kit / "templates").rglob("*.md")},
+        **{f"host:{w}": t for w, t in host_sections.HOST["sightlab-2"].items()},
+    }
+    for name, text in public.items():
+        assert "codex plugin marketplace" not in text, name
+    install = public["docs/install.md"]
+    assert "Search for `SightLab VR Assistant`" in install
+    assert "worldviz/sightlab-ai-kit" in install  # the Claude route is unchanged
+    assert "**Claude Desktop** copies a `/sightlab:new` prompt" in install
 
 
 def test_host_sections_give_kit_relative_paths(kit: Path):
